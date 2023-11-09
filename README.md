@@ -21,8 +21,8 @@ Power Monitor is a powerful open-source tool that provides real-time insights in
 
 You can find the following links also in the Wiki Page of Power Monitor.
 
-* [Install Power Monitor](https://github.com/SAP/power-monitoring-tool-for-macos/wiki/Installation))
-* [Uninstall Power Monitor](https://github.com/SAP/power-monitoring-tool-for-macos/wiki/Uninstallation))
+* [Install Power Monitor](https://github.com/SAP/power-monitoring-tool-for-macos/wiki/Installation)
+* [Uninstall Power Monitor](https://github.com/SAP/power-monitoring-tool-for-macos/wiki/Uninstallation)
 * [Using Power Monitor](https://github.com/SAP/power-monitoring-tool-for-macos/wiki/Using-Power-Monitor)
 * [Managing Power Monitor](https://github.com/SAP/power-monitoring-tool-for-macos/wiki/Managing-Power-Monitor)
 * [FAQ](https://github.com/SAP/power-monitoring-tool-for-macos/wiki/Frequently-Asked-Questions)
