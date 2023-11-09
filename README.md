@@ -1,7 +1,9 @@
-[![REUSE status](https://api.reuse.software/badge/github.com/SAP/power-monitoring-tool-for-macos)](https://api.reuse.software/info/github.com/SAP/power-monitoring-tool-for-macos)
+![](https://github.com/SAP/power-monitoring-tool-for-macos/blob/main/readme_images/banner.png)
 
 # Power Monitor 
- 
+
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP/power-monitoring-tool-for-macos)](https://api.reuse.software/info/github.com/SAP/power-monitoring-tool-for-macos)
+
 Power Monitor is a powerful open-source tool that provides real-time insights into your device's energy consumption and carbon footprint, linked to your location. Here's how it can help you:
 
 🔌 Measure Energy Consumption: Track how much energy your Mac consumes, helping you understand the environmental impact of your device usage.
