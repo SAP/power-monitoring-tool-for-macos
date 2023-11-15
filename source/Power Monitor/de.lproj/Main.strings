@@ -1,0 +1,159 @@
+
+/* Class = "NSViewController"; title = "General"; ObjectID = "2JJ-xP-qla"; */
+"2JJ-xP-qla.title" = "Allgemein";
+
+/* Class = "NSTextFieldCell"; title = "Current system power:"; ObjectID = "3ah-rg-0KD"; */
+"3ah-rg-0KD.title" = "Aktuelle Systemleistung:";
+
+/* Class = "NSMenuItem"; title = "Quit Power Monitor"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "Leistungsanzeige beenden";
+
+/* Class = "NSMenuItem"; title = "About Power Monitor"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "Über Leistungsanzeige";
+
+/* Class = "NSMenuItem"; title = "Settings…"; ObjectID = "BOF-NM-1cW"; */
+"BOF-NM-1cW.title" = "Einstellungen …";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
+"F2S-fz-NVQ.title" = "Hilfe";
+
+/* Class = "NSTextFieldCell"; title = "Based on this Mac's location and its average power, this application can show the equivalent of carbon dioxide emitted per hour you actively use this Mac. This value is also called the carbon footprint. Calculating the carbon footprint requires this Mac's approximate location, as different regions of the world emit different amounts of carbon dioxide for power generation. If you enable this feature, your Mac will eventually ask you for permission to use its location. If you do not agree to use the location of this Mac, the application will use another, but much less accurate, method to determine the approximate location of this Mac."; ObjectID = "4t5-90-YF7"; */
+"4t5-90-YF7.title" = "Anhand des Standorts dieses Macs und seiner durchschnittlichen Leistung kann dieses Programm das Äquivalent des Kohlendioxids anzeigen, das pro Stunde, in der Sie diesen Mac aktiv nutzen, ausgestoßen wird. Dieser Wert wird auch als CO2-Fußabdruck bezeichnet.\n\nFür die Berechnung des CO2-Fußabdrucks ist der ungefähre Standort dieses Macs erforderlich, da in verschiedenen Regionen der Welt unterschiedliche Mengen an Kohlendioxid für die Stromerzeugung ausgestoßen werden. Wenn Sie diese Funktion aktivieren, wird Ihr Mac Sie eventuell um Erlaubnis bitten, seinen Standort zu verwenden. Wenn Sie der Verwendung des Standorts dieses Macs nicht zustimmen, verwendet das Programm eine andere, aber wesentlich ungenauere Methode, um den ungeähren Standort dieses Macs zu ermitteln.";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
+"Kd2-mp-pUS.title" = "Alle einblenden";
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "LE2-aR-0XJ"; */
+"LE2-aR-0XJ.title" = "Alle nach vorne bringen";
+
+/* Class = "NSMenuItem"; title = "Close"; ObjectID = "zLt-t9-N7E"; */
+"zLt-t9-N7E.title" = "Schließen";
+
+/* Class = "NSTextFieldCell"; title = "Average system power:"; ObjectID = "MuP-fN-vvH"; */
+"MuP-fN-vvH.title" = "Durchschnittliche Systemleistung:";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "NMo-om-nkz"; */
+"NMo-om-nkz.title" = "Dienste";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "OY7-WF-poV"; */
+"OY7-WF-poV.title" = "Im Dock ablegen";
+
+/* Class = "NSMenuItem"; title = "Hide Power Monitor"; ObjectID = "Olw-nP-bQN"; */
+"Olw-nP-bQN.title" = "Leistungsanzeige ausblenden";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "R4o-n2-Eq4"; */
+"R4o-n2-Eq4.title" = "Zoomen";
+
+/* Class = "NSWindow"; title = "General"; ObjectID = "SVd-zl-CGr"; */
+"SVd-zl-CGr.title" = "Allgemein";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "Td7-aD-5lo"; */
+"Td7-aD-5lo.title" = "Fenster";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
+"Vdr-fp-XzO.title" = "Andere ausblenden";
+
+/* Class = "NSButtonCell"; title = "Show average line"; ObjectID = "XvU-9n-Fpb"; */
+"XvU-9n-Fpb.title" = "Durchschnittslinie anzeigen";
+
+/* Class = "NSButtonCell"; title = "Show day markers"; ObjectID = "GRK-12-ISD"; */
+"GRK-12-ISD.title" = "Tagesmarkierungen anzeigen";
+
+/* Class = "NSButtonCell"; title = "Show carbon footprint"; ObjectID = "ODP-wh-kgy"; */
+"ODP-wh-kgy.title" = "CO2-Fußabdruck anzeigen";
+
+/* Class = "NSTextFieldCell"; title = "Highest measured system power:"; ObjectID = "pfa-9s-Bs9"; */
+"pfa-9s-Bs9.title" = "Höchste gemessene Systemleistung:";
+
+/* Class = "NSTextFieldCell"; title = "Current time period covered:"; ObjectID = "xLV-2L-ILV"; */
+"xLV-2L-ILV.title" = "Abgedeckter Zeitraum:";
+
+/* Class = "NSTextFieldCell"; title = "Determining this Mac's carbon footprint…"; ObjectID = "yDb-bT-TJ9"; */
+"yDb-bT-TJ9.title" = "CO2-Fußabdruck dieses Macs wird ermittelt …";
+
+/* Class = "NSWindow"; title = "Power Monitor"; ObjectID = "IQv-IB-iLA"; */
+"IQv-IB-iLA.title" = "Leistungsanzeige";
+
+/* Class = "NSViewController"; title = "General"; ObjectID = "4TL-9c-yey"; */
+"4TL-9c-yey.title" = "Allgemein";
+
+/* Class = "NSViewController"; title = "Carbon Footprint"; ObjectID = "kQJ-Ad-1gA"; */
+"kQJ-Ad-1gA.title" = "CO2-Fußabdruck";
+
+/* Class = "NSTextFieldCell"; title = "The main window of this application displays the system power history in the form of a graph. Please use the checkboxes below to show additional information that may be displayed with the graph."; ObjectID = "usW-JI-5hr"; */
+"usW-JI-5hr.title" = "Im Hauptfenster dieses Programms wird der Verlauf der Systemleistung in Form eines Graphen angezeigt. Sie können zusätzliche Informationen einblenden, wenn Sie die untenstehenden Optionen aktivieren.";
+
+/* Class = "NSTextFieldCell"; title = "If you want to change the colors of the graph, please use the color pickers below. You may set the colors back to their original state by clicking the corresponding button."; ObjectID = "vZ8-RI-v4q"; */
+"vZ8-RI-v4q.title" = "Wenn Sie die Farben des Graphen ändern möchten, verwenden Sie bitte die untenstehenden Farbwähler. Sie können die Farben wieder auf ihren ursprünglichen Zustand zurücksetzen, indem Sie auf die entsprechende Taste klicken.";
+
+/* Class = "NSTextFieldCell"; title = "Graph:"; ObjectID = "K1C-RH-EhE"; */
+"K1C-RH-EhE.title" = "Graph:";
+
+/* Class = "NSTextFieldCell"; title = "Average line:"; ObjectID = "gQN-6r-EM1"; */
+"gQN-6r-EM1.title" = "Durchschnittslinie:";
+
+/* Class = "NSTextFieldCell"; title = "Day markers:"; ObjectID = "3jy-7o-8st"; */
+"3jy-7o-8st.title" = "Tagesmarkierungen:";
+
+/* Class = "NSButtonCell"; title = "Reset colors"; ObjectID = "0G4-LZ-k2b"; */
+"0G4-LZ-k2b.title" = "Farben zurücksetzen";
+
+/* Class = "NSMenu"; title = "Edit"; ObjectID = "Yk7-6p-cGj"; */
+"Yk7-6p-cGj.title" = "Bearbeiten";
+
+/* Class = "NSMenuItem"; title = "Paste"; ObjectID = "Agp-Bg-2gm"; */
+"Agp-Bg-2gm.title" = "Einsetzen";
+
+/* Class = "NSMenuItem"; title = "Copy"; ObjectID = "2FD-PM-4eP"; */
+"2FD-PM-4eP.title" = "Kopieren";
+
+/* Class = "NSMenuItem"; title = "Undo"; ObjectID = "2jg-dL-7bi"; */
+"2jg-dL-7bi.title" = "Rückgängig";
+
+/* Class = "NSMenuItem"; title = "Select All"; ObjectID = "216-BT-LWQ"; */
+"216-BT-LWQ.title" = "Alles auswählen";
+
+/* Class = "NSMenuItem"; title = "Delete"; ObjectID = "Efz-qP-N83"; */
+"Efz-qP-N83.title" = "Löschen";
+
+/* Class = "NSMenuItem"; title = "Cut"; ObjectID = "Q0t-07-FGT"; */
+"Q0t-07-FGT.title" = "Ausschneiden";
+
+/* Class = "NSTextFieldCell"; title = "Please select the API you want to use and enter the corresponding API key in the text field below."; ObjectID = "NME-51-rka"; */
+"NME-51-rka.title" = "Bitte wählen Sie die API aus, die Sie benutzen wollen, und geben Sie den  Schlüssel für die ausgewählte API in das untenstehende Textfeld ein.";
+
+/* Class = "NSTextFieldCell"; title = "Don't have an API key yet? Create your free API key for non-commercial use at https://co2signal.com."; ObjectID = "fmh-Bw-LnI"; */
+"fmh-Bw-LnI.title" = "Sie haben noch keinen API-Schlüssel? Einen kostenlosen API-Schlüssel zur nicht-kommerziellen Nutzung erhalten Sie auf https://co2signal.com.";
+
+/* Class = "NSTextFieldCell"; title = "API:"; ObjectID = "Loq-93-OXK"; */
+"Loq-93-OXK.title" = "API:";
+
+/* Class = "NSTextFieldCell"; title = "API key:"; ObjectID = "FlT-P2-7d3"; */
+"FlT-P2-7d3.title" = "API-Schlüssel:";
+
+/* Class = "NSTextFieldCell"; title = "The API key is incorrect!"; ObjectID = "IPl-A3-u8M"; */
+"IPl-A3-u8M.title" = "Der API-Schlüssel ist ungültig!";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "Td5-HC-FFT"; */
+"Td5-HC-FFT.title" = "Abbrechen";
+
+/* Class = "NSButtonCell"; title = "Continue"; ObjectID = "9xk-gz-4DH"; */
+"9xk-gz-4DH.title" = "Fortfahren";
+
+/* Class = "NSTextFieldCell"; title = "To determine this Mac's carbon footprint, this application needs carbon intensity data for the country this Mac is currentliy located at. This data can either be obtained dynamically by using one of the APIs this application supports or by providing a static list in form of a CSV file which must contain the country code followed by the respective carbon intensity value. Please use the button below to import carbon intensity data or to clear previously imported data."; ObjectID = "BGq-Ni-IHx"; */
+"BGq-Ni-IHx.title" = "Um den CO2-Fußabdruck dieses Macs ermitteln zu können, benötigt das Programm CO2-Emissionsdaten des Landes, in dem sich der Mac gerade befindet. Diese Daten können entweder dynamisch über eine der von diesem Programm unterstützten APIs bezogen werden oder durch Bereitstellung einer statischen Liste in Form einer CSV-Datei, die den Ländercode gefolgt vom jeweiligen CO2-Emissionsfaktor enthalten muss. Bitte benutzen Sie die untenstehende Taste, um CO2-Emissionsdaten zu importieren oder um zuvor importierte Daten zu löschen.";
+
+/* Class = "NSMenuItem"; title = "Settings…"; ObjectID = "hgu-6P-fXB"; */
+"hgu-6P-fXB.title" = "Einstellungen …";
+
+/* Class = "NSMenuItem"; title = "Quit Power Monitor"; ObjectID = "cm3-TC-alv"; */
+"cm3-TC-alv.title" = "Leistungsanzeige beenden";
+
+/* Class = "NSButtonCell"; title = "Run in background"; ObjectID = "NFB-rx-iin"; */
+"NFB-rx-iin.title" = "Im Hintergrund ausführen";
+
+/* Class = "NSTextFieldCell"; title = "This application can run in background. Then it only shows up in the macOS menu bar and shows basic power information. If you want the application to run in background, please enable the option below.; ObjectID = "TvQ-1c-RTC"; */
+"TvQ-1c-RTC.title" = "Dieses Programm kann im Hintergrund ausgeführt werden. In diesem Falle wird es nur in der macOS Menüleiste angezeigt und stellt lediglich grundlegende Leistungsinformationen zur Verfügung. Wenn Sie das Programm im Hintergrund ausführen möchten, aktivieren Sie bitte die untenstehende Funktion.";
+
+/* Class = "NSMenuItem"; title = "Power Monitor on GitHub"; ObjectID = "RrS-hI-FBW"; */
+"RrS-hI-FBW.title" = "Power Monitor auf GitHub";

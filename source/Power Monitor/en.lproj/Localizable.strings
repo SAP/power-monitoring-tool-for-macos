@@ -1,0 +1,58 @@
+/*
+     Localizable.strings
+     Copyright 2023 SAP SE
+     
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+     
+     http://www.apache.org/licenses/LICENSE-2.0
+     
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+*/
+
+"powerDescription" = "This Mac's power is measured every %@. A maximum of the values of the last %@ of active use are stored. As soon as the maximum number of stored values is reached, the oldest values are overwritten.\n\nDue to technical limitations, it is not possible to measure the exact wattage of this Mac directly on the Mac. Our tests with an external power meter have shown that the actual wattage can be up to 10 %% higher than the value displayed in this application. The deviation varies depending on the Mac model used and the system load.";
+
+"quitButton" = "Quit";
+"cancelButton" = "Cancel";
+"clearButton" = "Clear";
+"okButton" = "OK";
+"backgroundButton" = "Run in background";
+"tryAgainButton" = "Try Again";
+"openSettingsButton" = "Open System Settings";
+
+"dialogNoMeasurementsTitle" = "No measurements found!";
+"dialogNoMeasurementsMessage" = "The measurement data could not be read or contains errors.";
+
+"carbonFootprint" = "Based on this Mac's %@ location and average system power, an equivalent of %@ carbon dioxide is emitted per hour you actively use this Mac.";
+"carbonFootprintUnavailable" = "Information about this Mac's carbon footprint is currently unavailable.";
+"carbonLocationPrecise" = "current";
+"carbonLocationNotPrecise" = "approximate";
+
+"apiKeyTextCO2Signal" = "Don't have an API key yet? Create your free API key for non-commercial use at https://co2signal.com.";
+"apiKeyTextElectricityMaps" = "Don't have an API key yet? Create your free API key for non-commercial use at https://www.electricitymaps.com.";
+
+"dialogCarbonDataClearTitle" = "Do you want to clear previously imported carbon intensity data?";
+"dialogCarbonDataClearMessage" = "Clearing the carbon intensity data cannot be undone and also disables the display of the carbon footprint.";
+
+"importButtonTitle" = "Import carbon intensity data";
+"clearButtonTitle" = "Clear carbon intensity data";
+"dialogImportSuccessTitle" = "Import successful!";
+"dialogImportSuccessMessage" = "The carbon intensity data for %ld countries were successfully imported.";
+"dialogImportErrorTitle" = "Import failed!";
+"dialogImportErrorMessage" = "There couldn't be any carbon intensity data imported from the selected file. Please check if the file is a valid CSV file with values separated by comma or semicolon and try again.";
+
+"statusItemCurrentPower" = "Current system power: %@";
+"statusItemAveragePower" = "Average system power: %@";
+"statusItemCarbonFootprint" = "Carbon footprint: %@CO2eq/h";
+"statusItemValueUnknown" = "unknown";
+
+"dialogBackgroundTitle" = "Are you sure you want to run this application in background now?";
+"dialogBackgroundMessage" = "When running in background, all windows of this application will be closed and the application will be displayed only in the macOS menu bar.";
+
+"dialogLoginItemDisabledTitle" = "Login item not enabled!";
+"dialogLoginItemDisabledMessage" = "This application's login item needs to be enabled in System Settings for this application to work correctly. Please enable the login item and try again.";
