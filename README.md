@@ -1,7 +1,9 @@
-[![REUSE status](https://api.reuse.software/badge/github.com/SAP/power-monitoring-tool-for-macos)](https://api.reuse.software/info/github.com/SAP/power-monitoring-tool-for-macos)
+![](https://github.com/SAP/power-monitoring-tool-for-macos/blob/main/readme_images/banner.png)
 
 # Power Monitor 
- 
+
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP/power-monitoring-tool-for-macos)](https://api.reuse.software/info/github.com/SAP/power-monitoring-tool-for-macos)
+
 Power Monitor is a powerful open-source tool that provides real-time insights into your device's energy consumption and carbon footprint, linked to your location. Here's how it can help you:
 
 🔌 Measure Energy Consumption: Track how much energy your Mac consumes, helping you understand the environmental impact of your device usage.
@@ -21,8 +23,8 @@ Power Monitor is a powerful open-source tool that provides real-time insights in
 
 You can find the following links also in the Wiki Page of Power Monitor.
 
-* [Install Power Monitor](https://github.com/SAP/power-monitoring-tool-for-macos/wiki/Installation))
-* [Uninstall Power Monitor](https://github.com/SAP/power-monitoring-tool-for-macos/wiki/Uninstallation))
+* [Install Power Monitor](https://github.com/SAP/power-monitoring-tool-for-macos/wiki/Installation)
+* [Uninstall Power Monitor](https://github.com/SAP/power-monitoring-tool-for-macos/wiki/Uninstallation)
 * [Using Power Monitor](https://github.com/SAP/power-monitoring-tool-for-macos/wiki/Using-Power-Monitor)
 * [Managing Power Monitor](https://github.com/SAP/power-monitoring-tool-for-macos/wiki/Managing-Power-Monitor)
 * [FAQ](https://github.com/SAP/power-monitoring-tool-for-macos/wiki/Frequently-Asked-Questions)
