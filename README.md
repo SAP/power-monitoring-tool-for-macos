@@ -17,7 +17,11 @@ Power Monitor is a powerful open-source tool that provides real-time insights in
 **Make a positive impact, reduce energy waste, and contribute to sustainability with Power Monitor!**
 
 
-# Demo  <!-- Harald'll talk with you about this part -->
+# Demo
+
+Power Monitor is a new native Mac solution to monitor, report and visualize your Mac’s power consumption.
+
+![](https://github.com/SAP/power-monitoring-tool-for-macos/blob/main/readme_images/power_monitor_launched.png)
 
 # Documentation 
 
