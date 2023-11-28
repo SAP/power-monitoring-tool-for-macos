@@ -22,7 +22,6 @@
 #import "Constants.h"
 #import "MTCarbonFootprint.h"
 #import "MTStatusItemMenu.h"
-#import <ServiceManagement/ServiceManagement.h>
 
 @interface AppDelegate ()
 @property (weak) IBOutlet MTStatusItemMenu *statusItemMenu;
@@ -114,26 +113,7 @@
             [NSApp terminate:self];
         }
         
-    } else if ([appArguments containsObject:@"--registerDaemon"] || [appArguments containsObject:@"--unregisterDaemon"]) {
-        
-        BOOL shouldBeRegistered = ([appArguments containsObject:@"--registerDaemon"]) ? YES : NO;
-        [self registerDaemon:shouldBeRegistered completionHandler:^(BOOL success, NSError *error) {
-            
-            if (success) {
-                printf("Daemon has been successfully %s\n", (shouldBeRegistered) ? "registered" : "unregistered");
-            } else {
-                fprintf(stderr, "ERROR! Failed to %s daemon\n", (shouldBeRegistered) ? "register" : "unregister");
-            }
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [NSApp terminate:nil];
-            });
-        }];
-        
     } else {
-        
-        // register the daemon if not already registered
-        [self registerDaemon:YES completionHandler:nil];
         
         NSStoryboard *storyboard = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
         _mainWindowController = [storyboard instantiateControllerWithIdentifier:@"corp.sap.PowerMonitor.MainController"];
@@ -144,32 +124,6 @@
         // observe changes of the kMTDefaultsRunInBackgroundKey value
         [_userDefaults addObserver:self forKeyPath:kMTDefaultsRunInBackgroundKey options:NSKeyValueObservingOptionNew context:nil];
     }
-}
-
-- (void)registerDaemon:(BOOL)registerService completionHandler:(void (^) (BOOL success, NSError *error))completionHandler
-{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
-        NSError *error = nil;
-        BOOL success = NO;
-        
-        SMAppService *appService = [SMAppService daemonServiceWithPlistName:kMTDaemonPlistName];
-                        
-        // register the service
-        if (registerService) {
-            
-            if ([appService status] == SMAppServiceStatusNotRegistered || [appService status] == SMAppServiceStatusNotFound) {
-                success = [appService registerAndReturnError:&error];
-            } else {
-                success = YES;
-            }
-            
-        } else {
-            success = [appService unregisterAndReturnError:&error];
-        }
-        
-        if (completionHandler) {completionHandler(success, error); }
-    });
 }
 
 - (void)runAsStatusItem:(BOOL)status

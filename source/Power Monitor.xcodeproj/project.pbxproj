@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		AD06CE672A4575FD006386B8 /* MTStatusItemMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = AD06CE662A4575FD006386B8 /* MTStatusItemMenu.m */; };
 		AD0D3ADB2A1D1C83006AFF0D /* MTPowerMeasurementWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0D3ADA2A1D1C83006AFF0D /* MTPowerMeasurementWriter.m */; };
-		AD17F0912A0AB80900DB060D /* corp.sap.PowerMonitorDaemon.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = AD17F08F2A0AB7DE00DB060D /* corp.sap.PowerMonitorDaemon.plist */; };
+		AD17F0912A0AB80900DB060D /* corp.sap.PowerMonitorDaemon.plist in Embed Daemon Plist */ = {isa = PBXBuildFile; fileRef = AD17F08F2A0AB7DE00DB060D /* corp.sap.PowerMonitorDaemon.plist */; };
+		AD1D751B2B0C9D1500904B84 /* PowerMonitorDaemon in Copy Daemon */ = {isa = PBXBuildFile; fileRef = AD8123BA2A0B943C00857DF8 /* PowerMonitorDaemon */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		AD1D751D2B0C9D6A00904B84 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AD1D751C2B0C9D6A00904B84 /* Localizable.xcstrings */; };
 		AD238DCD2AD3DCC900A6B5B2 /* MTSystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB4B37C2A0BDCD800B7AF32 /* MTSystemInfo.m */; };
 		AD2E94612A0E710D00B6A13D /* MTCO2SignalAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2E94602A0E710D00B6A13D /* MTCO2SignalAPI.m */; };
 		AD3D04922AD041D9005B63A0 /* MTMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3D04912AD041D9005B63A0 /* MTMainWindowController.m */; };
@@ -20,7 +22,6 @@
 		AD4950DE29F7BDB200B6F363 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4950DC29F7BDB200B6F363 /* Main.storyboard */; };
 		AD4950E029F7BDB200B6F363 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4950DF29F7BDB200B6F363 /* main.m */; };
 		AD60B4F82A1CC0E500FE5BEC /* MTTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD60B4F72A1CC0E500FE5BEC /* MTTabViewController.m */; };
-		AD65D9852A124CAF006B05E7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD65D9872A124CAF006B05E7 /* Localizable.strings */; };
 		AD65D9912A127805006B05E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD65D9932A127805006B05E7 /* InfoPlist.strings */; };
 		AD68CBF22A173CAE00B19D07 /* MTCarbonFootprint.m in Sources */ = {isa = PBXBuildFile; fileRef = AD68CBF12A173CAE00B19D07 /* MTCarbonFootprint.m */; };
 		AD6B1D7E2A2F691B00CFE596 /* MTColorTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6B1D7D2A2F691B00CFE596 /* MTColorTransformer.m */; };
@@ -29,7 +30,6 @@
 		AD8123C32A0BC33B00857DF8 /* MTPowerMeasurementArray.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD8B532A0976D800B51609 /* MTPowerMeasurementArray.m */; };
 		AD8123C42A0BC33E00857DF8 /* MTPowerMeasurementReader.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE6425B29FFAFE9006BC4D5 /* MTPowerMeasurementReader.m */; };
 		AD8123C52A0BC34200857DF8 /* MTModifyData.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4043012A02434400EFC66C /* MTModifyData.m */; };
-		AD8123C72A0BC55F00857DF8 /* PowerMonitorDaemon in Resources */ = {isa = PBXBuildFile; fileRef = AD8123BA2A0B943C00857DF8 /* PowerMonitorDaemon */; };
 		AD8ECA852A3A1B440045BA11 /* Power Monitor.mobileconfig in Resources */ = {isa = PBXBuildFile; fileRef = AD8ECA842A3A1B440045BA11 /* Power Monitor.mobileconfig */; };
 		AD9E5EF62A3CA81B0055315C /* MTButtonTitleTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9E5EF42A3CA81B0055315C /* MTButtonTitleTransformer.m */; };
 		ADAD8B542A0976D800B51609 /* MTPowerMeasurementArray.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD8B532A0976D800B51609 /* MTPowerMeasurementArray.m */; };
@@ -58,14 +58,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		AD896DA92A05186000743EAD /* CopyFiles */ = {
+		AD1D751A2B0C9D0A00904B84 /* Copy Daemon */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				AD1D751B2B0C9D1500904B84 /* PowerMonitorDaemon in Copy Daemon */,
+			);
+			name = "Copy Daemon";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD896DA92A05186000743EAD /* Embed Daemon Plist */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = Contents/Library/LaunchDaemons;
 			dstSubfolderSpec = 1;
 			files = (
-				AD17F0912A0AB80900DB060D /* corp.sap.PowerMonitorDaemon.plist in CopyFiles */,
+				AD17F0912A0AB80900DB060D /* corp.sap.PowerMonitorDaemon.plist in Embed Daemon Plist */,
 			);
+			name = "Embed Daemon Plist";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -76,6 +88,7 @@
 		AD0D3AD92A1D1C83006AFF0D /* MTPowerMeasurementWriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTPowerMeasurementWriter.h; sourceTree = "<group>"; };
 		AD0D3ADA2A1D1C83006AFF0D /* MTPowerMeasurementWriter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTPowerMeasurementWriter.m; sourceTree = "<group>"; };
 		AD17F08F2A0AB7DE00DB060D /* corp.sap.PowerMonitorDaemon.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = corp.sap.PowerMonitorDaemon.plist; sourceTree = "<group>"; };
+		AD1D751C2B0C9D6A00904B84 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		AD2E945F2A0E710D00B6A13D /* MTCO2SignalAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCO2SignalAPI.h; sourceTree = "<group>"; };
 		AD2E94602A0E710D00B6A13D /* MTCO2SignalAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTCO2SignalAPI.m; sourceTree = "<group>"; };
 		AD3D04902AD041D9005B63A0 /* MTMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMainWindowController.h; sourceTree = "<group>"; };
@@ -92,8 +105,6 @@
 		AD4950DF29F7BDB200B6F363 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AD60B4F62A1CC0E500FE5BEC /* MTTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTabViewController.h; sourceTree = "<group>"; };
 		AD60B4F72A1CC0E500FE5BEC /* MTTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTabViewController.m; sourceTree = "<group>"; };
-		AD65D9862A124CAF006B05E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		AD65D9892A124CD8006B05E7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AD65D98B2A126FAB006B05E7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		AD65D9942A12780B006B05E7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AD68CBF02A173CAE00B19D07 /* MTCarbonFootprint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCarbonFootprint.h; sourceTree = "<group>"; };
@@ -224,7 +235,7 @@
 				AD17F08F2A0AB7DE00DB060D /* corp.sap.PowerMonitorDaemon.plist */,
 				ADB911EB2AD6F007007C64F1 /* Credits.rtf */,
 				AD65D9932A127805006B05E7 /* InfoPlist.strings */,
-				AD65D9872A124CAF006B05E7 /* Localizable.strings */,
+				AD1D751C2B0C9D6A00904B84 /* Localizable.xcstrings */,
 				AD4950DF29F7BDB200B6F363 /* main.m */,
 				AD4950DC29F7BDB200B6F363 /* Main.storyboard */,
 				AD90C7F929FBAB1A00917EE4 /* Power Monitor.entitlements */,
@@ -300,7 +311,8 @@
 				AD4950CD29F7BDB100B6F363 /* Sources */,
 				AD4950CE29F7BDB100B6F363 /* Frameworks */,
 				AD4950CF29F7BDB100B6F363 /* Resources */,
-				AD896DA92A05186000743EAD /* CopyFiles */,
+				AD1D751A2B0C9D0A00904B84 /* Copy Daemon */,
+				AD896DA92A05186000743EAD /* Embed Daemon Plist */,
 			);
 			buildRules = (
 			);
@@ -335,7 +347,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					AD4950D029F7BDB100B6F363 = {
 						CreatedOnToolsVersion = 14.3;
@@ -370,12 +382,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD8123C72A0BC55F00857DF8 /* PowerMonitorDaemon in Resources */,
 				AD65D9912A127805006B05E7 /* InfoPlist.strings in Resources */,
 				AD4950DB29F7BDB200B6F363 /* Assets.xcassets in Resources */,
+				AD1D751D2B0C9D6A00904B84 /* Localizable.xcstrings in Resources */,
 				ADB911E92AD6F007007C64F1 /* Credits.rtf in Resources */,
 				AD8ECA852A3A1B440045BA11 /* Power Monitor.mobileconfig in Resources */,
-				AD65D9852A124CAF006B05E7 /* Localizable.strings in Resources */,
 				ADB720C92A3C3E0600676E92 /* Alpha-2toAlpha-3.strings in Resources */,
 				AD4950DE29F7BDB200B6F363 /* Main.storyboard in Resources */,
 			);
@@ -447,15 +458,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		AD65D9872A124CAF006B05E7 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AD65D9862A124CAF006B05E7 /* en */,
-				AD65D9892A124CD8006B05E7 /* de */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
 		AD65D9932A127805006B05E7 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -480,6 +482,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -541,6 +544,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -601,7 +605,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 254;
+				CURRENT_PROJECT_VERSION = 263;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -618,7 +622,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -635,7 +639,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 254;
+				CURRENT_PROJECT_VERSION = 263;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -652,7 +656,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -662,8 +666,10 @@
 		AD8123BF2A0B943C00857DF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
 				CURRENT_PROJECT_VERSION = 67;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
@@ -679,8 +685,10 @@
 		AD8123C02A0B943C00857DF8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
 				CURRENT_PROJECT_VERSION = 67;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7R5ZEU67FQ;

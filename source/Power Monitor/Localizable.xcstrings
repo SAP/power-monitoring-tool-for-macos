@@ -1,0 +1,534 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "apiKeyTextCO2Signal" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sie haben noch keinen API-Schlüssel? Einen kostenlosen API-Schlüssel zur nicht-kommerziellen Nutzung erhalten Sie auf https://co2signal.com."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't have an API key yet? Create your free API key for non-commercial use at https://co2signal.com."
+          }
+        }
+      }
+    },
+    "apiKeyTextElectricityMaps" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sie haben noch keinen API-Schlüssel? Einen kostenlosen API-Schlüssel zur nicht-kommerziellen erhalten Sie auf https://www.electricitymaps.com."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't have an API key yet? Create your free API key for non-commercial use at https://www.electricitymaps.com."
+          }
+        }
+      }
+    },
+    "backgroundButton" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Im Hintergrund ausführen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Run in background"
+          }
+        }
+      }
+    },
+    "cancelButton" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abbrechen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
+    },
+    "carbonFootprint" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Basierend auf dem %@ Standort dieses Macs und seiner durchschnittlichen Leistung, wird pro Stunde, in der Sie diesen Mac aktiv nutzen, ein Äquivalent von %@ Kohlendioxid ausgestoßen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Based on this Mac's %@ location and average system power, an equivalent of %@ carbon dioxide is emitted per hour you actively use this Mac."
+          }
+        }
+      }
+    },
+    "carbonFootprintUnavailable" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informationen über den CO2-Fußabdruck dieses Macs sind momentan nicht verfügbar."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Information about this Mac's carbon footprint is currently unavailable."
+          }
+        }
+      }
+    },
+    "carbonLocationNotPrecise" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ungefähren"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "approximate"
+          }
+        }
+      }
+    },
+    "carbonLocationPrecise" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "aktuellen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "current"
+          }
+        }
+      }
+    },
+    "clearButton" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Löschen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear"
+          }
+        }
+      }
+    },
+    "clearButtonTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CO2-Emissionsdaten löschen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear carbon intensity data"
+          }
+        }
+      }
+    },
+    "dialogBackgroundMessage" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn es im Hintergrund ausgeführt wird, werden alle Fester des Programms geschlossen und es wird nur noch in der macOS Menüleiste angezeigt."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When running in background, all windows of this application will be closed and the application will be displayed only in the macOS menu bar."
+          }
+        }
+      }
+    },
+    "dialogBackgroundTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sind Sie sicher, dass Sie das Programm jetzt im Hintergrund ausführen wollen?"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to run this application in background now?"
+          }
+        }
+      }
+    },
+    "dialogCarbonDataClearMessage" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das Löschen der CO2-Emissionsdaten kann nicht rückgängig gemacht werden und deaktiviert außerdem die Anzeige des CO2-Fußabdrucks."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clearing the carbon intensity data cannot be undone and also disables the display of the carbon footprint."
+          }
+        }
+      }
+    },
+    "dialogCarbonDataClearTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Möchten Sie die bereits importierten CO2-Emissionsdaten löschen?"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you want to clear previously imported carbon intensity data?"
+          }
+        }
+      }
+    },
+    "dialogImportErrorMessage" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aus der ausgewählten Daten konnten keine CO2-Emissionsdaten importiert werden. Bitte prüfen Sie, ob die Datei eine gültige CSV-Datei, mit durch Komma oder Semikolon getrennten Werten ist, und versuchen Sie es erneut."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There couldn't be any carbon intensity data imported from the selected file. Please check if the file is a valid CSV file with values separated by comma or semicolon and try again."
+          }
+        }
+      }
+    },
+    "dialogImportErrorTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import fehlgeschlagen!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import failed!"
+          }
+        }
+      }
+    },
+    "dialogImportSuccessMessage" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die CO2-Emissionsdaten für %ld Länder wurden erfolgreich importiert."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The carbon intensity data for %ld countries were successfully imported."
+          }
+        }
+      }
+    },
+    "dialogImportSuccessTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import erfolgreich!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import successful!"
+          }
+        }
+      }
+    },
+    "dialogLoginItemDisabledMessage" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das Anmeldeobjekt dieses Programms muss in den Systemeinstellungen aktiviert werden, damit das Programm korrekt funktionieren kann. Bitte aktivieren Sie das Anmeldeobjekt und versuchen Sie es erneut."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This application's login item needs to be enabled in System Settings for this application to work correctly. Please enable the login item and try again."
+          }
+        }
+      }
+    },
+    "dialogLoginItemDisabledTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anmeldeobjekt ist nicht aktiviert!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Login item not enabled!"
+          }
+        }
+      }
+    },
+    "dialogNoMeasurementsMessage" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Messdaten konnten nicht gelesen werden oder sind fehlerhaft."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The measurement data could not be read or contains errors."
+          }
+        }
+      }
+    },
+    "dialogNoMeasurementsTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Messdaten gefunden!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No measurements found!"
+          }
+        }
+      }
+    },
+    "importButtonTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CO2-Emissionsdaten importieren"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import carbon intensity data"
+          }
+        }
+      }
+    },
+    "okButton" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
+    },
+    "openSettingsButton" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Systemeinstellungen öffnen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open System Settings"
+          }
+        }
+      }
+    },
+    "powerDescription" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Leistung dieses Macs wird alle %@ gemessen. Es werden maximal die Werte der letzten %@ aktiver Nutzung gespeichert. Sobald das Maximum an gespeicherten Daten erreicht ist, werden die ältesten Werte überschrieben. Aufgrund technischer Beschränkungen ist es nicht möglich, die exakte Leistungsaufnahme dieses Macs direkt auf dem Mac zu messen. Unsere Tests mit einem externen Leistungsmessgerät haben gezeigt, dass die tatsächliche Leistungsaufnahme um bis zu 10 %% höher sein kann als der in diesem Programm angezeigte Wert. Die Abweichung variiert je nach verwendetem Mac-Modell und der Auslastung des Systems."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This Mac's power is measured every %@. A maximum of the values of the last %@ of active use are stored. As soon as the maximum number of stored values is reached, the oldest values are overwritten.\n\nDue to technical limitations, it is not possible to measure the exact wattage of this Mac directly on the Mac. Our tests with an external power meter have shown that the actual wattage can be up to 10 %% higher than the value displayed in this application. The deviation varies depending on the Mac model used and the system load."
+          }
+        }
+      }
+    },
+    "quitButton" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beenden"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quit"
+          }
+        }
+      }
+    },
+    "selectButton" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auswählen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select"
+          }
+        }
+      }
+    },
+    "statusItemAveragePower" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Durchschnittliche Systemleistung: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Average system power: %@"
+          }
+        }
+      }
+    },
+    "statusItemCarbonFootprint" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CO2-Fußabdruck: %@CO2eq/h"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carbon footprint: %@CO2eq/h"
+          }
+        }
+      }
+    },
+    "statusItemCurrentPower" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktuelle Systemleistung: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Current system power: %@"
+          }
+        }
+      }
+    },
+    "statusItemValueUnknown" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "unbekannt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "unknown"
+          }
+        }
+      }
+    },
+    "tryAgainButton" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erneut versuchen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try Again"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

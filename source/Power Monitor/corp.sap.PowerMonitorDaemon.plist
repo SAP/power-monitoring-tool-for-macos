@@ -4,8 +4,10 @@
 <dict>
 	<key>Label</key>
 	<string>corp.sap.PowerMonitorDaemon</string>
-	<key>BundleProgram</key>
-	<string>Contents/Resources/PowerMonitorDaemon</string>
+	<key>Program</key>
+	<string>/Applications/Power Monitor.app/Contents/MacOS/PowerMonitorDaemon</string>
+	<key>AssociatedBundleIdentifiers</key>
+	<string>corp.sap.PowerMonitor</string>
 	<key>RunAtLoad</key>
 	<true/>
 	<key>KeepAlive</key>
