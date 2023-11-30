@@ -14,7 +14,13 @@ Power Monitor is a powerful open-source tool that provides real-time insights in
 
 🌟 Technical Accuracy: While it's not possible to measure exact wattage directly on the Mac, Power Monitor provides a reliable estimate based on external power meter tests.
 
+**Power Monitor supports the following macOS versions:**
+
+* macOS 14.x
+* macOS 13.x
+
 **Make a positive impact, reduce energy waste, and contribute to sustainability with Power Monitor!**
+
 
 
 # Demo
@@ -40,7 +46,7 @@ This project is 'as-is' with no support, no changes being made. You are welcome 
 ## Security / Disclosure
 If you find any bug that may be a security problem, please follow our instructions at [in our security policy](https://github.com/SAP/power-monitoring-tool-for-macos/security/policy) on how to report it. Please do not create GitHub issues for security-related doubts or problems.
 
-# Feedback and Contributing
+## Feedback and Contributing
 
 This project is open to feature requests/suggestions, bug reports etc. via [GitHub issues](https://github.com/SAP/power-monitoring-tool-for-macos/issues). Contribution and feedback are encouraged and always welcome. For more information about how to contribute, the project structure, as well as additional contribution information, see our [Contribution Guidelines](CONTRIBUTING.md).
 
