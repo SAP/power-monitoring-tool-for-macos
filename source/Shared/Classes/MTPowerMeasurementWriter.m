@@ -1,6 +1,6 @@
 /*
      MTPowerMeasurementWriter.m
-     Copyright 2023 SAP SE
+     Copyright 2023-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 */
 
 #import "MTPowerMeasurementWriter.h"
+#import "Constants.h"
+#import <os/log.h>
 
 @interface MTPowerMeasurementWriter ()
 @property (assign) int fileFD;
@@ -44,16 +46,38 @@
                 
             // check if the file already exists and if it has
             // the correct size. otherwise create a new file
+            NSInteger calculatedFileSize = maximumMeasurements * sizeof(MeasurementStruct) + sizeof(MeasurementFileHeader);
             NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:path
                                                                                             error:nil];
             if (fileAttributes) {
+                
                 NSNumber *fileSizeNumber = [fileAttributes objectForKey:NSFileSize];
-                NSInteger fileMaxMeasurements = [fileSizeNumber integerValue] / sizeof(MeasurementStruct);
-                if (fileMaxMeasurements == maximumMeasurements) { success = YES; }
+                if ([fileSizeNumber integerValue] == calculatedFileSize) { 
+                    
+                    // check the header
+                    MeasurementFileHeader header = [MTPowerMeasurement headerWithFilePath:path];
+                    if (strcmp(header.signature, kMTFileHeaderSignature) == 0 && header.version == kMTFileHeaderVersion) {
+                        success = YES;
+                    }
+                }
             }
             
             if (!success) {
-                NSMutableData *emptyData = [NSMutableData dataWithLength:maximumMeasurements * sizeof(MeasurementStruct)];
+                
+                // write a new file
+                NSMutableData *emptyData = [NSMutableData dataWithLength:calculatedFileSize];
+                
+                MeasurementFileHeader fileHeader =
+                {
+                    .signature = kMTFileHeaderSignature,
+                    .version = kMTFileHeaderVersion,
+                    .size = sizeof(MeasurementFileHeader)
+                };
+                
+                [emptyData replaceBytesInRange:NSMakeRange(0, sizeof(MeasurementFileHeader))
+                                     withBytes:&fileHeader
+                ];
+                
                 success = [emptyData writeToFile:path atomically:NO];
                 [[NSFileManager defaultManager] setAttributes:attributesDict ofItemAtPath:path error:nil];
             }
@@ -61,6 +85,7 @@
             // map the file
             if (success) {
                 
+                success = NO;
                 _fileFD = open([path UTF8String], O_RDWR);
                 
                 // set file size
@@ -71,16 +96,23 @@
                     NSNumber *fileSizeNumber = [fileAttributes objectForKey:NSFileSize];
                     NSInteger fileSize = [fileSizeNumber integerValue];
                     
-                    char *mappedAddress = mmap(0, fileSize, PROT_WRITE|PROT_READ, MAP_SHARED|MAP_FILE|MAP_NOCACHE, _fileFD, 0);
+                    char *mappedAddress = mmap(
+                                               0,
+                                               fileSize,
+                                               PROT_WRITE | PROT_READ,
+                                               MAP_SHARED | MAP_FILE | MAP_NOCACHE,
+                                               _fileFD,
+                                               0
+                                               );
                     
                     if (mappedAddress == MAP_FAILED) {
                         
-                        NSLog(@"SAPCorp: ERROR! Failed to map buffer file (errno=%d): %s", errno, strerror(errno));
+                        os_log_with_type(OS_LOG_DEFAULT, OS_LOG_TYPE_FAULT, "SAPCorp: Failed to map buffer file (errno=%{public}d): %{public}s", errno, strerror(errno));
                         
                     } else {
                         
-                        _measurementData = [[NSData alloc] initWithBytesNoCopy:mappedAddress
-                                                                        length:fileSize
+                        _measurementData = [[NSData alloc] initWithBytesNoCopy:mappedAddress + sizeof(MeasurementFileHeader)
+                                                                        length:fileSize - sizeof(MeasurementFileHeader)
                                                                    deallocator:^(void *bytes, NSUInteger length) {
 
                             msync(mappedAddress, fileSize, MS_SYNC);
@@ -137,6 +169,11 @@
     }
 
     return measurementIndex;
+}
+
+- (void)invalidate
+{
+    _measurementData = nil;
 }
 
 @end

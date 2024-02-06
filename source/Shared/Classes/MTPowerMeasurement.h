@@ -1,6 +1,6 @@
 /*
      MTPowerMeasurement.h
-     Copyright 2023 SAP SE
+     Copyright 2023-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -25,14 +25,40 @@
 @interface MTPowerMeasurement : NSMeasurement
 
 /*!
-  @struct       MeasurementStruct
-  @discussion   Specifies a power measurement, containing of the measured value and a timestamp.
+ @struct        MeasurementFileHeader
+ @abstract      Specifies the header of a measurement file.
+ @discussion    The measurement file format looks like this:
+ @code
+    +00 7B  magic number        (0x70777264617461)
+    +07 1B  reserved            (0x0)
+    +08 1B  length of header    (0xA)
+    +09 1B  version number      (0x2)
+    +10 XX  [data]
 */
 typedef struct __attribute__((packed)) {
+    
+    /// The signature of the file.
+    char signature[8];
+    /// The size of the header
+    uint8_t size;
+    /// The file format version.
+    uint8_t version;
+    
+} MeasurementFileHeader;
+
+/*!
+ @struct        MeasurementStruct
+ @abstract      Specifies a power measurement, containing of the measured value and a timestamp.
+*/
+typedef struct __attribute__((packed)) {
+    
     /// The timestamp of the measurement.
     time_t timestamp;
     /// The measurement value.
     uint32_t value;
+    /// A boolean specifying if the Mac is in dark wake mode.
+    Boolean darkwake;
+    
 } MeasurementStruct;
 
 /*!
@@ -41,6 +67,13 @@ typedef struct __attribute__((packed)) {
  @discussion    The value of this property is time_t.
 */
 @property (assign) time_t timeStamp;
+
+/*!
+ @property      darkWake
+ @abstract      A property to store if the measurement was done while the Mac was in dark wake mode.
+ @discussion    The value of this boolean.
+*/
+@property (assign) BOOL darkWake;
 
 /*!
  @method        initWithDoubleValue:unit:
@@ -55,6 +88,14 @@ typedef struct __attribute__((packed)) {
  @discussion    Returns a measurement initialized to have the specified value in watts.
 */
 - (instancetype)initWithPowerValue:(double)powerValue NS_DESIGNATED_INITIALIZER;
+
+/*!
+ @method        headerWithFilePath:
+ @abstract      Read a pwrdata file's header and return the relevant data in a MeasurementFileHeader struct.
+ @param         path The path to the pwrdata file.
+ @discussion    Returns a MeasurementFileHeader struct with the values read from file.
+*/
++ (MeasurementFileHeader)headerWithFilePath:(NSString*)path;
 
 @end
 

@@ -1,0 +1,177 @@
+/*
+     MTSidebarController.m
+     Copyright 2023-2024 SAP SE
+     
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+     
+     http://www.apache.org/licenses/LICENSE-2.0
+     
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+*/
+
+#import "MTSidebarController.h"
+#import "MTSidebarItem.h"
+
+@interface MTSidebarController ()
+@property (nonatomic, strong, readwrite) NSArray *orderedGroupItems;
+@property (nonatomic, strong, readwrite) NSMutableDictionary *allSidebarItems;
+
+@property (weak) IBOutlet NSOutlineView *sidebarOutlineView;
+@end
+
+@implementation MTSidebarController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+        
+    _allSidebarItems = [[NSMutableDictionary alloc] init];
+
+    MTSidebarItem *logItem = [[MTSidebarItem alloc] init];
+    [logItem setLabel:NSLocalizedString(@"sidebarEntryPowerEventLog", nil)];
+    [logItem setImage:[NSImage imageWithSystemSymbolName:@"bolt" accessibilityDescription:nil]];
+    [logItem setTargetViewController:[[self storyboard] instantiateControllerWithIdentifier:@"corp.sap.PowerMonitor.PowerEventLog"]];
+
+    MTSidebarItem *preventItem = [[MTSidebarItem alloc] init];
+    [preventItem setLabel:NSLocalizedString(@"sidebarEntryPreventingSleep", nil)];
+    [preventItem setImage:[NSImage imageWithSystemSymbolName:@"exclamationmark.triangle" accessibilityDescription:nil]];
+    [preventItem setTargetViewController:[[self storyboard] instantiateControllerWithIdentifier:@"corp.sap.PowerMonitor.AppsPreventingSleep"]];
+        
+    [_allSidebarItems setObject:[NSArray arrayWithObjects:logItem, nil]
+                         forKey:NSLocalizedString(@"sidebarEntryLogs", nil)
+    ];
+    
+    [_allSidebarItems setObject:[NSArray arrayWithObjects:preventItem, nil]
+                         forKey:NSLocalizedString(@"sidebarEntryReports", nil)
+    ];
+    
+    // this array must contain all the keys of the allSidebarItems
+    // dictionary in the order they should be displayed
+    _orderedGroupItems = [NSArray arrayWithObjects:
+                          NSLocalizedString(@"sidebarEntryLogs", nil),
+                          NSLocalizedString(@"sidebarEntryReports", nil),
+                          nil
+    ];
+    
+    [_sidebarOutlineView reloadData];
+    [_sidebarOutlineView setRowSizeStyle:NSTableViewRowSizeStyleDefault];
+    
+    [NSAnimationContext beginGrouping];
+    [[NSAnimationContext currentContext] setDuration:0];
+    [_sidebarOutlineView expandItem:nil expandChildren:YES];
+    [NSAnimationContext endGrouping];
+}
+
+- (NSArray*)childrenForItem:(id)item
+{
+    NSArray *childItems = nil;
+    
+    if (!item) {
+        
+        childItems = _orderedGroupItems;
+        
+    } else {
+        
+        NSString *itemLabel = ([item isKindOfClass:[MTSidebarItem class]]) ? [item label] : item;
+        childItems = [_allSidebarItems objectForKey:itemLabel];
+    }
+
+    return childItems;
+}
+
+#pragma mark NSOutlineViewDelegate
+
+- (NSView *)outlineView:(NSOutlineView *)outlineView viewForTableColumn:(NSTableColumn *)tableColumn item:(id)item
+{
+    id returnValue = nil;
+    
+    NSString *itemLabel = ([item isKindOfClass:[MTSidebarItem class]]) ? [item label] : item;
+
+    if ([[_allSidebarItems allKeys] containsObject:itemLabel]) {
+
+        NSTextField *headerTextField = [outlineView makeViewWithIdentifier:@"HeaderTextField" owner:self];
+        [headerTextField setStringValue:itemLabel];
+        returnValue = headerTextField;
+        
+    } else {
+        
+        NSTableCellView *mainCellView = [outlineView makeViewWithIdentifier:@"MainCell" owner:self];
+        [[mainCellView textField] setStringValue:itemLabel];
+
+        if ([item isKindOfClass:[MTSidebarItem class]]) {
+            NSImage *itemImage = [item image];
+            if ([itemImage isValid]) { [[mainCellView imageView] setImage:itemImage]; }
+        }
+
+        returnValue = mainCellView;
+    }
+    
+    return returnValue;
+}
+
+- (void)outlineView:(NSOutlineView *)outlineView didAddRowView:(NSTableRowView *)rowView forRow:(NSInteger)row
+{
+    if (row == 1) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [outlineView selectRowIndexes:[NSIndexSet indexSetWithIndex:1]
+                     byExtendingSelection:YES];
+        });
+    }
+}
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item
+{
+    return ([[_allSidebarItems allKeys] containsObject:item]) ? NO : YES;
+}
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldShowOutlineCellForItem:(id)item
+{
+    return YES;
+}
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView isGroupItem:(id)item
+{
+    return [[_allSidebarItems allKeys] containsObject:item];
+}
+
+- (void)outlineViewSelectionDidChange:(NSNotification *)notification
+{
+    if ([_sidebarOutlineView selectedRow] != -1) {
+        
+        id selectedItem = [_sidebarOutlineView itemAtRow:[_sidebarOutlineView selectedRow]];
+        
+        if ([selectedItem isKindOfClass:[MTSidebarItem class]] && [_sidebarOutlineView parentForItem:selectedItem] && [selectedItem targetViewController]) {
+
+            NSSplitViewItem *splitViewItem = [NSSplitViewItem splitViewItemWithViewController:[selectedItem targetViewController]];
+            
+            NSSplitViewController *splitViewController = (NSSplitViewController*)[self parentViewController];
+            [splitViewController removeSplitViewItem:[[splitViewController splitViewItems] lastObject]];
+            [splitViewController addSplitViewItem:splitViewItem];
+        }
+    }
+}
+
+#pragma mark NSOutlineViewDataSource
+
+- (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(id)item
+{
+    return [[self childrenForItem:item] objectAtIndex:index];
+}
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item
+{
+    return ([outlineView parentForItem:item]) ? NO : YES;
+}
+
+- (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item
+{
+    return [[self childrenForItem:item] count];
+}
+
+@end

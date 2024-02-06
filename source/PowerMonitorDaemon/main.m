@@ -1,6 +1,6 @@
 /*
      main.m
-     Copyright 2023 SAP SE
+     Copyright 2023-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,59 +16,43 @@
 */
 
 #import <Foundation/Foundation.h>
-#import "MTPowerMeasurement.h"
-#import "MTPowerMeasurementWriter.h"
 #import "MTSystemInfo.h"
-#import "Constants.h"
+#import "MTPowerMonitorDaemon.h"
 
 @interface Main : NSObject
+@property (nonatomic, strong, readwrite) MTPowerMonitorDaemon *powerMonitorDaemon;
 @end
 
 @implementation Main
 
 - (int)run
 {
-    MTPowerMeasurementWriter *pMWriter = [[MTPowerMeasurementWriter alloc] initWithFileAtPath:kMTMeasurementFilePath
-                                                                          maximumMeasurements:kMTMeasurementTimePeriod * 60 * (60 / kMTMeasurementInterval)];
-    if (pMWriter) {
+    BOOL success = [_powerMonitorDaemon startMonitoring];
+    
+    if (success) {
+
+        signal(SIGTERM, SIG_IGN);
         
-        printf("Power monitoring started…\n");
-        
-        // get the latest measurement to adjust file location
-        __block NSInteger bufferIndex = [pMWriter currentBufferIndex];
-        
-        // start measuring…
-        [NSTimer scheduledTimerWithTimeInterval:kMTMeasurementInterval
-                                        repeats:YES
-                                          block:^(NSTimer *timer) {
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        dispatch_source_t source = dispatch_source_create(DISPATCH_SOURCE_TYPE_SIGNAL, SIGTERM, 0, queue);
+         
+        if (source) {
             
-            // get current system power
-            float powerValue = [MTSystemInfo rawSystemPower];
-            
-            if (powerValue > 0) {
+            dispatch_source_set_event_handler(source, ^{
                 
-                // change data
-                MeasurementStruct data;
-                data.timestamp = CFSwapInt64HostToBig([[NSDate date] timeIntervalSince1970]);
-                data.value = CFSwapInt32HostToBig(*(int*)(&powerValue));
-                [[pMWriter measurementData] replaceMappedBytesInRange:NSMakeRange(bufferIndex, sizeof(data)) withBytes:&data];
-#ifdef DEBUG
-                printf("System power (%lu): %f W\n", bufferIndex / sizeof(data), powerValue);
-#endif
-                if (bufferIndex + sizeof(data) >= [[pMWriter measurementData] length]) {
-                    bufferIndex = 0;
-                } else {
-                    bufferIndex += sizeof(data);
-                }
-            }
-        }];
+                [self->_powerMonitorDaemon stopMonitoring];
+                self->_powerMonitorDaemon = nil;
+                os_log(OS_LOG_DEFAULT, "SAPCorp: Exiting");
+                
+                exit(0);
+            });
+         
+            // start processing signals
+            dispatch_resume(source);
+        }
         
-        // …and never return
+        // never return
         CFRunLoopRun();
-
-    } else {
-
-        fprintf(stderr, "ERROR! Failed to access buffer file: %s\n", [kMTMeasurementFilePath UTF8String]);
     }
     
     return EXIT_FAILURE;
@@ -96,6 +80,7 @@ int main(int argc, const char * argv[])
         } else {
             
             Main *m = [[Main alloc] init];
+            m.powerMonitorDaemon = [[MTPowerMonitorDaemon alloc] init];
             exitCode = [m run];
         }
     }

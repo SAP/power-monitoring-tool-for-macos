@@ -1,6 +1,6 @@
 /*
      MTPowerMeasurement.m
-     Copyright 2023 SAP SE
+     Copyright 2023-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -24,6 +24,25 @@
     self = [super initWithDoubleValue:powerValue unit:[NSUnitPower watts]];
     
     return self;
+}
+
++ (MeasurementFileHeader)headerWithFilePath:(NSString*)path
+{
+    MeasurementFileHeader buffer = (MeasurementFileHeader){ 0 };
+    
+    int fd = open([path UTF8String], O_RDONLY);
+    
+    if (fd >= 0) {
+        
+        size_t headerSize = read(fd, &buffer, sizeof(MeasurementFileHeader));
+        close(fd);
+        
+        if (headerSize != sizeof(MeasurementFileHeader)) {
+            buffer = (MeasurementFileHeader){ 0 };
+        }
+    }
+    
+    return buffer;
 }
 
 @end

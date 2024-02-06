@@ -1,6 +1,6 @@
 /*
      MTPowerMeasurementWriter.h
-     Copyright 2023 SAP SE
+     Copyright 2023-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -57,6 +57,14 @@
  @discussion    As our data file is actually a ring buffer, this method returns the current position within this buffer.
 */
 - (NSInteger)currentBufferIndex;
+
+/*!
+ @method        invalidate
+ @abstract      Invalidates the receiver.
+ @discussion    Unmaps the measurement file from memory, closes the file handle and invalidates
+                the receiver.
+*/
+- (void)invalidate;
 
 @end
 

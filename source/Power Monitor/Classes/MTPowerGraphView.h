@@ -1,6 +1,6 @@
 /*
      MTPowerGraphView.h
-     Copyright 2023 SAP SE
+     Copyright 2023-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -47,6 +47,13 @@
 @property (assign) BOOL showDayMarkers;
 
 /*!
+ @property      showPowerNaps
+ @abstract      A property to specify if Power Naps should be displayed or not.
+ @discussion    The value of this property is boolean.
+*/
+@property (assign) BOOL showPowerNaps;
+
+/*!
  @property      graphColor
  @abstract      A property to specify the color of the graph.
  @discussion    The value of this property is NSColor.
@@ -66,5 +73,37 @@
  @discussion    The value of this property is NSColor.
 */
 @property (nonatomic, strong, readwrite) NSColor *dayMarkerColor;
+
+/*!
+ @property      powerNapColor
+ @abstract      A property to specify the color of the Power Nap intervals.
+ @discussion    The value of this property is NSColor.
+*/
+@property (nonatomic, strong, readwrite) NSColor *powerNapColor;
+
+/*!
+ @property      positionLineColor
+ @abstract      A property to specify the color of the position line.
+ @discussion    The value of this property is NSColor.
+*/
+@property (nonatomic, strong, readwrite) NSColor *positionLineColor;
+
+/*!
+ @method        showMeasurement:withTooltip:
+ @abstract      Marks a measurement in the graph by drawing a position line. In addition to this the value
+                and timestamp can also displayed in a tooltip that appears near the line.
+ @param         measurement The MTPowerMeasurement object to be displayed in the graph
+ @param         tooltip A boolean indicating if the measurement value and timestamp should be displayed in a tooltip.
+ @discussion    Returns YES if the given measurement has been found and the position line could be displayed,
+                otherwise returns NO.
+*/
+- (BOOL)showMeasurement:(MTPowerMeasurement*)measurement withTooltip:(BOOL)tooltip;
+
+/*!
+ @method        showsPosition
+ @abstract      Indicates if the position line is shown or not.
+ @discussion    Returns YES if the position line is shown, otherwise returns NO.
+*/
+- (BOOL)showsPosition;
 
 @end

@@ -1,6 +1,6 @@
 /*
      MTSettingsCarbonController.m
-     Copyright 2023 SAP SE
+     Copyright 2023-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -130,7 +130,7 @@
         [panel setAllowsMultipleSelection:NO];
         [panel setCanCreateDirectories:NO];
         [panel setAllowedContentTypes:[NSArray arrayWithObject:UTTypeCommaSeparatedText]];
-        [panel beginSheetModalForWindow:[[self view] window] completionHandler:^(NSInteger result) {
+        [panel beginSheetModalForWindow:[[self view] window] completionHandler:^(NSModalResponse result) {
             
             if (result == NSModalResponseOK) {
                 

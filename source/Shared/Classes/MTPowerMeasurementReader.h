@@ -1,6 +1,6 @@
 /*
      MTPowerMeasurementReader.h
-     Copyright 2023 SAP SE
+     Copyright 2023-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -49,6 +49,15 @@
 - (NSArray<MTPowerMeasurement*>*)allMeasurements;
 
 /*!
+ @method        allMeasurementsSinceDate:
+ @abstract      Return all measurement data starting with the given date
+ @param         date The date from which measured values should be returned
+ @discussion    Returns an array of MTPowerMeasurement objects. This represents all data with a
+                timestamp after the given date that are currently stored in the given data file.
+*/
+- (NSArray<MTPowerMeasurement*>*)allMeasurementsSinceDate:(NSDate*)date;
+
+/*!
  @method        currentBufferIndex
  @abstract      Return the current position in our buffer.
  @discussion    As our data file is actually a ring buffer, this method returns the current position within this buffer.
@@ -61,5 +70,13 @@
  @discussion    Returns a MTPowerMeasurement object representing the current system power.
 */
 - (MTPowerMeasurement*)currentPower;
+
+/*!
+ @method        invalidate
+ @abstract      Invalidates the receiver.
+ @discussion    Unmaps the measurement file from memory, closes the file handle and invalidates
+                the receiver.
+*/
+- (void)invalidate;
 
 @end

@@ -1,6 +1,6 @@
 /*
      MTDescriptionController.m
-     Copyright 2023 SAP SE
+     Copyright 2023-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -41,7 +41,16 @@
     [timeFormatter setUnitStyle:NSFormattingUnitStyleLong];
     [timeFormatter setUnitOptions:NSMeasurementFormatterUnitOptionsNaturalScale];
 
-    [_powerDescription setStringValue:[NSString localizedStringWithFormat:NSLocalizedString(@"powerDescription", nil), [timeFormatter stringFromMeasurement:measurementInterval], [timeFormatter stringFromMeasurement:measurementPeriod]]];
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setMaximumFractionDigits:0];
+    [numberFormatter setNumberStyle:NSNumberFormatterPercentStyle];
+    
+    [_powerDescription setStringValue:[NSString localizedStringWithFormat:NSLocalizedString(@"powerDescription", nil),
+                                       [timeFormatter stringFromMeasurement:measurementInterval],
+                                       [timeFormatter stringFromMeasurement:measurementPeriod],
+                                       [numberFormatter stringFromNumber:[NSNumber numberWithFloat:.1]]
+                                       ]
+    ];
 }
 
 @end

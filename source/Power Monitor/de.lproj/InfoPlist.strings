@@ -1,6 +1,6 @@
 /*
      InfoPlist.strings
-     Copyright 2023 SAP SE
+     Copyright 2023-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 */
 
 // the copyright string (for the application's info window in Finder)
-"NSHumanReadableCopyright" = "Copyright © 2023 SAP SE. Alle Rechte vorbehalten.";
+"NSHumanReadableCopyright" = "Copyright © 2023-2024 SAP SE. Alle Rechte vorbehalten.";
 
 // the localized document type
 "Power Monitor Data File" = "Power Monitor Datei";

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		AD17F0912A0AB80900DB060D /* corp.sap.PowerMonitorDaemon.plist in Embed Daemon Plist */ = {isa = PBXBuildFile; fileRef = AD17F08F2A0AB7DE00DB060D /* corp.sap.PowerMonitorDaemon.plist */; };
 		AD1D751B2B0C9D1500904B84 /* PowerMonitorDaemon in Copy Daemon */ = {isa = PBXBuildFile; fileRef = AD8123BA2A0B943C00857DF8 /* PowerMonitorDaemon */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		AD1D751D2B0C9D6A00904B84 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AD1D751C2B0C9D6A00904B84 /* Localizable.xcstrings */; };
+		AD1F5DF12B4BFC0D007DD4FF /* MTAssertionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1F5DF02B4BFC0D007DD4FF /* MTAssertionsController.m */; };
 		AD238DCD2AD3DCC900A6B5B2 /* MTSystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB4B37C2A0BDCD800B7AF32 /* MTSystemInfo.m */; };
 		AD2E94612A0E710D00B6A13D /* MTCO2SignalAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2E94602A0E710D00B6A13D /* MTCO2SignalAPI.m */; };
 		AD3D04922AD041D9005B63A0 /* MTMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3D04912AD041D9005B63A0 /* MTMainWindowController.m */; };
@@ -21,17 +22,28 @@
 		AD4950DB29F7BDB200B6F363 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD4950DA29F7BDB200B6F363 /* Assets.xcassets */; };
 		AD4950DE29F7BDB200B6F363 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4950DC29F7BDB200B6F363 /* Main.storyboard */; };
 		AD4950E029F7BDB200B6F363 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4950DF29F7BDB200B6F363 /* main.m */; };
+		AD5236302B46FC9D00A6164D /* MTSidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52362F2B46FC9D00A6164D /* MTSidebarController.m */; };
 		AD60B4F82A1CC0E500FE5BEC /* MTTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD60B4F72A1CC0E500FE5BEC /* MTTabViewController.m */; };
 		AD65D9912A127805006B05E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD65D9932A127805006B05E7 /* InfoPlist.strings */; };
 		AD68CBF22A173CAE00B19D07 /* MTCarbonFootprint.m in Sources */ = {isa = PBXBuildFile; fileRef = AD68CBF12A173CAE00B19D07 /* MTCarbonFootprint.m */; };
 		AD6B1D7E2A2F691B00CFE596 /* MTColorTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6B1D7D2A2F691B00CFE596 /* MTColorTransformer.m */; };
 		AD74E37B2A38A59F000B0B84 /* MTPowerGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD74E3792A38A59F000B0B84 /* MTPowerGraphView.m */; };
+		AD7B989D2B48077C00AEEF92 /* MTSidebarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7B989B2B48077C00AEEF92 /* MTSidebarItem.m */; };
 		AD8123BD2A0B943C00857DF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8123BC2A0B943C00857DF8 /* main.m */; };
 		AD8123C32A0BC33B00857DF8 /* MTPowerMeasurementArray.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD8B532A0976D800B51609 /* MTPowerMeasurementArray.m */; };
 		AD8123C42A0BC33E00857DF8 /* MTPowerMeasurementReader.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE6425B29FFAFE9006BC4D5 /* MTPowerMeasurementReader.m */; };
 		AD8123C52A0BC34200857DF8 /* MTModifyData.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4043012A02434400EFC66C /* MTModifyData.m */; };
+		AD89CB4A2B28B5A000118757 /* MTUsagePriceTextTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89CB472B28B5A000118757 /* MTUsagePriceTextTransformer.m */; };
+		AD89CB4B2B28B5A000118757 /* MTUsagePriceValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89CB492B28B5A000118757 /* MTUsagePriceValueTransformer.m */; };
+		AD89CB4E2B28C66F00118757 /* MTUsagePriceTextTransformerDark.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89CB4C2B28C66F00118757 /* MTUsagePriceTextTransformerDark.m */; };
 		AD8ECA852A3A1B440045BA11 /* Power Monitor.mobileconfig in Resources */ = {isa = PBXBuildFile; fileRef = AD8ECA842A3A1B440045BA11 /* Power Monitor.mobileconfig */; };
+		AD9715092B48539B0059AC88 /* MTConsoleSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9715082B48539B0059AC88 /* MTConsoleSplitViewController.m */; };
+		AD9884E22B3171DE002C4FF7 /* PowerMonitorXPC.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9884E12B3171DE002C4FF7 /* PowerMonitorXPC.m */; };
+		AD9884E52B3171DE002C4FF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9884E42B3171DE002C4FF7 /* main.m */; };
+		AD9884EA2B3171DE002C4FF7 /* PowerMonitorXPC.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = AD9884DE2B3171DE002C4FF7 /* PowerMonitorXPC.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AD9E5EF62A3CA81B0055315C /* MTButtonTitleTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9E5EF42A3CA81B0055315C /* MTButtonTitleTransformer.m */; };
+		ADA213E62B20BFEA00C9661C /* MTSleepWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA213E52B20BFEA00C9661C /* MTSleepWatcher.m */; };
+		ADA213E92B20BFF300C9661C /* MTPowerEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA213E72B20BFF300C9661C /* MTPowerEvent.m */; };
 		ADAD8B542A0976D800B51609 /* MTPowerMeasurementArray.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD8B532A0976D800B51609 /* MTPowerMeasurementArray.m */; };
 		ADB4B37D2A0BDCD800B7AF32 /* MTSystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB4B37C2A0BDCD800B7AF32 /* MTSystemInfo.m */; };
 		ADB720C92A3C3E0600676E92 /* Alpha-2toAlpha-3.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADB720C82A3C3E0600676E92 /* Alpha-2toAlpha-3.strings */; };
@@ -40,11 +52,21 @@
 		ADBA009F2A29FCD50082157B /* MTSettingsCarbonController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBA009E2A29FCD50082157B /* MTSettingsCarbonController.m */; };
 		ADBA00A22A2A04480082157B /* MTCredentialsController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBA00A12A2A04480082157B /* MTCredentialsController.m */; };
 		ADBA00A52A2A2DFD0082157B /* MTCarbonAPIKey.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBA00A42A2A2DFD0082157B /* MTCarbonAPIKey.m */; };
+		ADCBCC772B30A59A004B9424 /* MTLogController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCBCC762B30A59A004B9424 /* MTLogController.m */; };
+		ADCBCC7A2B30A68D004B9424 /* MTToolbarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCBCC782B30A68D004B9424 /* MTToolbarItem.m */; };
+		ADCDF28F2B3024000026F56B /* MTPowerGraphTooltip.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCDF28E2B3024000026F56B /* MTPowerGraphTooltip.m */; };
+		ADCDF2912B3039B90026F56B /* MTPowerGraphTooltip.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADCDF2902B3039B90026F56B /* MTPowerGraphTooltip.xib */; };
 		ADD346E32A1285CD0045B031 /* MTDescriptionController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD346E22A1285CD0045B031 /* MTDescriptionController.m */; };
+		ADD3B09C2B1F306D000C1882 /* MTUsagePeriodTextTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD3B09B2B1F306D000C1882 /* MTUsagePeriodTextTransformer.m */; };
 		ADD594362A1B6C47007B84A3 /* MTElectricityMapsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD594342A1B6C47007B84A3 /* MTElectricityMapsAPI.m */; };
 		ADE6425C29FFAFE9006BC4D5 /* MTPowerMeasurementReader.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE6425B29FFAFE9006BC4D5 /* MTPowerMeasurementReader.m */; };
+		ADEAFD832B2892B3005A1799 /* MTSettingsViewOptionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEAFD812B2892B3005A1799 /* MTSettingsViewOptionsController.m */; };
+		ADEF0BDF2B317CD7000C7EEA /* MTPowerMonitorDaemon.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEF0BDE2B317CD7000C7EEA /* MTPowerMonitorDaemon.m */; };
+		ADEF0BE22B318417000C7EEA /* MTDaemonConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEF0BE12B318417000C7EEA /* MTDaemonConnection.m */; };
+		ADEF0BE52B318980000C7EEA /* MTLogLevelValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEF0BE42B318980000C7EEA /* MTLogLevelValueTransformer.m */; };
 		ADFCECBC2A1F2B8300AA728D /* MTPowerMeasurement.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFCECBB2A1F2B8300AA728D /* MTPowerMeasurement.m */; };
 		ADFCECBD2A1F2C8400AA728D /* MTPowerMeasurement.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFCECBB2A1F2B8300AA728D /* MTPowerMeasurement.m */; };
+		ADFD50262B35689100849855 /* MTLogDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFD50252B35689100849855 /* MTLogDetailsController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +76,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = AD8123B92A0B943C00857DF8;
 			remoteInfo = PowerMonitorDaemon;
+		};
+		AD9884E82B3171DE002C4FF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD4950C929F7BDB100B6F363 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD9884DD2B3171DE002C4FF7;
+			remoteInfo = PowerMonitorXPC;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -80,6 +109,17 @@
 			name = "Embed Daemon Plist";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AD9884EB2B3171DE002C4FF7 /* Embed XPC Services */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				AD9884EA2B3171DE002C4FF7 /* PowerMonitorXPC.xpc in Embed XPC Services */,
+			);
+			name = "Embed XPC Services";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +129,8 @@
 		AD0D3ADA2A1D1C83006AFF0D /* MTPowerMeasurementWriter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTPowerMeasurementWriter.m; sourceTree = "<group>"; };
 		AD17F08F2A0AB7DE00DB060D /* corp.sap.PowerMonitorDaemon.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = corp.sap.PowerMonitorDaemon.plist; sourceTree = "<group>"; };
 		AD1D751C2B0C9D6A00904B84 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		AD1F5DEF2B4BFC0D007DD4FF /* MTAssertionsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTAssertionsController.h; sourceTree = "<group>"; };
+		AD1F5DF02B4BFC0D007DD4FF /* MTAssertionsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTAssertionsController.m; sourceTree = "<group>"; };
 		AD2E945F2A0E710D00B6A13D /* MTCO2SignalAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCO2SignalAPI.h; sourceTree = "<group>"; };
 		AD2E94602A0E710D00B6A13D /* MTCO2SignalAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTCO2SignalAPI.m; sourceTree = "<group>"; };
 		AD3D04902AD041D9005B63A0 /* MTMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMainWindowController.h; sourceTree = "<group>"; };
@@ -103,9 +145,10 @@
 		AD4950DA29F7BDB200B6F363 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD4950DD29F7BDB200B6F363 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD4950DF29F7BDB200B6F363 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AD52362E2B46FC9D00A6164D /* MTSidebarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTSidebarController.h; sourceTree = "<group>"; };
+		AD52362F2B46FC9D00A6164D /* MTSidebarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTSidebarController.m; sourceTree = "<group>"; };
 		AD60B4F62A1CC0E500FE5BEC /* MTTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTabViewController.h; sourceTree = "<group>"; };
 		AD60B4F72A1CC0E500FE5BEC /* MTTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTabViewController.m; sourceTree = "<group>"; };
-		AD65D98B2A126FAB006B05E7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		AD65D9942A12780B006B05E7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AD68CBF02A173CAE00B19D07 /* MTCarbonFootprint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCarbonFootprint.h; sourceTree = "<group>"; };
 		AD68CBF12A173CAE00B19D07 /* MTCarbonFootprint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTCarbonFootprint.m; sourceTree = "<group>"; };
@@ -113,13 +156,33 @@
 		AD6B1D7D2A2F691B00CFE596 /* MTColorTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTColorTransformer.m; sourceTree = "<group>"; };
 		AD74E3792A38A59F000B0B84 /* MTPowerGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTPowerGraphView.m; sourceTree = "<group>"; };
 		AD74E37A2A38A59F000B0B84 /* MTPowerGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTPowerGraphView.h; sourceTree = "<group>"; };
+		AD7B989B2B48077C00AEEF92 /* MTSidebarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSidebarItem.m; sourceTree = "<group>"; };
+		AD7B989C2B48077C00AEEF92 /* MTSidebarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSidebarItem.h; sourceTree = "<group>"; };
 		AD8123BA2A0B943C00857DF8 /* PowerMonitorDaemon */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PowerMonitorDaemon; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD8123BC2A0B943C00857DF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AD8123C82A0BC5CF00857DF8 /* PowerMonitorDaemon-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PowerMonitorDaemon-Info.plist"; sourceTree = "<group>"; };
+		AD89CB462B28B5A000118757 /* MTUsagePriceValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTUsagePriceValueTransformer.h; sourceTree = "<group>"; };
+		AD89CB472B28B5A000118757 /* MTUsagePriceTextTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTUsagePriceTextTransformer.m; sourceTree = "<group>"; };
+		AD89CB482B28B5A000118757 /* MTUsagePriceTextTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTUsagePriceTextTransformer.h; sourceTree = "<group>"; };
+		AD89CB492B28B5A000118757 /* MTUsagePriceValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTUsagePriceValueTransformer.m; sourceTree = "<group>"; };
+		AD89CB4C2B28C66F00118757 /* MTUsagePriceTextTransformerDark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTUsagePriceTextTransformerDark.m; sourceTree = "<group>"; };
+		AD89CB4D2B28C66F00118757 /* MTUsagePriceTextTransformerDark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTUsagePriceTextTransformerDark.h; sourceTree = "<group>"; };
 		AD8ECA842A3A1B440045BA11 /* Power Monitor.mobileconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Power Monitor.mobileconfig"; sourceTree = "<group>"; };
 		AD90C7F929FBAB1A00917EE4 /* Power Monitor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Power Monitor.entitlements"; sourceTree = "<group>"; };
+		AD9715072B48539B0059AC88 /* MTConsoleSplitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTConsoleSplitViewController.h; sourceTree = "<group>"; };
+		AD9715082B48539B0059AC88 /* MTConsoleSplitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTConsoleSplitViewController.m; sourceTree = "<group>"; };
+		AD9884DE2B3171DE002C4FF7 /* PowerMonitorXPC.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = PowerMonitorXPC.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD9884E02B3171DE002C4FF7 /* PowerMonitorXPC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PowerMonitorXPC.h; sourceTree = "<group>"; };
+		AD9884E12B3171DE002C4FF7 /* PowerMonitorXPC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PowerMonitorXPC.m; sourceTree = "<group>"; };
+		AD9884E32B3171DE002C4FF7 /* PowerMonitorXPCProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PowerMonitorXPCProtocol.h; sourceTree = "<group>"; };
+		AD9884E42B3171DE002C4FF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AD9884E62B3171DE002C4FF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD9E5EF42A3CA81B0055315C /* MTButtonTitleTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTButtonTitleTransformer.m; sourceTree = "<group>"; };
 		AD9E5EF52A3CA81B0055315C /* MTButtonTitleTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTButtonTitleTransformer.h; sourceTree = "<group>"; };
+		ADA213E42B20BFEA00C9661C /* MTSleepWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSleepWatcher.h; sourceTree = "<group>"; };
+		ADA213E52B20BFEA00C9661C /* MTSleepWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSleepWatcher.m; sourceTree = "<group>"; };
+		ADA213E72B20BFF300C9661C /* MTPowerEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTPowerEvent.m; sourceTree = "<group>"; };
+		ADA213E82B20BFF300C9661C /* MTPowerEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTPowerEvent.h; sourceTree = "<group>"; };
 		ADAD8B522A0976D800B51609 /* MTPowerMeasurementArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTPowerMeasurementArray.h; sourceTree = "<group>"; };
 		ADAD8B532A0976D800B51609 /* MTPowerMeasurementArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTPowerMeasurementArray.m; sourceTree = "<group>"; };
 		ADB4B37B2A0BDCD800B7AF32 /* MTSystemInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTSystemInfo.h; sourceTree = "<group>"; };
@@ -135,15 +198,37 @@
 		ADBA00A12A2A04480082157B /* MTCredentialsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTCredentialsController.m; sourceTree = "<group>"; };
 		ADBA00A32A2A2DFD0082157B /* MTCarbonAPIKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MTCarbonAPIKey.h; path = "Power Monitor/Classes/MTCarbonAPIKey.h"; sourceTree = SOURCE_ROOT; };
 		ADBA00A42A2A2DFD0082157B /* MTCarbonAPIKey.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MTCarbonAPIKey.m; path = "Power Monitor/Classes/MTCarbonAPIKey.m"; sourceTree = SOURCE_ROOT; };
+		ADCBCC752B30A59A004B9424 /* MTLogController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLogController.h; sourceTree = "<group>"; };
+		ADCBCC762B30A59A004B9424 /* MTLogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLogController.m; sourceTree = "<group>"; };
+		ADCBCC782B30A68D004B9424 /* MTToolbarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTToolbarItem.m; sourceTree = "<group>"; };
+		ADCBCC792B30A68D004B9424 /* MTToolbarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTToolbarItem.h; sourceTree = "<group>"; };
+		ADCDF28D2B3024000026F56B /* MTPowerGraphTooltip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTPowerGraphTooltip.h; sourceTree = "<group>"; };
+		ADCDF28E2B3024000026F56B /* MTPowerGraphTooltip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTPowerGraphTooltip.m; sourceTree = "<group>"; };
+		ADCDF2902B3039B90026F56B /* MTPowerGraphTooltip.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MTPowerGraphTooltip.xib; sourceTree = "<group>"; };
 		ADD346E12A1285CD0045B031 /* MTDescriptionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTDescriptionController.h; sourceTree = "<group>"; };
 		ADD346E22A1285CD0045B031 /* MTDescriptionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTDescriptionController.m; sourceTree = "<group>"; };
+		ADD3B09A2B1F306D000C1882 /* MTUsagePeriodTextTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTUsagePeriodTextTransformer.h; sourceTree = "<group>"; };
+		ADD3B09B2B1F306D000C1882 /* MTUsagePeriodTextTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTUsagePeriodTextTransformer.m; sourceTree = "<group>"; };
+		ADD3B09D2B1F3188000C1882 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/Main.xcstrings; sourceTree = "<group>"; };
 		ADD594342A1B6C47007B84A3 /* MTElectricityMapsAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTElectricityMapsAPI.m; sourceTree = "<group>"; };
 		ADD594352A1B6C47007B84A3 /* MTElectricityMapsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTElectricityMapsAPI.h; sourceTree = "<group>"; };
 		ADE6425A29FFAFE9006BC4D5 /* MTPowerMeasurementReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTPowerMeasurementReader.h; sourceTree = "<group>"; };
 		ADE6425B29FFAFE9006BC4D5 /* MTPowerMeasurementReader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTPowerMeasurementReader.m; sourceTree = "<group>"; };
 		ADE6427C2A00FD06006BC4D5 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		ADEAFD812B2892B3005A1799 /* MTSettingsViewOptionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSettingsViewOptionsController.m; sourceTree = "<group>"; };
+		ADEAFD822B2892B3005A1799 /* MTSettingsViewOptionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSettingsViewOptionsController.h; sourceTree = "<group>"; };
+		ADEF0BDC2B3177E6000C7EEA /* PowerMonitorDaemonProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PowerMonitorDaemonProtocol.h; sourceTree = "<group>"; };
+		ADEF0BDD2B317CD7000C7EEA /* MTPowerMonitorDaemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTPowerMonitorDaemon.h; sourceTree = "<group>"; };
+		ADEF0BDE2B317CD7000C7EEA /* MTPowerMonitorDaemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTPowerMonitorDaemon.m; sourceTree = "<group>"; };
+		ADEF0BE02B318417000C7EEA /* MTDaemonConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTDaemonConnection.h; sourceTree = "<group>"; };
+		ADEF0BE12B318417000C7EEA /* MTDaemonConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTDaemonConnection.m; sourceTree = "<group>"; };
+		ADEF0BE32B318980000C7EEA /* MTLogLevelValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLogLevelValueTransformer.h; sourceTree = "<group>"; };
+		ADEF0BE42B318980000C7EEA /* MTLogLevelValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLogLevelValueTransformer.m; sourceTree = "<group>"; };
+		ADF5869A2B1F5A1F00DD19EA /* IOPMLibPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOPMLibPrivate.h; sourceTree = "<group>"; };
 		ADFCECBA2A1F2B8300AA728D /* MTPowerMeasurement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTPowerMeasurement.h; sourceTree = "<group>"; };
 		ADFCECBB2A1F2B8300AA728D /* MTPowerMeasurement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTPowerMeasurement.m; sourceTree = "<group>"; };
+		ADFD50242B35689100849855 /* MTLogDetailsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTLogDetailsController.h; sourceTree = "<group>"; };
+		ADFD50252B35689100849855 /* MTLogDetailsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTLogDetailsController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +240,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AD8123B72A0B943C00857DF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD9884DB2B3171DE002C4FF7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -186,16 +278,28 @@
 		AD2E945E2A0E668400B6A13D /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AD1F5DEF2B4BFC0D007DD4FF /* MTAssertionsController.h */,
+				AD1F5DF02B4BFC0D007DD4FF /* MTAssertionsController.m */,
+				AD9715072B48539B0059AC88 /* MTConsoleSplitViewController.h */,
+				AD9715082B48539B0059AC88 /* MTConsoleSplitViewController.m */,
 				ADBA00A02A2A04480082157B /* MTCredentialsController.h */,
 				ADBA00A12A2A04480082157B /* MTCredentialsController.m */,
 				ADD346E12A1285CD0045B031 /* MTDescriptionController.h */,
 				ADD346E22A1285CD0045B031 /* MTDescriptionController.m */,
+				ADCBCC752B30A59A004B9424 /* MTLogController.h */,
+				ADCBCC762B30A59A004B9424 /* MTLogController.m */,
+				ADFD50242B35689100849855 /* MTLogDetailsController.h */,
+				ADFD50252B35689100849855 /* MTLogDetailsController.m */,
 				AD4950D729F7BDB100B6F363 /* MTMainViewController.h */,
 				AD4950D829F7BDB100B6F363 /* MTMainViewController.m */,
 				ADBA009D2A29FCD50082157B /* MTSettingsCarbonController.h */,
 				ADBA009E2A29FCD50082157B /* MTSettingsCarbonController.m */,
 				ADBA009A2A29E1210082157B /* MTSettingsGeneralController.h */,
 				ADBA009B2A29E1210082157B /* MTSettingsGeneralController.m */,
+				ADEAFD822B2892B3005A1799 /* MTSettingsViewOptionsController.h */,
+				ADEAFD812B2892B3005A1799 /* MTSettingsViewOptionsController.m */,
+				AD52362E2B46FC9D00A6164D /* MTSidebarController.h */,
+				AD52362F2B46FC9D00A6164D /* MTSidebarController.m */,
 				AD60B4F62A1CC0E500FE5BEC /* MTTabViewController.h */,
 				AD60B4F72A1CC0E500FE5BEC /* MTTabViewController.m */,
 			);
@@ -208,6 +312,7 @@
 				ADE01A9F2A0508E600DB64EE /* Shared */,
 				AD4950D329F7BDB100B6F363 /* Power Monitor */,
 				AD8123BB2A0B943C00857DF8 /* PowerMonitorDaemon */,
+				AD9884DF2B3171DE002C4FF7 /* PowerMonitorXPC */,
 				AD4950D229F7BDB100B6F363 /* Products */,
 				AD91683929FA5F3400BEA2F6 /* Frameworks */,
 			);
@@ -218,6 +323,7 @@
 			children = (
 				AD4950D129F7BDB100B6F363 /* Power Monitor.app */,
 				AD8123BA2A0B943C00857DF8 /* PowerMonitorDaemon */,
+				AD9884DE2B3171DE002C4FF7 /* PowerMonitorXPC.xpc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -238,6 +344,7 @@
 				AD1D751C2B0C9D6A00904B84 /* Localizable.xcstrings */,
 				AD4950DF29F7BDB200B6F363 /* main.m */,
 				AD4950DC29F7BDB200B6F363 /* Main.storyboard */,
+				ADCDF2902B3039B90026F56B /* MTPowerGraphTooltip.xib */,
 				AD90C7F929FBAB1A00917EE4 /* Power Monitor.entitlements */,
 				AD8ECA842A3A1B440045BA11 /* Power Monitor.mobileconfig */,
 			);
@@ -253,14 +360,22 @@
 				AD68CBF12A173CAE00B19D07 /* MTCarbonFootprint.m */,
 				AD2E945F2A0E710D00B6A13D /* MTCO2SignalAPI.h */,
 				AD2E94602A0E710D00B6A13D /* MTCO2SignalAPI.m */,
+				ADEF0BE02B318417000C7EEA /* MTDaemonConnection.h */,
+				ADEF0BE12B318417000C7EEA /* MTDaemonConnection.m */,
 				ADD594352A1B6C47007B84A3 /* MTElectricityMapsAPI.h */,
 				ADD594342A1B6C47007B84A3 /* MTElectricityMapsAPI.m */,
 				AD3D04902AD041D9005B63A0 /* MTMainWindowController.h */,
 				AD3D04912AD041D9005B63A0 /* MTMainWindowController.m */,
+				ADCDF28D2B3024000026F56B /* MTPowerGraphTooltip.h */,
+				ADCDF28E2B3024000026F56B /* MTPowerGraphTooltip.m */,
 				AD74E37A2A38A59F000B0B84 /* MTPowerGraphView.h */,
 				AD74E3792A38A59F000B0B84 /* MTPowerGraphView.m */,
+				AD7B989C2B48077C00AEEF92 /* MTSidebarItem.h */,
+				AD7B989B2B48077C00AEEF92 /* MTSidebarItem.m */,
 				AD06CE652A4575FD006386B8 /* MTStatusItemMenu.h */,
 				AD06CE662A4575FD006386B8 /* MTStatusItemMenu.m */,
+				ADCBCC792B30A68D004B9424 /* MTToolbarItem.h */,
+				ADCBCC782B30A68D004B9424 /* MTToolbarItem.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -268,6 +383,8 @@
 		AD8123BB2A0B943C00857DF8 /* PowerMonitorDaemon */ = {
 			isa = PBXGroup;
 			children = (
+				ADA213EA2B20BFFF00C9661C /* Classes */,
+				ADEF0BDC2B3177E6000C7EEA /* PowerMonitorDaemonProtocol.h */,
 				AD8123BC2A0B943C00857DF8 /* main.m */,
 				AD8123C82A0BC5CF00857DF8 /* PowerMonitorDaemon-Info.plist */,
 			);
@@ -281,6 +398,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AD9884DF2B3171DE002C4FF7 /* PowerMonitorXPC */ = {
+			isa = PBXGroup;
+			children = (
+				AD9884E02B3171DE002C4FF7 /* PowerMonitorXPC.h */,
+				AD9884E12B3171DE002C4FF7 /* PowerMonitorXPC.m */,
+				AD9884E32B3171DE002C4FF7 /* PowerMonitorXPCProtocol.h */,
+				AD9884E42B3171DE002C4FF7 /* main.m */,
+				AD9884E62B3171DE002C4FF7 /* Info.plist */,
+			);
+			path = PowerMonitorXPC;
+			sourceTree = "<group>";
+		};
 		AD9E5EF32A3CA80F0055315C /* Value Transformers */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,14 +417,38 @@
 				AD9E5EF42A3CA81B0055315C /* MTButtonTitleTransformer.m */,
 				AD6B1D7C2A2F691B00CFE596 /* MTColorTransformer.h */,
 				AD6B1D7D2A2F691B00CFE596 /* MTColorTransformer.m */,
+				ADEF0BE32B318980000C7EEA /* MTLogLevelValueTransformer.h */,
+				ADEF0BE42B318980000C7EEA /* MTLogLevelValueTransformer.m */,
+				ADD3B09A2B1F306D000C1882 /* MTUsagePeriodTextTransformer.h */,
+				ADD3B09B2B1F306D000C1882 /* MTUsagePeriodTextTransformer.m */,
+				AD89CB482B28B5A000118757 /* MTUsagePriceTextTransformer.h */,
+				AD89CB472B28B5A000118757 /* MTUsagePriceTextTransformer.m */,
+				AD89CB4D2B28C66F00118757 /* MTUsagePriceTextTransformerDark.h */,
+				AD89CB4C2B28C66F00118757 /* MTUsagePriceTextTransformerDark.m */,
+				AD89CB462B28B5A000118757 /* MTUsagePriceValueTransformer.h */,
+				AD89CB492B28B5A000118757 /* MTUsagePriceValueTransformer.m */,
 			);
 			path = "Value Transformers";
+			sourceTree = "<group>";
+		};
+		ADA213EA2B20BFFF00C9661C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				ADA213E82B20BFF300C9661C /* MTPowerEvent.h */,
+				ADA213E72B20BFF300C9661C /* MTPowerEvent.m */,
+				ADA213E42B20BFEA00C9661C /* MTSleepWatcher.h */,
+				ADA213E52B20BFEA00C9661C /* MTSleepWatcher.m */,
+				ADEF0BDD2B317CD7000C7EEA /* MTPowerMonitorDaemon.h */,
+				ADEF0BDE2B317CD7000C7EEA /* MTPowerMonitorDaemon.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		ADE01A9F2A0508E600DB64EE /* Shared */ = {
 			isa = PBXGroup;
 			children = (
 				ADE6427C2A00FD06006BC4D5 /* Constants.h */,
+				ADF5869A2B1F5A1F00DD19EA /* IOPMLibPrivate.h */,
 				AD18A3C32A14AFF10021F734 /* Classes */,
 			);
 			path = Shared;
@@ -313,11 +466,13 @@
 				AD4950CF29F7BDB100B6F363 /* Resources */,
 				AD1D751A2B0C9D0A00904B84 /* Copy Daemon */,
 				AD896DA92A05186000743EAD /* Embed Daemon Plist */,
+				AD9884EB2B3171DE002C4FF7 /* Embed XPC Services */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				AD8123C22A0BC31E00857DF8 /* PBXTargetDependency */,
+				AD9884E92B3171DE002C4FF7 /* PBXTargetDependency */,
 			);
 			name = "Power Monitor";
 			productName = EnergyMonitor;
@@ -340,6 +495,23 @@
 			productReference = AD8123BA2A0B943C00857DF8 /* PowerMonitorDaemon */;
 			productType = "com.apple.product-type.tool";
 		};
+		AD9884DD2B3171DE002C4FF7 /* PowerMonitorXPC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD9884EE2B3171DE002C4FF7 /* Build configuration list for PBXNativeTarget "PowerMonitorXPC" */;
+			buildPhases = (
+				AD9884DA2B3171DE002C4FF7 /* Sources */,
+				AD9884DB2B3171DE002C4FF7 /* Frameworks */,
+				AD9884DC2B3171DE002C4FF7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PowerMonitorXPC;
+			productName = PowerMonitorXPC;
+			productReference = AD9884DE2B3171DE002C4FF7 /* PowerMonitorXPC.xpc */;
+			productType = "com.apple.product-type.xpc-service";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -354,6 +526,9 @@
 					};
 					AD8123B92A0B943C00857DF8 = {
 						CreatedOnToolsVersion = 14.3;
+					};
+					AD9884DD2B3171DE002C4FF7 = {
+						CreatedOnToolsVersion = 15.1;
 					};
 				};
 			};
@@ -373,6 +548,7 @@
 			targets = (
 				AD4950D029F7BDB100B6F363 /* Power Monitor */,
 				AD8123B92A0B943C00857DF8 /* PowerMonitorDaemon */,
+				AD9884DD2B3171DE002C4FF7 /* PowerMonitorXPC */,
 			);
 		};
 /* End PBXProject section */
@@ -389,6 +565,14 @@
 				AD8ECA852A3A1B440045BA11 /* Power Monitor.mobileconfig in Resources */,
 				ADB720C92A3C3E0600676E92 /* Alpha-2toAlpha-3.strings in Resources */,
 				AD4950DE29F7BDB200B6F363 /* Main.storyboard in Resources */,
+				ADCDF2912B3039B90026F56B /* MTPowerGraphTooltip.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD9884DC2B3171DE002C4FF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,27 +583,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD9715092B48539B0059AC88 /* MTConsoleSplitViewController.m in Sources */,
 				AD2E94612A0E710D00B6A13D /* MTCO2SignalAPI.m in Sources */,
+				ADCBCC7A2B30A68D004B9424 /* MTToolbarItem.m in Sources */,
+				ADEF0BE52B318980000C7EEA /* MTLogLevelValueTransformer.m in Sources */,
 				AD3D04922AD041D9005B63A0 /* MTMainWindowController.m in Sources */,
 				AD4043022A02434400EFC66C /* MTModifyData.m in Sources */,
 				ADD346E32A1285CD0045B031 /* MTDescriptionController.m in Sources */,
 				AD60B4F82A1CC0E500FE5BEC /* MTTabViewController.m in Sources */,
+				AD5236302B46FC9D00A6164D /* MTSidebarController.m in Sources */,
+				ADEF0BE22B318417000C7EEA /* MTDaemonConnection.m in Sources */,
 				ADBA00A52A2A2DFD0082157B /* MTCarbonAPIKey.m in Sources */,
 				ADAD8B542A0976D800B51609 /* MTPowerMeasurementArray.m in Sources */,
 				AD6B1D7E2A2F691B00CFE596 /* MTColorTransformer.m in Sources */,
+				AD1F5DF12B4BFC0D007DD4FF /* MTAssertionsController.m in Sources */,
+				AD89CB4B2B28B5A000118757 /* MTUsagePriceValueTransformer.m in Sources */,
+				ADD3B09C2B1F306D000C1882 /* MTUsagePeriodTextTransformer.m in Sources */,
+				AD89CB4E2B28C66F00118757 /* MTUsagePriceTextTransformerDark.m in Sources */,
+				ADCBCC772B30A59A004B9424 /* MTLogController.m in Sources */,
 				AD68CBF22A173CAE00B19D07 /* MTCarbonFootprint.m in Sources */,
 				AD74E37B2A38A59F000B0B84 /* MTPowerGraphView.m in Sources */,
+				ADEAFD832B2892B3005A1799 /* MTSettingsViewOptionsController.m in Sources */,
 				AD4950D929F7BDB100B6F363 /* MTMainViewController.m in Sources */,
 				AD238DCD2AD3DCC900A6B5B2 /* MTSystemInfo.m in Sources */,
 				ADFCECBC2A1F2B8300AA728D /* MTPowerMeasurement.m in Sources */,
+				AD7B989D2B48077C00AEEF92 /* MTSidebarItem.m in Sources */,
 				AD9E5EF62A3CA81B0055315C /* MTButtonTitleTransformer.m in Sources */,
 				ADD594362A1B6C47007B84A3 /* MTElectricityMapsAPI.m in Sources */,
+				AD89CB4A2B28B5A000118757 /* MTUsagePriceTextTransformer.m in Sources */,
 				ADBA00A22A2A04480082157B /* MTCredentialsController.m in Sources */,
 				AD06CE672A4575FD006386B8 /* MTStatusItemMenu.m in Sources */,
 				ADBA009C2A29E1210082157B /* MTSettingsGeneralController.m in Sources */,
 				ADE6425C29FFAFE9006BC4D5 /* MTPowerMeasurementReader.m in Sources */,
 				AD4950E029F7BDB200B6F363 /* main.m in Sources */,
+				ADFD50262B35689100849855 /* MTLogDetailsController.m in Sources */,
 				ADBA009F2A29FCD50082157B /* MTSettingsCarbonController.m in Sources */,
+				ADCDF28F2B3024000026F56B /* MTPowerGraphTooltip.m in Sources */,
 				AD4950D629F7BDB100B6F363 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,10 +630,22 @@
 				ADFCECBD2A1F2C8400AA728D /* MTPowerMeasurement.m in Sources */,
 				ADB4B37D2A0BDCD800B7AF32 /* MTSystemInfo.m in Sources */,
 				AD8123C52A0BC34200857DF8 /* MTModifyData.m in Sources */,
+				ADA213E92B20BFF300C9661C /* MTPowerEvent.m in Sources */,
+				ADA213E62B20BFEA00C9661C /* MTSleepWatcher.m in Sources */,
 				AD8123BD2A0B943C00857DF8 /* main.m in Sources */,
 				AD8123C42A0BC33E00857DF8 /* MTPowerMeasurementReader.m in Sources */,
+				ADEF0BDF2B317CD7000C7EEA /* MTPowerMonitorDaemon.m in Sources */,
 				AD0D3ADB2A1D1C83006AFF0D /* MTPowerMeasurementWriter.m in Sources */,
 				AD8123C32A0BC33B00857DF8 /* MTPowerMeasurementArray.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD9884DA2B3171DE002C4FF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD9884E52B3171DE002C4FF7 /* main.m in Sources */,
+				AD9884E22B3171DE002C4FF7 /* PowerMonitorXPC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +657,11 @@
 			target = AD8123B92A0B943C00857DF8 /* PowerMonitorDaemon */;
 			targetProxy = AD8123C12A0BC31E00857DF8 /* PBXContainerItemProxy */;
 		};
+		AD9884E92B3171DE002C4FF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD9884DD2B3171DE002C4FF7 /* PowerMonitorXPC */;
+			targetProxy = AD9884E82B3171DE002C4FF7 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -453,7 +669,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				AD4950DD29F7BDB200B6F363 /* Base */,
-				AD65D98B2A126FAB006B05E7 /* de */,
+				ADD3B09D2B1F3188000C1882 /* mul */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -605,7 +821,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 263;
+				CURRENT_PROJECT_VERSION = 364;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -614,7 +830,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Power Monitor";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 SAP SE. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023-2024 SAP SE. All rights reserved.";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -622,7 +838,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -639,7 +855,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 263;
+				CURRENT_PROJECT_VERSION = 364;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -648,7 +864,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Power Monitor";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 SAP SE. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023-2024 SAP SE. All rights reserved.";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -656,7 +872,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1.1;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -666,16 +883,16 @@
 		AD8123BF2A0B943C00857DF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 67;
+				CURRENT_PROJECT_VERSION = 145;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/PowerMonitorDaemon/PowerMonitorDaemon-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitorDaemon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -685,19 +902,66 @@
 		AD8123C02A0B943C00857DF8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 67;
+				CURRENT_PROJECT_VERSION = 145;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/PowerMonitorDaemon/PowerMonitorDaemon-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.1.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitorDaemon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		AD9884EC2B3171DE002C4FF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 27;
+				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PowerMonitorXPC/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PowerMonitorXPC;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitorXPC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		AD9884ED2B3171DE002C4FF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 27;
+				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PowerMonitorXPC/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PowerMonitorXPC;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitorXPC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;
 		};
@@ -727,6 +991,15 @@
 			buildConfigurations = (
 				AD8123BF2A0B943C00857DF8 /* Debug */,
 				AD8123C02A0B943C00857DF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD9884EE2B3171DE002C4FF7 /* Build configuration list for PBXNativeTarget "PowerMonitorXPC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD9884EC2B3171DE002C4FF7 /* Debug */,
+				AD9884ED2B3171DE002C4FF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

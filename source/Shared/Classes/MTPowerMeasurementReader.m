@@ -1,6 +1,6 @@
 /*
      MTPowerMeasurementReader.m
-     Copyright 2023 SAP SE
+     Copyright 2023-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -18,6 +18,8 @@
 #import "MTPowerMeasurementReader.h"
 #import "MTPowerMeasurementArray.h"
 #import "MTSystemInfo.h"
+#import "Constants.h"
+#import <os/log.h>
 
 @interface MTPowerMeasurementReader ()
 @property (nonatomic, strong, readwrite) NSData *measurementData;
@@ -44,18 +46,25 @@
             if (fileAttributes) {
                 
                 NSNumber *fileSizeNumber = [fileAttributes objectForKey:NSFileSize];
-                NSInteger fileSize = [fileSizeNumber integerValue];
+                NSInteger fileSize = [fileSizeNumber integerValue] - sizeof(MeasurementFileHeader);
                 
-                char *mappedAddress = mmap(0, fileSize, PROT_READ, MAP_SHARED|MAP_FILE|MAP_NOCACHE, _fileFD, 0);
+                char *mappedAddress = mmap(
+                                           0,
+                                           fileSize,
+                                           PROT_READ, 
+                                           MAP_SHARED | MAP_FILE | MAP_NOCACHE,
+                                           _fileFD,
+                                           0
+                                           );
                 
                 if (mappedAddress == MAP_FAILED) {
                     
-                    NSLog(@"SAPCorp: ERROR! Failed to map buffer file (errno=%d): %s", errno, strerror(errno));
+                    os_log_with_type(OS_LOG_DEFAULT, OS_LOG_TYPE_FAULT, "SAPCorp: Failed to map buffer file (errno=%{public}d): %{public}s", errno, strerror(errno));
                     
                 } else {
-                    
-                    _measurementData = [[NSData alloc] initWithBytesNoCopy:mappedAddress
-                                                                    length:fileSize
+                                                    
+                    _measurementData = [[NSData alloc] initWithBytesNoCopy:mappedAddress + sizeof(MeasurementFileHeader)
+                                                                    length:fileSize - sizeof(MeasurementFileHeader)
                                                                deallocator:^(void *bytes, NSUInteger length) {
                         
                         munmap(mappedAddress, fileSize);
@@ -76,6 +85,11 @@
 
 - (NSArray<MTPowerMeasurement*>*)allMeasurements
 {
+    return [self allMeasurementsSinceDate:nil];
+}
+
+- (NSArray<MTPowerMeasurement*>*)allMeasurementsSinceDate:(NSDate*)date
+{
     NSMutableArray *allMeasurements = [[NSMutableArray alloc] init];
 
     if (_measurementData) {
@@ -94,8 +108,11 @@
             if (powerValue > 0) {
                 
                 time_t timeStamp = CFSwapInt64BigToHost(data.timestamp);
+                BOOL darkWake = data.darkwake;
+                
                 MTPowerMeasurement *measurement = [[MTPowerMeasurement alloc] initWithPowerValue:*(float*)(&powerValue)];
                 [measurement setTimeStamp:timeStamp];
+                [measurement setDarkWake:darkWake];
                 [allMeasurements addObject:measurement];
                 
                 chunkOffset += chunkSize;
@@ -113,6 +130,10 @@
             NSArray *toBeMoved = [allMeasurements subarrayWithRange:moveRange];
             [allMeasurements removeObjectsInRange:moveRange];
             [allMeasurements addObjectsFromArray:toBeMoved];
+        }
+        if (date) {
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"timeStamp >= %ld", (long)[date timeIntervalSince1970]];
+            [allMeasurements setArray:[allMeasurements filteredArrayUsingPredicate:predicate]];
         }
     }
         
@@ -163,6 +184,11 @@
     MTPowerMeasurement *measurement = [[MTPowerMeasurement alloc] initWithPowerValue:[MTSystemInfo rawSystemPower]];
     
     return measurement;
+}
+
+- (void)invalidate
+{
+    _measurementData = nil;
 }
 
 @end

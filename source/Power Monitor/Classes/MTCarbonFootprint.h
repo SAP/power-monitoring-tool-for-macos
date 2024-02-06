@@ -1,6 +1,6 @@
 /*
      MTCarbonFootprint.h
-     Copyright 2023 SAP SE
+     Copyright 2023-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -26,13 +26,13 @@
 @interface MTCarbonFootprint : NSObject <CLLocationManagerDelegate>
 
 /*!
-  @enum         MTCarbonAPIType
-  @discussion   Specifies the type of the carbon API.
+ @enum         MTCarbonAPIType
+ @abstract     Specifies the type of the carbon API.
+ @constant     MTCarbonAPITypeCO2Signal Specifies the CO2Signal API.
+ @constant     MTCarbonAPITypeElectricityMaps Specifies the Electricity Maps API.
 */
 typedef enum {
-    /// CO2Signal API
     MTCarbonAPITypeCO2Signal        = 0,
-    /// Electricity Maps API
     MTCarbonAPITypeElectricityMaps  = 1
 } MTCarbonAPIType;
 

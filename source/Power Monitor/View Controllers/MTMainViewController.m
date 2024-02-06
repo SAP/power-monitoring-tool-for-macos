@@ -1,6 +1,6 @@
 /*
      MTMainViewController.m
-     Copyright 2023 SAP SE
+     Copyright 2023-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@
 #import "MTCarbonAPIKey.h"
 #import "MTPowerGraphView.h"
 #import "Constants.h"
-#import <ServiceManagement/ServiceManagement.h>
+#import "MTUsagePriceValueTransformer.h"
+#import "MTUsagePriceTextTransformer.h"
+#import <ServiceManagement/SMAppService.h>
 
 @interface MTMainViewController ()
 @property (weak) IBOutlet MTPowerGraphView *graphView;
@@ -31,14 +33,17 @@
 @property (weak) IBOutlet NSTextField *averagePowerText;
 @property (weak) IBOutlet NSTextField *maximumPowerText;
 @property (weak) IBOutlet NSTextField *measurementCountText;
+@property (weak) IBOutlet NSTextField *napTimeText;
 @property (weak) IBOutlet NSTextField *carbonPerHour;
+@property (weak) IBOutlet NSTextField *consumptionLabelText;
 @property (weak) IBOutlet NSProgressIndicator *carbonLookupProgressIndicator;
 
 @property (nonatomic, strong, readwrite) MTPowerMeasurementReader *pM;
 @property (nonatomic, strong, readwrite) MTCarbonFootprint *carbonFootprint;
-@property (nonatomic, strong, readwrite) NSWindowController *settingsController;
+@property (nonatomic, strong, readwrite) NSWindowController *consoleWindowController;
 @property (nonatomic, strong, readwrite) NSUserDefaults *userDefaults;
-@property (nonatomic, strong, readwrite) NSRunningApplication *runningSystemSettings;
+@property (nonatomic, strong, readwrite) NSNumber *valuePowerConsumption;
+@property (nonatomic, strong, readwrite) NSNumber *valuePowerConsumptionDark;
 @property (assign) BOOL carbonLookupInProgress;
 @property (assign) BOOL carbonFootprintEnabled;
 @end
@@ -48,12 +53,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-            
+
     _userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    // add an action to the maximum power text field
+    NSClickGestureRecognizer *textFieldClick = [[NSClickGestureRecognizer alloc] initWithTarget:self action:@selector(showMaxValue)];
+    [_maximumPowerText addGestureRecognizer:textFieldClick];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self checkForLoginItem];
     });
+}
+
+- (void)viewDidAppear
+{
+    [super viewDidAppear];
+    [self updateMeasurements];
 }
 
 - (void)checkForLoginItem
@@ -80,29 +95,11 @@
                    });
                    
                } else if (returnCode == NSAlertSecondButtonReturn) {
-                   
-                   [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"x-apple.systempreferences:com.apple.LoginItems-Settings.extension"]
-                                            configuration:[NSWorkspaceOpenConfiguration configuration]
-                                        completionHandler:^(NSRunningApplication *app, NSError *error) {
-                       
-                       if (app && ![app isFinishedLaunching]) {
-                           
-                           // notification
-                           self->_runningSystemSettings = app;
-                           [self->_runningSystemSettings addObserver:self
-                                                          forKeyPath:@"isFinishedLaunching"
-                                                             options:NSKeyValueObservingOptionNew
-                                                             context:nil
-                           ];
-                           
-                       } else {
-                           [app activateWithOptions:0];
-                       }
-                       
-                       dispatch_async(dispatch_get_main_queue(), ^{
-                           [self checkForLoginItem];
-                       });
-                   }];
+                                          
+                   dispatch_async(dispatch_get_main_queue(), ^{
+                       [SMAppService openSystemSettingsLoginItems];
+                       [self checkForLoginItem];
+                   });
                    
                } else {
                    
@@ -116,6 +113,8 @@
         
         if (_pM) {
             
+            [self setupGraphView];
+            
             if ([_userDefaults boolForKey:kMTDefaultsShowCarbonKey]) {
                 self.carbonFootprintEnabled = YES;
                 [self updateCarbonFootprint];
@@ -127,8 +126,14 @@
             NSTimer *graphUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:kMTGraphUpdateInterval
                                                                         repeats:YES
                                                                           block:^(NSTimer *timer) {
-                
-                [self updateMeasurements];
+                if (self->_pM) {
+                    
+                    [self updateMeasurements];
+                    
+                    if ([self->_userDefaults boolForKey:kMTDefaultsShowCarbonKey] && [self->_userDefaults boolForKey:kMTDefaultsUpdateCarbonKey]) {
+                        [self updateCarbonFootprint];
+                    }
+                }
             }];
             
             NSTimer *powerUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:kMTCurrentPowerUpdateInterval
@@ -137,20 +142,48 @@
                 
                 [self updateCurrentPower];
             }];
-            
+                        
             // make sure the timers update even if the status
             // item's menu is open
             [[NSRunLoop currentRunLoop] addTimer:graphUpdateTimer forMode:NSEventTrackingRunLoopMode];
             [[NSRunLoop currentRunLoop] addTimer:powerUpdateTimer forMode:NSEventTrackingRunLoopMode];
             
             // observe our user defaults for changes
-            [_userDefaults addObserver:self forKeyPath:kMTDefaultsShowCarbonKey options:NSKeyValueObservingOptionNew context:nil];
-            [_userDefaults addObserver:self forKeyPath:kMTDefaultsGraphFillColorKey options:NSKeyValueObservingOptionNew context:nil];
-            [_userDefaults addObserver:self forKeyPath:kMTDefaultsGraphAverageColorKey options:NSKeyValueObservingOptionNew context:nil];
-            [_userDefaults addObserver:self forKeyPath:kMTDefaultsGraphDayMarkerColorKey options:NSKeyValueObservingOptionNew context:nil];
-            [_userDefaults addObserver:self forKeyPath:kMTDefaultsGraphShowAverageKey options:NSKeyValueObservingOptionNew context:nil];
-            [_userDefaults addObserver:self forKeyPath:kMTDefaultsGraphShowDayMarkersKey options:NSKeyValueObservingOptionNew context:nil];
-            [_userDefaults addObserver:self forKeyPath:kMTDefaultsRunInBackgroundKey options:NSKeyValueObservingOptionNew context:nil];
+            NSArray *observedDefaults = [NSArray arrayWithObjects:
+                                         kMTDefaultsShowCarbonKey,
+                                         kMTDefaultsGraphFillColorKey,
+                                         kMTDefaultsGraphPowerNapFillColorKey,
+                                         kMTDefaultsGraphPositionLineColorKey,
+                                         kMTDefaultsGraphAverageColorKey,
+                                         kMTDefaultsGraphDayMarkerColorKey,
+                                         kMTDefaultsGraphShowAverageKey,
+                                         kMTDefaultsGraphShowDayMarkersKey,
+                                         kMTDefaultsGraphMarkPowerNapsKey,
+                                         kMTDefaultsRunInBackgroundKey,
+                                         kMTDefaultsElectricityPriceKey,
+                                         kMTDefaultsShowPriceKey,
+                                         kMTDefaultsTodayValuesOnlyKey,
+                                         kMTDefaultsShowSleepIntervalsKey,
+                                         nil
+            ];
+            
+            for (NSString *keyPath in observedDefaults) {
+                [_userDefaults addObserver:self forKeyPath:keyPath options:NSKeyValueObservingOptionNew context:nil];
+            }
+            
+            // register for notifications to reload the data file
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(reloadDataFile)
+                                                         name:kMTNotificationNameReloadDataFile
+                                                       object:nil
+            ];
+            
+            // register for notifications to show the console
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(showConsole)
+                                                         name:kMTNotificationNameShowConsole
+                                                       object:nil
+            ];
             
         } else {
             
@@ -182,7 +215,7 @@
 
 - (void)updateMeasurements
 {
-    NSArray *measurementData = [_pM allMeasurements];
+    NSArray *measurementData = ([_userDefaults boolForKey:kMTDefaultsTodayValuesOnlyKey]) ? [_pM allMeasurementsSinceDate:[[NSCalendar currentCalendar] startOfDayForDate:[NSDate date]]] : [_pM allMeasurements];
 
     MTPowerMeasurement *maxValue = [measurementData maximumPower];
     MTPowerMeasurement *avgValue = [measurementData averagePower];
@@ -191,39 +224,129 @@
     [[powerFormatter numberFormatter] setMinimumFractionDigits:2];
     [[powerFormatter numberFormatter] setMaximumFractionDigits:2];
     
-    NSMeasurement *measurementCoverage = [[NSMeasurement alloc] initWithDoubleValue:[measurementData count] * kMTMeasurementInterval
-                                                                               unit:[NSUnitDuration seconds]];
-    
+    float measurementTime = [measurementData count] * kMTMeasurementInterval;
+    NSMeasurement *measurementCoverage = [[NSMeasurement alloc] initWithDoubleValue:measurementTime
+                                                                               unit:[NSUnitDuration seconds]
+    ];
+    self.valuePowerConsumption = [NSNumber numberWithDouble:[avgValue doubleValue] * measurementTime];
+
     NSMeasurementFormatter *hourFormatter = [[NSMeasurementFormatter alloc] init];
     [[hourFormatter numberFormatter] setMaximumFractionDigits:0];
     [hourFormatter setUnitStyle:NSFormattingUnitStyleLong];
     [hourFormatter setUnitOptions:NSMeasurementFormatterUnitOptionsNaturalScale];
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        
         [self->_averagePowerText setStringValue:[powerFormatter stringFromMeasurement:avgValue]];
         [self->_maximumPowerText setStringValue:[powerFormatter stringFromMeasurement:maxValue]];
         [self->_measurementCountText setStringValue:[hourFormatter stringFromMeasurement:measurementCoverage]];
+        
+        MTUsagePriceTextTransformer *valueTransformer = [[MTUsagePriceTextTransformer alloc] init];
+        NSString *consumptionString = [valueTransformer transformedValue:[NSNumber numberWithBool:[self->_userDefaults boolForKey:kMTDefaultsShowPriceKey]]];
+        [self->_consumptionLabelText setStringValue:consumptionString];
+        
+        if ([self->_userDefaults boolForKey:kMTDefaultsGraphMarkPowerNapsKey]) {
+            
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"darkWake == %@", [NSNumber numberWithBool:YES]];
+            NSArray *darkWakeMeasurements = [measurementData filteredArrayUsingPredicate:predicate];
+            float darkWakeTime = [darkWakeMeasurements count] * kMTMeasurementInterval;
+            NSMeasurement *darkWakeCoverage = [[NSMeasurement alloc] initWithDoubleValue:darkWakeTime unit:[NSUnitDuration seconds]];
+            
+            [self->_napTimeText setStringValue:[hourFormatter stringFromMeasurement:darkWakeCoverage]];
+            self.valuePowerConsumptionDark = [NSNumber numberWithDouble:[[darkWakeMeasurements averagePower] doubleValue] * darkWakeTime];
+        }
     });
     
     // post notification
-    [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNameAveragePowerValue
+    MTUsagePriceValueTransformer *valueTransformer = [[MTUsagePriceValueTransformer alloc] init];
+    NSString *valueString = [valueTransformer transformedValue:_valuePowerConsumption];
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNamePowerStats
                                                         object:nil
-                                                      userInfo:[NSDictionary dictionaryWithObject:[powerFormatter stringFromMeasurement:avgValue]
-                                                                                           forKey:kMTNotificationKeyAveragePowerValue]
+                                                      userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                                [powerFormatter stringFromMeasurement:avgValue], kMTNotificationKeyAveragePowerValue,
+                                                                valueString, kMTNotificationKeyConsumptionValue,
+                                                               nil]
     ];
-        
-    // we don't update the graph if we run as status item
-    if (![_userDefaults boolForKey:kMTDefaultsRunInBackgroundKey]) {
-        
-        [_graphView setMeasurementData:measurementData];
-        [_graphView setGraphColor:(NSColor*)[NSKeyedUnarchiver unarchivedObjectOfClass:[NSColor class] fromData:[_userDefaults dataForKey:kMTDefaultsGraphFillColorKey] error:nil]];
-        [_graphView setAverageLineColor:(NSColor*)[NSKeyedUnarchiver unarchivedObjectOfClass:[NSColor class] fromData:[_userDefaults dataForKey:kMTDefaultsGraphAverageColorKey] error:nil]];
-        [_graphView setDayMarkerColor:(NSColor*)[NSKeyedUnarchiver unarchivedObjectOfClass:[NSColor class] fromData:[_userDefaults dataForKey:kMTDefaultsGraphDayMarkerColorKey] error:nil]];
-        [_graphView setShowAverage:[_userDefaults boolForKey:kMTDefaultsGraphShowAverageKey]];
-        [_graphView setShowDayMarkers:[_userDefaults boolForKey:kMTDefaultsGraphShowDayMarkersKey]];
+    
+    // we don't update the graph if the main window
+    // is not visible (e.g. if running as status item)
+    if ([[[self view] window] isVisible]) {
+
+        // add sleep intervals if configured
+        if ([_userDefaults boolForKey:kMTDefaultsShowSleepIntervalsKey]) {
+            
+            __block NSMutableArray *updatedMeasurements = [[NSMutableArray alloc] init];
+            __block MTPowerMeasurement *previousMeasurement = nil;
+            
+            [measurementData enumerateObjectsUsingBlock:^(MTPowerMeasurement *obj, NSUInteger idx, BOOL *stop) {
+                
+                if (idx == 0) {
+                    
+                    // if the today view is enabled, the measurements
+                    // start always at midnight. Otherwise we start with
+                    // the first measurement
+                    if ([self->_userDefaults boolForKey:kMTDefaultsTodayValuesOnlyKey]) {
+                        
+                        NSDate *measurementDate = [NSDate dateWithTimeIntervalSince1970:[obj timeStamp]];
+                        NSDate *startOfDay = [[NSCalendar currentCalendar] startOfDayForDate:measurementDate];
+
+                        if ([measurementDate timeIntervalSinceDate:startOfDay] > kMTMeasurementInterval) {
+                            
+                            previousMeasurement = [[MTPowerMeasurement alloc] initWithPowerValue:0];
+                            [previousMeasurement setTimeStamp:[startOfDay timeIntervalSince1970]];
+                            
+                        } else {
+                            
+                            previousMeasurement = obj;
+                        }
+                        
+                    } else {
+                        
+                        previousMeasurement = obj;
+                    }
+                            
+                } else {
+                
+                    if ([obj timeStamp] - [previousMeasurement timeStamp] > 2 * kMTMeasurementInterval) {
+                        
+                        for (time_t i = [previousMeasurement timeStamp] + kMTMeasurementInterval; i <= [obj timeStamp] - kMTMeasurementInterval; i += kMTMeasurementInterval) {
+
+                            MTPowerMeasurement *sleepMeasurement = [[MTPowerMeasurement alloc] initWithPowerValue:0];
+                            [sleepMeasurement setTimeStamp:i];
+                            [updatedMeasurements addObject:sleepMeasurement];
+                        }
+                    }
+                    
+                    previousMeasurement = obj;
+                }
+                
+                [updatedMeasurements addObject:obj];
+            }];
+            
+            [_graphView setMeasurementData:updatedMeasurements];
+            
+        } else {
+            
+            [_graphView setMeasurementData:measurementData];
+        }
         
         [_graphView setNeedsDisplay:YES];
     }
+}
+
+- (void)setupGraphView
+{
+    [_graphView setGraphColor:(NSColor*)[NSKeyedUnarchiver unarchivedObjectOfClass:[NSColor class] fromData:[_userDefaults dataForKey:kMTDefaultsGraphFillColorKey] error:nil]];
+    [_graphView setPowerNapColor:(NSColor*)[NSKeyedUnarchiver unarchivedObjectOfClass:[NSColor class] fromData:[_userDefaults dataForKey:kMTDefaultsGraphPowerNapFillColorKey] error:nil]];
+    [_graphView setPositionLineColor:(NSColor*)[NSKeyedUnarchiver unarchivedObjectOfClass:[NSColor class] fromData:[_userDefaults dataForKey:kMTDefaultsGraphPositionLineColorKey] error:nil]];
+    [_graphView setAverageLineColor:(NSColor*)[NSKeyedUnarchiver unarchivedObjectOfClass:[NSColor class] fromData:[_userDefaults dataForKey:kMTDefaultsGraphAverageColorKey] error:nil]];
+    [_graphView setDayMarkerColor:(NSColor*)[NSKeyedUnarchiver unarchivedObjectOfClass:[NSColor class] fromData:[_userDefaults dataForKey:kMTDefaultsGraphDayMarkerColorKey] error:nil]];
+    [_graphView setShowPowerNaps:[_userDefaults boolForKey:kMTDefaultsGraphMarkPowerNapsKey]];
+    [_graphView setShowAverage:[_userDefaults boolForKey:kMTDefaultsGraphShowAverageKey]];
+    [_graphView setShowDayMarkers:[_userDefaults boolForKey:kMTDefaultsGraphShowDayMarkersKey] && ![_userDefaults boolForKey:kMTDefaultsTodayValuesOnlyKey]];
+
+    [_graphView setNeedsDisplay:YES];
 }
 
 - (void)updateCurrentPower
@@ -257,44 +380,31 @@
         [_carbonFootprint setAllowUserInteraction:YES];
         [_carbonFootprint currentLocationWithCompletionHandler:^(CLLocation *location, BOOL preciseLocation) {
             
-            [self->_carbonFootprint countryCodeWithLocation:location
-                                          completionHandler:^(NSString *countryCode) {
-
-                if (countryCode) {
+            if (location) {
+                
+                [self->_carbonFootprint countryCodeWithLocation:location
+                                              completionHandler:^(NSString *countryCode) {
                     
-                    NSNumber *gramsCO2eqkWh = ([carbonRegions objectForKey:countryCode]) ? [carbonRegions valueForKey:countryCode] : [carbonRegions valueForKey:NSLocalizedStringFromTable(countryCode, @"Alpha-2toAlpha-3", nil)];
-                    
-                    if ([gramsCO2eqkWh floatValue] > 0) {
-
-                        NSMeasurement *measurementPowerKW = [[[self->_pM allMeasurements] averagePower] measurementByConvertingToUnit:[NSUnitPower kilowatts]];
-                        NSMeasurement *measurementCarbon = [[NSMeasurement alloc] initWithDoubleValue:[measurementPowerKW doubleValue] * 60.0 * [gramsCO2eqkWh floatValue]
-                                                                                                 unit:[NSUnitMass grams]];
+                    dispatch_async(dispatch_get_main_queue(), ^{
                         
-                        NSMeasurementFormatter *carbonFormatter = [[NSMeasurementFormatter alloc] init];
-                        [[carbonFormatter numberFormatter] setMaximumFractionDigits:0];
-                        [carbonFormatter setUnitStyle:NSFormattingUnitStyleLong];
-                        [carbonFormatter setUnitOptions:NSMeasurementFormatterUnitOptionsProvidedUnit];
-                        
-                        [self->_carbonPerHour setStringValue:[NSString localizedStringWithFormat:NSLocalizedString(@"carbonFootprint", nil), (preciseLocation) ? NSLocalizedString(@"carbonLocationPrecise", nil) : NSLocalizedString(@"carbonLocationNotPrecise", nil), [carbonFormatter stringFromMeasurement:measurementCarbon]]];
-                        
-                        // post a notification
-                        [carbonFormatter setUnitStyle:NSFormattingUnitStyleMedium];
-                        [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNameCarbonValue
-                                                                            object:nil
-                                                                          userInfo:[NSDictionary dictionaryWithObject:[carbonFormatter stringFromMeasurement:measurementCarbon]
-                                                                                                               forKey:kMTNotificationKeyCarbonValue]
-                        ];
-                        
-                    } else {
-                        
-                        [self->_carbonPerHour setStringValue:NSLocalizedString(@"carbonFootprintUnavailable", nil)];
-                    }
-                    
-                } else {
-                    
+                        if (countryCode) {
+                            
+                            NSNumber *gramsCO2eqkWh = ([carbonRegions objectForKey:countryCode]) ? [carbonRegions valueForKey:countryCode] : [carbonRegions valueForKey:NSLocalizedStringFromTable(countryCode, @"Alpha-2toAlpha-3", nil)];
+                            [self updateCarbonUIWithValue:gramsCO2eqkWh preciseLocation:preciseLocation];
+                            
+                        } else {
+                            
+                                [self->_carbonPerHour setStringValue:NSLocalizedString(@"carbonFootprintUnavailable", nil)];
+                        }
+                    });
+                }];
+                
+            } else {
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
                     [self->_carbonPerHour setStringValue:NSLocalizedString(@"carbonFootprintUnavailable", nil)];
-                }
-            }];
+                });
+            }
         }];
             
     } else {
@@ -340,49 +450,128 @@
                     
                     dispatch_async(dispatch_get_main_queue(), ^{
 
-                        if ([gramsCO2eqkWh floatValue] > 0) {
-                            
-                            NSMeasurement *measurementPowerKW = [[[self->_pM allMeasurements] averagePower] measurementByConvertingToUnit:[NSUnitPower kilowatts]];
-                            NSMeasurement *measurementCarbon = [[NSMeasurement alloc] initWithDoubleValue:[measurementPowerKW doubleValue] * 60.0 * [gramsCO2eqkWh floatValue]
-                                                                                                     unit:[NSUnitMass grams]];
-                            
-                            NSMeasurementFormatter *carbonFormatter = [[NSMeasurementFormatter alloc] init];
-                            [[carbonFormatter numberFormatter] setMaximumFractionDigits:0];
-                            [carbonFormatter setUnitStyle:NSFormattingUnitStyleLong];
-                            [carbonFormatter setUnitOptions:NSMeasurementFormatterUnitOptionsProvidedUnit];
-                            
-                            [self->_carbonPerHour setStringValue:[NSString localizedStringWithFormat:NSLocalizedString(@"carbonFootprint", nil), (preciseLocation) ? NSLocalizedString(@"carbonLocationPrecise", nil) : NSLocalizedString(@"carbonLocationNotPrecise", nil), [carbonFormatter stringFromMeasurement:measurementCarbon]]];
-                            
-                            // post a notification
-                            [carbonFormatter setUnitStyle:NSFormattingUnitStyleMedium];
-                            [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNameCarbonValue
-                                                                                object:nil
-                                                                              userInfo:[NSDictionary dictionaryWithObject:[carbonFormatter stringFromMeasurement:measurementCarbon]
-                                                                                                                   forKey:kMTNotificationKeyCarbonValue]
-                            ];
-                            
-                        } else {
-                            
-                            [self->_carbonPerHour setStringValue:NSLocalizedString(@"carbonFootprintUnavailable", nil)];
-                        }
-                        
+                        [self updateCarbonUIWithValue:gramsCO2eqkWh preciseLocation:preciseLocation];
                         self.carbonLookupInProgress = NO;
                     });
                 }];
             }];
             
+        } else {
+            
+            [self->_carbonPerHour setStringValue:NSLocalizedString(@"carbonFootprintUnavailable", nil)];
         }
     }
 }
 
-- (IBAction)openGitHub:(id)sender
+- (void)updateCarbonUIWithValue:(NSNumber*)gramsCO2eqkWh preciseLocation:(BOOL)preciseLocation
 {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:kMTGitHubURL]];
+    if ([gramsCO2eqkWh floatValue] > 0) {
+        
+        BOOL todayOnly = [self->_userDefaults boolForKey:kMTDefaultsTodayValuesOnlyKey];
+                            
+        NSArray *measurementData = (todayOnly) ? [self->_pM allMeasurementsSinceDate:[[NSCalendar currentCalendar] startOfDayForDate:[NSDate date]]] : [self->_pM allMeasurements];
+                
+        NSMeasurement *measurementPowerKW = [[measurementData averagePower] measurementByConvertingToUnit:[NSUnitPower kilowatts]];
+        NSMeasurement *measurementCarbon = (todayOnly) ? 
+        [[NSMeasurement alloc] initWithDoubleValue:[measurementPowerKW doubleValue] * (([measurementData count] * kMTMeasurementInterval) / 3600.0) * [gramsCO2eqkWh floatValue]
+                                              unit:[NSUnitMass grams]] :
+        [[NSMeasurement alloc] initWithDoubleValue:[measurementPowerKW doubleValue] * [gramsCO2eqkWh floatValue]
+                                              unit:[NSUnitMass grams]];
+        
+        NSMeasurementFormatter *carbonFormatter = [[NSMeasurementFormatter alloc] init];
+        [[carbonFormatter numberFormatter] setMaximumFractionDigits:0];
+        [carbonFormatter setUnitStyle:NSFormattingUnitStyleLong];
+        [carbonFormatter setUnitOptions:NSMeasurementFormatterUnitOptionsProvidedUnit];
+                                    
+        // one liter of CO2 weighs 1.96 grams and a standard balloon has
+        // a volume of around 2.5 liters
+        float ballonsCount = ([measurementCarbon doubleValue] / 1.96) / 2.5;
+            
+        NSString *carbonText = [NSString localizedStringWithFormat:(todayOnly) ? NSLocalizedString(@"carbonFootprintToday", nil) : NSLocalizedString(@"carbonFootprint", nil),
+                                  (preciseLocation) ?
+                                  NSLocalizedString(@"carbonLocationPrecise", nil) :
+                                      NSLocalizedString(@"carbonLocationNotPrecise", nil),
+                                  [carbonFormatter stringFromMeasurement:measurementCarbon]
+                                 ];
+            
+        if (ballonsCount >= 1) {
+            
+            carbonText = [carbonText stringByAppendingString:@" "];
+            
+            if (ballonsCount > 2) {
+                
+                carbonText = [carbonText stringByAppendingString:[NSString localizedStringWithFormat:(todayOnly) ? NSLocalizedString(@"carbonBalloonMultipleToday", nil) : NSLocalizedString(@"carbonBalloonMultiple", nil), ballonsCount]];
+                
+            } else {
+                
+                carbonText = [carbonText stringByAppendingString:(todayOnly) ? NSLocalizedString(@"carbonBalloonOneToday", nil) : NSLocalizedString(@"carbonBalloonOne", nil)];
+            }
+        }
+                                    
+        [self->_carbonPerHour setStringValue:carbonText];
+            
+        // post a notification
+        [carbonFormatter setUnitStyle:NSFormattingUnitStyleMedium];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNameCarbonValue
+                                                            object:nil
+                                                          userInfo:[NSDictionary dictionaryWithObject:[carbonFormatter stringFromMeasurement:measurementCarbon]
+                                                                                               forKey:kMTNotificationKeyCarbonValue]
+        ];
+        
+    } else {
+        
+        [self->_carbonPerHour setStringValue:NSLocalizedString(@"carbonFootprintUnavailable", nil)];
+    }
+}
+
+- (void)showMaxValue
+{
+    if (![_graphView showsPosition]) {
+        
+        NSArray *measurementData = ([_userDefaults boolForKey:kMTDefaultsTodayValuesOnlyKey]) ? [_pM allMeasurementsSinceDate:[[NSCalendar currentCalendar] startOfDayForDate:[NSDate date]]] : [_pM allMeasurements];
+        
+        MTPowerMeasurement *maxValue = [measurementData maximumPower];
+        [_graphView showMeasurement:maxValue withTooltip:YES];
+        
+    } else {
+        
+        [_graphView showMeasurement:nil withTooltip:NO];
+    }
+}
+
+- (void)reloadDataFile
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        [self->_pM invalidate];
+        self->_pM = nil;
+        
+        self->_pM = [[MTPowerMeasurementReader alloc] initWithContentsOfFile:kMTMeasurementFilePath];
+        [self updateMeasurements];
+        [self updateCarbonFootprint];
+    });
+}
+
+- (void)showConsole
+{
+    if (!self->_consoleWindowController) {
+        
+        if (self->_pM) {
+            NSDate *startDate = [NSDate dateWithTimeIntervalSince1970:[[[self->_pM allMeasurements] firstObject] timeStamp]];
+            [self->_userDefaults setObject:startDate forKey:kMTDefaultsMeasurementStartDateKey];
+        }
+
+        self->_consoleWindowController = [[self storyboard] instantiateControllerWithIdentifier:@"corp.sap.PowerMonitor.LogController"];
+        [self->_consoleWindowController loadWindow];
+    }
+
+    [[self->_consoleWindowController window] makeKeyAndOrderFront:nil];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 {
-    if ([keyPath isEqualToString:kMTDefaultsShowCarbonKey]) {
+    if ([keyPath isEqualToString:kMTDefaultsShowCarbonKey] ||
+        [keyPath isEqualToString:kMTDefaultsTodayValuesOnlyKey]) {
         
         if ([_userDefaults integerForKey:kMTDefaultsShowCarbonKey] == 1) {
             
@@ -395,9 +584,28 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{ self.carbonFootprintEnabled = NO; });
         }
+    }
         
-    } else if ([keyPath isEqualToString:kMTDefaultsGraphFillColorKey] || [keyPath isEqualToString:kMTDefaultsGraphAverageColorKey] || [keyPath isEqualToString:kMTDefaultsGraphDayMarkerColorKey] || [keyPath isEqualToString:kMTDefaultsGraphShowAverageKey] || [keyPath isEqualToString:kMTDefaultsGraphShowDayMarkersKey] || [keyPath isEqualToString:kMTDefaultsRunInBackgroundKey]) {
-
+    if ([keyPath isEqualToString:kMTDefaultsGraphFillColorKey] ||
+        [keyPath isEqualToString:kMTDefaultsGraphPowerNapFillColorKey] ||
+        [keyPath isEqualToString:kMTDefaultsGraphPositionLineColorKey] ||
+        [keyPath isEqualToString:kMTDefaultsGraphAverageColorKey] ||
+        [keyPath isEqualToString:kMTDefaultsGraphDayMarkerColorKey] ||
+        [keyPath isEqualToString:kMTDefaultsGraphShowAverageKey] ||
+        [keyPath isEqualToString:kMTDefaultsGraphShowDayMarkersKey] ||
+        [keyPath isEqualToString:kMTDefaultsGraphMarkPowerNapsKey] ||
+        [keyPath isEqualToString:kMTDefaultsTodayValuesOnlyKey]) {
+        
+        [self setupGraphView];
+    }
+    
+    if ([keyPath isEqualToString:kMTDefaultsElectricityPriceKey] ||
+        [keyPath isEqualToString:kMTDefaultsShowPriceKey] ||
+        [keyPath isEqualToString:kMTDefaultsShowSleepIntervalsKey] ||
+        [keyPath isEqualToString:kMTDefaultsGraphMarkPowerNapsKey] ||
+        [keyPath isEqualToString:kMTDefaultsTodayValuesOnlyKey] ||
+        [keyPath isEqualToString:kMTDefaultsRunInBackgroundKey]) {
+        
         [self updateMeasurements];
     }
 }

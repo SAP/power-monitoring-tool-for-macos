@@ -65,18 +65,99 @@
         }
       }
     },
-    "carbonFootprint" : {
+    "carbonBalloonMultiple" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Basierend auf dem %@ Standort dieses Macs und seiner durchschnittlichen Leistung, wird pro Stunde, in der Sie diesen Mac aktiv nutzen, ein Äquivalent von %@ Kohlendioxid ausgestoßen."
+            "value" : "Mit dieser Menge Gas könnte man jede Stunde etwa %.0f handelsübliche Luftballons befüllen."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Based on this Mac's %@ location and average system power, an equivalent of %@ carbon dioxide is emitted per hour you actively use this Mac."
+            "value" : "With this amount of gas you could fill about %.0f standard balloons per hour."
+          }
+        }
+      }
+    },
+    "carbonBalloonMultipleToday" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mit dieser Menge an Gas könnte man etwa %.0f handelsübliche Luftballons befüllen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "With this amount of gas you could fill about %.0f standard balloons."
+          }
+        }
+      }
+    },
+    "carbonBalloonOne" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mit dieser Menge an Gas könnte man jede Stunde einen handelsüblichen Luftballon befüllen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You could fill a standard balloon per hour with this amount of gas."
+          }
+        }
+      }
+    },
+    "carbonBalloonOneToday" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mit dieser Menge an Gas könnte man einen handelsüblichen Luftballon befüllen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You could fill a standard balloon with this amount of gas."
+          }
+        }
+      }
+    },
+    "carbonFootprint" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Basierend auf dem %1$@ Standort dieses Macs und seiner durchschnittlichen Leistung, wird pro Stunde, in der Sie diesen Mac aktiv nutzen, ein Äquivalent von %2$@ Kohlendioxid ausgestoßen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Based on this Mac's %1$@ location and average system power, an equivalent of %2$@ carbon dioxide is emitted per hour you actively use this Mac."
+          }
+        }
+      }
+    },
+    "carbonFootprintToday" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Basierend auf dem %1$@ Standort dieses Macs und seiner durchschnittlichen Leistung, wurde heute bisher ein Äquivalent von %2$@ Kohlendioxid von diesem Mac ausgestoßen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Based on this Mac's %1$@ location and average system power, an equivalent of %2$@ carbon dioxide has been emitted today by this Mac."
           }
         }
       }
@@ -161,6 +242,22 @@
         }
       }
     },
+    "deleteButton" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Löschen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        }
+      }
+    },
     "dialogBackgroundMessage" : {
       "localizations" : {
         "de" : {
@@ -221,6 +318,70 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Do you want to clear previously imported carbon intensity data?"
+          }
+        }
+      }
+    },
+    "dialogDeleteMeasurementsMessage" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diese Aktion kann nicht widerrufen werden."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can’t undo this action."
+          }
+        }
+      }
+    },
+    "dialogDeleteMeasurementsTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Möchten Sie wirklich alle Messwerte löschen?"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to delete all measurements?"
+          }
+        }
+      }
+    },
+    "dialogFailedToSaveLogMessage" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beim Schreiben der Protokolldatei ist ein Fehler aufgetreten. Bitte überprüfen Sie, ob der ausgewählte Speicherort korrekt ist und versuchen Sie es erneut."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error occurred while writing the log to file. Please check if the location you selected is writable and try again."
+          }
+        }
+      }
+    },
+    "dialogFailedToSaveLogTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das Protokoll konnte nicht gespeichert werden!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The log could not be saved!"
           }
         }
       }
@@ -369,6 +530,22 @@
         }
       }
     },
+    "logFileName" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power Monitor.log"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power Monitor.log"
+          }
+        }
+      }
+    },
     "okButton" : {
       "localizations" : {
         "de" : {
@@ -406,13 +583,125 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Die Leistung dieses Macs wird alle %@ gemessen. Es werden maximal die Werte der letzten %@ aktiver Nutzung gespeichert. Sobald das Maximum an gespeicherten Daten erreicht ist, werden die ältesten Werte überschrieben. Aufgrund technischer Beschränkungen ist es nicht möglich, die exakte Leistungsaufnahme dieses Macs direkt auf dem Mac zu messen. Unsere Tests mit einem externen Leistungsmessgerät haben gezeigt, dass die tatsächliche Leistungsaufnahme um bis zu 10 %% höher sein kann als der in diesem Programm angezeigte Wert. Die Abweichung variiert je nach verwendetem Mac-Modell und der Auslastung des Systems."
+            "value" : "Die Leistung dieses Macs wird alle %1$@ gemessen. Es werden maximal die Werte der letzten %2$@ aktiver Nutzung gespeichert. Sobald das Maximum an gespeicherten Daten erreicht ist, werden die ältesten Werte überschrieben.\n\nAufgrund technischer Beschränkungen ist es nicht möglich, die exakte Leistungsaufnahme dieses Macs direkt auf dem Mac zu messen. Unsere Tests mit einem externen Leistungsmessgerät haben gezeigt, dass die tatsächliche Leistungsaufnahme um bis zu %3$@ höher sein kann als der in diesem Programm angezeigte Wert. Die Abweichung variiert je nach verwendetem Mac-Modell und der Auslastung des Systems."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "This Mac's power is measured every %@. A maximum of the values of the last %@ of active use are stored. As soon as the maximum number of stored values is reached, the oldest values are overwritten.\n\nDue to technical limitations, it is not possible to measure the exact wattage of this Mac directly on the Mac. Our tests with an external power meter have shown that the actual wattage can be up to 10 %% higher than the value displayed in this application. The deviation varies depending on the Mac model used and the system load."
+            "value" : "This Mac's power is measured every %1$@. A maximum of the values of the last %2$@ of active use are stored. As soon as the maximum number of stored values is reached, the oldest values are overwritten.\n\nDue to technical limitations, it is not possible to measure the exact wattage of this Mac directly on the Mac. Our tests with an external power meter have shown that the actual wattage can be up to %3$@ higher than the value displayed in this application. The deviation varies depending on the Mac model used and the system load."
+          }
+        }
+      }
+    },
+    "powerNapDisable" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deaktiviert"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disabled"
+          }
+        }
+      }
+    },
+    "powerNapEnable" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktiviert"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enabled"
+          }
+        }
+      }
+    },
+    "powerNapEnableACPower" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nur am Netzteil"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Only on Power Adapter"
+          }
+        }
+      }
+    },
+    "powerNapEnableAlways" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Immer"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Always"
+          }
+        }
+      }
+    },
+    "powerNapEnableNever" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Never"
+          }
+        }
+      }
+    },
+    "powerNapHasBatteryLabel" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power Nap aktivieren:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enable Power Nap:"
+          }
+        }
+      }
+    },
+    "powerNapNoBatteryLabel" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power Nap:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power Nap:"
           }
         }
       }
@@ -449,6 +738,70 @@
         }
       }
     },
+    "sidebarEntryLogs" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Protokolle"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logs"
+          }
+        }
+      }
+    },
+    "sidebarEntryPowerEventLog" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Energie-Ereignisprotokoll"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power Event Log"
+          }
+        }
+      }
+    },
+    "sidebarEntryPreventingSleep" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prozesse die den Ruhezustand verhindern"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Processes Preventing Sleep"
+          }
+        }
+      }
+    },
+    "sidebarEntryReports" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Berichte"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reports"
+          }
+        }
+      }
+    },
     "statusItemAveragePower" : {
       "localizations" : {
         "de" : {
@@ -477,6 +830,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Carbon footprint: %@CO2eq/h"
+          }
+        }
+      }
+    },
+    "statusItemCarbonFootprintToday" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heutige CO2-Emissionen: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today's carbon emissions: %@"
           }
         }
       }
@@ -513,6 +883,54 @@
         }
       }
     },
+    "tooltipAwake" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Betrieb"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Awake"
+          }
+        }
+      }
+    },
+    "tooltipPowerNap" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power Nap"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power Nap"
+          }
+        }
+      }
+    },
+    "tooltipSleep" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ruhezustand"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sleep"
+          }
+        }
+      }
+    },
     "tryAgainButton" : {
       "localizations" : {
         "de" : {
@@ -525,6 +943,134 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Try Again"
+          }
+        }
+      }
+    },
+    "usageConsumptionText" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stromverbrauch insgesamt:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total power consumption:"
+          }
+        }
+      }
+    },
+    "usageConsumptionTextDark" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stromverbrauch während Power Nap:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power consumption during Power Nap:"
+          }
+        }
+      }
+    },
+    "usageConsumptionTodayText" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heutiger Stromverbrauch:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today's power consumption:"
+          }
+        }
+      }
+    },
+    "usagePeriodText" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abgedeckter Zeitraum:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Current time period covered:"
+          }
+        }
+      }
+    },
+    "usagePeriodTodayText" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heutige Nutzungsdauer:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today's usage time:"
+          }
+        }
+      }
+    },
+    "usagePriceText" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stromkosten insgesamt:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total electricity costs:"
+          }
+        }
+      }
+    },
+    "usagePriceTextDark" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stromkosten wegen Power Nap:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Electricity costs due to Power Nap:"
+          }
+        }
+      }
+    },
+    "usagePriceTodayText" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heutige Stromkosten:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today's electricity costs:"
           }
         }
       }

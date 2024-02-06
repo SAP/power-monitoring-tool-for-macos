@@ -1,6 +1,6 @@
 /*
      MTStatusItemMenu.m
-     Copyright 2023 SAP SE
+     Copyright 2023-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,12 +16,14 @@
 */
 
 #import "MTStatusItemMenu.h"
+#import "MTUsagePriceTextTransformer.h"
 #import "Constants.h"
 
 @interface MTStatusItemMenu ()
 @property(nonatomic, strong, readwrite) NSString *carbonValue;
 @property(nonatomic, strong, readwrite) NSString *averagePowerValue;
 @property(nonatomic, strong, readwrite) NSString *currentPowerValue;
+@property(nonatomic, strong, readwrite) NSString *consumptionValue;
 @property (assign) BOOL isOpen;
 @end
 
@@ -53,7 +55,7 @@
     ];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateValues:)
-                                                 name:kMTNotificationNameAveragePowerValue
+                                                 name:kMTNotificationNamePowerStats
                                                object:nil
     ];
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -70,29 +72,35 @@
 {
     if ([[notification name] isEqualToString:kMTNotificationNameCarbonValue]) {
         
-        _carbonValue = [[notification userInfo] objectForKey:kMTNotificationKeyCarbonValue];
+        self.carbonValue = [[notification userInfo] objectForKey:kMTNotificationKeyCarbonValue];
         if ([self isOpen]) { [self updateCarbonValue]; }
         
-    } else if ([[notification name] isEqualToString:kMTNotificationNameAveragePowerValue]) {
+    } else if ([[notification name] isEqualToString:kMTNotificationNamePowerStats]) {
         
-        _averagePowerValue = [[notification userInfo] objectForKey:kMTNotificationKeyAveragePowerValue];
-        if ([self isOpen]) { [self updateAveragePowerValue]; }
+        self.averagePowerValue = [[notification userInfo] objectForKey:kMTNotificationKeyAveragePowerValue];
+        self.consumptionValue = [[notification userInfo] objectForKey:kMTNotificationKeyConsumptionValue];
+        if ([self isOpen]) { [self updatePowerStats]; }
         
     } else if ([[notification name] isEqualToString:kMTNotificationNameCurrentPowerValue]) {
 
-        _currentPowerValue = [[notification userInfo] objectForKey:kMTNotificationKeyCurrentPowerValue];
+        self.currentPowerValue = [[notification userInfo] objectForKey:kMTNotificationKeyCurrentPowerValue];
         if ([self isOpen]) { [self updateCurrentPowerValue]; }
     }
 }
 
 - (void)updateCarbonValue
 {
-    [[self itemWithTag:3000] setTitle:[NSString localizedStringWithFormat:NSLocalizedString(@"statusItemCarbonFootprint", nil), (_carbonValue) ? _carbonValue : NSLocalizedString(@"statusItemValueUnknown", nil)]];
+    [[self itemWithTag:3000] setTitle:[NSString localizedStringWithFormat:([[NSUserDefaults standardUserDefaults] boolForKey:kMTDefaultsTodayValuesOnlyKey]) ? NSLocalizedString(@"statusItemCarbonFootprintToday", nil) : NSLocalizedString(@"statusItemCarbonFootprint", nil), (_carbonValue) ? _carbonValue : NSLocalizedString(@"statusItemValueUnknown", nil)]];
 }
 
-- (void)updateAveragePowerValue
+- (void)updatePowerStats
 {
     [[self itemWithTag:2000] setTitle:[NSString localizedStringWithFormat:NSLocalizedString(@"statusItemAveragePower", nil), (_averagePowerValue) ? _averagePowerValue : NSLocalizedString(@"statusItemValueUnknown", nil)]];
+
+    MTUsagePriceTextTransformer *valueTransformer = [[MTUsagePriceTextTransformer alloc] init];
+    BOOL showPrice = [[NSUserDefaults standardUserDefaults] boolForKey:kMTDefaultsShowPriceKey];
+    NSString *valueString = [valueTransformer transformedValue:[NSNumber numberWithBool:showPrice]];
+    [[self itemWithTag:2100] setTitle:[NSString stringWithFormat:@"%@ %@", valueString, (_consumptionValue) ? _consumptionValue : NSLocalizedString(@"statusItemValueUnknown", nil)]];
 }
 
 - (void)updateCurrentPowerValue
@@ -112,7 +120,7 @@
         [[self itemWithTag:3000] setHidden:YES];
     }
     
-    [self updateAveragePowerValue];
+    [self updatePowerStats];
     [self updateCurrentPowerValue];
     
     _isOpen = YES;

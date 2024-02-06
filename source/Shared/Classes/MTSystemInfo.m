@@ -1,6 +1,6 @@
 /*
      MTSystemInfo.m
-     Copyright 2023 SAP SE
+     Copyright 2023-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,7 +16,9 @@
 */
 
 #import "MTSystemInfo.h"
+#import "IOPMLibPrivate.h"
 #import <libproc.h>
+#import <ServiceManagement/SMAppService.h>
 
 @implementation MTSystemInfo
 
@@ -87,6 +89,220 @@ typedef struct {
     }
     
     return returnValue;
+}
+
++ (BOOL)deviceSupportsPowerNap
+{
+    return (IOPMFeatureIsAvailable(CFSTR(kIOPMSleepServicesKey), NULL) ||
+            IOPMFeatureIsAvailable(CFSTR(kIOPMDarkWakeBackgroundTaskKey), NULL) ||
+            IOPMFeatureIsAvailable(CFSTR(kIOPMPowerNapSupportedKey), NULL)) ? YES : NO;
+}
+
++ (void)powerNapStatusWithCompletionHandler:(void (^) (BOOL enabled, BOOL aconly))completionHandler
+{
+    BOOL enabled = NO;
+    BOOL aconly = NO;
+    
+    if ([self deviceSupportsPowerNap]) {
+        
+        CFNumberRef resultRef = NULL;
+        IOPMCopyPMSetting(CFSTR(kIOPMDarkWakeBackgroundTaskKey), CFSTR(kIOPMACPowerKey), (CFTypeRef *)&resultRef);
+        
+        if (resultRef != NULL) {
+                
+            int result = 0;
+            CFNumberGetValue(resultRef, kCFNumberSInt32Type, &result);
+            
+            if (result == 1) {
+                
+                enabled = YES;
+                
+                CFNumberRef batt_resultRef = NULL;
+                IOPMCopyPMSetting(CFSTR(kIOPMDarkWakeBackgroundTaskKey), CFSTR(kIOPMBatteryPowerKey), (CFTypeRef *)&batt_resultRef);
+                
+                if (batt_resultRef != NULL) {
+                        
+                    int batt_result = 0;
+                    CFNumberGetValue(batt_resultRef, kCFNumberSInt32Type, &batt_result);
+                    if (batt_result == 0) { aconly = YES; }
+                    
+                    CFRelease(batt_resultRef);
+                }
+            }
+        
+            CFRelease(resultRef);
+        }
+    }
+        
+    if (completionHandler) { completionHandler(enabled, aconly); }
+}
+
++ (BOOL)enablePowerNap:(BOOL)enable acPowerOnly:(BOOL)aconly
+{
+    IOReturn status = kIOReturnError;
+    
+    if ([self deviceSupportsPowerNap]) {
+        
+        // get the current pm settings
+        NSDictionary *currentSettings = CFBridgingRelease(IOPMCopyActivePMPreferences());
+        
+        if (currentSettings) {
+            
+            // create a mutable copy
+            NSMutableDictionary *mutableSettings = [currentSettings mutableCopy];
+            
+            if (mutableSettings) {
+                
+                NSMutableDictionary *batterySettings = [mutableSettings objectForKey:@kIOPMBatteryPowerKey];
+                NSMutableDictionary *acPowerSettings = [mutableSettings objectForKey:@kIOPMACPowerKey];
+                
+                int pn = (enable) ? 1 : 0;
+
+                if (batterySettings) { [batterySettings setValue:[NSNumber numberWithInt:(aconly) ? 0 : pn] forKey:@kIOPMDarkWakeBackgroundTaskKey]; }
+                if (acPowerSettings) { [acPowerSettings setValue:[NSNumber numberWithInt:pn] forKey:@kIOPMDarkWakeBackgroundTaskKey]; }
+                status = IOPMSetPMPreferences((__bridge CFDictionaryRef)(mutableSettings));
+            }            
+        }
+    }
+        
+    return (status == kIOReturnSuccess) ? YES : NO;
+}
+
++ (BOOL)hasBattery
+{
+    BOOL returnValue = NO;
+    
+    CFTypeRef ps_info = NULL;
+    CFArrayRef ps_list = NULL;
+    CFDictionaryRef one_ps = NULL;
+    
+    ps_info = IOPSCopyPowerSourcesInfo();
+    
+    if (ps_info) {
+        
+        ps_list = IOPSCopyPowerSourcesList(ps_info);
+        
+        if (ps_list) {
+            
+            for (int i = 0; i < CFArrayGetCount(ps_list); i++) {
+                
+                one_ps = IOPSGetPowerSourceDescription(ps_info, CFArrayGetValueAtIndex(ps_list, i));
+                
+                if (one_ps) {
+                    
+                    CFStringRef ps_type = CFDictionaryGetValue(one_ps, CFSTR(kIOPSTypeKey));
+                    
+                    if (ps_type && CFStringCompare(ps_type, CFSTR(kIOPSInternalBatteryType), 0) == kCFCompareEqualTo) {
+                        returnValue = YES;
+                        break;
+                    }
+
+                } else {
+                    break;
+                }
+            }
+            
+            CFRelease(ps_list);
+        }
+        
+        CFRelease(ps_info);
+    }
+    
+    return returnValue;
+}
+
++ (NSArray*)processesPreventingSleep
+{
+    NSMutableArray *processes = nil;
+    
+    // get available assertions
+    CFDictionaryRef state = NULL;
+    IOReturn ret = IOPMCopyAssertionsStatus(&state);
+    
+    if (ret == kIOReturnSuccess && state) {
+        
+        NSDictionary *stateDict = CFBridgingRelease(state);
+        
+        int noIdleLevel = [[stateDict objectForKey:(NSString*)kIOPMAssertionTypeNoIdleSleep] intValue];
+        int userIdleLevel = [[stateDict objectForKey:(NSString*)kIOPMAssertionTypePreventUserIdleSystemSleep] intValue];
+        int bgTaskLevel = [[stateDict objectForKey:(NSString*)kIOPMAssertionTypeBackgroundTask] intValue];
+        int pushTaskLevel = [[stateDict objectForKey:(NSString*)kIOPMAssertionTypeApplePushServiceTask] intValue];
+        int preventSleepLevel = [[stateDict objectForKey:(NSString*)kIOPMAssertionTypePreventSystemSleep] intValue];
+        int proxyLevel = [[stateDict objectForKey:(NSString*)kIOPMAssertInternalPreventSleep] intValue];
+        
+        if (noIdleLevel != kIOPMAssertionLevelOff ||
+            preventSleepLevel != kIOPMAssertionLevelOff ||
+            bgTaskLevel != kIOPMAssertionLevelOff ||
+            pushTaskLevel != kIOPMAssertionLevelOff ||
+            userIdleLevel != kIOPMAssertionLevelOff)
+        {
+            
+            CFDictionaryRef pids = NULL;
+            ret = IOPMCopyAssertionsByProcess(&pids);
+            
+            if (ret == kIOReturnSuccess && pids) {
+                
+                NSDictionary *pidDict = CFBridgingRelease(pids);
+                processes = [[NSMutableArray alloc] init];
+                
+                for (NSString *pidString in [pidDict allKeys]) {
+                    
+                    NSInteger pid = [pidString integerValue];
+                    
+                    if (pid > 0) {
+                        
+                        NSArray *assertionsArray = [pidDict objectForKey:pidString];
+
+                        for (NSDictionary *assertionDict in assertionsArray) {
+                            
+                            int level = [[assertionDict objectForKey:(NSString*)kIOPMAssertionLevelKey] intValue];
+                            
+                            if (level == kIOPMAssertionLevelOn) {
+                                
+                                NSString *assertionType = [assertionDict objectForKey:(NSString*)kIOPMAssertionTypeKey];
+                            
+                                if ([assertionType isEqualToString:(NSString*)kIOPMAssertionTypePreventUserIdleSystemSleep] ||
+                                    (preventSleepLevel && [assertionType isEqualToString:(NSString*)kIOPMAssertionTypePreventSystemSleep]) ||
+                                    (bgTaskLevel && [assertionType isEqualToString:(NSString*)kIOPMAssertionTypeBackgroundTask]) ||
+                                    (pushTaskLevel && [assertionType isEqualToString:(NSString*)kIOPMAssertionTypeApplePushServiceTask]) ||
+                                    (proxyLevel && [assertionType isEqualToString:(NSString*)kIOPMAssertInternalPreventSleep])) {
+                                    
+                                    [processes addObject:assertionDict];
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+                
+            }
+        }
+    }
+    
+    return processes;
+}
+
++ (BOOL)loginItemEnabled
+{
+    SMAppService *loginItem = [SMAppService mainAppService];
+    BOOL isEnabled = ([loginItem status] == SMAppServiceStatusEnabled) ? YES : NO;
+    
+    return isEnabled;
+}
+
++ (BOOL)enableLoginItem:(BOOL)enable
+{
+    BOOL success = NO;
+    
+    SMAppService *loginItem = [SMAppService mainAppService];
+    
+    if (enable) {
+        success = [loginItem registerAndReturnError:nil];
+    } else {
+        success = [loginItem unregisterAndReturnError:nil];
+    }
+    
+    return success;
 }
 
 @end

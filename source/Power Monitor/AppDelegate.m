@@ -1,6 +1,6 @@
 /*
      AppDelegate.m
-     Copyright 2023 SAP SE
+     Copyright 2023-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -41,8 +41,11 @@
     
     [_userDefaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
                                      [NSKeyedArchiver archivedDataWithRootObject:[NSColor colorNamed:@"GraphFillColor"] requiringSecureCoding:YES error:nil], kMTDefaultsGraphFillColorKey,
+                                     [NSKeyedArchiver archivedDataWithRootObject:[NSColor colorNamed:@"GraphPowerNapFillColor"] requiringSecureCoding:YES error:nil], kMTDefaultsGraphPowerNapFillColorKey,
                                      [NSKeyedArchiver archivedDataWithRootObject:[NSColor colorNamed:@"GraphAverageLineColor"] requiringSecureCoding:YES error:nil], kMTDefaultsGraphAverageColorKey,
                                      [NSKeyedArchiver archivedDataWithRootObject:[NSColor colorNamed:@"GraphDayMarkerColor"] requiringSecureCoding:YES error:nil], kMTDefaultsGraphDayMarkerColorKey,
+                                     [NSKeyedArchiver archivedDataWithRootObject:[NSColor colorNamed:@"GraphPositionLineColor"] requiringSecureCoding:YES error:nil], kMTDefaultsGraphPositionLineColorKey,
+                                     [NSNumber numberWithBool:YES], kMTDefaultsLogFollowCursorKey,
                                      nil]
     ];
     
@@ -83,7 +86,7 @@
                             if ([gramsCO2eqkWh floatValue] > 0) {
 
                                 NSMeasurement *measurementPowerKW = [averagePower measurementByConvertingToUnit:[NSUnitPower kilowatts]];
-                                NSMeasurement *measurementCarbon = [[NSMeasurement alloc] initWithDoubleValue:[measurementPowerKW doubleValue] * 60.0 * [gramsCO2eqkWh floatValue]
+                                NSMeasurement *measurementCarbon = [[NSMeasurement alloc] initWithDoubleValue:[measurementPowerKW doubleValue] * [gramsCO2eqkWh floatValue]
                                                                                                                      unit:[NSUnitMass grams]];
                                 printf("Carbon footprint (in gCO2eq/h): %.2f\n", [measurementCarbon doubleValue]);
                                             
@@ -160,6 +163,8 @@
     }
 }
 
+#pragma mark IBActions
+
 - (IBAction)showSettingsWindow:(id)sender
 {
     if (!_settingsWindowController) {
@@ -172,6 +177,27 @@
     [[_settingsWindowController window] makeKeyAndOrderFront:nil];
     
     [NSApp activateIgnoringOtherApps:YES];
+}
+
+- (IBAction)showMainWindow:(id)sender
+{
+    if (_mainWindowController) {
+        [_mainWindowController showWindow:nil];
+        [[_mainWindowController window] makeKeyAndOrderFront:nil];        
+    }
+}
+
+- (IBAction)showConsoleWindow:(id)sender
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNameShowConsole
+                                                        object:nil
+                                                      userInfo:nil
+    ];
+}
+
+- (IBAction)openGitHub:(id)sender
+{
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:kMTGitHubURL]];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
