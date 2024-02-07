@@ -28,7 +28,7 @@ if [[ -x "$appPath" ]]; then
 			if [[ "$carbonIntensity" =~ ^[0-9]+$ ]]; then
 	
 				# calculate footprint
-				calculatedFootprint=$(/usr/bin/bc -l <<< "($averagePower / 1000) * 60 * $carbonIntensity")
+				calculatedFootprint=$(/usr/bin/bc -l <<< "($averagePower / 1000) * $carbonIntensity")
 				
 				# round footprint
 				calculatedFootprint=$(echo "scale=0;($calculatedFootprint+0.5)/1" | /usr/bin/bc)
