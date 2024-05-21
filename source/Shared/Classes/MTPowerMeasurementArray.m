@@ -16,6 +16,7 @@
 */
 
 #import "MTPowerMeasurementArray.h"
+#import "Constants.h"
 
 @implementation NSArray (MTPowerMeasurementArray)
 
@@ -56,6 +57,63 @@
     MTPowerMeasurement *measurement = [[MTPowerMeasurement alloc] initWithPowerValue:[maximum doubleValue]];
     
     return measurement;
+}
+
+- (NSArray<MTPowerMeasurement*>*)awakeMeasurements
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"darkWake == %@", [NSNumber numberWithBool:NO]];
+    NSArray *awakeMeasurements = [self filteredArrayUsingPredicate:predicate];
+    
+    return awakeMeasurements;
+}
+
+- (NSArray<MTPowerMeasurement *> *)powerNapMeasurements
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"darkWake == %@", [NSNumber numberWithBool:YES]];
+    NSArray *powerNapMeasurements = [self filteredArrayUsingPredicate:predicate];
+    
+    return powerNapMeasurements;
+}
+
+- (NSTimeInterval)totalTime
+{
+    NSTimeInterval total = [self count] * kMTMeasurementInterval;
+    
+    return total;
+}
+
+- (NSDictionary*)measurementsGroupedByDay
+{
+    NSDate *anchorDate = [NSDate distantPast];
+    NSMutableDictionary *groupedDict = [[NSMutableDictionary alloc] init];
+    NSMutableArray *groupedEntries = [[NSMutableArray alloc] init];
+    
+    for (MTPowerMeasurement *pM in self) {
+        
+        NSDate *measurementDate = [NSDate dateWithTimeIntervalSince1970:[pM timeStamp]];
+        
+        if ([[NSCalendar currentCalendar] compareDate:anchorDate
+                                               toDate:measurementDate
+                                    toUnitGranularity:NSCalendarUnitDay] != NSOrderedSame) {
+        
+            if ([groupedEntries count] > 0) {
+                
+                [groupedDict setObject:groupedEntries forKey:[NSString stringWithFormat:@"%.0lf", [anchorDate timeIntervalSince1970]]];
+                groupedEntries = [[NSMutableArray alloc] init];
+            }
+
+            anchorDate = [[NSCalendar currentCalendar] startOfDayForDate:measurementDate];
+        }
+
+        [groupedEntries addObject:pM];
+    }
+    
+    if ([groupedEntries count] > 0) {
+        
+        [groupedDict setObject:groupedEntries forKey:[NSString stringWithFormat:@"%.0lf", [anchorDate timeIntervalSince1970]]];
+    }
+    
+    return groupedDict;
 }
 
 @end

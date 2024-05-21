@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 
 <!--
-     Copyright 2023 SAP SE
+     Copyright 2023-2024 SAP SE
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 		<dict>
 			<key>PayloadContent</key>
 			<dict>
+			
 				<key>corp.sap.PowerMonitor</key>
 				<dict>
 					<key>Forced</key>
@@ -239,6 +240,18 @@
                                 <key>ShowDayMarkers</key>
                                 <true/>
                                 
+                                 <!--
+                                    key:     MarkPowerNaps
+                                    value:   boolean
+                                    
+                                    Forces the display of the Power Nap intervals in the power graph if set
+                                    to true, otherwise the display of the Power Nap intervals is disabled.
+                                    Once this setting has been configured, the setting cannot be changed
+                                    by the user.
+                                -->
+                                <key>MarkPowerNaps</key>
+                                <true/>
+                                
                                 <!--
                                     If you want to deploy a color, just use the Power Monitor app, change
                                     the colors in the app's settings and copy the correspondig data from
@@ -295,31 +308,7 @@
                                     setting has been configured, the setting cannot be changed by the user.
                                 -->
                                 <key>GraphAverageLineColor</key>
-                                <data>
-                                    YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
-                                    AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGpCwwXGBkiKCkwVSRudWxs1Q0O
-                                    DxAREhMUFRZWJGNsYXNzW05TQ29sb3JOYW1lXE5TQ29sb3JTcGFjZV1OU0NhdGFsb2dO
-                                    YW1lV05TQ29sb3KACIADEAaAAoAEXxAVIyRhc3NldHMtbWFpbkJ1bmRsZUlEXxAVR3Jh
-                                    cGhBdmVyYWdlTGluZUNvbG9y1RobDxwNHR4fIBJcTlNDb21wb25lbnRzVU5TUkdCXxAS
-                                    TlNDdXN0b21Db2xvclNwYWNlTxApMC43NjM5OTk5OTg2IDAuMTg4OTk5OTk1NiAwLjA2
-                                    NDAwMDAwMzA0IDFPEBEwLjc4MzE1OTczMjggMCAwABABgAWACNMjDSQlJidVTlNJQ0NZ
-                                    TlNTcGFjZUlEgAaABxAMTxECGAAAAhhhcHBsBAAAAG1udHJSR0IgWFlaIAfmAAEAAQAA
-                                    AAAAAGFjc3BBUFBMAAAAAEFQUEwAAAAAAAAAAAAAAAAAAAAAAAD21gABAAAAANMtYXBw
-                                    bOz9o444hUfDbbS9T3raGC8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACmRl
-                                    c2MAAAD8AAAAMGNwcnQAAAEsAAAAUHd0cHQAAAF8AAAAFHJYWVoAAAGQAAAAFGdYWVoA
-                                    AAGkAAAAFGJYWVoAAAG4AAAAFHJUUkMAAAHMAAAAIGNoYWQAAAHsAAAALGJUUkMAAAHM
-                                    AAAAIGdUUkMAAAHMAAAAIG1sdWMAAAAAAAAAAQAAAAxlblVTAAAAFAAAABwARABpAHMA
-                                    cABsAGEAeQAgAFAAM21sdWMAAAAAAAAAAQAAAAxlblVTAAAANAAAABwAQwBvAHAAeQBy
-                                    AGkAZwBoAHQAIABBAHAAcABsAGUAIABJAG4AYwAuACwAIAAyADAAMgAyWFlaIAAAAAAA
-                                    APbVAAEAAAAA0yxYWVogAAAAAAAAg98AAD2/////u1hZWiAAAAAAAABKvwAAsTcAAAq5
-                                    WFlaIAAAAAAAACg4AAARCwAAyLlwYXJhAAAAAAADAAAAAmZmAADypwAADVkAABPQAAAK
-                                    W3NmMzIAAAAAAAEMQgAABd7///MmAAAHkwAA/ZD///ui///9owAAA9wAAMBu0iorLC1a
-                                    JGNsYXNzbmFtZVgkY2xhc3Nlc1xOU0NvbG9yU3BhY2WiLi9cTlNDb2xvclNwYWNlWE5T
-                                    T2JqZWN00iorMTJXTlNDb2xvcqIxLwAIABEAGgAkACkAMgA3AEkATABRAFMAXQBjAG4A
-                                    dQCBAI4AnACkAKYAqACqAKwArgDGAN4A6QD2APwBEQE9AVEBUwFVAVcBXgFkAW4BcAFy
-                                    AXQDkAOVA6ADqQO2A7kDxgPPA9QD3AAAAAAAAAIBAAAAAAAAADMAAAAAAAAAAAAAAAAA
-                                    AAPf
-                                </data>
+                                <data/>
                                     
                                 <!--
                                     key:     GraphDayMarkerColor
@@ -329,33 +318,85 @@
                                     setting has been configured, the setting cannot be changed by the user.
                                 -->
                                 <key>GraphDayMarkerColor</key>
-                                <data>
-                                    YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
-                                    AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGpCwwXGBkiKCkwVSRudWxs1Q0O
-                                    DxAREhMUFRZWJGNsYXNzW05TQ29sb3JOYW1lXE5TQ29sb3JTcGFjZV1OU0NhdGFsb2dO
-                                    YW1lV05TQ29sb3KACIADEAaAAoAEXxAVIyRhc3NldHMtbWFpbkJ1bmRsZUlEXxATR3Jh
-                                    cGhEYXlNYXJrZXJDb2xvctUaGw8cDR0eHyASXE5TQ29tcG9uZW50c1VOU1JHQl8QEk5T
-                                    Q3VzdG9tQ29sb3JTcGFjZU8QKTAuMDkwOTk5OTk4MTUgMC41OTIwMDAwMDc2IDAuOTk5
-                                    MDAwMDEyOSAxTxARMCAwLjUxNjAwODI1NzkgMQAQAYAFgAjTIw0kJSYnVU5TSUNDWU5T
-                                    U3BhY2VJRIAGgAcQDE8RAhgAAAIYYXBwbAQAAABtbnRyUkdCIFhZWiAH5gABAAEAAAAA
-                                    AABhY3NwQVBQTAAAAABBUFBMAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWFwcGzs
-                                    /aOOOIVHw220vU962hgvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApkZXNj
-                                    AAAA/AAAADBjcHJ0AAABLAAAAFB3dHB0AAABfAAAABRyWFlaAAABkAAAABRnWFlaAAAB
-                                    pAAAABRiWFlaAAABuAAAABRyVFJDAAABzAAAACBjaGFkAAAB7AAAACxiVFJDAAABzAAA
-                                    ACBnVFJDAAABzAAAACBtbHVjAAAAAAAAAAEAAAAMZW5VUwAAABQAAAAcAEQAaQBzAHAA
-                                    bABhAHkAIABQADNtbHVjAAAAAAAAAAEAAAAMZW5VUwAAADQAAAAcAEMAbwBwAHkAcgBp
-                                    AGcAaAB0ACAAQQBwAHAAbABlACAASQBuAGMALgAsACAAMgAwADIAMlhZWiAAAAAAAAD2
-                                    1QABAAAAANMsWFlaIAAAAAAAAIPfAAA9v////7tYWVogAAAAAAAASr8AALE3AAAKuVhZ
-                                    WiAAAAAAAAAoOAAAEQsAAMi5cGFyYQAAAAAAAwAAAAJmZgAA8qcAAA1ZAAAT0AAACltz
-                                    ZjMyAAAAAAABDEIAAAXe///zJgAAB5MAAP2Q///7ov///aMAAAPcAADAbtIqKywtWiRj
-                                    bGFzc25hbWVYJGNsYXNzZXNcTlNDb2xvclNwYWNloi4vXE5TQ29sb3JTcGFjZVhOU09i
-                                    amVjdNIqKzEyV05TQ29sb3KiMS8ACAARABoAJAApADIANwBJAEwAUQBTAF0AYwBuAHUA
-                                    gQCOAJwApACmAKgAqgCsAK4AxgDcAOcA9AD6AQ8BOwFPAVEBUwFVAVwBYgFsAW4BcAFy
-                                    A44DkwOeA6cDtAO3A8QDzQPSA9oAAAAAAAACAQAAAAAAAAAzAAAAAAAAAAAAAAAAAAAD
-                                    3Q==
-                                </data>
-								
+                                <data/>
+                                
+                                <!--
+                                    key:     GraphPowerNapFillColor
+                                    value:   data
+                                    
+                                    Forces the color of the Power Nap intervals of the power graph. Once this
+                                    setting has been configured, the setting cannot be changed by the user.
+                                -->
+                                <key>GraphPowerNapFillColor</key>
+                                <data/>
+                                
+                                <!--
+                                    key:     GraphPositionLineColor
+                                    value:   data
+                                    
+                                    Forces the color of the position line of the power graph. Once this
+                                    setting has been configured, the setting cannot be changed by the user.
+                                -->
+                                <key>GraphPositionLineColor</key>
+                                <data/>
+                                    								
 							</dict>
+						</dict>
+					</array>
+				</dict>
+				
+				<key>corp.sap.PowerMonitorDaemon</key>
+				<dict>
+					<key>Forced</key>
+					<array>
+						<dict>
+							<key>mcx_preference_settings</key>
+							<dict>
+							
+								<!--
+                                    key:     EnableJournal
+                                    value:   boolean
+                                    
+                                    Force enables the journal function if the option is set to true.
+                                    If this option is set to false, the journal function is disabled. 
+                                    Once this setting has been configured, the setting cannot be 
+                                    changed by the user.
+                                -->
+								<key>EnableJournal</key>
+								<true/>
+								
+								<!--
+                                    key:     JournalEntriesAutoDelete
+                                    value:   integer
+                                    
+                                    Forces the interval for automatic deletion of journal entries. Once 
+                                    this setting has been configured, the setting cannot be changed by the 
+                                    user.
+                                    
+                                    Possible values and their meanings:
+                                    
+                                    0 -> disables automatic deletion of journal entries
+                                    1 -> automatically delete journal entries older than one month
+                                    2 -> automatically delete journal entries older than six months
+                                    3 -> automatically delete journal entries older than one year
+                                -->
+								<key>JournalEntriesAutoDelete</key>
+								<integer>1</integer>
+                                
+                                <!--
+                                    key:     IgnorePowerNaps
+                                    value:   boolean
+                                   
+                                    Does not capture power data during Power Naps. So times where the Mac
+                                    takes a Power Nap are treated like times the Mac is in sleep mode.
+                                    Once this setting has been configured, the setting cannot be changed
+                                    by the user.
+                                -->
+                                <key>IgnorePowerNaps</key>
+                                <true/>
+                                
+							</dict>
+							
 						</dict>
 					</array>
 				</dict>

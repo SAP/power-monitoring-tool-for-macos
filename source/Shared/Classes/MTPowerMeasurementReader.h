@@ -38,7 +38,15 @@
  @discussion    Returns an initialized MTPowerMeasurementReader object with the given data file
                 mapped into memory (read-only). Returns nil if an error occurred.
 */
-- (instancetype)initWithContentsOfFile:(NSString*)path NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithContentsOfFile:(NSString*)path;
+
+/*!
+ @method        initWithData:
+ @abstract      Initialize a MTPowerMeasurementReader object with the given data.
+ @param         data A reference to the data object.
+ @discussion    Returns an initialized MTPowerMeasurementReader object with the given data. Returns nil if an error occurred.
+*/
+- (instancetype)initWithData:(NSData*)data;
 
 /*!
  @method        allMeasurements

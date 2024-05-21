@@ -1,5 +1,5 @@
 /*
-     MTUsagePriceTextTransformerDark.h
+     MTUsagePriceTextTransformerDark.m
      Copyright 2023-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");

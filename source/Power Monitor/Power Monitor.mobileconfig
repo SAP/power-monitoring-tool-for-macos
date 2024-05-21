@@ -24,6 +24,7 @@
 		<dict>
 			<key>PayloadContent</key>
 			<dict>
+			
 				<key>corp.sap.PowerMonitor</key>
 				<dict>
 					<key>Forced</key>
@@ -340,6 +341,62 @@
                                 <data/>
                                     								
 							</dict>
+						</dict>
+					</array>
+				</dict>
+				
+				<key>corp.sap.PowerMonitorDaemon</key>
+				<dict>
+					<key>Forced</key>
+					<array>
+						<dict>
+							<key>mcx_preference_settings</key>
+							<dict>
+							
+								<!--
+                                    key:     EnableJournal
+                                    value:   boolean
+                                    
+                                    Force enables the journal function if the option is set to true.
+                                    If this option is set to false, the journal function is disabled. 
+                                    Once this setting has been configured, the setting cannot be 
+                                    changed by the user.
+                                -->
+								<key>EnableJournal</key>
+								<true/>
+								
+								<!--
+                                    key:     JournalEntriesAutoDelete
+                                    value:   integer
+                                    
+                                    Forces the interval for automatic deletion of journal entries. Once 
+                                    this setting has been configured, the setting cannot be changed by the 
+                                    user.
+                                    
+                                    Possible values and their meanings:
+                                    
+                                    0 -> disables automatic deletion of journal entries
+                                    1 -> automatically delete journal entries older than one month
+                                    2 -> automatically delete journal entries older than six months
+                                    3 -> automatically delete journal entries older than one year
+                                -->
+								<key>JournalEntriesAutoDelete</key>
+								<integer>1</integer>
+                                
+                                <!--
+                                    key:     IgnorePowerNaps
+                                    value:   boolean
+                                   
+                                    Does not capture power data during Power Naps. So times where the Mac
+                                    takes a Power Nap are treated like times the Mac is in sleep mode.
+                                    Once this setting has been configured, the setting cannot be changed
+                                    by the user.
+                                -->
+                                <key>IgnorePowerNaps</key>
+                                <true/>
+                                
+							</dict>
+							
 						</dict>
 					</array>
 				</dict>

@@ -142,21 +142,12 @@
 - (NSString*)powerStringWithMeasurement:(MTPowerMeasurement*)measurement
 {
     NSMeasurementFormatter *powerFormatter = [[NSMeasurementFormatter alloc] init];
-    NSString *statusString = NSLocalizedString(@"tooltipSleep", nil);
+    NSString *statusString = [measurement state];
     
     if ([measurement doubleValue] > 0) {
         
         [[powerFormatter numberFormatter] setMinimumFractionDigits:2];
         [[powerFormatter numberFormatter] setMaximumFractionDigits:2];
-        
-        if ([measurement darkWake]) {
-            
-            statusString = NSLocalizedString(@"tooltipPowerNap", nil);
-            
-        } else {
-            
-            statusString = NSLocalizedString(@"tooltipAwake", nil);
-        }
         
     } else {
         

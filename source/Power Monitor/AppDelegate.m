@@ -22,6 +22,7 @@
 #import "Constants.h"
 #import "MTCarbonFootprint.h"
 #import "MTStatusItemMenu.h"
+#import "MTPowerJournal.h"
 
 @interface AppDelegate ()
 @property (weak) IBOutlet MTStatusItemMenu *statusItemMenu;
@@ -35,7 +36,7 @@
 
 @implementation AppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+- (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
     _userDefaults = [NSUserDefaults standardUserDefaults];
     
@@ -51,63 +52,196 @@
     
     NSArray *appArguments = [[NSProcessInfo processInfo] arguments];
     
-    if ([appArguments containsObject:@"--noGUI"]) {
+    if ([appArguments containsObject:@"--help"]) {
+        
+        [self printUsage];
+        [NSApp terminate:self];
+        
+    } else if ([appArguments containsObject:@"--noGUI"]) {
 
         MTPowerMeasurementReader *pM = [[MTPowerMeasurementReader alloc] initWithContentsOfFile:kMTMeasurementFilePath];
         
         if (pM) {
 
             NSArray *allMeasurements = [pM allMeasurements];
-            MTPowerMeasurement *averagePower = [allMeasurements averagePower];
             
-            if ([averagePower doubleValue] > 0) {
-
-                printf("Average system power (in W): %.2f\n", [averagePower doubleValue]);
-                printf("Number of measurements: %lu\n", (unsigned long)[allMeasurements count]);
+            if ([appArguments containsObject:@"--journal"]) {
                 
-                _carbonFootprint = [[MTCarbonFootprint alloc] initWithAPIKey:nil];
-                [_carbonFootprint currentLocationWithCompletionHandler:^(CLLocation *location, BOOL preciseLocation) {
+                MTPowerJournal *powerJournal = [[MTPowerJournal alloc] initWithFileAtPath:kMTJournalFilePath];
+                
+                if (powerJournal) {
+                    
+                    NSCalendarUnit summarize = 0;
+                    NSArray *journalEntries = [powerJournal allEntries];
+                    
+                    NSInteger argumentIndex = [appArguments indexOfObject:@"--summarize"];
+                    
+                    if (argumentIndex != NSNotFound && [appArguments count] > argumentIndex + 1) {
 
-                    [self->_carbonFootprint countryCodeWithLocation:location
-                                                  completionHandler:^(NSString *countryCode) {
-
-                        printf("Country code: %s\n", [countryCode UTF8String]);
-                        printf("Precise location: %s\n", (preciseLocation) ? "yes" : "no");
+                        NSString *summarizeString = [[appArguments objectAtIndex:argumentIndex + 1] lowercaseString];
                         
-                        // if we use a static list of carbon intensity values (either imported
-                        // directly into the app or provided via configuration profile), we also
-                        // print the carbon footprint value
-                        NSDictionary *carbonRegions = [self->_userDefaults objectForKey:kMTDefaultsCarbonRegionsKey];
-    
-                        if (carbonRegions) {
+                        if ([summarizeString isEqualToString:@"w"]) {
                             
-                            NSNumber *gramsCO2eqkWh = ([carbonRegions objectForKey:countryCode]) ? [carbonRegions valueForKey:countryCode] : [carbonRegions valueForKey:NSLocalizedStringFromTable(countryCode, @"Alpha-2toAlpha-3", nil)];
+                            summarize = NSCalendarUnitWeekOfYear;
                             
-                            if ([gramsCO2eqkWh floatValue] > 0) {
-
-                                NSMeasurement *measurementPowerKW = [averagePower measurementByConvertingToUnit:[NSUnitPower kilowatts]];
-                                NSMeasurement *measurementCarbon = [[NSMeasurement alloc] initWithDoubleValue:[measurementPowerKW doubleValue] * [gramsCO2eqkWh floatValue]
-                                                                                                                     unit:[NSUnitMass grams]];
-                                printf("Carbon footprint (in gCO2eq/h): %.2f\n", [measurementCarbon doubleValue]);
-                                            
-                            } else {
-                                            
-                                printf("Carbon footprint (in gCO2eq/h): unavailable\n");
-                            }
-                                        
-                        } else {
+                        } else if ([summarizeString isEqualToString:@"m"]) {
                             
-                            printf("Carbon footprint (in gCO2eq/h): unavailable\n");
+                            summarize = NSCalendarUnitMonth;
+                            
+                        } else if ([summarizeString isEqualToString:@"y"]) {
+                            
+                            summarize = NSCalendarUnitYear;
                         }
-
-                        [NSApp terminate:self];
-                    }];
-                }];
-                                    
+                    }
+                    
+                    argumentIndex = [appArguments indexOfObject:@"--start"];
+                    if (argumentIndex != NSNotFound && [appArguments count] > argumentIndex + 1) {
+                        
+                        NSString *dateString = [[appArguments objectAtIndex:argumentIndex + 1] lowercaseString];
+                        
+                        if (dateString) {
+                            
+                            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                            [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+                            NSDate *startDate = [dateFormatter dateFromString:dateString];
+                            
+                            if (startDate) {
+                                
+                                NSPredicate *predicate = [NSPredicate predicateWithFormat:@"timeStamp >= %lf", [startDate timeIntervalSince1970]];
+                                journalEntries = [journalEntries filteredArrayUsingPredicate:predicate];
+                            }
+                        }
+                    }
+                    
+                    argumentIndex = [appArguments indexOfObject:@"--end"];
+                    if (argumentIndex != NSNotFound && [appArguments count] > argumentIndex + 1) {
+                        
+                        NSString *dateString = [[appArguments objectAtIndex:argumentIndex + 1] lowercaseString];
+                        
+                        if (dateString) {
+                            
+                            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                            [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+                            NSDate *endDate = [dateFormatter dateFromString:dateString];
+                            
+                            if (endDate) {
+                                
+                                NSPredicate *predicate = [NSPredicate predicateWithFormat:@"timeStamp <= %lf", [endDate timeIntervalSince1970]];
+                                journalEntries = [journalEntries filteredArrayUsingPredicate:predicate];
+                            }
+                        }
+                    }
+                    
+                    NSString *jsonString = [MTPowerJournal jsonStringWithEntries:journalEntries 
+                                                                    summarizedBy:summarize
+                                                                 includeDuration:YES
+                    ];
+                    printf("%s\n", [jsonString UTF8String]);
+                }
+                
+                [NSApp terminate:self];
+                
             } else {
                 
-                printf("No measurements\n");
-                [NSApp terminate:self];
+                MTPowerMeasurement *averagePower = [allMeasurements averagePower];
+                
+                if ([averagePower doubleValue] > 0) {
+                    
+                    if ([appArguments containsObject:@"--averagePowerOnly"]) {
+                        
+                        printf("%.2f\n", [averagePower doubleValue]);
+                        [NSApp terminate:self];
+                        
+                    } else {
+                        
+                        NSMutableDictionary *jsonDict = [[NSMutableDictionary alloc] init];
+                        [jsonDict setObject:[NSNumber numberWithDouble:[averagePower doubleValue]] forKey:@"AveragePower"];
+                        [jsonDict setObject:[NSNumber numberWithInteger:[allMeasurements count]] forKey:@"MeasurementsCount"];
+                        
+                        _carbonFootprint = [[MTCarbonFootprint alloc] initWithAPIKey:nil];
+                        [_carbonFootprint currentLocationWithCompletionHandler:^(CLLocation *location, BOOL preciseLocation) {
+                            
+                            [self->_carbonFootprint countryCodeWithLocation:location
+                                                          completionHandler:^(NSString *countryCode) {
+                                
+                                [jsonDict setObject:countryCode forKey:@"CountryCode"];
+                                [jsonDict setObject:[NSNumber numberWithBool:preciseLocation] forKey:@"PreciseLocation"];
+                                
+                                // if we use a static list of carbon intensity values (either imported
+                                // directly into the app or provided via configuration profile), we also
+                                // print the carbon footprint value
+                                NSDictionary *carbonRegions = [self->_userDefaults objectForKey:kMTDefaultsCarbonRegionsKey];
+                                
+                                if (carbonRegions) {
+                                    
+                                    NSNumber *gramsCO2eqkWh = ([carbonRegions objectForKey:countryCode]) ? [carbonRegions valueForKey:countryCode] : [carbonRegions valueForKey:NSLocalizedStringFromTable(countryCode, @"Alpha-2toAlpha-3", nil)];
+                                    
+                                    if ([gramsCO2eqkWh floatValue] > 0) {
+                                        
+                                        NSMeasurement *measurementPowerKW = [averagePower measurementByConvertingToUnit:[NSUnitPower kilowatts]];
+                                        NSMeasurement *measurementCarbon = [[NSMeasurement alloc] initWithDoubleValue:[measurementPowerKW doubleValue] * [gramsCO2eqkWh floatValue]
+                                                                                                                 unit:[NSUnitMass grams]];
+                                        [jsonDict setObject:[NSNumber numberWithDouble:[measurementCarbon doubleValue]] forKey:@"CarbonFootprint"];
+                                        
+                                    } else {
+                                        
+                                        [jsonDict setObject:[NSNumber numberWithInteger:-1] forKey:@"CarbonFootprint"];
+                                    }
+                                    
+                                } else {
+                                    
+                                    [jsonDict setObject:[NSNumber numberWithInteger:-1] forKey:@"CarbonFootprint"];
+                                }
+                                
+                                if ([appArguments containsObject:@"--JSON"]) {
+                                    
+                                    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:jsonDict
+                                                                                       options:NSJSONWritingPrettyPrinted
+                                                                                         error:nil
+                                    ];
+
+                                    if (jsonData) {
+                                        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+                                        printf("%s\n", [jsonString UTF8String]);
+                                    }
+                                    
+                                    
+                                } else if ([appArguments containsObject:@"--footprintOnly"]) {
+                                    
+                                    double carbonValue = [[jsonDict valueForKey:@"CarbonFootprint"] doubleValue];
+                                    
+                                    if (carbonValue >= 0) {
+                                        printf("%.2f\n", carbonValue);
+                                    } else {
+                                        printf("%.0f\n", carbonValue);
+                                    }
+                                    
+                                } else {
+                                    
+                                    double carbonValue = [[jsonDict valueForKey:@"CarbonFootprint"] doubleValue];
+                                    
+                                    printf("Average system power (in W): %.2f\n", [[jsonDict valueForKey:@"AveragePower"] doubleValue]);
+                                    printf("Number of measurements: %lu\n", [[jsonDict valueForKey:@"MeasurementsCount"] integerValue]);
+                                    printf("Country code: %s\n", [[jsonDict valueForKey:@"CountryCode"] UTF8String]);
+                                    printf("Precise location: %s\n", ([[jsonDict valueForKey:@"PreciseLocation"] boolValue]) ? "yes" : "no");
+                                    
+                                    if (carbonValue >= 0) {
+                                        printf("Carbon footprint (in gCO2eq/h): %.2f\n", carbonValue);
+                                    } else {
+                                        printf("Carbon footprint (in gCO2eq/h): unavailable\n");
+                                    }
+                                }
+                                
+                                [NSApp terminate:self];
+                            }];
+                        }];
+                    }
+                    
+                } else {
+                    
+                    printf("No measurements\n");
+                    [NSApp terminate:self];
+                }
             }
             
         } else {
@@ -163,6 +297,30 @@
     }
 }
 
+- (void)printUsage
+{
+    fprintf(stderr, "\nUsage:\n\n");
+    fprintf(stderr, "   Power Monitor --noGUI [--JSON]\n");
+    fprintf(stderr, "   Power Monitor --noGUI [--averagePowerOnly | --footprintOnly]\n");
+    fprintf(stderr, "   Power Monitor --noGUI --journal [--summarize <w|m|y>] [--start <date>] [--end <date>]\n\n");
+    fprintf(stderr, "   --noGUI     If used without any additional arguments, it runs the application without gui and returns some basic information.\n\n");
+    fprintf(stderr, "               --JSON              Returns the data in JSON format instead of plain text.\n\n");
+    
+    fprintf(stderr, "               --averagePowerOnly  Returns the average power value only.\n\n");
+    
+    fprintf(stderr, "               --footprintOnly     Returns the carbon footprint only.\n\n");
+    
+    fprintf(stderr, "               --journal           Returns the power journal in json format.\n\n");
+    
+    fprintf(stderr, "                                   --summarize <w|m|y>     Summarizes the journal by week, month or year.\n\n");
+    
+    fprintf(stderr, "                                   --start <date>          Returns the journal starting from the provided date. Date must be in format \"YYYY-MM-DD\".\n\n");
+    
+    fprintf(stderr, "                                   --end <date>            Returns the journal up to the provided date. Date must be in format \"YYYY-MM-DD\".\n\n");
+    
+    fprintf(stderr, "   --help      Shows this help.\n\n");
+}
+
 #pragma mark IBActions
 
 - (IBAction)showSettingsWindow:(id)sender
@@ -195,6 +353,14 @@
     ];
 }
 
+- (IBAction)showGraphWindow:(id)sender
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNameShowGraphWindow
+                                                        object:nil
+                                                      userInfo:nil
+    ];
+}
+
 - (IBAction)openGitHub:(id)sender
 {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:kMTGitHubURL]];
@@ -208,7 +374,7 @@
     }
 }
 
-- (void)applicationWillTerminate:(NSNotification *)aNotification
+- (void)applicationWillTerminate:(NSNotification *)notification
 {
     
 }

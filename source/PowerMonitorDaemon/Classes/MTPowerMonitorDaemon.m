@@ -18,7 +18,10 @@
 #import "MTPowerMonitorDaemon.h"
 #import "MTPowerMeasurement.h"
 #import "MTPowerMeasurementWriter.h"
+#import "MTPowerMeasurementReader.h"
+#import "MTPowerMeasurementArray.h"
 #import "MTSystemInfo.h"
+#import "MTPowerJournal.h"
 #import "Constants.h"
 #import <os/log.h>
 
@@ -27,6 +30,8 @@
 @property (nonatomic, strong, readwrite) NSTimer *measurementTimer;
 @property (nonatomic, strong, readwrite) MTPowerMeasurementWriter *pMWriter;
 @property (nonatomic, strong, readwrite) MTSleepWatcher *watcher;
+@property (nonatomic, strong, readwrite) MTPowerJournal *powerJournal;
+@property (assign) NSTimeInterval currentDayStart;
 @property (assign) BOOL isDarkWake;
 @property (assign) BOOL resetMeasurements;
 @end
@@ -42,6 +47,8 @@
         _listener = [[NSXPCListener alloc] initWithMachServiceName:kMTDaemonMachServiceName];
         [_listener setDelegate:self];
         [_listener resume];
+        
+        _powerJournal = [[MTPowerJournal alloc] initWithFileAtPath:kMTJournalFilePath];
     }
     
     return self;
@@ -94,6 +101,9 @@
 #endif
         success = YES;
         
+        // if journal is enabled, check our measurements and make sure, measurements
+        // older than today, are in the journal
+        
         _watcher = [[MTSleepWatcher alloc] initWithDelegate:self];
         [_watcher startWatching];
         
@@ -115,24 +125,118 @@
                 self->_resetMeasurements = NO;
             }
             
-            // get current system power
-            float powerValue = [MTSystemInfo rawSystemPower];
+            NSDate *newDate = [NSDate date];
+            NSDate *newDayStartDate = [[NSCalendar currentCalendar] startOfDayForDate:newDate];
+            NSTimeInterval newDayStart = [newDayStartDate timeIntervalSince1970];
             
-            if (powerValue > 0) {
-                
-                // write data
-                MeasurementStruct data;
-                data.timestamp = CFSwapInt64HostToBig([[NSDate date] timeIntervalSince1970]);
-                data.value = CFSwapInt32HostToBig(*(int*)(&powerValue));
-                data.darkwake = self->_isDarkWake;
-                [[self->_pMWriter measurementData] replaceMappedBytesInRange:NSMakeRange(bufferIndex, sizeof(data)) withBytes:&data];
+            if (![self powerNapsIgnored] || !self->_isDarkWake) {
+            
+                // get current system power
+                float powerValue = [MTSystemInfo rawSystemPower];
+            
+                if (powerValue > 0) {
+                                        
+                    // write data
+                    MeasurementStruct data;
+                    data.timestamp = CFSwapInt64HostToBig([newDate timeIntervalSince1970]);
+                    data.value = CFSwapInt32HostToBig(*(int*)(&powerValue));
+                    data.darkwake = self->_isDarkWake;
+                    [[self->_pMWriter measurementData] replaceMappedBytesInRange:NSMakeRange(bufferIndex, sizeof(data)) withBytes:&data];
 #ifdef DEBUG
-                printf("System power (%lu): %f W\n", bufferIndex / sizeof(data), powerValue);
+                    printf("System power (%lu): %f W\n", bufferIndex / sizeof(data), powerValue);
 #endif
-                if (bufferIndex + sizeof(data) >= [[self->_pMWriter measurementData] length]) {
-                    bufferIndex = 0;
-                } else {
-                    bufferIndex += sizeof(data);
+                    if (bufferIndex + sizeof(data) >= [[self->_pMWriter measurementData] length]) {
+                        bufferIndex = 0;
+                    } else {
+                        bufferIndex += sizeof(data);
+                    }
+                }
+                
+                if (!self->_currentDayStart || self->_currentDayStart < newDayStart) {
+                    
+                    self->_currentDayStart = newDayStart;
+                    
+                    // check if our journal is up to date
+                    [self journalEnabledWithReply:^(BOOL enabled, BOOL forced) {
+                        
+                        __block BOOL journalUpdated = NO;
+                        
+                        if (enabled) {
+                            
+                            MTPowerMeasurementReader *pmReader = [[MTPowerMeasurementReader alloc] initWithData:[self->_pMWriter measurementData]];
+                            NSDictionary *groupedMeasurements = [[pmReader allMeasurements] measurementsGroupedByDay];
+                            
+                            for (NSString *aKey in [groupedMeasurements allKeys]) {
+                                
+                                NSTimeInterval interval = [aKey doubleValue];
+                                
+                                // we ignore today's measurements and only go ahead, if the
+                                // journal does not contain an entry for the day
+                                if  (interval != self->_currentDayStart && ![self->_powerJournal entryWithTimeStamp:interval]) {
+                                    
+                                    NSArray *measurementGroup = [groupedMeasurements objectForKey:aKey];
+                                    NSArray *awakeMeasurements = [measurementGroup awakeMeasurements];
+                                    NSArray *powerNapMeasurements = [measurementGroup powerNapMeasurements];
+                                    
+                                    MTPowerJournalEntry *journalEntry = [[MTPowerJournalEntry alloc] initWithTimeIntervalSince1970:interval];
+                                    [journalEntry setDurationAwake:[awakeMeasurements totalTime]];
+                                    [journalEntry setConsumptionTotal:[[measurementGroup averagePower] doubleValue]];
+                                    [journalEntry setDurationPowerNap:[powerNapMeasurements totalTime]];
+                                    [journalEntry setConsumptionPowerNap:[[powerNapMeasurements averagePower] doubleValue]];
+                                    
+                                    [[self->_powerJournal allEntries] addObject:journalEntry];
+                                    
+                                    journalUpdated = YES;
+                                }
+                            }
+                        }
+                        
+                        // delete outdated entries
+                        [self journalAutoDeletionIntervalWithReply:^(NSInteger interval, BOOL forced) {
+                            
+                            NSDate *lastValidDate = nil;
+                            NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+
+                            if (interval == 1) {
+
+                                [dateComponents setMonth:-1];
+                                lastValidDate = [[NSCalendar currentCalendar] dateByAddingComponents:dateComponents
+                                                                                              toDate:newDayStartDate
+                                                                                             options:0
+                                ];
+                                
+                            } else if (interval == 2) {
+                                
+                                [dateComponents setMonth:-6];
+                                lastValidDate = [[NSCalendar currentCalendar] dateByAddingComponents:dateComponents 
+                                                                                              toDate:newDayStartDate
+                                                                                             options:0
+                                ];
+                                
+                            } else if (interval == 3) {
+                                
+                                [dateComponents setYear:-1];
+                                lastValidDate = [[NSCalendar currentCalendar] dateByAddingComponents:dateComponents 
+                                                                                              toDate:newDayStartDate
+                                                                                             options:0
+                                ];
+                            }
+                                
+                            if (lastValidDate) {
+                                
+                                NSPredicate *predicate = [NSPredicate predicateWithFormat:@"timeStamp < %lf", [lastValidDate timeIntervalSince1970]];
+                                NSArray *filteredArray = [[self->_powerJournal allEntries] filteredArrayUsingPredicate:predicate];
+                                
+                                if ([filteredArray count] > 0) {
+                                    
+                                    [[self->_powerJournal allEntries] removeObjectsInArray:filteredArray];
+                                    journalUpdated = YES;
+                                }
+                            }
+                            
+                            if (journalUpdated) { [self->_powerJournal synchronize]; }
+                        }];
+                    }];
                 }
             }
         }];
@@ -158,6 +262,20 @@
 #endif
     
     return success;
+}
+
+- (BOOL)powerNapsIgnored
+{
+    BOOL ignored = NO;
+    
+    CFPropertyListRef property = CFPreferencesCopyValue(kMTPrefsIgnorePowerNapsKey, kMTDaemonPreferenceDomain, kCFPreferencesAnyUser, kCFPreferencesCurrentHost);
+    
+    if (property) {
+        ignored = CFBooleanGetValue(property);
+        CFRelease(property);
+    }
+    
+    return ignored;
 }
 
 #pragma mark exported methods
@@ -205,6 +323,85 @@
 {
     BOOL success = [MTSystemInfo enablePowerNap:enable acPowerOnly:aconly];
     completionHandler(success);
+}
+
+- (void)setJournalEnabled:(BOOL)enabled completionHandler:(void (^)(BOOL success))completionHandler
+{
+    // set the value
+    CFPreferencesSetValue(kMTPrefsEnableJournalKey, (__bridge CFPropertyListRef)([NSNumber numberWithBool:enabled]), kMTDaemonPreferenceDomain, kCFPreferencesAnyUser, kCFPreferencesCurrentHost);
+        
+    // read the value and compare it
+    // with the value we set
+    [self journalEnabledWithReply:^(BOOL isEnabled, BOOL isForced) {
+        
+        completionHandler((enabled == isEnabled) ? YES : NO);
+    }];
+}
+
+- (void)journalEnabledWithReply:(void (^)(BOOL enabled, BOOL forced))reply
+{
+    BOOL isEnabled = NO;
+    BOOL isForced = CFPreferencesAppValueIsForced(kMTPrefsEnableJournalKey, kMTDaemonPreferenceDomain);
+    
+    CFPropertyListRef property = CFPreferencesCopyValue(kMTPrefsEnableJournalKey, kMTDaemonPreferenceDomain, kCFPreferencesAnyUser, kCFPreferencesCurrentHost);
+    
+    if (property) {
+        isEnabled = CFBooleanGetValue(property);
+        CFRelease(property);
+    }
+    
+    reply(isEnabled, isForced);
+}
+
+- (void)setJournalAutoDeletionInterval:(NSInteger)interval completionHandler:(void (^)(BOOL success))completionHandler
+{
+    // set the value
+    CFPreferencesSetValue(kMTPrefsJournalAutoDeleteKey, (__bridge CFPropertyListRef)([NSNumber numberWithInteger:interval]), kMTDaemonPreferenceDomain, kCFPreferencesAnyUser, kCFPreferencesCurrentHost);
+        
+    // read the value and compare it
+    // with the value we set
+    [self journalAutoDeletionIntervalWithReply:^(NSInteger storedInterval, BOOL isForced) {
+        
+        completionHandler((interval == storedInterval) ? YES : NO);
+    }];
+}
+
+- (void)journalAutoDeletionIntervalWithReply:(void (^)(NSInteger interval, BOOL forced))reply
+{
+    NSInteger interval = 0;
+    BOOL isForced = CFPreferencesAppValueIsForced(kMTPrefsJournalAutoDeleteKey, kMTDaemonPreferenceDomain);
+    
+    CFPropertyListRef property = CFPreferencesCopyValue(kMTPrefsJournalAutoDeleteKey, kMTDaemonPreferenceDomain, kCFPreferencesAnyUser, kCFPreferencesCurrentHost);
+    
+    if (property) {
+        
+        if (CFGetTypeID(property) == CFNumberGetTypeID()) {
+            CFNumberGetValue((CFNumberRef)property, kCFNumberNSIntegerType, &interval);
+        }
+        
+        CFRelease(property);
+    }
+    
+    reply(interval, isForced);
+}
+
+- (void)setIgnorePowerNaps:(BOOL)ignore completionHandler:(void (^)(BOOL success))completionHandler
+{
+    // set the value
+    CFPreferencesSetValue(kMTPrefsIgnorePowerNapsKey, (__bridge CFPropertyListRef)([NSNumber numberWithBool:ignore]), kMTDaemonPreferenceDomain, kCFPreferencesAnyUser, kCFPreferencesCurrentHost);
+        
+    // read the value and compare it
+    // with the value we set
+    [self powerNapsIgnoredWithReply:^(BOOL isIgnored, BOOL isForced) {
+        
+        completionHandler((ignore == isIgnored) ? YES : NO);
+    }];
+}
+
+- (void)powerNapsIgnoredWithReply:(void (^)(BOOL ignored, BOOL forced))reply
+{
+    BOOL isForced = CFPreferencesAppValueIsForced(kMTPrefsIgnorePowerNapsKey, kMTDaemonPreferenceDomain);
+    reply([self powerNapsIgnored], isForced);
 }
 
 #pragma mark MTSleepWatcherDelegate methods

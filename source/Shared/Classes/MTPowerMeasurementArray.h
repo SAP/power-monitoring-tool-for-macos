@@ -45,4 +45,17 @@
 */
 - (MTPowerMeasurement*)maximumPower;
 
+- (NSArray<MTPowerMeasurement*>*)awakeMeasurements;
+- (NSArray<MTPowerMeasurement*>*)powerNapMeasurements;
+
+- (NSTimeInterval)totalTime;
+
+/*!
+ @method        measurementsGroupedByDay
+ @abstract      Return the measurement data grouped by day.
+ @discussion    Returns an NSDictionary with timestamps as keys and NSArrays of MTPowerMeasurement
+                objects as values.
+*/
+- (NSDictionary*)measurementsGroupedByDay;
+
 @end

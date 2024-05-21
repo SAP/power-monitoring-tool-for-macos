@@ -1,0 +1,204 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "4f1-T1-poO.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Save selected entries only\"; ObjectID = \"4f1-T1-poO\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Nur ausgewählte Einträge sichern"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Save selected entries only"
+          }
+        }
+      }
+    },
+    "9ko-st-tbq.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Format:\"; ObjectID = \"9ko-st-tbq\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Format:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Format:"
+          }
+        }
+      }
+    },
+    "a4J-7c-e6N.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Month\"; ObjectID = \"a4J-7c-e6N\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monat"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Month"
+          }
+        }
+      }
+    },
+    "FpW-jh-zwQ.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Comma-Separated Values (CSV)\"; ObjectID = \"FpW-jh-zwQ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Durch Komma getrennte Werte (CSV)"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Comma-Separated Values (CSV)"
+          }
+        }
+      }
+    },
+    "hpl-Wz-Sje.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Add Header\"; ObjectID = \"hpl-Wz-Sje\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopfzeile hinzufügen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add Header"
+          }
+        }
+      }
+    },
+    "HuV-6F-yld.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"JavaScript Object Notation (JSON)\"; ObjectID = \"HuV-6F-yld\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JavaScript Object Notation (JSON)"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "JavaScript Object Notation (JSON)"
+          }
+        }
+      }
+    },
+    "I1K-CB-bF3.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Summarize By:\"; ObjectID = \"I1K-CB-bF3\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zusammenfassen nach:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Summarize By:"
+          }
+        }
+      }
+    },
+    "iok-6B-LKx.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Include duration\"; ObjectID = \"iok-6B-LKx\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Dauer einbeziehen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Include duration"
+          }
+        }
+      }
+    },
+    "ufI-Vp-hgL.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Week\"; ObjectID = \"ufI-Vp-hgL\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woche"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Week"
+          }
+        }
+      }
+    },
+    "xDz-bb-lGq.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Don't Summarize\"; ObjectID = \"xDz-bb-lGq\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nicht zusammenfassen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Don't Summarize"
+          }
+        }
+      }
+    },
+    "XVw-XM-mDi.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Year\"; ObjectID = \"XVw-XM-mDi\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jahr"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Year"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

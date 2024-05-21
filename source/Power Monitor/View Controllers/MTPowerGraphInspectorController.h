@@ -1,5 +1,5 @@
 /*
-     MTUsagePeriodTextTransformer.m
+     MTPowerGraphInspectorController.h
      Copyright 2023-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,18 +15,9 @@
      limitations under the License.
 */
 
-#import "MTUsagePeriodTextTransformer.h"
+#import <Cocoa/Cocoa.h>
+#import "MTPowerGraphController.h"
 
-@implementation MTUsagePeriodTextTransformer
-
-+ (BOOL)allowsReverseTransformation
-{
-    return NO;
-}
-
-- (id)transformedValue:(id)value
-{
-    return ([value boolValue]) ? NSLocalizedString(@"usagePeriodTodayText", nil) : NSLocalizedString(@"usagePeriodText", nil);
-}
+@interface MTPowerGraphInspectorController : NSViewController <MTPowerGraphControllerDelegate>
 
 @end

@@ -18,6 +18,7 @@
 #import "MTAssertionsController.h"
 #import "IOPMLibPrivate.h"
 #import "MTSystemInfo.h"
+#import "Constants.h"
 
 @interface MTAssertionsController ()
 @property (nonatomic, strong, readwrite) NSMutableArray *assertionEntries;
@@ -60,7 +61,7 @@
     
     if (item) {
 
-        if ([[item itemIdentifier] isEqualToString:@"ReloadContentToolbarItem"]) {
+        if ([[item itemIdentifier] isEqualToString:MTToolbarConsoleReloadItemIdentifier]) {
             
             enable = YES;
         }

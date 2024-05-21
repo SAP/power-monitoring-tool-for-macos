@@ -26,10 +26,15 @@
 @property (nonatomic, strong, readwrite) CAShapeLayer *dayMarkerLayer;
 @property (nonatomic, strong, readwrite) CAShapeLayer *averageLineLayer;
 @property (nonatomic, strong, readwrite) CAShapeLayer *positionLineLayer;
+@property (nonatomic, strong, readwrite) CAShapeLayer *positionLineLockLayer;
 @property (nonatomic, strong, readwrite) NSTrackingArea *trackingArea;
 @property (nonatomic, strong, readwrite) MTPowerGraphTooltip *tooltipWindow;
+@property (nonatomic, strong, readwrite) MTPowerMeasurement *pinnedMeasurement;
 @property (assign) NSInteger currentPosititon;
+@property (assign) CGFloat lineWidth;
 @property (assign) BOOL insideTrackingArea;
+@property (assign) BOOL isPinned;
+@property (assign) NSPoint pinnedPosition;
 @end
 
 @implementation MTPowerGraphView
@@ -50,57 +55,54 @@
     return self;
 }
 
-- (instancetype)initWithFrame:(NSRect)frameRect powerMeasurements:(NSArray*)measurements
-{
-    self = [super initWithFrame:frameRect];
-
-    if (self) {
-        _measurementData = measurements;
-    }
-    
-    return self;
-}
-
 - (void)setUpView
 {
     [self setWantsLayer:YES];
     [[self layer] setDrawsAsynchronously:YES];
     
+    CGFloat scaleFactor = [[self layer] contentsScale];
+
     _graphLayer = [CAShapeLayer layer];
-    [_graphLayer setContentsScale:[[self layer] contentsScale]];
+    [_graphLayer setContentsScale:scaleFactor];
     [_graphLayer setAutoresizingMask:(kCALayerWidthSizable | kCALayerHeightSizable)];
     [_graphLayer setFrame:[self bounds]];
-    [_graphLayer setLineWidth:.1];
+    [_graphLayer setDelegate:self];
     _graphColor = [NSColor systemGreenColor];
     
     _powerNapLayer = [CAShapeLayer layer];
-    [_powerNapLayer setContentsScale:[[self layer] contentsScale]];
+    [_powerNapLayer setContentsScale:scaleFactor];
     [_powerNapLayer setAutoresizingMask:(kCALayerWidthSizable | kCALayerHeightSizable)];
     [_powerNapLayer setFrame:[self bounds]];
-    [_powerNapLayer setLineWidth:.1];
+    [_powerNapLayer setDelegate:self];
     _powerNapColor = [NSColor systemYellowColor];
     
     _dayMarkerLayer = [CAShapeLayer layer];
-    [_dayMarkerLayer setContentsScale:[[self layer] contentsScale]];
+    [_dayMarkerLayer setContentsScale:scaleFactor];
     [_dayMarkerLayer setAutoresizingMask:(kCALayerWidthSizable | kCALayerHeightSizable)];
     [_dayMarkerLayer setFrame:[self bounds]];
-    [_dayMarkerLayer setLineWidth:1];
+    [_dayMarkerLayer setDelegate:self];
     _dayMarkerColor = [NSColor systemYellowColor];
     
     _averageLineLayer = [CAShapeLayer layer];
-    [_averageLineLayer setContentsScale:[[self layer] contentsScale]];
+    [_averageLineLayer setContentsScale:scaleFactor];
     [_averageLineLayer setAutoresizingMask:(kCALayerWidthSizable | kCALayerHeightSizable)];
     [_averageLineLayer setFrame:[self bounds]];
     [_averageLineLayer setLineWidth:1];
+    [_averageLineLayer setDelegate:self];
     _averageLineColor = [NSColor systemRedColor];
     
     _positionLineColor = [NSColor systemPurpleColor];
     _positionLineLayer = [CAShapeLayer layer];
-    [_positionLineLayer setContentsScale:[[self layer] contentsScale]];
+    [_positionLineLayer setContentsScale:scaleFactor];
     [_positionLineLayer setAutoresizingMask:kCALayerHeightSizable];
-    [_positionLineLayer setFrame:NSMakeRect(-10, 0, 1, NSHeight([self bounds]))];
     [_positionLineLayer setBackgroundColor:[_positionLineColor CGColor]];
-    [_positionLineLayer setSpeed:NSIntegerMax];
+    [_positionLineLayer setDelegate:self];
+    
+    _positionLineLockLayer = [CAShapeLayer layer];
+    [_positionLineLockLayer setContentsScale:scaleFactor];
+    [_positionLineLockLayer setAutoresizingMask:kCALayerHeightSizable];
+    [_positionLineLockLayer setBackgroundColor:[_positionLineColor CGColor]];
+    [_positionLineLockLayer setDelegate:self];
     
     _currentPosititon = -1;
     
@@ -109,12 +111,42 @@
                                 _powerNapLayer,
                                 _dayMarkerLayer,
                                 _averageLineLayer,
+                                _positionLineLockLayer,
                                 _positionLineLayer,
                                 nil
                                ]
     ];
     
     _tooltipWindow = [[MTPowerGraphTooltip alloc] init];
+}
+
+- (void)setView:(MTPowerGraphView*)view
+{
+    if (view && [view isKindOfClass:[MTPowerGraphView class]]) {
+  
+        _measurementData = [[view measurementData] copy];
+        _showAverage = [view showAverage];
+        _showDayMarkers = [view showDayMarkers];
+        _showPowerNaps = [view showPowerNaps];
+        _graphColor = [view graphColor];
+        _averageLineColor = [view averageLineColor];
+        _dayMarkerColor = [view dayMarkerColor];
+        _powerNapColor = [view powerNapColor];
+        _positionLineColor = [view positionLineColor];
+        _allowPinning = [view allowPinning];
+        _isPinned = [view isPinned];
+        _pinnedPosition = [view pinnedPosition];
+        _pinnedMeasurement = [view pinnedMeasurement];
+        _allowToolTip = [view allowToolTip];
+        
+        [self setNeedsDisplay:YES];
+    }
+}
+
+- (id<CAAction>)actionForLayer:(CALayer *)layer forKey:(NSString *)event
+{
+    // disable all implicit animations
+    return [NSNull null];
 }
 
 - (void)updateTrackingAreas
@@ -138,13 +170,43 @@
     [self addTrackingArea:_trackingArea];
 }
 
+- (void)viewDidMoveToWindow
+{
+    // make sure our tooltip window is closed
+    // if our parent window is closed
+    if ([self window]) {
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(windowWillClose:)
+                                                     name:NSWindowWillCloseNotification
+                                                   object:[self window]
+        ];
+    }
+}
+
+- (void)dealloc
+{
+    if ([_tooltipWindow isVisible]) { [_tooltipWindow close]; }
+}
+
+- (void)windowWillClose:(NSNotification*)notification 
+{
+    if ([_tooltipWindow isVisible]) { [_tooltipWindow close]; }
+}
+
 - (void)drawRect:(NSRect)dirtyRect
 {
     [super drawRect:dirtyRect];
-    
+
     NSInteger measurementsCount = [_measurementData count];
     
     if (measurementsCount > 0) {
+        
+        CGFloat scaleFactor = [[self layer] contentsScale];
+        _lineWidth = (scaleFactor > 1) ? 2.0 / scaleFactor : 1;
+        [_dayMarkerLayer setLineWidth:_lineWidth];
+        [_graphLayer setLineWidth:_lineWidth / 10.0];
+        [_powerNapLayer setLineWidth:_lineWidth / 10.0];
 
         CGMutablePathRef linePath = CGPathCreateMutable();
         CGMutablePathRef powerNapPath = CGPathCreateMutable();
@@ -244,26 +306,25 @@
             
             [_powerNapLayer setHidden:YES];
         }
-        
+
         CGPathRelease(powerNapPath);
         
         // day markers
         if ([dayMarkers count] > 0) {
             
-            CGMutablePathRef dayPath = CGPathCreateMutable();
+            [_dayMarkerLayer setSublayers:nil];
             
             for (NSNumber *x in dayMarkers) {
-                CGPathMoveToPoint(dayPath, NULL, [x floatValue], 0);
-                CGPathAddLineToPoint(dayPath, NULL, [x floatValue], NSHeight([self bounds]));
+                
+                CAShapeLayer *aDayMakerLayer = [CAShapeLayer layer];
+                [aDayMakerLayer setContentsScale:scaleFactor];
+                [aDayMakerLayer setAutoresizingMask:kCALayerHeightSizable];
+                [aDayMakerLayer setBackgroundColor:[_dayMarkerColor CGColor]];
+                [aDayMakerLayer setFrame:NSMakeRect([x floatValue], 0, _lineWidth, NSHeight([self bounds]))];
+                [_dayMarkerLayer addSublayer:aDayMakerLayer];
             }
-            
-            CGPathCloseSubpath(dayPath);
-            
-            [_dayMarkerLayer setPath:dayPath];
-            [_dayMarkerLayer setStrokeColor:[_dayMarkerColor CGColor]];
+
             [_dayMarkerLayer setHidden:NO];
-            
-            CGPathRelease(dayPath);
             
         } else {
             
@@ -291,19 +352,34 @@
             [_averageLineLayer setHidden:YES];
         }
         
-        if (_insideTrackingArea) {
-            
-            NSPoint cursorPoint = [self convertPoint:[[self window] mouseLocationOutsideOfEventStream] fromView:nil];
-            [self drawPositionLineAtPoint:cursorPoint];
+        // position line
+        if (_isPinned) {
+                        
+            float maxX = [_measurementData count] - 1;
+            float x = NSWidth([self bounds]) / maxX * [_measurementData indexOfObject:_pinnedMeasurement];
+            if (x == NSWidth([self bounds])) { x--; }
+            [_positionLineLockLayer setFrame:NSMakeRect(x, 0, _lineWidth, NSHeight([self bounds]))];
+            _pinnedPosition = [_positionLineLockLayer position];
             
         } else {
-            
-            // make sure the position layer is not visible anymore
-            [_positionLineLayer setFrame:NSMakeRect(-10, 0, 1, NSHeight([self bounds]))];
-            [_tooltipWindow close];
+         
+            if (_insideTrackingArea) {
+                
+                NSPoint cursorPoint = [self convertPoint:[[self window] mouseLocationOutsideOfEventStream] fromView:nil];
+                [self drawPositionLineAtPoint:cursorPoint];
+                [_positionLineLayer setHidden:NO];
+                
+            } else {
+                
+                // make sure the position layer is not visible anymore
+                [_positionLineLayer setHidden:YES];
+                [_positionLineLockLayer setHidden:YES];
+                [_tooltipWindow close];
+            }
         }
         
         [_positionLineLayer setBackgroundColor:[_positionLineColor CGColor]];
+        [_positionLineLockLayer setBackgroundColor:[_positionLineColor CGColor]];
     }
 }
 
@@ -311,7 +387,7 @@
 {
     NSInteger measurementsCount = [_measurementData count];
     NSInteger objectPosition = floorf(measurementsCount / NSWidth([self bounds]) * position.x);
-    
+
     if (objectPosition >= 0 && objectPosition < measurementsCount) {
         
         // we only update the position line if the
@@ -320,21 +396,34 @@
             
             _currentPosititon = objectPosition;
             float x = NSWidth([self bounds]) / (measurementsCount - 1) * _currentPosititon;
-            [_positionLineLayer setPosition:NSMakePoint(x, [_positionLineLayer position].y)];
+            [_positionLineLayer setFrame:NSMakeRect(x, 0, _lineWidth, NSHeight([self bounds]))];
         }
         
         // update the tooltip
-        MTPowerMeasurement *pM = [_measurementData objectAtIndex:_currentPosititon];
-        [_tooltipWindow setMeasurement:pM];
-        [_tooltipWindow setFrame:NSMakeRect(
-                                            [[self window] frame].origin.x + position.x + 50,
-                                            [[self window] frame].origin.y + position.y,
-                                            NSWidth([_tooltipWindow frame]),
-                                            NSHeight([_tooltipWindow frame])
-                                            )
-                          display:NO
-        ];
-        [_tooltipWindow orderFront:nil];
+        if (_allowToolTip) {
+            
+            [_tooltipWindow setMeasurement:[_measurementData objectAtIndex:_currentPosititon]];
+            [_tooltipWindow setFrame:NSMakeRect(
+                                                [[self window] frame].origin.x + position.x + 50,
+                                                [[self window] frame].origin.y + position.y,
+                                                NSWidth([_tooltipWindow frame]),
+                                                NSHeight([_tooltipWindow frame])
+                                                )
+                             display:NO
+            ];
+            [_tooltipWindow orderFront:nil];
+            
+        } else if ([_tooltipWindow isVisible]) { [_tooltipWindow close]; }
+        
+        if (_postPositionChangedNotification) {
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNameGraphPositionUpdated
+                                                                object:self
+                                                              userInfo:[NSDictionary dictionaryWithObject:[_measurementData objectAtIndex:_currentPosititon]
+                                                                                                   forKey:kMTNotificationKeyGraphPosition
+                                                                       ]
+            ];
+        }
     }
 }
 
@@ -343,6 +432,7 @@
     BOOL success = NO;
     
     if (measurement) {
+        
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"doubleValue == %lf", [measurement doubleValue]];
         NSArray *filteredArray = [_measurementData filteredArrayUsingPredicate:predicate];
         
@@ -353,7 +443,7 @@
             float maxX = [_measurementData count] - 1;
             float x = NSWidth([self bounds]) / maxX * [_measurementData indexOfObject:measurement];
             if (x == NSWidth([self bounds])) { x--; }
-            [_positionLineLayer setFrame:NSMakeRect(x, 0, 1, NSHeight([self bounds]))];
+            [_positionLineLayer setFrame:NSMakeRect(x, 0, _lineWidth, NSHeight([self bounds]))];
             success = YES;
             
             if (tooltip) {
@@ -372,9 +462,11 @@
             }
         }
         
+        [_positionLineLayer setHidden:NO];
+        
     } else {
         
-        [_positionLineLayer setFrame:NSMakeRect(-10, 0, 1, NSHeight([self bounds]))];
+        [_positionLineLayer setHidden:YES];
         [_tooltipWindow close];
         
         success = YES;
@@ -385,19 +477,23 @@
 
 - (BOOL)showsPosition
 {
-    return ([_positionLineLayer frame].origin.x >= 0) ? YES : NO;
+    return ![_positionLineLayer isHidden];
 }
 
 #pragma mark mouse event handlers
 
 - (void)mouseEntered:(NSEvent *)event
 {
+    [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNameGraphMouseEntered
+                                                        object:self
+                                                      userInfo:nil
+    ];
+    
     _insideTrackingArea = YES;
     
-    // even if we only allow resizing of the height, the width changes
-    // to 2 pixels on resizing. therefore we set the layer to the correct
-    // size as soon as the mouse enters the tracking area.
-    [_positionLineLayer setFrame:NSMakeRect(-10, 0, 1, NSHeight([self bounds]))];
+    NSPoint cursorPoint = [self convertPoint:[event locationInWindow] fromView:nil];
+    [self drawPositionLineAtPoint:cursorPoint];
+    [_positionLineLayer setHidden:NO];
 }
 
 - (void)mouseMoved:(NSEvent *)event
@@ -409,12 +505,17 @@
 - (void)mouseExited:(NSEvent *)event
 {
     // make sure the position layer is not visible anymore
-    [_positionLineLayer setFrame:NSMakeRect(-10, 0, 1, NSHeight([self bounds]))];
+    [_positionLineLayer setHidden:YES];
     
     _currentPosititon = -1;
     _insideTrackingArea = NO;
     
     [_tooltipWindow close];
+            
+    [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNameGraphMouseExited
+                                                        object:self
+                                                      userInfo:nil
+    ];
 }
 
 - (void)mouseDown:(NSEvent *)event
@@ -427,12 +528,49 @@
         if (timeStamp) {
             
             [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNamePowerTimeStamp
-                                                                object:nil
+                                                                object:self
                                                               userInfo:[NSDictionary dictionaryWithObject:timeStamp
                                                                                                    forKey:kMTNotificationKeyPowerTimeStamp
                                                                        ]
             ];
         }
+        
+        if (_allowPinning) {
+            
+            _isPinned = !_isPinned;
+            
+            if (_isPinned) {
+                
+                _pinnedPosition = [_positionLineLayer position];
+                _pinnedMeasurement = [_measurementData objectAtIndex:_currentPosititon];
+                [_positionLineLockLayer setPosition:_pinnedPosition];
+                [_positionLineLockLayer setHidden:NO];
+                
+            } else {
+                
+                _pinnedPosition = NSZeroPoint;
+                _pinnedMeasurement = nil;
+                [_positionLineLockLayer setHidden:YES];
+            }
+            
+            [self setNeedsDisplay:YES];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNameGraphPinChanged
+                                                                object:self
+                                                              userInfo:nil
+            ];
+        }
+    }
+}
+
+- (void)mouseUp:(NSEvent *)event
+{
+    if ([event clickCount] == 2) {
+    
+        [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNameGraphShowDetail
+                                                            object:self
+                                                          userInfo:nil
+        ];
     }
 }
 

@@ -1,5 +1,5 @@
 /*
-     MTUsagePeriodTextTransformer.m
+     MTSavePanelAccessoryController.h
      Copyright 2023-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,18 +15,12 @@
      limitations under the License.
 */
 
-#import "MTUsagePeriodTextTransformer.h"
+#import <Cocoa/Cocoa.h>
 
-@implementation MTUsagePeriodTextTransformer
+@interface MTSavePanelAccessoryController : NSViewController
 
-+ (BOOL)allowsReverseTransformation
-{
-    return NO;
-}
-
-- (id)transformedValue:(id)value
-{
-    return ([value boolValue]) ? NSLocalizedString(@"usagePeriodTodayText", nil) : NSLocalizedString(@"usagePeriodText", nil);
-}
+@property (assign) BOOL hasSelection;
+@property (assign) BOOL exportSelected;
+@property (assign) NSCalendarUnit summarizeType;
 
 @end

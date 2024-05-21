@@ -39,7 +39,7 @@
     [super viewDidLoad];
     
     _userDefaults = [NSUserDefaults standardUserDefaults];
-    _apiType = MTCarbonAPITypeCO2Signal;
+    _apiType = MTCarbonAPITypeElectricityMaps;
     
     // make the link in our text field clickable
     [_apiKeyText setAttributedStringValue:[self stringWithClickableLinksFromString:[_apiKeyText attributedStringValue]]];
@@ -107,20 +107,7 @@
     }
 }
 
-- (IBAction)selectAPI:(id)sender
-{
-    _apiType = (MTCarbonAPIType)[sender tag];
-    
-    if (_apiType == MTCarbonAPITypeCO2Signal) {
-        [_apiKeyText setStringValue:NSLocalizedString(@"apiKeyTextCO2Signal", nil)];
-    } else {
-        [_apiKeyText setStringValue:NSLocalizedString(@"apiKeyTextElectricityMaps", nil)];
-    }
-    
-    [_apiKeyText setAttributedStringValue:[self stringWithClickableLinksFromString:[_apiKeyText attributedStringValue]]];
-}
-
-- (void)controlTextDidChange:(NSNotification*)aNotification
+- (void)controlTextDidChange:(NSNotification*)notification
 {
     if ([[_apiKeyTextField stringValue] length] > 0) {
         [_continueButton setEnabled:YES];

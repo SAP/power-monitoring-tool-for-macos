@@ -83,6 +83,25 @@
     return self;
 }
 
+- (instancetype)initWithData:(NSData *)data
+{
+    self = [super init];
+    
+    if (self) {
+        
+        if (data && [data isKindOfClass:[NSData class]]) {
+            
+            _measurementData = data;
+            
+        } else {
+            
+            self = nil;
+        }
+    }
+    
+    return self;
+}
+
 - (NSArray<MTPowerMeasurement*>*)allMeasurements
 {
     return [self allMeasurementsSinceDate:nil];
@@ -131,6 +150,7 @@
             [allMeasurements removeObjectsInRange:moveRange];
             [allMeasurements addObjectsFromArray:toBeMoved];
         }
+        
         if (date) {
             NSPredicate *predicate = [NSPredicate predicateWithFormat:@"timeStamp >= %ld", (long)[date timeIntervalSince1970]];
             [allMeasurements setArray:[allMeasurements filteredArrayUsingPredicate:predicate]];

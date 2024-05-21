@@ -1,38 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "apiKeyTextCO2Signal" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sie haben noch keinen API-Schlüssel? Einen kostenlosen API-Schlüssel zur nicht-kommerziellen Nutzung erhalten Sie auf https://co2signal.com."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Don't have an API key yet? Create your free API key for non-commercial use at https://co2signal.com."
-          }
-        }
-      }
-    },
-    "apiKeyTextElectricityMaps" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sie haben noch keinen API-Schlüssel? Einen kostenlosen API-Schlüssel zur nicht-kommerziellen erhalten Sie auf https://www.electricitymaps.com."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Don't have an API key yet? Create your free API key for non-commercial use at https://www.electricitymaps.com."
-          }
-        }
-      }
-    },
     "backgroundButton" : {
       "localizations" : {
         "de" : {
@@ -44,7 +12,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Run in background"
+            "value" : "Run in Background"
           }
         }
       }
@@ -242,6 +210,38 @@
         }
       }
     },
+    "consumptionLabelAll" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Übersicht"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Summary"
+          }
+        }
+      }
+    },
+    "consumptionLabelSelected" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Übersicht für ausgewählte Einträge:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Summary for selected entries:"
+          }
+        }
+      }
+    },
     "deleteButton" : {
       "localizations" : {
         "de" : {
@@ -254,6 +254,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Delete"
+          }
+        }
+      }
+    },
+    "deleteJournalMultipleMenuEntry" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausgewählte Journaleinträge löschen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete Selected Journal Entries"
+          }
+        }
+      }
+    },
+    "deleteJournalOneMenuEntry" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Journaleintrag löschen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete Journal Entry"
           }
         }
       }
@@ -354,6 +386,38 @@
         }
       }
     },
+    "dialogFailedToExportJournalMessage" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beim Exportieren des Journals in eine CSV-Datei ist ein Fehler aufgetreten. Bitte überprüfen Sie, ob der ausgewählte Speicherort korrekt ist und versuchen Sie es erneut."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error occurred while exporting the journal to a CSV file. Please check if the location you selected is writable and try again."
+          }
+        }
+      }
+    },
+    "dialogFailedToExportJournalTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das Journal konnte nicht gespeichert werden!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The journal could not be saved!"
+          }
+        }
+      }
+    },
     "dialogFailedToSaveLogMessage" : {
       "localizations" : {
         "de" : {
@@ -450,6 +514,70 @@
         }
       }
     },
+    "dialogJournalDeleteAllTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sind Sie sicher, dass Sie alle Journaleinträge löschen wollen?"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to delete all journal entries?"
+          }
+        }
+      }
+    },
+    "dialogJournalDeleteMessage" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diese Aktion kann nicht rückgängig gemacht werden."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can't undo this action."
+          }
+        }
+      }
+    },
+    "dialogJournalDeleteMultipleTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sind Sie sicher, dass Sie die ausgewählten Journaleinträge löschen wollen?"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to delete the selected journal entries?"
+          }
+        }
+      }
+    },
+    "dialogJournalDeleteOneTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sind Sie sicher, dass Sie diesen Journaleintrag löschen wollen?"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to delete this journal entry?"
+          }
+        }
+      }
+    },
     "dialogLoginItemDisabledMessage" : {
       "localizations" : {
         "de" : {
@@ -514,6 +642,54 @@
         }
       }
     },
+    "dialogTrashJournalFailedMessage" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das Journal wurde deaktiviert, konnte aber nicht in den Papierkorb gelegt werden. Bitte löschen Sie das Journal direkt im Finder."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The journal was deactivated but could not be moved to the Trash. Please delete the journal directly in Finder."
+          }
+        }
+      }
+    },
+    "dialogTrashJournalFailedTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das Journal konnte nicht in den Papierkorb gelegt werden!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The journal could not be moved to the Trash!"
+          }
+        }
+      }
+    },
+    "dialogTrashJournalTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Möchten Sie das bestehende Journal in den Papierkorb legen?"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you want to move the existing journal to the Trash?"
+          }
+        }
+      }
+    },
     "importButtonTitle" : {
       "localizations" : {
         "de" : {
@@ -530,6 +706,22 @@
         }
       }
     },
+    "journalExportFileName" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power Journal"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power Journal"
+          }
+        }
+      }
+    },
     "logFileName" : {
       "localizations" : {
         "de" : {
@@ -542,6 +734,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Power Monitor.log"
+          }
+        }
+      }
+    },
+    "MoveToTrashButton" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In den Papierkorb legen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Move to Trash"
           }
         }
       }
@@ -734,6 +942,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Select"
+          }
+        }
+      }
+    },
+    "sidebarEntryJournal" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Journal"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Journal"
           }
         }
       }
@@ -952,7 +1176,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Stromverbrauch insgesamt:"
+            "value" : "Stromverbrauch gesamt:"
           }
         },
         "en" : {
@@ -1032,7 +1256,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Stromkosten insgesamt:"
+            "value" : "Stromkosten gesamt:"
           }
         },
         "en" : {

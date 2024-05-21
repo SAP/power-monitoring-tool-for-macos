@@ -28,11 +28,9 @@
 /*!
  @enum         MTCarbonAPIType
  @abstract     Specifies the type of the carbon API.
- @constant     MTCarbonAPITypeCO2Signal Specifies the CO2Signal API.
  @constant     MTCarbonAPITypeElectricityMaps Specifies the Electricity Maps API.
 */
 typedef enum {
-    MTCarbonAPITypeCO2Signal        = 0,
     MTCarbonAPITypeElectricityMaps  = 1
 } MTCarbonAPIType;
 

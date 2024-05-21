@@ -53,25 +53,31 @@
 
 - (void)requestCarbonDataForCountry:(NSString*)country location:(CLLocation*)location completionHandler:(void (^) (NSNumber *gramsCO2eqkWh, NSError *error))completionHandler
 {
-    NSURL *url = nil;
+    NSString *apiURLString = @"https://api.electricitymap.org/v3/carbon-intensity/latest?";
     
     if (country) {
-        url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api-access.electricitymaps.com/free-tier/carbon-intensity/latest?zone=%@", country]];
+        
+        apiURLString = [apiURLString stringByAppendingFormat:@"zone=%@", country];
+        
     } else {
+        
         CLLocationCoordinate2D coordinate = [location coordinate];
-        url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api-access.electricitymaps.com/free-tier/carbon-intensity/latest?lon=%f&lat=%f", coordinate.longitude, coordinate.latitude]];
+        apiURLString = [apiURLString stringByAppendingFormat:@"lon=%f&lat=%f", coordinate.longitude, coordinate.latitude];
     }
     
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:apiURLString]];
     [request addValue:_apiKey forHTTPHeaderField:@"auth-token"];
+    
+    NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration ephemeralSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig delegate:nil delegateQueue:nil];
 
-    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request
-                                                                     completionHandler:^(NSData* data, NSURLResponse* response, NSError* error) {
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData* data, NSURLResponse* response, NSError* error) {
         
         NSNumber *gramsCO2eqkWh = 0;
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
         NSError *httpError = nil;
-        
+
         if ([httpResponse statusCode] == 200 && data) {
             
             NSDictionary *carbonDict = [NSJSONSerialization JSONObjectWithData:data

@@ -18,6 +18,7 @@
 #import "MTLogController.h"
 #import "MTDaemonConnection.h"
 #import "MTSystemInfo.h"
+#import "MTToolbarItem.h"
 #import "Constants.h"
 
 @interface MTLogController ()
@@ -50,7 +51,7 @@
                                                object:nil
     ];
     
-    [self toggleLogDetail:nil];
+    [self toggleInfoSection:nil];
     [self getLogEntriesFromDaemon];
 }
 
@@ -184,23 +185,15 @@
     return predicate;
 }
 
-- (IBAction)toggleLogDetail:(id)sender
+- (IBAction)toggleInfoSection:(id)sender
 {
+    BOOL isEnabled = [_userDefaults boolForKey:kMTDefaultsLogDetailsEnabledKey];
+    
     NSSplitViewController *splitViewController = (NSSplitViewController*)[self parentViewController];
     
     if (splitViewController) {
         
-        if ([_userDefaults boolForKey:kMTDefaultsLogDetailsEnabledKey]) {
-            
-            // get saved divider position
-            float position = [_userDefaults floatForKey:kMTDefaultsLogDividerPositionKey];
-            [[[splitViewController splitViewItems] lastObject] setCollapsed:NO];
-            
-            if (position > 0) {
-                [[splitViewController splitView] setPosition:position ofDividerAtIndex:0];
-            }
-            
-        } else {
+        if (isEnabled) {
             
             // save the divider position
             if (sender) {
@@ -213,11 +206,25 @@
             }
             
             [[[splitViewController splitViewItems] lastObject] setCollapsed:YES];
+            
+        } else {
+            
+            // get saved divider position
+            float position = [_userDefaults floatForKey:kMTDefaultsLogDividerPositionKey];
+            [[[splitViewController splitViewItems] lastObject] setCollapsed:NO];
+            
+            if (position > 0) {
+                [[splitViewController splitView] setPosition:position ofDividerAtIndex:0];
+            }
         }
+    }
+    
+    if (sender) {
+        [_userDefaults setBool:!isEnabled forKey:kMTDefaultsLogDetailsEnabledKey];
     }
 }
 
-- (IBAction)saveLog:(id)sender
+- (IBAction)saveContent:(id)sender
 {
     NSSavePanel *panel = [NSSavePanel savePanel];
     [panel setNameFieldStringValue:NSLocalizedString(@"logFileName", nil)];
@@ -321,12 +328,12 @@
     BOOL enable = NO;
     
     if (item) {
-
+        
         // we disable all toolbar items while the log is reloaded
         // and if there are no log entries
         if (!_logIsRefreshing && [_logEntries count] > 0) {
             
-            if ([[item itemIdentifier] isEqualToString:@"SaveLogToolbarItem"]) {
+            if ([[item itemIdentifier] isEqualToString:MTToolbarConsoleSaveItemIdentifier]) {
                 
                 // disable the save button if no log entries are shown
                 enable = ([[_logController arrangedObjects] count] > 0) ? YES : NO;
@@ -334,6 +341,16 @@
             } else {
                 
                 enable = YES;
+            }
+        }
+        
+        if ([[item itemIdentifier] isEqualToString:MTToolbarConsoleInfoItemIdentifier]) {
+            
+            MTToolbarItem *toolbarItem = (MTToolbarItem*)item;
+            
+            if ([toolbarItem button]) {
+                
+                [[toolbarItem button] setState:([_userDefaults boolForKey:kMTDefaultsLogDetailsEnabledKey]) ? NSControlStateValueOn : NSControlStateValueOff];
             }
         }
     }

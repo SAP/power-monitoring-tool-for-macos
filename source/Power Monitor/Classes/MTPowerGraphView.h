@@ -23,7 +23,7 @@
  @abstract      This class defines the view for the power graph.
 */
 
-@interface MTPowerGraphView : NSView
+@interface MTPowerGraphView : NSView <CALayerDelegate>
 
 /*!
  @property      measurementData
@@ -52,6 +52,49 @@
  @discussion    The value of this property is boolean.
 */
 @property (assign) BOOL showPowerNaps;
+
+/*!
+ @property      allowPinning
+ @abstract      A property to specify if a value in the graph can be pinned (by clicking on it) or not.
+ @discussion    The value of this property is boolean.
+*/
+@property (assign) BOOL allowPinning;
+
+/*!
+ @property      isPinned
+ @abstract      This property returns if the graph has a value pinned or not.
+ @discussion    The value of this property is boolean.
+*/
+@property (readonly) BOOL isPinned;
+
+/*!
+ @property      pinnedPosition
+ @abstract      This property returns the graph's pinned position.
+ @discussion    The value of this property is NSPoint.
+*/
+@property (readonly) NSPoint pinnedPosition;
+
+/*!
+ @property      pinnedMeasurement
+ @abstract      This property returns the measurement for the graph's pinned position.
+ @discussion    The value of this property is MTPowerMeasurement.
+*/
+@property (nonatomic, strong, readonly) MTPowerMeasurement *pinnedMeasurement;
+
+/*!
+ @property      allowToolTip
+ @abstract      A property to specify if a tooltip should be displayed next to the position line or not.
+ @discussion    The value of this property is boolean.
+*/
+@property (assign) BOOL allowToolTip;
+
+/*!
+ @property      postPositionChangedNotification
+ @abstract      A property indicating whether the view posts notifications when the mouse pointer
+                position in its frame rectangle changes.
+ @discussion    The value of this property is boolean.
+*/
+@property (assign) BOOL postPositionChangedNotification;
 
 /*!
  @property      graphColor
@@ -105,5 +148,11 @@
  @discussion    Returns YES if the position line is shown, otherwise returns NO.
 */
 - (BOOL)showsPosition;
+
+/*!
+ @method        setView:
+ @abstract      Set the view to a given view.
+*/
+- (void)setView:(MTPowerGraphView*)view;
 
 @end

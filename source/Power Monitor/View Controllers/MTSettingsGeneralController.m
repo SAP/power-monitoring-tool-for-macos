@@ -23,15 +23,11 @@
 @interface MTSettingsGeneralController ()
 @property (nonatomic, strong, readwrite) NSUserDefaults *userDefaults;
 @property (nonatomic, strong, readwrite) MTDaemonConnection *daemonConnection;
-@property (nonatomic, strong, readwrite) NSMutableArray *powerNapMenuArray;
 
 @property (weak) IBOutlet NSButton *runInBackgroundButton;
 @property (weak) IBOutlet NSButton *loginItemButton;
-@property (weak) IBOutlet NSArrayController *powerNapController;
-@property (weak) IBOutlet NSTextField *powerNapEnableLabel;
 @property (weak) IBOutlet NSTextField *electricityPriceField;
 @property (weak) IBOutlet NSButton *deleteMeasurementsButton;
-@property (weak) IBOutlet NSPopUpButton *powerNapButton;
 @end
 
 @implementation MTSettingsGeneralController
@@ -41,7 +37,6 @@
     [super viewDidLoad];
     
     _userDefaults = [NSUserDefaults standardUserDefaults];
-    _powerNapMenuArray = [[NSMutableArray alloc] init];
     
     // set the initial state of the "Run in background" checkbox
     [_runInBackgroundButton setState:([_userDefaults boolForKey:kMTDefaultsRunInBackgroundKey]) ? NSControlStateValueOn : NSControlStateValueOff];
@@ -51,89 +46,13 @@
     [self setLoginButton];
     
     _daemonConnection = [[MTDaemonConnection alloc] init];
-    
-    // populate the popup button's menu
-    NSMutableArray *menuEntryDicts = [[NSMutableArray alloc] init];
-    
-    if ([MTSystemInfo hasBattery]) {
-        
-        NSDictionary *firstDict = [NSDictionary dictionaryWithObjectsAndKeys:
-                                      NSLocalizedString(@"powerNapEnableAlways", nil), kMTPopupMenuEntryLabelKey,
-                                      [NSNumber numberWithInt:1], kMTPopupMenuEntryPowerNapKey,
-                                      nil
-        ];
-        
-        NSDictionary *secondDict = [NSDictionary dictionaryWithObjectsAndKeys:
-                                      NSLocalizedString(@"powerNapEnableACPower", nil), kMTPopupMenuEntryLabelKey,
-                                      [NSNumber numberWithInt:2], kMTPopupMenuEntryPowerNapKey,
-                                      nil
-        ];
-        
-        NSDictionary *thirdDict = [NSDictionary dictionaryWithObjectsAndKeys:
-                                      NSLocalizedString(@"powerNapEnableNever", nil), kMTPopupMenuEntryLabelKey,
-                                      [NSNumber numberWithInt:0], kMTPopupMenuEntryPowerNapKey,
-                                      nil
-        ];
-        
-        [menuEntryDicts addObjectsFromArray:[NSArray arrayWithObjects:firstDict, secondDict, thirdDict, nil]];
-        
-        [_powerNapEnableLabel setStringValue:NSLocalizedString(@"powerNapHasBatteryLabel", nil)];
-        
-    } else {
-        
-        NSDictionary *firstDict = [NSDictionary dictionaryWithObjectsAndKeys:
-                                      NSLocalizedString(@"powerNapEnable", nil), kMTPopupMenuEntryLabelKey,
-                                      [NSNumber numberWithInt:1], kMTPopupMenuEntryPowerNapKey,
-                                      nil
-        ];
-        
-        NSDictionary *secondDict = [NSDictionary dictionaryWithObjectsAndKeys:
-                                       NSLocalizedString(@"powerNapDisable", nil), kMTPopupMenuEntryLabelKey,
-                                       [NSNumber numberWithInt:0], kMTPopupMenuEntryPowerNapKey,
-                                       nil
-        ];
-        
-        [menuEntryDicts addObjectsFromArray:[NSArray arrayWithObjects:firstDict, secondDict, nil]];
-        
-        [_powerNapEnableLabel setStringValue:NSLocalizedString(@"powerNapNoBatteryLabel", nil)];
-    }
-    
-    [_powerNapController addObjects:menuEntryDicts];
-    [_powerNapButton setEnabled:[MTSystemInfo deviceSupportsPowerNap]];
-    [self setPowerNapButton];
 }
 
 - (void)viewWillAppear
 {
     [super viewWillAppear];
     
-    [self setPowerNapButton];
     [self setLoginButton];
-}
-
-- (void)setPowerNapButton
-{
-    [MTSystemInfo powerNapStatusWithCompletionHandler:^(BOOL enabled, BOOL aconly) {
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            NSInteger powerNapValue = 0;
-            
-            if (enabled) {
-                
-                powerNapValue++;
-                if (aconly) { powerNapValue++; }
-            }
-            
-            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"powerNap == %ld", powerNapValue];
-            NSArray *filteredArray = [[self.powerNapController arrangedObjects] filteredArrayUsingPredicate:predicate];
-            
-            if ([filteredArray count] > 0) {
-                NSInteger index = [[self.powerNapController arrangedObjects] indexOfObjectIdenticalTo:[filteredArray lastObject]];
-                [self.powerNapController setSelectionIndex:index];
-            }
-        });
-    }];
 }
 
 - (void)setLoginButton
@@ -227,32 +146,6 @@
             });
         }
     }];
-}
-
-- (IBAction)setPowerNap:(id)sender
-{
-    NSInteger selectionIndex = [_powerNapController selectionIndex];
-    
-    if (selectionIndex >= 0 && selectionIndex < [[_powerNapController arrangedObjects] count]) {
-        
-        NSDictionary *selectionDict = [[_powerNapController arrangedObjects] objectAtIndex:selectionIndex];
-        NSInteger powerNap = [[selectionDict valueForKey:kMTPopupMenuEntryPowerNapKey] integerValue];
-        BOOL enable = (powerNap > 0) ? YES : NO;
-        BOOL aconly = (powerNap > 1) ? YES : NO;
-        
-        [self->_daemonConnection connectToDaemonWithExportedObject:nil
-                                            andExecuteCommandBlock:^{
-            
-            [[[self->_daemonConnection connection] remoteObjectProxyWithErrorHandler:^(NSError *error) {
-                
-                os_log_with_type(OS_LOG_DEFAULT, OS_LOG_TYPE_FAULT, "SAPCorp: Failed to connect to daemon: %{public}@", error);
-                
-            }] enablePowerNap:enable acPowerOnly:aconly completionHandler:^(BOOL success) {
-                
-                [self setPowerNapButton];
-            }];
-        }];
-    }
 }
 
 @end

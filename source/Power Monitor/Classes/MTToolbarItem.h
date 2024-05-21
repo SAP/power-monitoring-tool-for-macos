@@ -18,5 +18,5 @@
 #import <Cocoa/Cocoa.h>
 
 @interface MTToolbarItem : NSToolbarItem
-
+@property (weak) IBOutlet NSButton *button;
 @end

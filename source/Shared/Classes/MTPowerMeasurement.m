@@ -45,4 +45,23 @@
     return buffer;
 }
 
+- (NSString*)state
+{
+    NSString *stateString = NSLocalizedString(@"tooltipSleep", nil);
+    
+    if ([self doubleValue] > 0) {
+        
+        if ([self darkWake]) {
+            
+            stateString = NSLocalizedString(@"tooltipPowerNap", nil);
+            
+        } else {
+            
+            stateString = NSLocalizedString(@"tooltipAwake", nil);
+        }
+    }
+    
+    return stateString;
+}
+
 @end

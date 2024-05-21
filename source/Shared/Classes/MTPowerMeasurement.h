@@ -90,6 +90,13 @@ typedef struct __attribute__((packed)) {
 - (instancetype)initWithPowerValue:(double)powerValue NS_DESIGNATED_INITIALIZER;
 
 /*!
+ @method        state
+ @abstract      Get the power state of a measurement (awake, power nap, sleep).
+ @discussion    Returns a localized string for the power state of the measurement.
+*/
+- (NSString*)state;
+
+/*!
  @method        headerWithFilePath:
  @abstract      Read a pwrdata file's header and return the relevant data in a MeasurementFileHeader struct.
  @param         path The path to the pwrdata file.

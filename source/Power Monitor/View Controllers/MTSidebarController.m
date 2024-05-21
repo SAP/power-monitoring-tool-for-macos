@@ -21,6 +21,7 @@
 @interface MTSidebarController ()
 @property (nonatomic, strong, readwrite) NSArray *orderedGroupItems;
 @property (nonatomic, strong, readwrite) NSMutableDictionary *allSidebarItems;
+@property (nonatomic, strong, readwrite) NSMutableDictionary *allViewControllers;
 
 @property (weak) IBOutlet NSOutlineView *sidebarOutlineView;
 @end
@@ -32,22 +33,28 @@
     [super viewDidLoad];
         
     _allSidebarItems = [[NSMutableDictionary alloc] init];
+    _allViewControllers = [[NSMutableDictionary alloc] init];
 
     MTSidebarItem *logItem = [[MTSidebarItem alloc] init];
     [logItem setLabel:NSLocalizedString(@"sidebarEntryPowerEventLog", nil)];
     [logItem setImage:[NSImage imageWithSystemSymbolName:@"bolt" accessibilityDescription:nil]];
-    [logItem setTargetViewController:[[self storyboard] instantiateControllerWithIdentifier:@"corp.sap.PowerMonitor.PowerEventLog"]];
+    [logItem setTargetViewControllerIdentifier:@"corp.sap.PowerMonitor.PowerEventLog"];
 
     MTSidebarItem *preventItem = [[MTSidebarItem alloc] init];
     [preventItem setLabel:NSLocalizedString(@"sidebarEntryPreventingSleep", nil)];
     [preventItem setImage:[NSImage imageWithSystemSymbolName:@"exclamationmark.triangle" accessibilityDescription:nil]];
-    [preventItem setTargetViewController:[[self storyboard] instantiateControllerWithIdentifier:@"corp.sap.PowerMonitor.AppsPreventingSleep"]];
+    [preventItem setTargetViewControllerIdentifier:@"corp.sap.PowerMonitor.AppsPreventingSleep"];
+    
+    MTSidebarItem *journalItem = [[MTSidebarItem alloc] init];
+    [journalItem setLabel:NSLocalizedString(@"sidebarEntryJournal", nil)];
+    [journalItem setImage:[NSImage imageWithSystemSymbolName:@"book" accessibilityDescription:nil]];
+    [journalItem setTargetViewControllerIdentifier:@"corp.sap.PowerMonitor.Journal"];
         
     [_allSidebarItems setObject:[NSArray arrayWithObjects:logItem, nil]
                          forKey:NSLocalizedString(@"sidebarEntryLogs", nil)
     ];
     
-    [_allSidebarItems setObject:[NSArray arrayWithObjects:preventItem, nil]
+    [_allSidebarItems setObject:[NSArray arrayWithObjects:preventItem, journalItem, nil]
                          forKey:NSLocalizedString(@"sidebarEntryReports", nil)
     ];
     
@@ -59,8 +66,8 @@
                           nil
     ];
     
+    [[_sidebarOutlineView outlineTableColumn] setWidth:NSWidth([_sidebarOutlineView bounds])];
     [_sidebarOutlineView reloadData];
-    [_sidebarOutlineView setRowSizeStyle:NSTableViewRowSizeStyleDefault];
     
     [NSAnimationContext beginGrouping];
     [[NSAnimationContext currentContext] setDuration:0];
@@ -146,13 +153,25 @@
         
         id selectedItem = [_sidebarOutlineView itemAtRow:[_sidebarOutlineView selectedRow]];
         
-        if ([selectedItem isKindOfClass:[MTSidebarItem class]] && [_sidebarOutlineView parentForItem:selectedItem] && [selectedItem targetViewController]) {
-
-            NSSplitViewItem *splitViewItem = [NSSplitViewItem splitViewItemWithViewController:[selectedItem targetViewController]];
+        if ([selectedItem isKindOfClass:[MTSidebarItem class]] && [_sidebarOutlineView parentForItem:selectedItem] && [selectedItem targetViewControllerIdentifier]) {
             
-            NSSplitViewController *splitViewController = (NSSplitViewController*)[self parentViewController];
-            [splitViewController removeSplitViewItem:[[splitViewController splitViewItems] lastObject]];
-            [splitViewController addSplitViewItem:splitViewItem];
+            NSViewController *targetViewController = [_allViewControllers objectForKey:[selectedItem targetViewControllerIdentifier]];
+            
+            if (!targetViewController) {
+                targetViewController = [[self storyboard] instantiateControllerWithIdentifier:[selectedItem targetViewControllerIdentifier]];
+                
+                if (targetViewController) {
+                    [_allViewControllers setObject:targetViewController forKey:[selectedItem targetViewControllerIdentifier]];
+                }
+            }
+            
+            if (targetViewController) {
+                
+                NSSplitViewItem *splitViewItem = [NSSplitViewItem splitViewItemWithViewController:targetViewController];
+                NSSplitViewController *splitViewController = (NSSplitViewController*)[self parentViewController];
+                [splitViewController removeSplitViewItem:[[splitViewController splitViewItems] lastObject]];
+                [splitViewController addSplitViewItem:splitViewItem];
+            }
         }
     }
 }

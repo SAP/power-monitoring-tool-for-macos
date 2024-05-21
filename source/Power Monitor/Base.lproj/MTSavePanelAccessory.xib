@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22689"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MTSavePanelAccessoryController">
+            <connections>
+                <outlet property="view" destination="c22-O7-iKe" id="fh6-8j-gAG"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView translatesAutoresizingMaskIntoConstraints="NO" id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="428" height="138"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="LpR-77-IvB">
+                    <rect key="frame" x="42" y="20" width="344" height="98"/>
+                    <subviews>
+                        <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lr8-0h-HTA" userLabel="File Format Popup Button">
+                            <rect key="frame" x="98" y="24" width="250" height="25"/>
+                            <popUpButtonCell key="cell" type="push" title="Comma-Separated Values (CSV)" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="FpW-jh-zwQ" id="dQ0-FI-ipG" userLabel="File Format Popup Button">
+                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="menu"/>
+                                <menu key="menu" id="gMq-Pi-9Is">
+                                    <items>
+                                        <menuItem title="Comma-Separated Values (CSV)" state="on" id="FpW-jh-zwQ">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem title="JavaScript Object Notation (JSON)" tag="1" id="HuV-6F-yld">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </popUpButtonCell>
+                            <connections>
+                                <action selector="selectExportFileType:" target="-2" id="3Pt-pc-Axf"/>
+                                <binding destination="1Qh-uU-1Ky" name="selectedTag" keyPath="values.JournalExportFormat" id="rkp-aV-dvH">
+                                    <dictionary key="options">
+                                        <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                    </dictionary>
+                                </binding>
+                            </connections>
+                        </popUpButton>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sGz-to-zsc">
+                            <rect key="frame" x="-2" y="31" width="95" height="16"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Format:" id="9ko-st-tbq">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="V91-gQ-btm">
+                            <rect key="frame" x="231" y="3" width="98" height="18"/>
+                            <buttonCell key="cell" type="check" title="Add Header" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="hpl-Wz-Sje">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <binding destination="1Qh-uU-1Ky" name="hidden" keyPath="values.JournalExportFormat" id="eEf-Df-51j"/>
+                                <binding destination="1Qh-uU-1Ky" name="value" keyPath="values.JournalWriteCSVHeader" id="jZ0-Tw-70k">
+                                    <dictionary key="options">
+                                        <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                    </dictionary>
+                                </binding>
+                            </connections>
+                        </button>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rZg-az-Fbs">
+                            <rect key="frame" x="99" y="81" width="185" height="18"/>
+                            <buttonCell key="cell" type="check" title="Save selected entries only" bezelStyle="regularSquare" imagePosition="left" inset="2" id="4f1-T1-poO">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <binding destination="-2" name="value" keyPath="exportSelected" id="oQ5-VM-V4A">
+                                    <dictionary key="options">
+                                        <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                    </dictionary>
+                                </binding>
+                                <binding destination="-2" name="enabled" keyPath="hasSelection" id="hUS-f1-B9C"/>
+                            </connections>
+                        </button>
+                        <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cge-aE-7Pm" userLabel="Summarize By Popup Button">
+                            <rect key="frame" x="98" y="50" width="250" height="25"/>
+                            <popUpButtonCell key="cell" type="push" title="Don't Summarize" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="xDz-bb-lGq" id="Zg5-tE-8U7" userLabel="Summarize By Popup Button">
+                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="menu"/>
+                                <menu key="menu" id="LE3-2h-c57">
+                                    <items>
+                                        <menuItem title="Don't Summarize" state="on" id="xDz-bb-lGq">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="8bo-p3-e35"/>
+                                        <menuItem title="Week" tag="1" id="ufI-Vp-hgL">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem title="Month" tag="2" id="a4J-7c-e6N">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem title="Year" tag="3" id="XVw-XM-mDi">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </popUpButtonCell>
+                            <connections>
+                                <action selector="setSummarizing:" target="-2" id="euz-Y7-q9p"/>
+                                <binding destination="1Qh-uU-1Ky" name="selectedTag" keyPath="values.JournalExportSummarize" id="HwN-wJ-vlA">
+                                    <dictionary key="options">
+                                        <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                    </dictionary>
+                                </binding>
+                            </connections>
+                        </popUpButton>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nra-mw-yDA">
+                            <rect key="frame" x="-2" y="57" width="95" height="16"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Summarize By:" id="I1K-CB-bF3">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <button horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="J40-qx-XLN">
+                            <rect key="frame" x="99" y="3" width="124" height="18"/>
+                            <buttonCell key="cell" type="check" title="Include duration" bezelStyle="regularSquare" imagePosition="left" inset="2" id="iok-6B-LKx">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <binding destination="1Qh-uU-1Ky" name="value" keyPath="values.JournalExportDuration" id="bjm-ri-Nft">
+                                    <dictionary key="options">
+                                        <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                    </dictionary>
+                                </binding>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="nra-mw-yDA" firstAttribute="leading" secondItem="LpR-77-IvB" secondAttribute="leading" id="0vg-Vn-UM0"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rZg-az-Fbs" secondAttribute="trailing" id="2nt-v3-a3m"/>
+                        <constraint firstItem="sGz-to-zsc" firstAttribute="leading" secondItem="nra-mw-yDA" secondAttribute="leading" id="5aC-KD-nP9"/>
+                        <constraint firstItem="rZg-az-Fbs" firstAttribute="top" secondItem="LpR-77-IvB" secondAttribute="top" id="EJx-Z4-WkA"/>
+                        <constraint firstItem="Cge-aE-7Pm" firstAttribute="firstBaseline" secondItem="nra-mw-yDA" secondAttribute="firstBaseline" id="G35-I6-J4K"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="330" id="JqY-qk-2QT"/>
+                        <constraint firstItem="J40-qx-XLN" firstAttribute="firstBaseline" secondItem="V91-gQ-btm" secondAttribute="firstBaseline" id="Mqm-Jd-Nw3"/>
+                        <constraint firstItem="lr8-0h-HTA" firstAttribute="firstBaseline" secondItem="sGz-to-zsc" secondAttribute="firstBaseline" id="Rb1-cU-ZaH"/>
+                        <constraint firstItem="lr8-0h-HTA" firstAttribute="leading" secondItem="Cge-aE-7Pm" secondAttribute="leading" id="Ul1-8b-ZS0"/>
+                        <constraint firstItem="sGz-to-zsc" firstAttribute="trailing" secondItem="nra-mw-yDA" secondAttribute="trailing" id="Vhc-lv-H92"/>
+                        <constraint firstAttribute="height" constant="98" id="X9i-Jb-f7K"/>
+                        <constraint firstItem="sGz-to-zsc" firstAttribute="top" secondItem="nra-mw-yDA" secondAttribute="bottom" constant="10" id="bES-rF-9aa"/>
+                        <constraint firstAttribute="trailing" secondItem="Cge-aE-7Pm" secondAttribute="trailing" id="dNl-TH-Z02"/>
+                        <constraint firstItem="J40-qx-XLN" firstAttribute="leading" secondItem="lr8-0h-HTA" secondAttribute="leading" id="hS6-bv-Vcg"/>
+                        <constraint firstItem="J40-qx-XLN" firstAttribute="top" secondItem="lr8-0h-HTA" secondAttribute="bottom" constant="8" id="k8N-st-kG5"/>
+                        <constraint firstItem="Cge-aE-7Pm" firstAttribute="top" secondItem="rZg-az-Fbs" secondAttribute="bottom" constant="8" id="kIw-NG-a8l"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="V91-gQ-btm" secondAttribute="trailing" id="noo-aZ-9of"/>
+                        <constraint firstItem="lr8-0h-HTA" firstAttribute="trailing" secondItem="Cge-aE-7Pm" secondAttribute="trailing" id="opY-Og-PYl"/>
+                        <constraint firstItem="Cge-aE-7Pm" firstAttribute="leading" secondItem="nra-mw-yDA" secondAttribute="trailing" constant="10" id="p7N-a9-EXi"/>
+                        <constraint firstItem="V91-gQ-btm" firstAttribute="leading" secondItem="J40-qx-XLN" secondAttribute="trailing" constant="10" id="t14-hD-zdL"/>
+                        <constraint firstItem="rZg-az-Fbs" firstAttribute="leading" secondItem="Cge-aE-7Pm" secondAttribute="leading" id="u26-P0-kkY"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="LpR-77-IvB" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="DQn-AL-8j7"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LpR-77-IvB" secondAttribute="trailing" constant="40" id="Hkg-h9-Q6h"/>
+                <constraint firstItem="LpR-77-IvB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="c22-O7-iKe" secondAttribute="leading" constant="40" id="Ux6-UV-VlY"/>
+                <constraint firstItem="LpR-77-IvB" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="u42-Pw-CYw"/>
+                <constraint firstAttribute="bottom" secondItem="LpR-77-IvB" secondAttribute="bottom" constant="20" id="wbI-DQ-bMp"/>
+            </constraints>
+            <point key="canvasLocation" x="36.5" y="176.5"/>
+        </customView>
+        <userDefaultsController representsSharedInstance="YES" id="1Qh-uU-1Ky"/>
+    </objects>
+</document>

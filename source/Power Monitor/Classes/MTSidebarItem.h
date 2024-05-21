@@ -21,6 +21,6 @@
 
 @property (nonatomic, strong, readwrite) NSString *label;
 @property (nonatomic, strong, readwrite) NSImage *image;
-@property (nonatomic, strong, readwrite) NSViewController *targetViewController;
+@property (nonatomic, strong, readwrite) NSString *targetViewControllerIdentifier;
 
 @end

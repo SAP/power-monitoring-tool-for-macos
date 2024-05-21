@@ -41,11 +41,13 @@
 @property (nonatomic, strong, readwrite) MTPowerMeasurementReader *pM;
 @property (nonatomic, strong, readwrite) MTCarbonFootprint *carbonFootprint;
 @property (nonatomic, strong, readwrite) NSWindowController *consoleWindowController;
+@property (nonatomic, strong, readwrite) NSWindowController *graphWindowController;
 @property (nonatomic, strong, readwrite) NSUserDefaults *userDefaults;
 @property (nonatomic, strong, readwrite) NSNumber *valuePowerConsumption;
 @property (nonatomic, strong, readwrite) NSNumber *valuePowerConsumptionDark;
 @property (assign) BOOL carbonLookupInProgress;
 @property (assign) BOOL carbonFootprintEnabled;
+@property (assign) BOOL insideTrackingArea;
 @end
 
 @implementation MTMainViewController
@@ -55,7 +57,7 @@
     [super viewDidLoad];
 
     _userDefaults = [NSUserDefaults standardUserDefaults];
-    
+                
     // add an action to the maximum power text field
     NSClickGestureRecognizer *textFieldClick = [[NSClickGestureRecognizer alloc] initWithTarget:self action:@selector(showMaxValue)];
     [_maximumPowerText addGestureRecognizer:textFieldClick];
@@ -185,6 +187,35 @@
                                                        object:nil
             ];
             
+            // register for notifications to show the graph window
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(showGraph)
+                                                         name:kMTNotificationNameShowGraphWindow
+                                                       object:nil
+            ];
+            
+            // register for notifications to get notified if the
+            // mouse enters and exits the graph view
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(showOrHideGraphPopoutButton:)
+                                                         name:kMTNotificationNameGraphMouseEntered
+                                                       object:_graphView
+            ];
+
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(showOrHideGraphPopoutButton:)
+                                                         name:kMTNotificationNameGraphMouseExited
+                                                       object:_graphView
+            ];
+            
+            // register for notifications to show the graph window if the
+            // user double-clicked the small graph window in main window
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(showGraph)
+                                                         name:kMTNotificationNameGraphShowDetail
+                                                       object:nil
+            ];
+            
         } else {
             
             NSAlert *theAlert = [[NSAlert alloc] init];
@@ -224,10 +255,8 @@
     [[powerFormatter numberFormatter] setMinimumFractionDigits:2];
     [[powerFormatter numberFormatter] setMaximumFractionDigits:2];
     
-    float measurementTime = [measurementData count] * kMTMeasurementInterval;
-    NSMeasurement *measurementCoverage = [[NSMeasurement alloc] initWithDoubleValue:measurementTime
-                                                                               unit:[NSUnitDuration seconds]
-    ];
+    NSTimeInterval measurementTime = [measurementData totalTime];
+    NSMeasurement *measurementCoverage = [[NSMeasurement alloc] initWithDoubleValue:measurementTime unit:[NSUnitDuration seconds]];
     self.valuePowerConsumption = [NSNumber numberWithDouble:[avgValue doubleValue] * measurementTime];
 
     NSMeasurementFormatter *hourFormatter = [[NSMeasurementFormatter alloc] init];
@@ -247,9 +276,8 @@
         
         if ([self->_userDefaults boolForKey:kMTDefaultsGraphMarkPowerNapsKey]) {
             
-            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"darkWake == %@", [NSNumber numberWithBool:YES]];
-            NSArray *darkWakeMeasurements = [measurementData filteredArrayUsingPredicate:predicate];
-            float darkWakeTime = [darkWakeMeasurements count] * kMTMeasurementInterval;
+            NSArray *darkWakeMeasurements = [measurementData powerNapMeasurements];
+            NSTimeInterval darkWakeTime = [darkWakeMeasurements totalTime];
             NSMeasurement *darkWakeCoverage = [[NSMeasurement alloc] initWithDoubleValue:darkWakeTime unit:[NSUnitDuration seconds]];
             
             [self->_napTimeText setStringValue:[hourFormatter stringFromMeasurement:darkWakeCoverage]];
@@ -345,6 +373,7 @@
     [_graphView setShowPowerNaps:[_userDefaults boolForKey:kMTDefaultsGraphMarkPowerNapsKey]];
     [_graphView setShowAverage:[_userDefaults boolForKey:kMTDefaultsGraphShowAverageKey]];
     [_graphView setShowDayMarkers:[_userDefaults boolForKey:kMTDefaultsGraphShowDayMarkersKey] && ![_userDefaults boolForKey:kMTDefaultsTodayValuesOnlyKey]];
+    [_graphView setAllowToolTip:YES];
 
     [_graphView setNeedsDisplay:YES];
 }
@@ -412,7 +441,7 @@
         self.carbonLookupInProgress = YES;
         
         if (!_carbonFootprint) {
-            
+
             // check for existing credentials
             if ([_userDefaults objectForKey:kMTDefaultsCarbonAPITypeKey]) {
                 
@@ -424,7 +453,7 @@
                 [apiKey getKeyWithCompletionHandler:^(NSString *key) {
                     
                     if (key) {
-                        
+
                         self->_carbonFootprint = [[MTCarbonFootprint alloc] initWithAPIKey:key];
                         [self->_carbonFootprint setAllowUserInteraction:YES];
                         
@@ -432,6 +461,7 @@
                         
                         [self->_userDefaults setBool:NO forKey:kMTDefaultsShowCarbonKey];
                         self.carbonLookupInProgress = NO;
+                        self.carbonFootprintEnabled = NO;
                     }
                     
                     dispatch_semaphore_signal(semaphore);
@@ -458,7 +488,8 @@
             
         } else {
             
-            [self->_carbonPerHour setStringValue:NSLocalizedString(@"carbonFootprintUnavailable", nil)];
+            self.carbonLookupInProgress = NO;
+            [self updateCarbonUIWithValue:0 preciseLocation:NO];
         }
     }
 }
@@ -568,6 +599,29 @@
     [[self->_consoleWindowController window] makeKeyAndOrderFront:nil];
 }
 
+- (void)showOrHideGraphPopoutButton:(NSNotification*)notification
+{
+    self.insideTrackingArea = ([[notification name] isEqualToString:kMTNotificationNameGraphMouseEntered]) ? YES : NO;
+}
+
+- (void)showGraph
+{
+    if (!self->_graphWindowController) {
+
+        self->_graphWindowController = [[self storyboard] instantiateControllerWithIdentifier:@"corp.sap.PowerMonitor.GraphController"];
+        [self->_graphWindowController loadWindow];
+    }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNameGraphReloadData
+                                                        object:self
+                                                      userInfo:[NSDictionary dictionaryWithObject:_graphView
+                                                                                           forKey:kMTNotificationKeyGraphData
+                                                               ]
+    ];
+
+    [[self->_graphWindowController window] makeKeyAndOrderFront:nil];
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 {
     if ([keyPath isEqualToString:kMTDefaultsShowCarbonKey] ||
@@ -579,9 +633,9 @@
                 self.carbonFootprintEnabled = YES;
                 [self updateCarbonFootprint];
             });
-            
+
         } else {
-            
+
             dispatch_async(dispatch_get_main_queue(), ^{ self.carbonFootprintEnabled = NO; });
         }
     }

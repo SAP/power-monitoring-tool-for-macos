@@ -1,6 +1,30 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "0hJ-4A-yd8.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"journalTimeAwake\"; ObjectID = \"0hJ-4A-yd8\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "journalTimeAwake"
+          }
+        }
+      }
+    },
+    "0t5-IO-Xwe.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Text Cell\"; ObjectID = \"0t5-IO-Xwe\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Text Cell"
+          }
+        }
+      }
+    },
     "1el-R4-jYy.ibShadowedDateFormat" : {
       "comment" : "Class = \"NSDateFormatter\"; ibShadowedDateFormat = \"yyyy-MM-dd HH:mm:ss.SSSZ\"; ObjectID = \"1el-R4-jYy\";",
       "extractionState" : "extracted_with_value",
@@ -51,24 +75,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Power Monitor"
-          }
-        }
-      }
-    },
-    "2dI-bg-ken.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"While sleeping, your Mac can wake up periodically to do some tasks like checking for new email or downloading updates. This is called a Power Nap. Use the menu below to enable or disable Power Nap. On some Macs, Power Nap may not be completely disabled.\"; ObjectID = \"2dI-bg-ken\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Während des Ruhezustands kann Ihr Mac in regelmäßigen Abständen aufwachen, um Aufgaben wie das Abrufen von neuen E-Mails oder das Herunterladen von Updates zu erledigen. Dies wird als Power Nap bezeichnet. Bitte wählen Sie im unten stehenden Menü aus, ob Sie Power Nap aktivieren oder deaktivieren möchten. Auf einigen Macs kann Power Nap möglicherweise nicht vollständig deaktiviert werden."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "While sleeping, your Mac can wake up periodically to do some tasks like checking for new email or downloading updates. This is called a Power Nap. Use the menu below to enable or disable Power Nap. On some Macs, Power Nap may not be completely disabled."
           }
         }
       }
@@ -235,6 +241,24 @@
         }
       }
     },
+    "4r5-fi-WCs.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Show Journal in Finder\"; ObjectID = \"4r5-fi-WCs\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Journal im Finder anzeigen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Show Journal in Finder"
+          }
+        }
+      }
+    },
     "4sb-4s-VLi.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Quit Power Monitor\"; ObjectID = \"4sb-4s-VLi\";",
       "extractionState" : "extracted_with_value",
@@ -307,6 +331,24 @@
         }
       }
     },
+    "5L4-n0-bFI.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Electricity costs Power Nap:\"; ObjectID = \"5L4-n0-bFI\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stromkosten Power Nap:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Electricity costs Power Nap:"
+          }
+        }
+      }
+    },
     "7Rg-1h-aT5.ibShadowedDateFormat" : {
       "comment" : "Class = \"NSDateFormatter\"; ibShadowedDateFormat = \"yyyy-MM-dd HH:mm:ss.SSSZ\"; ObjectID = \"7Rg-1h-aT5\";",
       "extractionState" : "extracted_with_value",
@@ -315,6 +357,36 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "yyyy-MM-dd HH:mm:ss.SSSZ"
+          }
+        }
+      }
+    },
+    "8Rk-nO-hh4.headerCell.title" : {
+      "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Duration Awake\"; ObjectID = \"8Rk-nO-hh4\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dauer Betrieb"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Duration Awake"
+          }
+        }
+      }
+    },
+    "8zs-JE-Whc.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Delete Journal Entry\"; ObjectID = \"8zs-JE-Whc\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Delete Journal Entry"
           }
         }
       }
@@ -333,6 +405,24 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Price per kWh:"
+          }
+        }
+      }
+    },
+    "9IP-YZ-hMZ.title" : {
+      "comment" : "Class = \"NSWindow\"; title = \"Power Graph\"; ObjectID = \"9IP-YZ-hMZ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leistungsdiagramm"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Power Graph"
           }
         }
       }
@@ -373,6 +463,36 @@
         }
       }
     },
+    "79H-X5-650.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Electricity costs:\"; ObjectID = \"79H-X5-650\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stromkosten:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Electricity costs:"
+          }
+        }
+      }
+    },
+    "82l-7S-CjA.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"powerValue\"; ObjectID = \"82l-7S-CjA\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "powerValue"
+          }
+        }
+      }
+    },
     "216-BT-LWQ.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Select All\"; ObjectID = \"216-BT-LWQ\";",
       "extractionState" : "extracted_with_value",
@@ -387,6 +507,18 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Select All"
+          }
+        }
+      }
+    },
+    "a6b-fq-F0L.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"journalConsumptionTotal\"; ObjectID = \"a6b-fq-F0L\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "journalConsumptionTotal"
           }
         }
       }
@@ -410,13 +542,13 @@
       }
     },
     "AHX-Ey-ZrB.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Table View Cell\"; ObjectID = \"AHX-Ey-ZrB\";",
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"logMessage\"; ObjectID = \"AHX-Ey-ZrB\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Table View Cell"
+            "value" : "logMessage"
           }
         }
       }
@@ -453,6 +585,24 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Total power consumption:"
+          }
+        }
+      }
+    },
+    "Asi-Kh-bjt.headerCell.title" : {
+      "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Date\"; ObjectID = \"Asi-Kh-bjt\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datum"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Date"
           }
         }
       }
@@ -565,14 +715,26 @@
         }
       }
     },
-    "C3i-sE-lNs.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Table View Cell\"; ObjectID = \"C3i-sE-lNs\";",
+    "bS3-mq-ZQb.title" : {
+      "comment" : "Class = \"NSViewController\"; title = \"Power Nap\"; ObjectID = \"bS3-mq-ZQb\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Table View Cell"
+            "value" : "Power Nap"
+          }
+        }
+      }
+    },
+    "C3i-sE-lNs.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"logTime\"; ObjectID = \"C3i-sE-lNs\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "logTime"
           }
         }
       }
@@ -649,6 +811,102 @@
         }
       }
     },
+    "csm-gY-8sj.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Duration Power Nap:\"; ObjectID = \"csm-gY-8sj\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dauer Power Nap:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Duration Power Nap:"
+          }
+        }
+      }
+    },
+    "CXZ-Ti-3Lq.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"After one year\"; ObjectID = \"CXZ-Ti-3Lq\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nach einem Jahr"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "After one year"
+          }
+        }
+      }
+    },
+    "d1a-6O-KEe.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Show Power Graph\"; ObjectID = \"d1a-6O-KEe\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leistungsdiagramm anzeigen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Show Power Graph"
+          }
+        }
+      }
+    },
+    "DBi-AU-gA8.paletteLabel" : {
+      "comment" : "Class = \"NSToolbarItem\"; paletteLabel = \"Separator\"; ObjectID = \"DBi-AU-gA8\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Separator"
+          }
+        }
+      }
+    },
+    "dBY-C9-8mg.title" : {
+      "comment" : "Class = \"NSViewController\"; title = \"Journal\"; ObjectID = \"dBY-C9-8mg\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Journal"
+          }
+        }
+      }
+    },
+    "DCN-OY-bdG.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Never\"; ObjectID = \"DCN-OY-bdG\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Never"
+          }
+        }
+      }
+    },
     "Dgu-kt-5pL.title" : {
       "comment" : "Class = \"NSButtonCell\"; title = \"Import carbon intensity data\"; ObjectID = \"Dgu-kt-5pL\";",
       "extractionState" : "extracted_with_value",
@@ -693,6 +951,18 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Delete"
+          }
+        }
+      }
+    },
+    "eJC-U8-DqW.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"journalTimeNap\"; ObjectID = \"eJC-U8-DqW\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "journalTimeNap"
           }
         }
       }
@@ -751,6 +1021,18 @@
         }
       }
     },
+    "f8r-pg-7RR.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"journalConsumptionNap\"; ObjectID = \"f8r-pg-7RR\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "journalConsumptionNap"
+          }
+        }
+      }
+    },
     "FlT-P2-7d3.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"API key:\"; ObjectID = \"FlT-P2-7d3\";",
       "extractionState" : "extracted_with_value",
@@ -770,19 +1052,19 @@
       }
     },
     "fmh-Bw-LnI.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Don't have an API key yet? Create your free API key for non-commercial use at https://co2signal.com.\"; ObjectID = \"fmh-Bw-LnI\";",
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Don't have an API key yet? Create your free API key for non-commercial use at https://api-portal.electricitymaps.com.\"; ObjectID = \"fmh-Bw-LnI\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sie haben noch keinen API-Schlüssel? Einen kostenlosen API-Schlüssel zur nicht-kommerziellen Nutzung erhalten Sie auf https://co2signal.com."
+            "value" : "Sie haben noch keinen API-Schlüssel? Einen kostenlosen API-Schlüssel zur nicht-kommerziellen Nutzung erhalten Sie auf https://api-portal.electricitymaps.com."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Don't have an API key yet? Create your free API key for non-commercial use at https://co2signal.com."
+            "value" : "Don't have an API key yet? Create your free API key for non-commercial use at https://api-portal.electricitymaps.com."
           }
         }
       }
@@ -837,6 +1119,18 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Toggle the info pane"
+          }
+        }
+      }
+    },
+    "Fvy-a0-jaA.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"powerNapEnableLabel\"; ObjectID = \"Fvy-a0-jaA\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "powerNapEnableLabel"
           }
         }
       }
@@ -955,6 +1249,60 @@
         }
       }
     },
+    "HFI-Zs-bjs.label" : {
+      "comment" : "Class = \"NSToolbarItem\"; label = \"Inspector\"; ObjectID = \"HFI-Zs-bjs\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inspektor"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Inspector"
+          }
+        }
+      }
+    },
+    "HFI-Zs-bjs.paletteLabel" : {
+      "comment" : "Class = \"NSToolbarItem\"; paletteLabel = \"Inspector\"; ObjectID = \"HFI-Zs-bjs\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inspektor"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Inspector"
+          }
+        }
+      }
+    },
+    "HFI-Zs-bjs.toolTip" : {
+      "comment" : "Class = \"NSToolbarItem\"; toolTip = \"Toggle inspector\"; ObjectID = \"HFI-Zs-bjs\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inspektor ein- oder ausblenden"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Toggle inspector"
+          }
+        }
+      }
+    },
     "hgu-6P-fXB.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Settings…\"; ObjectID = \"hgu-6P-fXB\";",
       "extractionState" : "extracted_with_value",
@@ -1027,6 +1375,24 @@
         }
       }
     },
+    "Icz-2M-MvU.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Enable journal\"; ObjectID = \"Icz-2M-MvU\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Journal aktivieren"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Enable journal"
+          }
+        }
+      }
+    },
     "ilr-4r-VCp.headerCell.title" : {
       "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Message\"; ObjectID = \"ilr-4r-VCp\";",
       "extractionState" : "extracted_with_value",
@@ -1081,32 +1447,62 @@
         }
       }
     },
-    "jkO-t9-yXJ.title" : {
-      "comment" : "Class = \"NSButtonCell\"; title = \"CO2signal\"; ObjectID = \"jkO-t9-yXJ\";",
+    "jkR-AM-8Rp.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"measurementDate\"; ObjectID = \"jkR-AM-8Rp\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CO2signal"
-          }
-        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "CO2signal"
+            "value" : "measurementDate"
           }
         }
       }
     },
     "JUn-M5-ksy.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Table View Cell\"; ObjectID = \"JUn-M5-ksy\";",
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"assertionsMessage\"; ObjectID = \"JUn-M5-ksy\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Table View Cell"
+            "value" : "assertionsMessage"
+          }
+        }
+      }
+    },
+    "Jv4-az-WCd.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"To prevent the journal from becoming too large, the entries can be deleted automatically after a certain period of time. Please select in the menu below whether or after what time journal entries should be deleted automatically.\"; ObjectID = \"Jv4-az-WCd\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um das Journal nicht zu groß werden zu lassen, können die Einträge nach einer bestimmten Zeit automatisch gelöscht werden. Bitte wählen Sie im unten stehenden Menü aus, ob bzw. nach welcher Zeit Journaleinträge automatisch gelöscht werden sollen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "To prevent the journal from becoming too large, the entries can be deleted automatically after a certain period of time. Please select in the menu below whether or after what time journal entries should be deleted automatically."
+          }
+        }
+      }
+    },
+    "JW4-fb-jp0.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Ignore Power Naps\"; ObjectID = \"JW4-fb-jp0\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power Naps ignorieren"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Ignore Power Naps"
           }
         }
       }
@@ -1213,20 +1609,44 @@
         }
       }
     },
-    "Loq-93-OXK.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"API:\"; ObjectID = \"Loq-93-OXK\";",
+    "Lhx-fv-9ck.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"powerState\"; ObjectID = \"Lhx-fv-9ck\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "powerState"
+          }
+        }
+      }
+    },
+    "ljb-Pz-ErA.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Text Cell\"; ObjectID = \"ljb-Pz-ErA\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Text Cell"
+          }
+        }
+      }
+    },
+    "ME3-AA-pMQ.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Journal entries:\"; ObjectID = \"ME3-AA-pMQ\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "API:"
+            "value" : "Journaleinträge:"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "API:"
+            "value" : "Journal entries:"
           }
         }
       }
@@ -1316,19 +1736,19 @@
       }
     },
     "NME-51-rka.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Please select the API you want to use and enter the corresponding API key in the text field below.\"; ObjectID = \"NME-51-rka\";",
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Please enter your Electricity Maps API key in the text field below.\"; ObjectID = \"NME-51-rka\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bitte wählen Sie die API aus, die Sie benutzen wollen, und geben Sie den  Schlüssel für die ausgewählte API in das unten stehende Textfeld ein."
+            "value" : "Bitte geben Sie Ihren Schlüssel für Electricity Maps API in das unten stehende Textfeld ein."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Please select the API you want to use and enter the corresponding API key in the text field below."
+            "value" : "Please enter your Electricity Maps API key in the text field below."
           }
         }
       }
@@ -1352,13 +1772,13 @@
       }
     },
     "nrm-Np-YgB.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Table View Cell\"; ObjectID = \"nrm-Np-YgB\";",
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"assertionsTime\"; ObjectID = \"nrm-Np-YgB\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Table View Cell"
+            "value" : "assertionsTime"
           }
         }
       }
@@ -1435,6 +1855,24 @@
         }
       }
     },
+    "nzZ-Dp-bqY.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"While sleeping, your Mac can wake up periodically to do some tasks like checking for new email or downloading updates. This is called a Power Nap. Use the menu below to enable or disable Power Nap. On some Macs, Power Nap may not be completely disabled.\"; ObjectID = \"nzZ-Dp-bqY\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Während des Ruhezustands kann Ihr Mac in regelmäßigen Abständen aufwachen, um Aufgaben wie das Abrufen von neuen E-Mails oder das Herunterladen von Updates zu erledigen. Dies wird als Power Nap bezeichnet. Bitte wählen Sie im unten stehenden Menü aus, ob Sie Power Nap aktivieren oder deaktivieren möchten. Auf einigen Macs kann Power Nap möglicherweise nicht vollständig deaktiviert werden."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "While sleeping, your Mac can wake up periodically to do some tasks like checking for new email or downloading updates. This is called a Power Nap. Use the menu below to enable or disable Power Nap. On some Macs, Power Nap may not be completely disabled."
+          }
+        }
+      }
+    },
     "ODP-wh-kgy.title" : {
       "comment" : "Class = \"NSButtonCell\"; title = \"Show carbon footprint\"; ObjectID = \"ODP-wh-kgy\";",
       "extractionState" : "extracted_with_value",
@@ -1453,6 +1891,60 @@
         }
       }
     },
+    "OeR-uZ-BoG.label" : {
+      "comment" : "Class = \"NSToolbarItem\"; label = \"Average line\"; ObjectID = \"OeR-uZ-BoG\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Durchschnittslinie"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Average line"
+          }
+        }
+      }
+    },
+    "OeR-uZ-BoG.paletteLabel" : {
+      "comment" : "Class = \"NSToolbarItem\"; paletteLabel = \"Average line\"; ObjectID = \"OeR-uZ-BoG\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Durchschnittslinie"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Average line"
+          }
+        }
+      }
+    },
+    "OeR-uZ-BoG.toolTip" : {
+      "comment" : "Class = \"NSToolbarItem\"; toolTip = \"Hide or show the average line\"; ObjectID = \"OeR-uZ-BoG\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Durchschnittslinie ein- oder ausblenden"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Hide or show the average line"
+          }
+        }
+      }
+    },
     "OL1-un-9cm.headerCell.title" : {
       "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Time\"; ObjectID = \"OL1-un-9cm\";",
       "extractionState" : "extracted_with_value",
@@ -1467,6 +1959,24 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Time"
+          }
+        }
+      }
+    },
+    "OLr-dX-jwG.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Consumed during Power Nap:\"; ObjectID = \"OLr-dX-jwG\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verbraucht während Power Nap:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Consumed during Power Nap:"
           }
         }
       }
@@ -1525,6 +2035,18 @@
         }
       }
     },
+    "PC2-GZ-055.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Text Cell\"; ObjectID = \"PC2-GZ-055\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Text Cell"
+          }
+        }
+      }
+    },
     "pfa-9s-Bs9.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"Highest measured system power:\"; ObjectID = \"pfa-9s-Bs9\";",
       "extractionState" : "extracted_with_value",
@@ -1544,13 +2066,13 @@
       }
     },
     "PYs-z2-snG.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Table View Cell\"; ObjectID = \"PYs-z2-snG\";",
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"assertionsProcess\"; ObjectID = \"PYs-z2-snG\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Table View Cell"
+            "value" : "assertionsProcess"
           }
         }
       }
@@ -1585,6 +2107,48 @@
         }
       }
     },
+    "QcZ-8s-LvD.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"journalDate\"; ObjectID = \"QcZ-8s-LvD\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "journalDate"
+          }
+        }
+      }
+    },
+    "QgV-jm-6vz.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"By default, this application measures all power consumption. In some environments, however, measuring power consumption during Power Naps may not be desirable. If you only want to measure power during times when your Mac is actively in use, please activate the option below.\"; ObjectID = \"QgV-jm-6vz\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standardmäßig misst dieses Programm jeglichen Stromverbrauch. In einigen Umgebungen kann die Messung des Stromverbrauchs während Power Naps allerdings nicht gewünscht sein. Wenn Sie die Leistung nur in Zeiten messen wollen, in denen Ihr Mac aktiv genutzt wird, aktivieren Sie bitte die unten stehende Option."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "By default, this application measures all power consumption. In some environments, however, measuring power consumption during Power Naps may not be desirable. If you only want to measure power during times when your Mac is actively in use, please activate the option below."
+          }
+        }
+      }
+    },
+    "QIK-1s-Nxe.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"powerState\"; ObjectID = \"QIK-1s-Nxe\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "powerState"
+          }
+        }
+      }
+    },
     "qxt-b8-PAf.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"Measurements:\"; ObjectID = \"qxt-b8-PAf\";",
       "extractionState" : "extracted_with_value",
@@ -1599,6 +2163,24 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Measurements:"
+          }
+        }
+      }
+    },
+    "qye-Lt-zao.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"To enable you to log and evaluate your power consumption over a longer period of time, this program has a journal function that stores the total power consumption per day. If you want to use the journal, please activate the option below.\"; ObjectID = \"qye-Lt-zao\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um Ihnen die Möglichkeit zu geben, Ihren Stromverbrauch über einen längeren Zeitraum protokollieren und auswerten zu können, verfügt dieses Programm über eine Journal-Funktion, welche den Gesamtstromverbrauch pro Tag speichert. Wenn Sie das Journal nutzen wollen, aktivieren Sie bitte die unten stehende Option."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "To enable you to log and evaluate your power consumption over a longer period of time, this program has a journal function that stores the total power consumption per day. If you want to use the journal, please activate the option below."
           }
         }
       }
@@ -1621,18 +2203,6 @@
         }
       }
     },
-    "RNv-Iz-JQ8.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"powerNapEnableLabel\"; ObjectID = \"RNv-Iz-JQ8\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "powerNapEnableLabel"
-          }
-        }
-      }
-    },
     "rO2-fo-M0y.headerCell.title" : {
       "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Type\"; ObjectID = \"rO2-fo-M0y\";",
       "extractionState" : "extracted_with_value",
@@ -1647,6 +2217,60 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Type"
+          }
+        }
+      }
+    },
+    "rqK-68-QY7.label" : {
+      "comment" : "Class = \"NSToolbarItem\"; label = \"Power Naps\"; ObjectID = \"rqK-68-QY7\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power Naps"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Power Naps"
+          }
+        }
+      }
+    },
+    "rqK-68-QY7.paletteLabel" : {
+      "comment" : "Class = \"NSToolbarItem\"; paletteLabel = \"Power Naps\"; ObjectID = \"rqK-68-QY7\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power Naps"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Power Naps"
+          }
+        }
+      }
+    },
+    "rqK-68-QY7.toolTip" : {
+      "comment" : "Class = \"NSToolbarItem\"; toolTip = \"Hide or show Power Naps\"; ObjectID = \"rqK-68-QY7\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power Naps ein- oder ausblenden"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Hide or show Power Naps"
           }
         }
       }
@@ -1687,6 +2311,60 @@
         }
       }
     },
+    "S7G-Cc-Bik.label" : {
+      "comment" : "Class = \"NSToolbarItem\"; label = \"Day markers\"; ObjectID = \"S7G-Cc-Bik\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tagesmarkierungen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Day markers"
+          }
+        }
+      }
+    },
+    "S7G-Cc-Bik.paletteLabel" : {
+      "comment" : "Class = \"NSToolbarItem\"; paletteLabel = \"Day markers\"; ObjectID = \"S7G-Cc-Bik\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tagesmarkierungen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Day markers"
+          }
+        }
+      }
+    },
+    "S7G-Cc-Bik.toolTip" : {
+      "comment" : "Class = \"NSToolbarItem\"; toolTip = \"Hide or show day markers\"; ObjectID = \"S7G-Cc-Bik\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tagesmarkierungen ein- oder ausblenden"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Hide or show day markers"
+          }
+        }
+      }
+    },
     "SPH-3H-P8I.label" : {
       "comment" : "Class = \"NSToolbarItem\"; label = \"Save\"; ObjectID = \"SPH-3H-P8I\";",
       "extractionState" : "extracted_with_value",
@@ -1694,7 +2372,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Speichern"
+            "value" : "Sichern"
           }
         },
         "en" : {
@@ -1712,7 +2390,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Speichern"
+            "value" : "Sichern"
           }
         },
         "en" : {
@@ -1724,19 +2402,37 @@
       }
     },
     "SPH-3H-P8I.toolTip" : {
-      "comment" : "Class = \"NSToolbarItem\"; toolTip = \"Save log messages fo file\"; ObjectID = \"SPH-3H-P8I\";",
+      "comment" : "Class = \"NSToolbarItem\"; toolTip = \"Save fo file\"; ObjectID = \"SPH-3H-P8I\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mitteilungen in Datei speichern"
+            "value" : "In Datei sichern"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Save log messages fo file"
+            "value" : "Save fo file"
+          }
+        }
+      }
+    },
+    "SXe-Mz-f3d.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"After six months\"; ObjectID = \"SXe-Mz-f3d\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nach sechs Monaten"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "After six months"
           }
         }
       }
@@ -1795,6 +2491,78 @@
         }
       }
     },
+    "tl2-Dg-PTM.headerCell.title" : {
+      "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Duration Power Nap\"; ObjectID = \"tl2-Dg-PTM\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dauer Power Nap"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Duration Power Nap"
+          }
+        }
+      }
+    },
+    "Tlt-ch-mDA.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"After one month\"; ObjectID = \"Tlt-ch-mDA\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nach einem Monat"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "After one month"
+          }
+        }
+      }
+    },
+    "Tq5-S6-vw3.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Delete journal entries:\"; ObjectID = \"Tq5-S6-vw3\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Journaleinträge löschen:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Delete journal entries:"
+          }
+        }
+      }
+    },
+    "TvO-d4-Nym.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Total power consumption:\"; ObjectID = \"TvO-d4-Nym\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stromverbrauch insgesamt:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Total power consumption:"
+          }
+        }
+      }
+    },
     "TvQ-1c-RTC.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"This application can run in background. Then it only shows up in the macOS menu bar and shows basic power information. If you want the application to run in background, please enable the option below.\"; ObjectID = \"TvQ-1c-RTC\";",
       "extractionState" : "extracted_with_value",
@@ -1809,6 +2577,24 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "This application can run in background. Then it only shows up in the macOS menu bar and shows basic power information. If you want the application to run in background, please enable the option below."
+          }
+        }
+      }
+    },
+    "U4A-7v-8aP.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Duration awake:\"; ObjectID = \"U4A-7v-8aP\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dauer Betrieb:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Duration awake:"
           }
         }
       }
@@ -1843,6 +2629,18 @@
         }
       }
     },
+    "v97-X5-VL2.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Text Cell\"; ObjectID = \"v97-X5-VL2\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Text Cell"
+          }
+        }
+      }
+    },
     "Vdr-fp-XzO.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Hide Others\"; ObjectID = \"Vdr-fp-XzO\";",
       "extractionState" : "extracted_with_value",
@@ -1861,10 +2659,28 @@
         }
       }
     },
+    "vH9-De-bB3.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"measurementDate\"; ObjectID = \"vH9-De-bB3\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "measurementDate"
+          }
+        }
+      }
+    },
     "VLe-x5-fQV.label" : {
       "comment" : "Class = \"NSToolbarItem\"; label = \"Filter\"; ObjectID = \"VLe-x5-fQV\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -1877,6 +2693,12 @@
       "comment" : "Class = \"NSToolbarItem\"; paletteLabel = \"Filter\"; ObjectID = \"VLe-x5-fQV\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -1899,6 +2721,18 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Show only entries related to wake and sleep events"
+          }
+        }
+      }
+    },
+    "Vtc-3q-Zj6.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Text Cell\"; ObjectID = \"Vtc-3q-Zj6\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Text Cell"
           }
         }
       }
@@ -1957,6 +2791,36 @@
         }
       }
     },
+    "xH1-Ho-Skq.headerCell.title" : {
+      "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Consumption Power Nap\"; ObjectID = \"xH1-Ho-Skq\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verbrauch Power Nap"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Consumption Power Nap"
+          }
+        }
+      }
+    },
+    "xKy-kj-fL9.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"powerValue\"; ObjectID = \"xKy-kj-fL9\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "powerValue"
+          }
+        }
+      }
+    },
     "xLV-2L-ILV.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"Current time period covered:\"; ObjectID = \"xLV-2L-ILV\";",
       "extractionState" : "extracted_with_value",
@@ -1965,24 +2829,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Current time period covered:"
-          }
-        }
-      }
-    },
-    "Xpm-ea-vj2.title" : {
-      "comment" : "Class = \"NSButtonCell\"; title = \"Electricity Maps (Free Tier)\"; ObjectID = \"Xpm-ea-vj2\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Electricity Maps (Free Tier)"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Electricity Maps (Free Tier)"
           }
         }
       }
@@ -2144,13 +2990,31 @@
       }
     },
     "yku-V4-z6F.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Table View Cell\"; ObjectID = \"yku-V4-z6F\";",
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"logCategory\"; ObjectID = \"yku-V4-z6F\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Table View Cell"
+            "value" : "logCategory"
+          }
+        }
+      }
+    },
+    "ytk-Ju-hcn.headerCell.title" : {
+      "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Consumption Total\"; ObjectID = \"ytk-Ju-hcn\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verbrauch gesamt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Consumption Total"
           }
         }
       }
@@ -2187,6 +3051,18 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Delete all measurements"
+          }
+        }
+      }
+    },
+    "zdL-7W-VgV.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"consumptionSummaryLabel\"; ObjectID = \"zdL-7W-VgV\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "consumptionSummaryLabel"
           }
         }
       }

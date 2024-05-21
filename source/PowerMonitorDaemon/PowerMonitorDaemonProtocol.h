@@ -44,8 +44,79 @@
 */
 - (void)logEntriesSinceDate:(NSDate*)date completionHandler:(void (^)(NSArray<OSLogEntry*> *entries))completionHandler;
 
+/*!
+ @method        deleteMeasurementsWithCompletionHandler :
+ @abstract      Deletes all measurements.
+ @param         completionHandler The handler to call when the request is complete.
+*/
 - (void)deleteMeasurementsWithCompletionHandler:(void (^)(void))completionHandler;
 
+/*!
+ @method        enablePowerNap:acPowerOnly:completionHandler:
+ @abstract      Enables or disables Power Nap.
+ @param         enable A boolean specifying if Power Nap should be enabled or disabled.
+ @param         aconly A boolean specifying if the settings should be applied to ac power only (YES) or all power sources (NO).
+ @param         completionHandler The handler to call when the request is complete.
+ @discussion    Returns YES if Power Nap has been successfully set to the given value, otherwise returns NO.
+*/
 - (void)enablePowerNap:(BOOL)enable acPowerOnly:(BOOL)aconly completionHandler:(void (^)(BOOL success))completionHandler;
+
+/*!
+ @method        setJournalEnabled:completionHandler:
+ @abstract      Enables or disables the power journal.
+ @param         enabled A boolean specifying if the journal should be enabled or disabled.
+ @param         completionHandler The handler to call when the request is complete.
+ @discussion    Returns YES if the journal has been successfully set to the given value,
+                otherwise returns NO.
+*/
+- (void)setJournalEnabled:(BOOL)enabled completionHandler:(void (^)(BOOL success))completionHandler;
+
+/*!
+ @method        journalEnabledWithReply:
+ @abstract      Returns the current status of the journal.
+ @param         reply The reply block to call when the request is complete.
+ @discussion    Returns YES if the journal is enabled, otherwise returns NO. The second argument is set to YES, if the
+                setting is managed (via configuration profile), otherwise returns NO.
+*/
+- (void)journalEnabledWithReply:(void (^)(BOOL enabled, BOOL forced))reply;
+
+/*!
+ @method        setJournalAutoDeletionInterval:completionHandler:
+ @abstract      Sets the interval for the automatic deleting of power journal entries.
+ @param         interval An ineger specifying the deletion interval.
+ @param         completionHandler The handler to call when the request is complete.
+ @discussion    Returns YES if the interval has been successfully set to the given value,
+                otherwise returns NO.
+*/
+- (void)setJournalAutoDeletionInterval:(NSInteger)interval completionHandler:(void (^)(BOOL success))completionHandler;
+
+/*!
+ @method        journalAutoDeletionIntervalWithReply:
+ @abstract      Returns the current deletion interval for power journal entries.
+ @param         reply The reply block to call when the request is complete.
+ @discussion    Returns the currently configured deletion interval. The second argument is set to YES, if the
+                setting is managed (via configuration profile), otherwise returns NO.
+*/
+- (void)journalAutoDeletionIntervalWithReply:(void (^)(NSInteger interval, BOOL forced))reply;
+
+/*!
+ @method        setIgnorePowerNaps:completionHandler:
+ @abstract      Configures if Power Naps should be ignored or not. If set to YES, Power Naps are treated like
+                times in sleep mode and no power data is catured during Power Naps.
+ @param         ignore A boolean specifying if Power Naps should be ignored or not.
+ @param         completionHandler The handler to call when the request is complete.
+ @discussion    Returns YES if the the option has been successfully set to the given value,
+                otherwise returns NO.
+*/
+- (void)setIgnorePowerNaps:(BOOL)ignore completionHandler:(void (^)(BOOL success))completionHandler;
+
+/*!
+ @method        powerNapsIgnoredWithReply:
+ @abstract      Returns if Power Naps are currently ignored or not.
+ @param         reply The reply block to call when the request is complete.
+ @discussion    Returns YES if Power Naps are currently ignored, otherwise returns NO. The second argument is set to YES, if the
+                setting is managed (via configuration profile), otherwise returns NO.
+*/
+- (void)powerNapsIgnoredWithReply:(void (^)(BOOL ignored, BOOL forced))reply;
 
 @end

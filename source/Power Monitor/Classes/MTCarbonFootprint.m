@@ -16,7 +16,6 @@
 */
 
 #import "MTCarbonFootprint.h"
-#import "MTCO2SignalAPI.h"
 #import "MTElectricityMapsAPI.h"
 #import "Constants.h"
 #import <MapKit/MapKit.h>
@@ -34,7 +33,7 @@
     self = [super init];
     
     if (self) {
-        _apiType = MTCarbonAPITypeCO2Signal;
+        _apiType = MTCarbonAPITypeElectricityMaps;
         _apiKey = key;
     }
     
@@ -83,16 +82,7 @@
 
 - (void)footprintWithLocation:(CLLocation*)location completionHandler:(void (^) (NSNumber *gramsCO2eqkWh, NSError *error))completionHandler
 {
-    if (_apiType == MTCarbonAPITypeCO2Signal) {
-        
-        MTCO2SignalAPI *co2API = [[MTCO2SignalAPI alloc] initWithAPIKey:_apiKey];
-        [co2API requestCarbonDataForLocation:location
-                           completionHandler:^(NSNumber *gramsCO2eqkWh, NSError *error) {
-        
-                if (completionHandler) { completionHandler(gramsCO2eqkWh, error); }
-        }];
-        
-    } else if (_apiType == MTCarbonAPITypeElectricityMaps) {
+    if (_apiType == MTCarbonAPITypeElectricityMaps) {
         
         MTElectricityMapsAPI *co2API = [[MTElectricityMapsAPI alloc] initWithAPIKey:_apiKey];
         [co2API requestCarbonDataForLocation:location

@@ -16,6 +16,7 @@
 */
 
 #define kMTMeasurementFilePath                  @"/Users/Shared/Power Monitor/measurements.pwrdata"
+#define kMTJournalFilePath                      @"/Users/Shared/Power Monitor/journal.plist"
 #define kMTMeasurementTimePeriod                24
 #define kMTMeasurementInterval                  5
 #define kMTGraphUpdateInterval                  60
@@ -25,6 +26,7 @@
 #define kMTDaemonMachServiceName                @"corp.sap.PowerMonitor.xpc"
 #define kMTGitHubURL                            @"https://github.com/SAP/power-monitoring-tool-for-macos"
 
+// NSUserDefaults
 #define kMTDefaultsShowCarbonKey                @"ShowCarbon"
 #define kMTDefaultsCarbonRegionsKey             @"CarbonRegions"
 #define kMTDefaultsGraphShowAverageKey          @"ShowAverage"
@@ -48,24 +50,62 @@
 #define kMTDefaultsLogFilterEnabledKey          @"LogFilterEnabled"
 #define kMTDefaultsLogDetailsEnabledKey         @"LogDetailsEnabled"
 #define kMTDefaultsLogDividerPositionKey        @"LogSplitViewDividerPosition"
+#define kMTDefaultsJournalExportFormatKey       @"JournalExportFormat"
+#define kMTDefaultsJournalExportCSVHeaderKey    @"JournalWriteCSVHeader"
+#define kMTDefaultsJournalExportSummarizeKey    @"JournalExportSummarize"
+#define kMTDefaultsJournalExportDurationKey     @"JournalExportDuration"
+#define kMTDefaultsJournalSummaryEnabledKey     @"JournalSummaryEnabled"
+#define kMTDefaultsJournalDividerPositionKey    @"JournalSplitViewDividerPosition"
 
-#define kMTNotificationNameCarbonValue          @"corp.sap.PowerMonitor.CarbonFootprintValue"
-#define kMTNotificationNamePowerStats           @"corp.sap.PowerMonitor.PowerStats"
-#define kMTNotificationNameCurrentPowerValue    @"corp.sap.PowerMonitor.CurrentPowerValue"
-#define kMTNotificationNamePowerTimeStamp       @"corp.sap.PowerMonitor.PowerTimeStamp"
-#define kMTNotificationNameLogMessage           @"corp.sap.PowerMonitor.LogMessage"
-#define kMTNotificationNameReloadDataFile       @"corp.sap.PowerMonitor.ReloadDataFile"
-#define kMTNotificationNameShowConsole          @"corp.sap.PowerMonitor.ShowConsole"
+// CFPreferences
+#define kMTDaemonPreferenceDomain               CFSTR("corp.sap.PowerMonitorDaemon")
+#define kMTPrefsEnableJournalKey                CFSTR("EnableJournal")
+#define kMTPrefsJournalAutoDeleteKey            CFSTR("JournalEntriesAutoDelete")
+#define kMTPrefsIgnorePowerNapsKey              CFSTR("IgnorePowerNaps")
 
+// NSNotification
+#define kMTNotificationNameCarbonValue              @"corp.sap.PowerMonitor.CarbonFootprintValue"
+#define kMTNotificationNamePowerStats               @"corp.sap.PowerMonitor.PowerStats"
+#define kMTNotificationNameCurrentPowerValue        @"corp.sap.PowerMonitor.CurrentPowerValue"
+#define kMTNotificationNamePowerTimeStamp           @"corp.sap.PowerMonitor.PowerTimeStamp"
+#define kMTNotificationNameLogMessage               @"corp.sap.PowerMonitor.LogMessage"
+#define kMTNotificationNameReloadDataFile           @"corp.sap.PowerMonitor.ReloadDataFile"
+#define kMTNotificationNameShowConsole              @"corp.sap.PowerMonitor.ShowConsole"
+#define kMTNotificationNameShowGraphWindow          @"corp.sap.PowerMonitor.ShowGraphWindow"
+#define kMTNotificationNameGraphMouseEntered        @"corp.sap.PowerMonitor.GraphView.MouseEntered"
+#define kMTNotificationNameGraphMouseExited         @"corp.sap.PowerMonitor.GraphView.MouseExited"
+#define kMTNotificationNameGraphPositionUpdated     @"corp.sap.PowerMonitor.GraphView.PositionUpdated"
+#define kMTNotificationNameGraphPinChanged          @"corp.sap.PowerMonitor.GraphView.PinChanged"
+#define kMTNotificationNameGraphShowDetail          @"corp.sap.PowerMonitor.GraphView.ShowDetail"
+#define kMTNotificationNameGraphReloadData          @"corp.sap.PowerMonitor.GraphView.ReloadData"
+#define kMTNotificationNameJournalUpdateSummary     @"corp.sap.PowerMonitor.Journal.UpdateSummary"
+
+// NSNotification user info keys
 #define kMTNotificationKeyCarbonValue           @"CarbonValue"
 #define kMTNotificationKeyAveragePowerValue     @"AveragePowerValue"
 #define kMTNotificationKeyConsumptionValue      @"ConsumptionValue"
 #define kMTNotificationKeyCurrentPowerValue     @"CurrentPowerValue"
 #define kMTNotificationKeyPowerTimeStamp        @"PowerTimeStamp"
 #define kMTNotificationKeyLogMessage            @"LogMessage"
+#define kMTNotificationKeyGraphPosition         @"MeasurementAtCurrentPosition"
+#define kMTNotificationKeyGraphData             @"GraphData"
 
+// pwrdata file format
 #define kMTFileHeaderSignature                  "pwrdata"
 #define kMTFileHeaderVersion                    2
 
+// keys for dicts to populate NSPopupButton (general settings -> enable Power Nap)
 #define kMTPopupMenuEntryLabelKey               @"label"
 #define kMTPopupMenuEntryPowerNapKey            @"powerNap"
+
+// MTToolbarItem
+#define MTToolbarGraphAverageLineItemIdentifier @"MTToolbarGraphAverageLineItem"
+#define MTToolbarGraphDayMarkerItemIdentifier   @"MTToolbarGraphDayMarkerItem"
+#define MTToolbarGraphPowerNapItemIdentifier    @"MTToolbarGraphPowerNapItem"
+#define MTToolbarGraphInspectorItemIdentifier   @"MTToolbarGraphInspectorItem"
+#define MTToolbarConsoleReloadItemIdentifier    @"MTToolbarConsoleReloadItem"
+#define MTToolbarConsoleFollowLogItemIdentifier @"MTToolbarConsoleFollowLogItem"
+#define MTToolbarConsoleInfoItemIdentifier      @"MTToolbarConsoleInfoItem"
+#define MTToolbarConsoleFilterItemIdentifier    @"MTToolbarConsoleFilterItem"
+#define MTToolbarConsoleSaveItemIdentifier      @"MTToolbarConsoleSaveItem"
+#define MTToolbarConsoleSearchItemIdentifier    @"MTToolbarConsoleSearchItem"
