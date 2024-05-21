@@ -387,10 +387,10 @@
                                     key:     IgnorePowerNaps
                                     value:   boolean
                                    
-                                    Does not capture power data during Power Naps. So times where the Mac
-                                    takes a Power Nap are treated like times the Mac is in sleep mode.
-                                    Once this setting has been configured, the setting cannot be changed
-                                    by the user.
+                                    If set to true, PowerMonitorDaemon will not capture power data during 
+                                    Power Naps. So times where the Mac takes a Power Nap are treated like 
+                                    times the Mac is in sleep mode. Once this setting has been configured, 
+                                    the setting cannot be changed by the user.
                                 -->
                                 <key>IgnorePowerNaps</key>
                                 <true/>
