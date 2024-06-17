@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22689"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22690"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="NSView safe area layout guides" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -155,7 +155,7 @@ CA
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="Power Monitor on GitHub" id="RrS-hI-FBW" userLabel="Script2Pkg on GitHub">
+                                        <menuItem title="Power Monitor on GitHub" id="RrS-hI-FBW">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="openGitHub:" target="Ady-hI-5gd" id="wzk-KJ-RBs"/>
@@ -277,7 +277,7 @@ CA
                                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="ea2-tV-deH">
                                             <rect key="frame" x="73" y="220" width="255" height="26"/>
                                             <subviews>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v9v-d7-2jn">
+                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v9v-d7-2jn">
                                                     <rect key="frame" x="-2" y="0.0" width="219" height="26"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Current system power:" id="3ah-rg-0KD">
                                                         <font key="font" textStyle="title1" name=".SFNS-Regular"/>
@@ -285,7 +285,7 @@ CA
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PYK-8Y-sEJ">
+                                                <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PYK-8Y-sEJ">
                                                     <rect key="frame" x="223" y="0.0" width="34" height="26"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="1Uo-bY-XrI"/>
@@ -315,7 +315,7 @@ CA
                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="SJa-oe-1Z4" userLabel="General Measurements">
                                                     <rect key="frame" x="94" y="110" width="212" height="79"/>
                                                     <subviews>
-                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="QfH-GH-8MY">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="QfH-GH-8MY">
                                                             <rect key="frame" x="-2" y="0.0" width="206" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Current time period covered:" id="xLV-2L-ILV">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -331,7 +331,7 @@ CA
                                                                 </binding>
                                                             </connections>
                                                         </textField>
-                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="i9e-3p-IYN">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="i9e-3p-IYN">
                                                             <rect key="frame" x="210" y="0.0" width="4" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="NQc-8E-oSy">
                                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" formatWidth="-1" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="uvb-MW-Mpy"/>
@@ -340,7 +340,7 @@ CA
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
-                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="2br-uB-sYs">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="2br-uB-sYs">
                                                             <rect key="frame" x="-2" y="42" width="206" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Highest measured system power:" id="pfa-9s-Bs9">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -348,7 +348,7 @@ CA
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
-                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="IUy-xd-UYF">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="IUy-xd-UYF">
                                                             <rect key="frame" x="-2" y="63" width="206" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Average system power:" id="MuP-fN-vvH">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -356,7 +356,7 @@ CA
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
-                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="ODg-c4-VjY">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="ODg-c4-VjY">
                                                             <rect key="frame" x="210" y="63" width="4" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="2gD-I2-mll">
                                                                 <font key="font" metaFont="system"/>
@@ -364,7 +364,7 @@ CA
                                                                 <color key="backgroundColor" name="unemphasizedSelectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
-                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="CXp-cd-FnD">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="CXp-cd-FnD">
                                                             <rect key="frame" x="210" y="42" width="4" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="sXO-q2-Jif">
                                                                 <font key="font" metaFont="system"/>
@@ -372,7 +372,7 @@ CA
                                                                 <color key="backgroundColor" name="unemphasizedSelectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
-                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="9Iy-i6-M1d">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="9Iy-i6-M1d">
                                                             <rect key="frame" x="-2" y="21" width="206" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Total power consumption:" id="ajp-WQ-E8Y">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -389,7 +389,7 @@ CA
                                                                 </binding>
                                                             </connections>
                                                         </textField>
-                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Qwd-OT-8ba">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Qwd-OT-8ba">
                                                             <rect key="frame" x="210" y="21" width="4" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="1u8-ka-HT5">
                                                                 <font key="font" metaFont="system"/>
@@ -436,7 +436,7 @@ CA
                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="8dq-e6-6Kp" userLabel="Dark Wake">
                                                     <rect key="frame" x="61" y="58" width="278" height="37"/>
                                                     <subviews>
-                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="LR1-8c-8Ss">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="LR1-8c-8Ss">
                                                             <rect key="frame" x="-2" y="21" width="239" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Power Nap:" id="mmd-Fn-OoT">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -444,7 +444,7 @@ CA
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
-                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="rqR-Jr-5wp">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="rqR-Jr-5wp">
                                                             <rect key="frame" x="243" y="21" width="37" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="3JY-J5-Teq">
                                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" formatWidth="-1" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="MxT-uN-Co0"/>
@@ -453,7 +453,7 @@ CA
                                                                 <color key="backgroundColor" name="unemphasizedSelectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
-                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="PB6-NG-Hhi">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="PB6-NG-Hhi">
                                                             <rect key="frame" x="243" y="0.0" width="37" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="mk2-Qh-qSm">
                                                                 <font key="font" metaFont="system"/>
@@ -469,7 +469,7 @@ CA
                                                                 </binding>
                                                             </connections>
                                                         </textField>
-                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="m0S-ah-9cU">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="m0S-ah-9cU">
                                                             <rect key="frame" x="-2" y="0.0" width="239" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Power consumption during Power Nap:" id="C9c-og-Thm">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -512,7 +512,7 @@ CA
                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="bRd-2r-UC9" userLabel="Carbon Footprint">
                                                     <rect key="frame" x="20" y="29" width="360" height="14"/>
                                                     <subviews>
-                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="HKn-yB-3jy">
+                                                        <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="HKn-yB-3jy">
                                                             <rect key="frame" x="-2" y="0.0" width="364" height="14"/>
                                                             <textFieldCell key="cell" alignment="center" id="X2U-Qr-GCC">
                                                                 <font key="font" metaFont="smallSystem"/>
@@ -551,7 +551,7 @@ CA
                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="Rb4-nG-YTX" userLabel="Determining Carbon Footprint">
                                                     <rect key="frame" x="71" y="0.0" width="258" height="14"/>
                                                     <subviews>
-                                                        <textField horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="XPe-c0-dTk">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="XPe-c0-dTk">
                                                             <rect key="frame" x="-2" y="0.0" width="222" height="14"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" alignment="left" title="Determining this Mac's carbon footprint…" usesSingleLineMode="YES" id="yDb-bT-TJ9">
                                                                 <font key="font" metaFont="smallSystem"/>
@@ -700,7 +700,7 @@ CA
                         <rect key="frame" x="0.0" y="0.0" width="450" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="3hd-KL-A9K">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="3hd-KL-A9K">
                                 <rect key="frame" x="18" y="20" width="414" height="16"/>
                                 <textFieldCell key="cell" title="powerDescription" id="4eH-4U-Qtl">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -789,7 +789,7 @@ CA
                         <rect key="frame" x="0.0" y="0.0" width="450" height="505"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQ0-f2-pL9">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQ0-f2-pL9">
                                 <rect key="frame" x="23" y="438" width="404" height="42"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="TvQ-1c-RTC">
                                     <font key="font" metaFont="smallSystem"/>
@@ -798,7 +798,7 @@ CA
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWt-da-6NG">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWt-da-6NG">
                                 <rect key="frame" x="23" y="333" width="404" height="28"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" title="To open this application automatically when you log in, please enable the option below." id="02K-vK-hIW">
                                     <font key="font" metaFont="smallSystem"/>
@@ -826,7 +826,7 @@ CA
                                     <action selector="setBackgroundMode:" target="4TL-9c-yey" id="dh5-8z-r8d"/>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORR-ic-Zq7">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORR-ic-Zq7">
                                 <rect key="frame" x="23" y="186" width="404" height="70"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="Mpc-BY-IwB">
                                     <font key="font" metaFont="smallSystem"/>
@@ -835,7 +835,7 @@ CA
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="J29-3D-d5b">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="J29-3D-d5b">
                                 <rect key="frame" x="23" y="148" width="93" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Price per kWh:" id="9c3-De-a2E">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -843,7 +843,7 @@ CA
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rU3-Fi-vXp">
+                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rU3-Fi-vXp">
                                 <rect key="frame" x="124" y="145" width="90" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="d3S-qP-hk5"/>
@@ -893,7 +893,7 @@ CA
                                     <action selector="deleteMeasurements:" target="4TL-9c-yey" id="zoi-cg-F37"/>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcc-vf-fNE">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcc-vf-fNE">
                                 <rect key="frame" x="23" y="65" width="404" height="42"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="h6y-ZC-SCg">
                                     <font key="font" metaFont="smallSystem"/>
@@ -970,7 +970,7 @@ CA
                         <rect key="frame" x="0.0" y="0.0" width="450" height="655"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOY-Au-tw5">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOY-Au-tw5">
                                 <rect key="frame" x="23" y="588" width="404" height="42"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="4bl-8F-k7A">
                                     <font key="font" metaFont="smallSystem"/>
@@ -992,7 +992,7 @@ CA
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="Sf2-Y7-Ma0">
                                 <rect key="frame" x="70" y="65" width="310" height="92"/>
                                 <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OKs-Fw-EDn">
+                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OKs-Fw-EDn">
                                         <rect key="frame" x="-2" y="72" width="98" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Measurements:" id="qxt-b8-PAf">
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -1015,7 +1015,7 @@ CA
                                             </binding>
                                         </connections>
                                     </colorWell>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pni-XH-Hpm">
+                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pni-XH-Hpm">
                                         <rect key="frame" x="-2" y="38" width="98" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Average line:" id="Gwv-28-QfN">
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -1038,7 +1038,7 @@ CA
                                             </binding>
                                         </connections>
                                     </colorWell>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LS6-tt-AS0">
+                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LS6-tt-AS0">
                                         <rect key="frame" x="180" y="38" width="84" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Day markers:" id="fY2-hN-oBS">
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -1061,7 +1061,7 @@ CA
                                             </binding>
                                         </connections>
                                     </colorWell>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RVa-Bu-aWa">
+                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RVa-Bu-aWa">
                                         <rect key="frame" x="-2" y="4" width="98" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Position line:" id="9qQ-z3-Pxf">
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -1084,7 +1084,7 @@ CA
                                             </binding>
                                         </connections>
                                     </colorWell>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="98H-n5-ByY">
+                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="98H-n5-ByY">
                                         <rect key="frame" x="180" y="72" width="84" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Power Naps:" id="1u4-T0-e9q">
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -1166,7 +1166,7 @@ CA
                                     </binding>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHE-qv-kcE">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHE-qv-kcE">
                                 <rect key="frame" x="23" y="177" width="404" height="42"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="eeg-PC-H8n">
                                     <font key="font" metaFont="smallSystem"/>
@@ -1195,7 +1195,7 @@ CA
                                     </binding>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3w-om-lCZ">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3w-om-lCZ">
                                 <rect key="frame" x="23" y="296" width="404" height="70"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="nwg-27-Nf5">
                                     <font key="font" metaFont="smallSystem"/>
@@ -1218,7 +1218,7 @@ CA
                                     </binding>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXc-dr-KzV">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXc-dr-KzV">
                                 <rect key="frame" x="23" y="443" width="404" height="42"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="aHZ-8l-6c9">
                                     <font key="font" metaFont="smallSystem"/>
@@ -1297,7 +1297,7 @@ CA
                         <rect key="frame" x="0.0" y="0.0" width="450" height="431"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3c-wk-Oem">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3c-wk-Oem">
                                 <rect key="frame" x="23" y="266" width="404" height="140"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="4t5-90-YF7">
                                     <font key="font" metaFont="smallSystem"/>
@@ -1345,7 +1345,7 @@ Calculating the carbon footprint requires this Mac's approximate location, as di
                                     </binding>
                                 </connections>
                             </progressIndicator>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hhy-9K-bsp">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hhy-9K-bsp">
                                 <rect key="frame" x="326" y="230" width="101" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Verifying API key…" id="CnG-14-GpQ">
                                     <font key="font" metaFont="smallSystem"/>
@@ -1364,7 +1364,7 @@ Calculating the carbon footprint requires this Mac's approximate location, as di
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="vPC-HC-mbA">
                                 <rect key="frame" x="25" y="181" width="400" height="5"/>
                             </box>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvd-fx-ECd">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvd-fx-ECd">
                                 <rect key="frame" x="23" y="65" width="404" height="98"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="BGq-Ni-IHx">
                                     <font key="font" metaFont="smallSystem"/>
@@ -1500,7 +1500,7 @@ Gw
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="tyf-yw-Nsc">
                                         <rect key="frame" x="0.0" y="98" width="340" height="70"/>
                                         <subviews>
-                                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="RNE-uT-ggG">
+                                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="RNE-uT-ggG">
                                                 <rect key="frame" x="-2" y="38" width="344" height="32"/>
                                                 <textFieldCell key="cell" title="Please enter your Electricity Maps API key in the text field below." id="NME-51-rka">
                                                     <font key="font" metaFont="systemBold"/>
@@ -1508,7 +1508,7 @@ Gw
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHp-6m-sHV">
+                                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHp-6m-sHV">
                                                 <rect key="frame" x="-2" y="0.0" width="344" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="340" id="6hK-0L-lBf"/>
@@ -1533,7 +1533,7 @@ Gw
                                             <constraint firstItem="RNE-uT-ggG" firstAttribute="leading" secondItem="tyf-yw-Nsc" secondAttribute="leading" id="x4D-x2-sDk"/>
                                         </constraints>
                                     </customView>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSJ-Lc-s4x">
+                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSJ-Lc-s4x">
                                         <rect key="frame" x="93" y="62" width="155" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" allowsUndo="NO" alignment="center" title="The API key is incorrect!" id="IPl-A3-u8M">
                                             <font key="font" metaFont="system"/>
@@ -1551,7 +1551,7 @@ Gw
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="fhi-He-gRN">
                                         <rect key="frame" x="23" y="0.0" width="295" height="42"/>
                                         <subviews>
-                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KG9-Js-jHE">
+                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KG9-Js-jHE">
                                                 <rect key="frame" x="-2" y="26" width="53" height="16"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="API key:" id="FlT-P2-7d3">
                                                     <font key="font" metaFont="system"/>
@@ -1574,7 +1574,7 @@ Gw
                                                     </binding>
                                                 </connections>
                                             </progressIndicator>
-                                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TNW-HP-9Ug">
+                                            <secureTextField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TNW-HP-9Ug">
                                                 <rect key="frame" x="0.0" y="0.0" width="295" height="21"/>
                                                 <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="LNa-Nk-t5o">
                                                     <font key="font" metaFont="system"/>
@@ -1755,7 +1755,7 @@ Gw
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="fZQ-vW-aho"/>
                                 <toolbarItem implicitItemIdentifier="9375995D-EC0D-4069-92B9-C94F08758203" explicitItemIdentifier="MTToolbarConsoleSearchItem" label="" paletteLabel="" sizingBehavior="auto" id="hZb-8U-PGs" userLabel="Search" customClass="MTToolbarItem">
                                     <nil key="toolTip"/>
-                                    <searchField key="view" wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" id="Ts7-X6-ZWB">
+                                    <searchField key="view" wantsLayer="YES" focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" id="Ts7-X6-ZWB">
                                         <rect key="frame" x="0.0" y="14" width="96" height="22"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="mjq-Ne-i7I">
@@ -1858,7 +1858,7 @@ Gw
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
-                                                <textField identifier="HeaderTextField" verticalHuggingPriority="750" id="M3n-fq-DiU">
+                                                <textField identifier="HeaderTextField" focusRingType="none" verticalHuggingPriority="750" id="M3n-fq-DiU">
                                                     <rect key="frame" x="11" y="0.0" width="167" height="14"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Header Cell" id="3kl-4F-sYb">
@@ -1875,7 +1875,7 @@ Gw
                                                             <rect key="frame" x="3" y="-1" width="20" height="20"/>
                                                             <imageCell key="cell" refusesFirstResponder="YES" imageScaling="proportionallyDown" image="NSActionTemplate" id="38T-1o-YyB"/>
                                                         </imageView>
-                                                        <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYQ-ax-XSm">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="249" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYQ-ax-XSm">
                                                             <rect key="frame" x="28" y="0.0" width="141" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Table View Cell" usesSingleLineMode="YES" id="1wI-bA-gal">
                                                                 <font key="font" metaFont="system"/>
@@ -1983,7 +1983,7 @@ Gw
                                                     <rect key="frame" x="8" y="0.0" width="198" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ZCY-AT-weh">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ZCY-AT-weh">
                                                             <rect key="frame" x="2" y="4" width="196" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="assertionsProcess" id="PYs-z2-snG">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -2027,7 +2027,7 @@ Gw
                                                     <rect key="frame" x="221.5" y="0.0" width="250" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ANJ-zz-37d">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ANJ-zz-37d">
                                                             <rect key="frame" x="2" y="4" width="248" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="assertionsTime" id="nrm-Np-YgB">
                                                                 <dateFormatter key="formatter" formatterBehavior="custom10_4" dateStyle="short" dateFormat="yyyy-MM-dd HH:mm:ss.SSSZ" id="1el-R4-jYy"/>
@@ -2072,7 +2072,7 @@ Gw
                                                     <rect key="frame" x="488" y="0.0" width="322" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="8HJ-7o-ezb">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="8HJ-7o-ezb">
                                                             <rect key="frame" x="2" y="4" width="320" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="assertionsMessage" id="JUn-M5-ksy">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -2146,13 +2146,13 @@ Gw
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRw-og-ptP">
-                                <rect key="frame" x="0.0" y="0.0" width="960" height="202"/>
+                                <rect key="frame" x="0.0" y="0.0" width="970" height="202"/>
                                 <clipView key="contentView" ambiguous="YES" id="96W-Lb-WOb">
-                                    <rect key="frame" x="1" y="1" width="958" height="200"/>
+                                    <rect key="frame" x="1" y="1" width="968" height="200"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" tableStyle="plain" alternatingRowBackgroundColors="YES" columnReordering="NO" multipleSelection="NO" autosaveName="LogViewer" rowHeight="24" usesAutomaticRowHeights="YES" headerView="lV7-Uh-vXT" viewBased="YES" id="JNv-Wl-dcG">
-                                            <rect key="frame" x="0.0" y="0.0" width="958" height="172"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="968" height="172"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="16" height="0.0"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -2218,7 +2218,7 @@ Gw
                                                             <rect key="frame" x="74" y="0.0" width="201" height="24"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Cox-VY-kTV">
+                                                                <textField focusRingType="none" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Cox-VY-kTV">
                                                                     <rect key="frame" x="2" y="3" width="199" height="18"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="18" id="186-dU-eb7"/>
@@ -2267,7 +2267,7 @@ Gw
                                                             <rect key="frame" x="290.5" y="0.0" width="140" height="24"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="gjT-7s-qx4">
+                                                                <textField focusRingType="none" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="gjT-7s-qx4">
                                                                     <rect key="frame" x="2" y="3" width="138" height="18"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="18" id="Dls-C3-09S"/>
@@ -2298,7 +2298,7 @@ Gw
                                                         </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>
-                                                <tableColumn width="503.5" minWidth="150" maxWidth="10000" id="ilr-4r-VCp">
+                                                <tableColumn width="513.5" minWidth="150" maxWidth="10000" id="ilr-4r-VCp">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Message">
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2312,11 +2312,11 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="i0z-QC-M2P">
-                                                            <rect key="frame" x="446.5" y="0.0" width="503" height="24"/>
+                                                            <rect key="frame" x="446.5" y="0.0" width="513" height="24"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="VnP-7m-OFA">
-                                                                    <rect key="frame" x="2" y="3" width="502" height="18"/>
+                                                                <textField focusRingType="none" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="VnP-7m-OFA">
+                                                                    <rect key="frame" x="2" y="3" width="512" height="18"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="18" id="R28-wK-q3J"/>
                                                                     </constraints>
@@ -2368,12 +2368,12 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <tableHeaderView key="headerView" wantsLayer="YES" id="lV7-Uh-vXT">
-                                    <rect key="frame" x="0.0" y="0.0" width="958" height="28"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="968" height="28"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="DEb-Kk-t7A">
-                                <rect key="frame" x="429" y="44" width="102" height="58"/>
+                                <rect key="frame" x="434" y="44" width="102" height="58"/>
                                 <subviews>
                                     <progressIndicator verticalHuggingPriority="1000" maxValue="100" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="drN-g1-2s9">
                                         <rect key="frame" x="35" y="26" width="32" height="32"/>
@@ -2385,7 +2385,7 @@ Gw
                                             </binding>
                                         </connections>
                                     </progressIndicator>
-                                    <textField horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="1I3-ZE-igj">
+                                    <textField focusRingType="none" horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="1I3-ZE-igj">
                                         <rect key="frame" x="-2" y="0.0" width="106" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Composing log…" id="xeC-qU-AdB">
                                             <font key="font" metaFont="system"/>
@@ -2702,7 +2702,7 @@ Gw
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="Xz2-4L-LTn">
                                         <rect key="frame" x="0.0" y="100" width="150" height="100"/>
                                         <subviews>
-                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNt-0Q-zFn">
+                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNt-0Q-zFn">
                                                 <rect key="frame" x="-2" y="69" width="154" height="31"/>
                                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" alignment="center" title="powerValue" id="82l-7S-CjA">
                                                     <font key="font" textStyle="largeTitle" name=".SFNS-Regular"/>
@@ -2710,7 +2710,7 @@ Gw
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="L3P-OM-B5h">
+                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="L3P-OM-B5h">
                                                 <rect key="frame" x="-2" y="22" width="154" height="16"/>
                                                 <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" alignment="center" title="measurementDate" id="jkR-AM-8Rp">
                                                     <font key="font" metaFont="system"/>
@@ -2718,7 +2718,7 @@ Gw
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="dXb-5g-m6q">
+                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="dXb-5g-m6q">
                                                 <rect key="frame" x="-2" y="43" width="154" height="16"/>
                                                 <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" alignment="center" title="powerState" id="QIK-1s-Nxe">
                                                     <font key="font" metaFont="system"/>
@@ -2747,7 +2747,7 @@ Gw
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="AS8-g8-zVN">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="100"/>
                                         <subviews>
-                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doh-nO-K6U">
+                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doh-nO-K6U">
                                                 <rect key="frame" x="-2" y="69" width="154" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="G88-lo-FIM"/>
@@ -2758,7 +2758,7 @@ Gw
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="87X-aN-ZOJ">
+                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="87X-aN-ZOJ">
                                                 <rect key="frame" x="-2" y="22" width="154" height="16"/>
                                                 <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" alignment="center" title="measurementDate" id="vH9-De-bB3">
                                                     <font key="font" metaFont="system"/>
@@ -2766,7 +2766,7 @@ Gw
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="op7-8k-Y9z">
+                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="op7-8k-Y9z">
                                                 <rect key="frame" x="-2" y="43" width="154" height="16"/>
                                                 <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" alignment="center" title="powerState" id="Lhx-fv-9ck">
                                                     <font key="font" metaFont="system"/>
@@ -2840,7 +2840,7 @@ Gw
                         <rect key="frame" x="0.0" y="0.0" width="450" height="261"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AjN-Ki-mI5">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AjN-Ki-mI5">
                                 <rect key="frame" x="23" y="180" width="404" height="56"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="qye-Lt-zao">
                                     <font key="font" metaFont="smallSystem"/>
@@ -2862,7 +2862,7 @@ Gw
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="ff2-52-LgE">
                                 <rect key="frame" x="25" y="121" width="400" height="5"/>
                             </box>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CwE-5n-UbN">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CwE-5n-UbN">
                                 <rect key="frame" x="23" y="61" width="404" height="42"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="Jv4-az-WCd">
                                     <font key="font" metaFont="smallSystem"/>
@@ -2871,7 +2871,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AvO-4r-bup">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AvO-4r-bup">
                                 <rect key="frame" x="23" y="25" width="137" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Delete journal entries:" id="Tq5-S6-vw3">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -2972,7 +2972,7 @@ Gw
                                                     <rect key="frame" x="8" y="0.0" width="148" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="xGj-jH-8nf">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="xGj-jH-8nf">
                                                             <rect key="frame" x="2" y="4" width="146" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="journalDate" id="QcZ-8s-LvD">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -3016,7 +3016,7 @@ Gw
                                                     <rect key="frame" x="172" y="0.0" width="151" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="8Fs-FO-ewV">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="8Fs-FO-ewV">
                                                             <rect key="frame" x="2" y="4" width="149" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="journalConsumptionTotal" id="a6b-fq-F0L">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -3060,7 +3060,7 @@ Gw
                                                     <rect key="frame" x="338.5" y="0.0" width="150" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="4Wi-yT-UnY">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="4Wi-yT-UnY">
                                                             <rect key="frame" x="2" y="4" width="148" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="journalConsumptionNap" id="f8r-pg-7RR">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -3104,7 +3104,7 @@ Gw
                                                     <rect key="frame" x="505" y="0.0" width="152" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="7ui-37-eVc">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="7ui-37-eVc">
                                                             <rect key="frame" x="2" y="4" width="150" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="journalTimeAwake" id="0hJ-4A-yd8">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -3148,7 +3148,7 @@ Gw
                                                     <rect key="frame" x="673" y="0.0" width="178" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="aev-pG-7CA">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="aev-pG-7CA">
                                                             <rect key="frame" x="2" y="4" width="176" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="journalTimeNap" id="eJC-U8-DqW">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -3244,7 +3244,7 @@ Gw
                         <rect key="frame" x="0.0" y="0.0" width="312" height="400"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jat-vc-Z6U">
+                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jat-vc-Z6U">
                                 <rect key="frame" x="18" y="262" width="166" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Total power consumption:" usesSingleLineMode="YES" id="TvO-d4-Nym">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3252,7 +3252,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Koh-m6-0cu">
+                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Koh-m6-0cu">
                                 <rect key="frame" x="190" y="262" width="74" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="xO5-bb-xj0"/>
@@ -3263,7 +3263,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="yYQ-2q-DqG" userLabel="Consumption Summary Nap Label">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="yYQ-2q-DqG" userLabel="Consumption Summary Nap Label">
                                 <rect key="frame" x="18" y="243" width="166" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Consumed during Power Nap:" usesSingleLineMode="YES" id="OLr-dX-jwG">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3271,7 +3271,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcB-QI-qln">
+                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcB-QI-qln">
                                 <rect key="frame" x="190" y="243" width="74" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="S4x-U9-Mm5">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3279,7 +3279,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IJM-Ea-NrB" userLabel="Duration Summary Awake Label">
+                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IJM-Ea-NrB" userLabel="Duration Summary Awake Label">
                                 <rect key="frame" x="18" y="224" width="166" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Duration awake:" usesSingleLineMode="YES" id="U4A-7v-8aP">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3287,7 +3287,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHs-NO-8Wj">
+                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHs-NO-8Wj">
                                 <rect key="frame" x="190" y="224" width="74" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="PXZ-C7-eAF">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3295,7 +3295,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YSK-Xa-Bao" userLabel="Duration Summary Nap Label">
+                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YSK-Xa-Bao" userLabel="Duration Summary Nap Label">
                                 <rect key="frame" x="18" y="205" width="166" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Duration Power Nap:" usesSingleLineMode="YES" id="csm-gY-8sj">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3303,7 +3303,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM9-nI-EBh">
+                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM9-nI-EBh">
                                 <rect key="frame" x="190" y="205" width="74" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="qNU-ew-9nn">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3311,7 +3311,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="7M0-FP-neR" userLabel="Consumption Summary Costs Label">
+                            <textField focusRingType="none" horizontalHuggingPriority="249" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="7M0-FP-neR" userLabel="Consumption Summary Costs Label">
                                 <rect key="frame" x="18" y="186" width="166" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Electricity costs:" usesSingleLineMode="YES" id="79H-X5-650">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3326,7 +3326,7 @@ Gw
                                     </binding>
                                 </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qql-E6-Jnb" userLabel="Consumption Summary Costs Value">
+                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qql-E6-Jnb" userLabel="Consumption Summary Costs Value">
                                 <rect key="frame" x="190" y="186" width="74" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" usesSingleLineMode="YES" id="Jrt-qJ-XaC">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3341,7 +3341,7 @@ Gw
                                     </binding>
                                 </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="4jk-y9-iV2" userLabel="Consumption Summary Nap Costs Label">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="4jk-y9-iV2" userLabel="Consumption Summary Nap Costs Label">
                                 <rect key="frame" x="18" y="167" width="166" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Electricity costs Power Nap:" usesSingleLineMode="YES" id="5L4-n0-bFI">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3356,7 +3356,7 @@ Gw
                                     </binding>
                                 </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4X-yP-ruJ" userLabel="Consumption Summary Nap Costs Value">
+                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4X-yP-ruJ" userLabel="Consumption Summary Nap Costs Value">
                                 <rect key="frame" x="190" y="167" width="74" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" usesSingleLineMode="YES" id="Zva-EX-a2c">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3371,7 +3371,7 @@ Gw
                                     </binding>
                                 </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="jaI-12-NCq">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="jaI-12-NCq">
                                 <rect key="frame" x="5" y="325" width="181" height="16"/>
                                 <textFieldCell key="cell" selectable="YES" title="consumptionSummaryLabel" id="zdL-7W-VgV">
                                     <font key="font" metaFont="systemSemibold" size="13"/>
@@ -3379,7 +3379,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hp9-ev-jsk">
+                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hp9-ev-jsk">
                                 <rect key="frame" x="18" y="291" width="166" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Journal entries:" usesSingleLineMode="YES" id="ME3-AA-pMQ">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3387,7 +3387,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vR-lq-GSt">
+                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vR-lq-GSt">
                                 <rect key="frame" x="190" y="291" width="74" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="BgG-4M-oXN"/>
@@ -3469,14 +3469,14 @@ Gw
             <objects>
                 <viewController title="Power Nap" id="bS3-mq-ZQb" customClass="MTSettingsPowerNapController" sceneMemberID="viewController">
                     <view key="view" id="lYQ-tY-0wr">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="284"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="279"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="QFN-05-pXQ">
-                                <rect key="frame" x="25" y="140" width="400" height="5"/>
+                                <rect key="frame" x="25" y="135" width="400" height="5"/>
                             </box>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QT5-d4-7Ze">
-                                <rect key="frame" x="23" y="203" width="404" height="56"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QT5-d4-7Ze">
+                                <rect key="frame" x="23" y="198" width="404" height="56"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="nzZ-Dp-bqY">
                                     <font key="font" metaFont="smallSystem"/>
                                     <string key="title">While sleeping, your Mac can wake up periodically to do some tasks like checking for new email or downloading updates. This is called a Power Nap. Use the menu below to enable or disable Power Nap. On some Macs, Power Nap may not be completely disabled.</string>
@@ -3485,7 +3485,7 @@ Gw
                                 </textFieldCell>
                             </textField>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="agv-2u-dqG">
-                                <rect key="frame" x="168" y="159" width="207" height="25"/>
+                                <rect key="frame" x="168" y="154" width="207" height="25"/>
                                 <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="9Ro-Ja-egN">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
@@ -3506,15 +3506,15 @@ Gw
                                     </binding>
                                 </connections>
                             </popUpButton>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BNR-Hj-tlN">
-                                <rect key="frame" x="23" y="166" width="140" height="16"/>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BNR-Hj-tlN">
+                                <rect key="frame" x="23" y="161" width="140" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="powerNapEnableLabel" id="Fvy-a0-jaA">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyC-FF-6Dy">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyC-FF-6Dy">
                                 <rect key="frame" x="23" y="61" width="404" height="56"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="QgV-jm-6vz">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3540,7 +3540,7 @@ Gw
                             <constraint firstItem="QFN-05-pXQ" firstAttribute="leading" secondItem="lYQ-tY-0wr" secondAttribute="leading" constant="25" id="8D8-wU-IIP"/>
                             <constraint firstItem="agv-2u-dqG" firstAttribute="firstBaseline" secondItem="BNR-Hj-tlN" secondAttribute="firstBaseline" id="8g6-a7-j0q"/>
                             <constraint firstItem="39W-39-kcF" firstAttribute="leading" secondItem="lYQ-tY-0wr" secondAttribute="leading" constant="25" id="D6L-eN-A2b"/>
-                            <constraint firstItem="EyC-FF-6Dy" firstAttribute="top" secondItem="QFN-05-pXQ" secondAttribute="bottom" constant="25" id="Fcn-zc-i6G"/>
+                            <constraint firstItem="EyC-FF-6Dy" firstAttribute="top" secondItem="QFN-05-pXQ" secondAttribute="bottom" constant="20" id="Fcn-zc-i6G"/>
                             <constraint firstItem="EyC-FF-6Dy" firstAttribute="leading" secondItem="lYQ-tY-0wr" secondAttribute="leading" constant="25" id="J9V-h0-jyg"/>
                             <constraint firstItem="QT5-d4-7Ze" firstAttribute="top" secondItem="lYQ-tY-0wr" secondAttribute="top" constant="25" id="L4m-Uw-i9s"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="agv-2u-dqG" secondAttribute="trailing" constant="25" id="PaK-ma-gy4"/>

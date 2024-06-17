@@ -268,7 +268,7 @@
 {
     BOOL ignored = NO;
     
-    CFPropertyListRef property = CFPreferencesCopyValue(kMTPrefsIgnorePowerNapsKey, kMTDaemonPreferenceDomain, kCFPreferencesAnyUser, kCFPreferencesCurrentHost);
+    CFPropertyListRef property = CFPreferencesCopyAppValue(kMTPrefsIgnorePowerNapsKey, kMTDaemonPreferenceDomain);
     
     if (property) {
         ignored = CFBooleanGetValue(property);
@@ -343,7 +343,7 @@
     BOOL isEnabled = NO;
     BOOL isForced = CFPreferencesAppValueIsForced(kMTPrefsEnableJournalKey, kMTDaemonPreferenceDomain);
     
-    CFPropertyListRef property = CFPreferencesCopyValue(kMTPrefsEnableJournalKey, kMTDaemonPreferenceDomain, kCFPreferencesAnyUser, kCFPreferencesCurrentHost);
+    CFPropertyListRef property = CFPreferencesCopyAppValue(kMTPrefsEnableJournalKey, kMTDaemonPreferenceDomain);
     
     if (property) {
         isEnabled = CFBooleanGetValue(property);
@@ -371,7 +371,7 @@
     NSInteger interval = 0;
     BOOL isForced = CFPreferencesAppValueIsForced(kMTPrefsJournalAutoDeleteKey, kMTDaemonPreferenceDomain);
     
-    CFPropertyListRef property = CFPreferencesCopyValue(kMTPrefsJournalAutoDeleteKey, kMTDaemonPreferenceDomain, kCFPreferencesAnyUser, kCFPreferencesCurrentHost);
+    CFPropertyListRef property = CFPreferencesCopyAppValue(kMTPrefsJournalAutoDeleteKey, kMTDaemonPreferenceDomain);
     
     if (property) {
         
