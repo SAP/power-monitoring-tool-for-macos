@@ -365,7 +365,7 @@
                     double durationPowernap = [self durationPowerNapWithEntries:entriesArray];
                     
                     energyTotal = energyTotal / (durationAwake + durationPowernap);
-                    energyPowerNap = energyPowerNap / durationPowernap;
+                    energyPowerNap = (durationPowernap > 0) ? energyPowerNap / durationPowernap : 0;
                     
                     MTPowerJournalEntry *entry = [[MTPowerJournalEntry alloc] initWithTimeIntervalSince1970:[anchorDate timeIntervalSince1970]];
                     [entry setConsumptionTotal:energyTotal];

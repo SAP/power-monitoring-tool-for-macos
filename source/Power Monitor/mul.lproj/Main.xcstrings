@@ -13,18 +13,6 @@
         }
       }
     },
-    "0t5-IO-Xwe.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Text Cell\"; ObjectID = \"0t5-IO-Xwe\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Text Cell"
-          }
-        }
-      }
-    },
     "1el-R4-jYy.ibShadowedDateFormat" : {
       "comment" : "Class = \"NSDateFormatter\"; ibShadowedDateFormat = \"yyyy-MM-dd HH:mm:ss.SSSZ\"; ObjectID = \"1el-R4-jYy\";",
       "extractionState" : "extracted_with_value",
@@ -51,18 +39,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Power Naps:"
-          }
-        }
-      }
-    },
-    "1wI-bA-gal.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Table View Cell\"; ObjectID = \"1wI-bA-gal\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Table View Cell"
           }
         }
       }
@@ -213,18 +189,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "The main window of this application displays the system power history in the form of a graph. Please use the checkboxes below to show additional information that may be displayed with the graph."
-          }
-        }
-      }
-    },
-    "4df-sH-uOX.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Text Cell\"; ObjectID = \"4df-sH-uOX\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Text Cell"
           }
         }
       }
@@ -663,18 +627,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "To determine this Mac's carbon footprint, this application needs carbon intensity data for the country this Mac is currentliy located at. This data can either be obtained dynamically by using one of the APIs this application supports or by providing a static list in form of a CSV file which must contain the country code followed by the respective carbon intensity value. Please use the button below to import carbon intensity data or to clear previously imported data."
-          }
-        }
-      }
-    },
-    "BNy-Nn-euS.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Text Cell\"; ObjectID = \"BNy-Nn-euS\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Text Cell"
           }
         }
       }
@@ -1171,18 +1123,6 @@
         }
       }
     },
-    "gll-WL-dOZ.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Text Cell\"; ObjectID = \"gll-WL-dOZ\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Text Cell"
-          }
-        }
-      }
-    },
     "GrO-pm-TnR.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Power Consumption\"; ObjectID = \"GrO-pm-TnR\";",
       "extractionState" : "extracted_with_value",
@@ -1359,18 +1299,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Services"
-          }
-        }
-      }
-    },
-    "i6o-WU-ml3.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Text Cell\"; ObjectID = \"i6o-WU-ml3\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Text Cell"
           }
         }
       }
@@ -1617,18 +1545,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "powerState"
-          }
-        }
-      }
-    },
-    "ljb-Pz-ErA.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Text Cell\"; ObjectID = \"ljb-Pz-ErA\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Text Cell"
           }
         }
       }
@@ -2031,18 +1947,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Show times without power consumption"
-          }
-        }
-      }
-    },
-    "PC2-GZ-055.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Text Cell\"; ObjectID = \"PC2-GZ-055\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Text Cell"
           }
         }
       }
@@ -2629,18 +2533,6 @@
         }
       }
     },
-    "v97-X5-VL2.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Text Cell\"; ObjectID = \"v97-X5-VL2\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Text Cell"
-          }
-        }
-      }
-    },
     "Vdr-fp-XzO.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Hide Others\"; ObjectID = \"Vdr-fp-XzO\";",
       "extractionState" : "extracted_with_value",
@@ -2721,18 +2613,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Show only entries related to wake and sleep events"
-          }
-        }
-      }
-    },
-    "Vtc-3q-Zj6.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Text Cell\"; ObjectID = \"Vtc-3q-Zj6\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Text Cell"
           }
         }
       }
@@ -2833,30 +2713,6 @@
         }
       }
     },
-    "XtP-aP-Chs.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Text Cell\"; ObjectID = \"XtP-aP-Chs\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Text Cell"
-          }
-        }
-      }
-    },
-    "y0t-2x-m6x.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Text Cell\"; ObjectID = \"y0t-2x-m6x\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Text Cell"
-          }
-        }
-      }
-    },
     "y2E-Fl-cvG.title" : {
       "comment" : "Class = \"NSWindow\"; title = \"Console\"; ObjectID = \"y2E-Fl-cvG\";",
       "extractionState" : "extracted_with_value",
@@ -2871,30 +2727,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Console"
-          }
-        }
-      }
-    },
-    "y3N-VG-tRP.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Text Cell\"; ObjectID = \"y3N-VG-tRP\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Text Cell"
-          }
-        }
-      }
-    },
-    "y7E-Ay-uLy.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Text Cell\"; ObjectID = \"y7E-Ay-uLy\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Text Cell"
           }
         }
       }

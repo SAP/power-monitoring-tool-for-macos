@@ -63,14 +63,6 @@
             argument = "--noGUI"
             isEnabled = "NO">
          </CommandLineArgument>
-         <CommandLineArgument
-            argument = "--registerDaemon"
-            isEnabled = "NO">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "--unregisterDaemon"
-            isEnabled = "NO">
-         </CommandLineArgument>
       </CommandLineArguments>
    </LaunchAction>
    <ProfileAction
