@@ -1,5 +1,5 @@
 /*
-     InfoPlist.strings
+     MTPowerInfoController.h
      Copyright 2023-2024 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,12 +15,8 @@
      limitations under the License.
 */
 
-// the copyright string (for the application's info window in Finder)
-"NSHumanReadableCopyright" = "Copyright © 2023-2024 SAP SE. Alle Rechte vorbehalten.";
+#import <Cocoa/Cocoa.h>
 
-// the localized document type
-"Power Monitor Data File" = "Power Monitor Datei";
+@interface MTPowerInfoController : NSViewController
 
-// the localized app name
-"CFBundleDisplayName" = "Leistungsanzeige";
-"CFBundleName" = "Leistungsanzeige";
+@end

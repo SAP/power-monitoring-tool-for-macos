@@ -16,7 +16,6 @@
 */
 
 #import "MTAssertionsController.h"
-#import "IOPMLibPrivate.h"
 #import "MTSystemInfo.h"
 #import "Constants.h"
 

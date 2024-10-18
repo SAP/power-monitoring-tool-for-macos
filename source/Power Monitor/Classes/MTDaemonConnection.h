@@ -27,6 +27,7 @@
                 the connection to the daemon failed.
 */
 @protocol MTDaemonConnectionDelegate <NSObject>
+@optional
 
 /*!
  @method        connection:didFailWithError:

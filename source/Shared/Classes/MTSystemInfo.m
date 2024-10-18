@@ -305,4 +305,48 @@ typedef struct {
     return success;
 }
 
++ (NSDictionary*)externalPowerAdapterDetails
+{
+    NSDictionary *adapterDetails = nil;
+    CFDictionaryRef external_ps = NULL;
+    external_ps = IOPSCopyExternalPowerAdapterDetails();
+    
+    if (external_ps) {
+        adapterDetails = CFBridgingRelease(external_ps);
+    }
+    
+    return adapterDetails;
+}
+
++ (NSArray*)powerSourcesInfo
+{
+    NSMutableArray *returnValue = [[NSMutableArray alloc] init];
+    
+    CFTypeRef ps_info = NULL;
+    CFArrayRef ps_list = NULL;
+    
+    ps_info = IOPSCopyPowerSourcesInfo();
+    
+    if (ps_info) {
+        
+        ps_list = IOPSCopyPowerSourcesList(ps_info);
+
+        if (ps_list) {
+            
+            for (int i = 0; i < CFArrayGetCount(ps_list); i++) {
+                
+                CFDictionaryRef one_ps = NULL;
+                one_ps = IOPSGetPowerSourceDescription(ps_info, CFArrayGetValueAtIndex(ps_list, i));
+                if (one_ps) { [returnValue addObject:(__bridge NSDictionary*)(one_ps)]; }
+            }
+            
+            CFRelease(ps_list);
+        }
+        
+        CFRelease(ps_info);
+    }
+    
+    return returnValue;
+}
+
 @end

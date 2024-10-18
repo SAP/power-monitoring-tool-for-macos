@@ -23,6 +23,7 @@
  @abstract      Defines an interface for delegates of MTJournalController to be notified if specific aspects of the journal have changed.
 */
 @protocol MTJournalControllerDelegate <NSObject>
+@optional
 
 /*!
  @method        journalControllerSelectionDidChange:

@@ -411,11 +411,6 @@
     _isDarkWake = (type == MTPowerEventTypeDarkWake) ? YES : NO;
 }
 
-- (void)powerEventDidEnd:(MTPowerEvent *)event
-{
-    return;
-}
-
 - (void)powerEventDidStart:(MTPowerEvent *)event
 {
     _isDarkWake = ([event type] == MTPowerEventTypeDarkWake) ? YES : NO;

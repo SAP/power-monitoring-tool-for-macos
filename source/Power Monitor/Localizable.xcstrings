@@ -1,6 +1,22 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "acPower" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Netzteil"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power Supply"
+          }
+        }
+      }
+    },
     "backgroundButton" : {
       "localizations" : {
         "de" : {
@@ -786,6 +802,22 @@
         }
       }
     },
+    "powerBattery" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Interne Batterie"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internal Battery"
+          }
+        }
+      }
+    },
     "powerDescription" : {
       "localizations" : {
         "de" : {
@@ -914,6 +946,38 @@
         }
       }
     },
+    "powerUnknown" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unbekannte Stromversorgung"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown Power Supply"
+          }
+        }
+      }
+    },
+    "powerUPS" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unterbrechungsfreie Stromversorgung (USV)"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uninterruptible Power Supply (UPS)"
+          }
+        }
+      }
+    },
     "quitButton" : {
       "localizations" : {
         "de" : {
@@ -990,6 +1054,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Power Event Log"
+          }
+        }
+      }
+    },
+    "sidebarEntryPowerInfo" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informationen zur Stromversorgung"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power Supply Information"
           }
         }
       }

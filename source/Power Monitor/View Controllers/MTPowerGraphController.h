@@ -24,6 +24,7 @@
  @abstract      Defines an interface for delegates of MTPowerGraphController to be notified if specific aspects of the view have changed.
 */
 @protocol MTPowerGraphControllerDelegate <NSObject>
+@optional
 
 /*!
  @method        graphView:didSelectMeasurement:

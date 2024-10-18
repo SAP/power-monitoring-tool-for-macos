@@ -14,6 +14,7 @@
 		AD17F0912A0AB80900DB060D /* corp.sap.PowerMonitorDaemon.plist in Embed Daemon Plist */ = {isa = PBXBuildFile; fileRef = AD17F08F2A0AB7DE00DB060D /* corp.sap.PowerMonitorDaemon.plist */; };
 		AD1D751B2B0C9D1500904B84 /* PowerMonitorDaemon in Copy Daemon */ = {isa = PBXBuildFile; fileRef = AD8123BA2A0B943C00857DF8 /* PowerMonitorDaemon */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		AD1D751D2B0C9D6A00904B84 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AD1D751C2B0C9D6A00904B84 /* Localizable.xcstrings */; };
+		AD1E5FEB2C60275100E9C59B /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AD1E5FEA2C60275100E9C59B /* InfoPlist.xcstrings */; };
 		AD1F5DF12B4BFC0D007DD4FF /* MTAssertionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1F5DF02B4BFC0D007DD4FF /* MTAssertionsController.m */; };
 		AD238DCD2AD3DCC900A6B5B2 /* MTSystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB4B37C2A0BDCD800B7AF32 /* MTSystemInfo.m */; };
 		AD2B8BB92B7A1DE100625CEB /* MTPowerJournal.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2B8BB82B7A1DE100625CEB /* MTPowerJournal.m */; };
@@ -28,9 +29,9 @@
 		AD4950DB29F7BDB200B6F363 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD4950DA29F7BDB200B6F363 /* Assets.xcassets */; };
 		AD4950DE29F7BDB200B6F363 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4950DC29F7BDB200B6F363 /* Main.storyboard */; };
 		AD4950E029F7BDB200B6F363 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4950DF29F7BDB200B6F363 /* main.m */; };
+		AD4AB55A2CB7BE9A0000002F /* MTPowerInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4AB5592CB7BE9A0000002F /* MTPowerInfoController.m */; };
 		AD5236302B46FC9D00A6164D /* MTSidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52362F2B46FC9D00A6164D /* MTSidebarController.m */; };
 		AD60B4F82A1CC0E500FE5BEC /* MTTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD60B4F72A1CC0E500FE5BEC /* MTTabViewController.m */; };
-		AD65D9912A127805006B05E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD65D9932A127805006B05E7 /* InfoPlist.strings */; };
 		AD68CBF22A173CAE00B19D07 /* MTCarbonFootprint.m in Sources */ = {isa = PBXBuildFile; fileRef = AD68CBF12A173CAE00B19D07 /* MTCarbonFootprint.m */; };
 		AD6B1D7E2A2F691B00CFE596 /* MTColorTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6B1D7D2A2F691B00CFE596 /* MTColorTransformer.m */; };
 		AD6E2B612B890241009E820F /* MTJournalInspectorController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6E2B602B890241009E820F /* MTJournalInspectorController.m */; };
@@ -147,6 +148,7 @@
 		AD0E98212B6A6CDE006A1C66 /* MTPowerGraphController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTPowerGraphController.m; sourceTree = "<group>"; };
 		AD17F08F2A0AB7DE00DB060D /* corp.sap.PowerMonitorDaemon.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = corp.sap.PowerMonitorDaemon.plist; sourceTree = "<group>"; };
 		AD1D751C2B0C9D6A00904B84 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		AD1E5FEA2C60275100E9C59B /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		AD1F5DEF2B4BFC0D007DD4FF /* MTAssertionsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTAssertionsController.h; sourceTree = "<group>"; };
 		AD1F5DF02B4BFC0D007DD4FF /* MTAssertionsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTAssertionsController.m; sourceTree = "<group>"; };
 		AD2B8BB72B7A1DE100625CEB /* MTPowerJournal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MTPowerJournal.h; path = Shared/Classes/MTPowerJournal.h; sourceTree = SOURCE_ROOT; };
@@ -167,11 +169,12 @@
 		AD4950DA29F7BDB200B6F363 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD4950DD29F7BDB200B6F363 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD4950DF29F7BDB200B6F363 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AD4AB5582CB7BE9A0000002F /* MTPowerInfoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTPowerInfoController.h; sourceTree = "<group>"; };
+		AD4AB5592CB7BE9A0000002F /* MTPowerInfoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTPowerInfoController.m; sourceTree = "<group>"; };
 		AD52362E2B46FC9D00A6164D /* MTSidebarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTSidebarController.h; sourceTree = "<group>"; };
 		AD52362F2B46FC9D00A6164D /* MTSidebarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTSidebarController.m; sourceTree = "<group>"; };
 		AD60B4F62A1CC0E500FE5BEC /* MTTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTabViewController.h; sourceTree = "<group>"; };
 		AD60B4F72A1CC0E500FE5BEC /* MTTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTabViewController.m; sourceTree = "<group>"; };
-		AD65D9942A12780B006B05E7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AD68CBF02A173CAE00B19D07 /* MTCarbonFootprint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCarbonFootprint.h; sourceTree = "<group>"; };
 		AD68CBF12A173CAE00B19D07 /* MTCarbonFootprint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTCarbonFootprint.m; sourceTree = "<group>"; };
 		AD6B1D7C2A2F691B00CFE596 /* MTColorTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTColorTransformer.h; sourceTree = "<group>"; };
@@ -348,6 +351,8 @@
 				AD0E98212B6A6CDE006A1C66 /* MTPowerGraphController.m */,
 				AD09A6022B73D217008CF6C4 /* MTPowerGraphInspectorController.h */,
 				AD09A6032B73D217008CF6C4 /* MTPowerGraphInspectorController.m */,
+				AD4AB5582CB7BE9A0000002F /* MTPowerInfoController.h */,
+				AD4AB5592CB7BE9A0000002F /* MTPowerInfoController.m */,
 				ADE7AF212B85F36F00153AD5 /* MTSavePanelAccessoryController.h */,
 				ADE7AF222B85F36F00153AD5 /* MTSavePanelAccessoryController.m */,
 				ADBA009D2A29FCD50082157B /* MTSettingsCarbonController.h */,
@@ -402,7 +407,7 @@
 				AD4950DA29F7BDB200B6F363 /* Assets.xcassets */,
 				AD17F08F2A0AB7DE00DB060D /* corp.sap.PowerMonitorDaemon.plist */,
 				ADB911EB2AD6F007007C64F1 /* Credits.rtf */,
-				AD65D9932A127805006B05E7 /* InfoPlist.strings */,
+				AD1E5FEA2C60275100E9C59B /* InfoPlist.xcstrings */,
 				AD1D751C2B0C9D6A00904B84 /* Localizable.xcstrings */,
 				AD4950DF29F7BDB200B6F363 /* main.m */,
 				AD4950DC29F7BDB200B6F363 /* Main.storyboard */,
@@ -620,11 +625,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD7574B92B865EC80050CA85 /* MTSavePanelAccessory.xib in Resources */,
-				AD65D9912A127805006B05E7 /* InfoPlist.strings in Resources */,
 				AD4950DB29F7BDB200B6F363 /* Assets.xcassets in Resources */,
 				AD1D751D2B0C9D6A00904B84 /* Localizable.xcstrings in Resources */,
 				ADB911E92AD6F007007C64F1 /* Credits.rtf in Resources */,
 				AD8ECA852A3A1B440045BA11 /* Power Monitor.mobileconfig in Resources */,
+				AD1E5FEB2C60275100E9C59B /* InfoPlist.xcstrings in Resources */,
 				ADB720C92A3C3E0600676E92 /* Alpha-2toAlpha-3.strings in Resources */,
 				AD4950DE29F7BDB200B6F363 /* Main.storyboard in Resources */,
 				ADCDF2912B3039B90026F56B /* MTPowerGraphTooltip.xib in Resources */,
@@ -670,6 +675,7 @@
 				AD68CBF22A173CAE00B19D07 /* MTCarbonFootprint.m in Sources */,
 				AD2B8BB92B7A1DE100625CEB /* MTPowerJournal.m in Sources */,
 				AD38D4C62B84C47200ACC67E /* MTJournalTableView.m in Sources */,
+				AD4AB55A2CB7BE9A0000002F /* MTPowerInfoController.m in Sources */,
 				AD74D81A2B7A5216003B1524 /* MTSettingsJournalController.m in Sources */,
 				AD74E37B2A38A59F000B0B84 /* MTPowerGraphView.m in Sources */,
 				ADEAFD832B2892B3005A1799 /* MTSettingsViewOptionsController.m in Sources */,
@@ -747,14 +753,6 @@
 				ADD3B09D2B1F3188000C1882 /* mul */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		AD65D9932A127805006B05E7 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AD65D9942A12780B006B05E7 /* de */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		AD7574B82B865EC80050CA85 /* MTSavePanelAccessory.xib */ = {
@@ -837,6 +835,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Debug;
 		};
@@ -892,6 +891,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;
 		};
@@ -905,7 +905,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 497;
+				CURRENT_PROJECT_VERSION = 513;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -922,7 +922,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -939,7 +939,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 497;
+				CURRENT_PROJECT_VERSION = 513;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -956,7 +956,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.2.3;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";

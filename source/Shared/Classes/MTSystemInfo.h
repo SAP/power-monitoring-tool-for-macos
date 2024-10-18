@@ -94,4 +94,20 @@
 */
 + (BOOL)enableLoginItem:(BOOL)enable;
 
+/*!
+ @method        externalPowerAdapterDetails
+ @abstract      Returns a NSDictionary that describes the attached (AC) external power adapter (if any external power adapter is attached).
+ @discussion    Returns a NSDictionary on success. Returns nil if no adapter is attached, or if an error occurred. Use the kIOPSPowerAdapter...
+                keys described in IOPSKeys.h to interpret the returned dictionary.
+*/
++ (NSDictionary*)externalPowerAdapterDetails;
+
+/*!
+ @method        powerSourcesInfo
+ @abstract      Returns a NSArray of power source information, each of type NSDictionary.
+ @discussion    Returns a NSArray on success, otherwise returns nil. See the C-strings defined in IOPSKeys.h for specific keys into the dictionary.
+                Don't expect all keys to be present in any dictionary.
+*/
++ (NSArray*)powerSourcesInfo;
+
 @end

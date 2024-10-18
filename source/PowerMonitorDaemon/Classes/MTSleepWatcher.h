@@ -23,6 +23,7 @@
  @abstract      Defines an interface for delegates of MTSleepWatcher to be notified about power events.
 */
 @protocol MTSleepWatcherDelegate <NSObject>
+@optional
 
 /*!
  @method        powerEventDidStart:

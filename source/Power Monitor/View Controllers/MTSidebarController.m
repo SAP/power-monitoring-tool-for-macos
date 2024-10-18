@@ -45,19 +45,24 @@
     [preventItem setImage:[NSImage imageWithSystemSymbolName:@"exclamationmark.triangle" accessibilityDescription:nil]];
     [preventItem setTargetViewControllerIdentifier:@"corp.sap.PowerMonitor.AppsPreventingSleep"];
     
+    MTSidebarItem *powerInfoItem = [[MTSidebarItem alloc] init];
+    [powerInfoItem setLabel:NSLocalizedString(@"sidebarEntryPowerInfo", nil)];
+    [powerInfoItem setImage:[NSImage imageWithSystemSymbolName:@"minus.plus.batteryblock" accessibilityDescription:nil]];
+    [powerInfoItem setTargetViewControllerIdentifier:@"corp.sap.PowerMonitor.PowerInfo"];
+    
     MTSidebarItem *journalItem = [[MTSidebarItem alloc] init];
     [journalItem setLabel:NSLocalizedString(@"sidebarEntryJournal", nil)];
     [journalItem setImage:[NSImage imageWithSystemSymbolName:@"book" accessibilityDescription:nil]];
     [journalItem setTargetViewControllerIdentifier:@"corp.sap.PowerMonitor.Journal"];
-        
+
     [_allSidebarItems setObject:[NSArray arrayWithObjects:logItem, nil]
                          forKey:NSLocalizedString(@"sidebarEntryLogs", nil)
     ];
-    
-    [_allSidebarItems setObject:[NSArray arrayWithObjects:preventItem, journalItem, nil]
+
+    [_allSidebarItems setObject:[NSArray arrayWithObjects:preventItem, powerInfoItem, journalItem, nil]
                          forKey:NSLocalizedString(@"sidebarEntryReports", nil)
     ];
-    
+
     // this array must contain all the keys of the allSidebarItems
     // dictionary in the order they should be displayed
     _orderedGroupItems = [NSArray arrayWithObjects:
@@ -65,7 +70,7 @@
                           NSLocalizedString(@"sidebarEntryReports", nil),
                           nil
     ];
-    
+
     [[_sidebarOutlineView outlineTableColumn] setWidth:NSWidth([_sidebarOutlineView bounds])];
     [_sidebarOutlineView reloadData];
     
