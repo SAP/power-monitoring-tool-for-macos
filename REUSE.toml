@@ -6,5 +6,5 @@ SPDX-PackageDownloadLocation = "https://github.com/SAP/power-monitoring-tool-for
 [[annotations]]
 path = "**"
 precedence = "aggregate"
-SPDX-FileCopyrightText = "2023 SAP SE or an SAP affiliate company and Script2Pkg contributors."
+SPDX-FileCopyrightText = "2023-2025 SAP SE or an SAP affiliate company and Script2Pkg contributors."
 SPDX-License-Identifier = "Apache-2.0"
