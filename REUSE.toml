@@ -1,0 +1,10 @@
+version = 1
+SPDX-PackageName = "power-monitoring-tool-for-macos"
+SPDX-PackageSupplier = "SAP Mac Open Source Security macatsap-opensource-security@sap.com"
+SPDX-PackageDownloadLocation = "https://github.com/SAP/power-monitoring-tool-for-macos"
+
+[[annotations]]
+path = "**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2023 SAP SE or an SAP affiliate company and Script2Pkg contributors."
+SPDX-License-Identifier = "Apache-2.0"

@@ -1,8 +1,0 @@
-Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: power-monitoring-tool-for-macos
-Upstream-Contact: SAP Mac Open Source Security macatsap-opensource-security@sap.com
-Source: https://github.com/SAP/power-monitoring-tool-for-macos
-
-Files: *
-Copyright: 2023 SAP SE or an SAP affiliate company and Script2Pkg contributors.
-License: Apache-2.0
