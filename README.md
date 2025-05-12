@@ -16,6 +16,7 @@ Power Monitor is a powerful open-source tool that provides real-time insights in
 
 **Power Monitor supports the following macOS versions:**
 
+* macOS 15.x
 * macOS 14.x
 * macOS 13.x
 
