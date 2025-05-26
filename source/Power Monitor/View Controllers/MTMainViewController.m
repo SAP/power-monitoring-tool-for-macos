@@ -1,6 +1,6 @@
 /*
      MTMainViewController.m
-     Copyright 2023-2024 SAP SE
+     Copyright 2023-2025 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@
 #import "MTCarbonAPIKey.h"
 #import "MTPowerGraphView.h"
 #import "Constants.h"
-#import "MTUsagePriceValueTransformer.h"
-#import "MTUsagePriceTextTransformer.h"
+#import "MTElectricityPrice.h"
+#import "MTDaemonConnection.h"
 #import <ServiceManagement/SMAppService.h>
 
 @interface MTMainViewController ()
@@ -35,8 +35,10 @@
 @property (weak) IBOutlet NSTextField *measurementCountText;
 @property (weak) IBOutlet NSTextField *napTimeText;
 @property (weak) IBOutlet NSTextField *carbonPerHour;
-@property (weak) IBOutlet NSTextField *consumptionLabelText;
 @property (weak) IBOutlet NSProgressIndicator *carbonLookupProgressIndicator;
+@property (weak) IBOutlet NSTextField *totalPowerText;
+@property (weak) IBOutlet NSTextField *totalCostsText;
+@property (weak) IBOutlet NSTextField *totalCostsTextDark;
 
 @property (nonatomic, strong, readwrite) MTPowerMeasurementReader *pM;
 @property (nonatomic, strong, readwrite) MTCarbonFootprint *carbonFootprint;
@@ -45,9 +47,15 @@
 @property (nonatomic, strong, readwrite) NSUserDefaults *userDefaults;
 @property (nonatomic, strong, readwrite) NSNumber *valuePowerConsumption;
 @property (nonatomic, strong, readwrite) NSNumber *valuePowerConsumptionDark;
+@property (nonatomic, strong, readwrite) NSArray *currentMeasurements;
+@property (nonatomic, strong, readwrite) NSArray *currentMeasurementsDark;
+@property (nonatomic, strong, readwrite) MTDaemonConnection *daemonConnection;
+@property (nonatomic, strong, readwrite) NSMutableDictionary *scheduleDict;
+@property (assign) BOOL altPriceEnabled;
 @property (assign) BOOL carbonLookupInProgress;
 @property (assign) BOOL carbonFootprintEnabled;
 @property (assign) BOOL insideTrackingArea;
+@property (retain) id daemonPreferencesObserver;
 @end
 
 @implementation MTMainViewController
@@ -57,6 +65,8 @@
     [super viewDidLoad];
 
     _userDefaults = [NSUserDefaults standardUserDefaults];
+    _scheduleDict = [[NSMutableDictionary alloc] init];
+    _daemonConnection = [[MTDaemonConnection alloc] init];
                 
     // add an action to the maximum power text field
     NSClickGestureRecognizer *textFieldClick = [[NSClickGestureRecognizer alloc] initWithTarget:self action:@selector(showMaxValue)];
@@ -65,6 +75,32 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [self checkForLoginItem];
     });
+    
+    [self updateAltTariffStatusWithCompletionHandler:^{
+        [self updateMeasurements];
+    }];
+    
+    _daemonPreferencesObserver = [[NSDistributedNotificationCenter defaultCenter] addObserverForName:kMTNotificationNameDaemonConfigDidChange
+                                                                                              object:nil
+                                                                                               queue:nil
+                                                                                          usingBlock:^(NSNotification *notification) {
+        
+        NSDictionary *userInfo = [notification userInfo];
+        
+        if (userInfo) {
+            
+            NSString *changedKey = [userInfo objectForKey:kMTNotificationKeyPreferenceChanged];
+            
+            if ([changedKey isEqualToString:(NSString*)kMTPrefsUseAltPriceKey] ||
+                [changedKey isEqualToString:(NSString*)kMTPrefsAltPriceScheduleKey]) {
+                
+                [self updateAltTariffStatusWithCompletionHandler:^{
+                    
+                    [self updateMeasurements];
+                }];
+            }
+        }
+    }];
 }
 
 - (void)viewDidAppear
@@ -163,6 +199,7 @@
                                          kMTDefaultsGraphMarkPowerNapsKey,
                                          kMTDefaultsRunInBackgroundKey,
                                          kMTDefaultsElectricityPriceKey,
+                                         kMTDefaultsAltElectricityPriceKey,
                                          kMTDefaultsShowPriceKey,
                                          kMTDefaultsTodayValuesOnlyKey,
                                          kMTDefaultsShowSleepIntervalsKey,
@@ -244,18 +281,25 @@
     }
 }
 
-- (void)updateMeasurements
+- (NSArray*)measurementData
 {
     NSArray *measurementData = ([_userDefaults boolForKey:kMTDefaultsTodayValuesOnlyKey]) ? [_pM allMeasurementsSinceDate:[[NSCalendar currentCalendar] startOfDayForDate:[NSDate date]]] : [_pM allMeasurements];
 
-    MTPowerMeasurement *maxValue = [measurementData maximumPower];
-    MTPowerMeasurement *avgValue = [measurementData averagePower];
+    return measurementData;
+}
+
+- (void)updateMeasurements
+{
+    self.currentMeasurements = [self measurementData];
+
+    MTPowerMeasurement *maxValue = [_currentMeasurements maximumPower];
+    MTPowerMeasurement *avgValue = [_currentMeasurements averagePower];
     
     NSMeasurementFormatter *powerFormatter = [[NSMeasurementFormatter alloc] init];
     [[powerFormatter numberFormatter] setMinimumFractionDigits:2];
     [[powerFormatter numberFormatter] setMaximumFractionDigits:2];
     
-    NSTimeInterval measurementTime = [measurementData totalTime];
+    NSTimeInterval measurementTime = [_currentMeasurements totalTime];
     NSMeasurement *measurementCoverage = [[NSMeasurement alloc] initWithDoubleValue:measurementTime unit:[NSUnitDuration seconds]];
     self.valuePowerConsumption = [NSNumber numberWithDouble:[avgValue doubleValue] * measurementTime];
 
@@ -269,98 +313,188 @@
         [self->_averagePowerText setStringValue:[powerFormatter stringFromMeasurement:avgValue]];
         [self->_maximumPowerText setStringValue:[powerFormatter stringFromMeasurement:maxValue]];
         [self->_measurementCountText setStringValue:[hourFormatter stringFromMeasurement:measurementCoverage]];
-        
-        MTUsagePriceTextTransformer *valueTransformer = [[MTUsagePriceTextTransformer alloc] init];
-        NSString *consumptionString = [valueTransformer transformedValue:[NSNumber numberWithBool:[self->_userDefaults boolForKey:kMTDefaultsShowPriceKey]]];
-        [self->_consumptionLabelText setStringValue:consumptionString];
+        if ([self->_userDefaults boolForKey:kMTDefaultsShowPriceKey]) {
+            [self->_totalCostsText setStringValue:[self priceForMeasurementsWithArray:self->_currentMeasurements]];
+        }
         
         if ([self->_userDefaults boolForKey:kMTDefaultsGraphMarkPowerNapsKey]) {
             
-            NSArray *darkWakeMeasurements = [measurementData powerNapMeasurements];
-            NSTimeInterval darkWakeTime = [darkWakeMeasurements totalTime];
+            self.currentMeasurementsDark = [self.currentMeasurements powerNapMeasurements];
+            NSTimeInterval darkWakeTime = [self.currentMeasurementsDark totalTime];
             NSMeasurement *darkWakeCoverage = [[NSMeasurement alloc] initWithDoubleValue:darkWakeTime unit:[NSUnitDuration seconds]];
             
             [self->_napTimeText setStringValue:[hourFormatter stringFromMeasurement:darkWakeCoverage]];
-            self.valuePowerConsumptionDark = [NSNumber numberWithDouble:[[darkWakeMeasurements averagePower] doubleValue] * darkWakeTime];
+            self.valuePowerConsumptionDark = [NSNumber numberWithDouble:[[self.currentMeasurementsDark averagePower] doubleValue] * darkWakeTime];
+            
+            if ([self->_userDefaults boolForKey:kMTDefaultsShowPriceKey]) {
+                [self->_totalCostsTextDark setStringValue:[self priceForMeasurementsWithArray:self->_currentMeasurementsDark]];
+            }
         }
-    });
     
-    // post notification
-    MTUsagePriceValueTransformer *valueTransformer = [[MTUsagePriceValueTransformer alloc] init];
-    NSString *valueString = [valueTransformer transformedValue:_valuePowerConsumption];
+        // post notification
+        NSString *valueString = ([self->_userDefaults boolForKey:kMTDefaultsShowPriceKey]) ? [self.totalCostsText stringValue] : [self.totalPowerText stringValue];
 
-    [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNamePowerStats
-                                                        object:nil
-                                                      userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                                [powerFormatter stringFromMeasurement:avgValue], kMTNotificationKeyAveragePowerValue,
-                                                                valueString, kMTNotificationKeyConsumptionValue,
-                                                               nil]
-    ];
-    
-    // we don't update the graph if the main window
-    // is not visible (e.g. if running as status item)
-    if ([[[self view] window] isVisible]) {
+        if (valueString) {
 
-        // add sleep intervals if configured
-        if ([_userDefaults boolForKey:kMTDefaultsShowSleepIntervalsKey]) {
-            
-            __block NSMutableArray *updatedMeasurements = [[NSMutableArray alloc] init];
-            __block MTPowerMeasurement *previousMeasurement = nil;
-            
-            [measurementData enumerateObjectsUsingBlock:^(MTPowerMeasurement *obj, NSUInteger idx, BOOL *stop) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:kMTNotificationNamePowerStats
+                                                                object:nil
+                                                              userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                                            [powerFormatter stringFromMeasurement:avgValue], kMTNotificationKeyAveragePowerValue,
+                                                                            valueString, kMTNotificationKeyConsumptionValue,
+                                                                            nil
+                                                                       ]
+            ];
+        }
+        
+        // we don't update the graph if the main window
+        // is not visible (e.g. if running as status item)
+        if ([[[self view] window] isVisible]) {
+
+            // add sleep intervals if configured
+            if ([self->_userDefaults boolForKey:kMTDefaultsShowSleepIntervalsKey]) {
                 
-                if (idx == 0) {
+                __block NSMutableArray *updatedMeasurements = [[NSMutableArray alloc] init];
+                __block MTPowerMeasurement *previousMeasurement = nil;
+                
+                [self->_currentMeasurements enumerateObjectsUsingBlock:^(MTPowerMeasurement *obj, NSUInteger idx, BOOL *stop) {
                     
-                    // if the today view is enabled, the measurements
-                    // start always at midnight. Otherwise we start with
-                    // the first measurement
-                    if ([self->_userDefaults boolForKey:kMTDefaultsTodayValuesOnlyKey]) {
+                    if (idx == 0) {
                         
-                        NSDate *measurementDate = [NSDate dateWithTimeIntervalSince1970:[obj timeStamp]];
-                        NSDate *startOfDay = [[NSCalendar currentCalendar] startOfDayForDate:measurementDate];
-
-                        if ([measurementDate timeIntervalSinceDate:startOfDay] > kMTMeasurementInterval) {
+                        // if the today view is enabled, the measurements
+                        // start always at midnight. Otherwise we start with
+                        // the first measurement
+                        if ([self->_userDefaults boolForKey:kMTDefaultsTodayValuesOnlyKey]) {
                             
-                            previousMeasurement = [[MTPowerMeasurement alloc] initWithPowerValue:0];
-                            [previousMeasurement setTimeStamp:[startOfDay timeIntervalSince1970]];
+                            NSDate *measurementDate = [NSDate dateWithTimeIntervalSince1970:[obj timeStamp]];
+                            NSDate *startOfDay = [[NSCalendar currentCalendar] startOfDayForDate:measurementDate];
+
+                            if ([measurementDate timeIntervalSinceDate:startOfDay] > kMTMeasurementInterval) {
+                                
+                                previousMeasurement = [[MTPowerMeasurement alloc] initWithPowerValue:0];
+                                [previousMeasurement setTimeStamp:[startOfDay timeIntervalSince1970]];
+                                
+                            } else {
+                                
+                                previousMeasurement = obj;
+                            }
                             
                         } else {
                             
                             previousMeasurement = obj;
                         }
-                        
+                                
                     } else {
+                    
+                        if ([obj timeStamp] - [previousMeasurement timeStamp] > 2 * kMTMeasurementInterval) {
+                            
+                            for (time_t i = [previousMeasurement timeStamp] + kMTMeasurementInterval; i <= [obj timeStamp] - kMTMeasurementInterval; i += kMTMeasurementInterval) {
+
+                                MTPowerMeasurement *sleepMeasurement = [[MTPowerMeasurement alloc] initWithPowerValue:0];
+                                [sleepMeasurement setTimeStamp:i];
+                                [updatedMeasurements addObject:sleepMeasurement];
+                            }
+                        }
                         
                         previousMeasurement = obj;
                     }
-                            
-                } else {
-                
-                    if ([obj timeStamp] - [previousMeasurement timeStamp] > 2 * kMTMeasurementInterval) {
-                        
-                        for (time_t i = [previousMeasurement timeStamp] + kMTMeasurementInterval; i <= [obj timeStamp] - kMTMeasurementInterval; i += kMTMeasurementInterval) {
-
-                            MTPowerMeasurement *sleepMeasurement = [[MTPowerMeasurement alloc] initWithPowerValue:0];
-                            [sleepMeasurement setTimeStamp:i];
-                            [updatedMeasurements addObject:sleepMeasurement];
-                        }
-                    }
                     
-                    previousMeasurement = obj;
-                }
+                    [updatedMeasurements addObject:obj];
+                }];
                 
-                [updatedMeasurements addObject:obj];
-            }];
+                [self.graphView setMeasurementData:updatedMeasurements];
+                
+            } else {
+                
+                [self.graphView setMeasurementData:self->_currentMeasurements];
+            }
             
-            [_graphView setMeasurementData:updatedMeasurements];
+            [self->_graphView setNeedsDisplay:YES];
+        }
+    });
+}
+
+- (void)updateAltTariffStatusWithCompletionHandler:(void (^)(void))completionHandler
+{
+    [_daemonConnection connectToDaemonWithExportedObject:nil
+                                  andExecuteCommandBlock:^{
+        
+        [[[self->_daemonConnection connection] remoteObjectProxyWithErrorHandler:^(NSError *error) {
             
-        } else {
+            os_log_with_type(OS_LOG_DEFAULT, OS_LOG_TYPE_FAULT, "SAPCorp: Failed to connect to daemon: %{public}@", error);
             
-            [_graphView setMeasurementData:measurementData];
+        }] altPriceEnabledWithReply:^(BOOL enabled, BOOL forced) {
+            
+            self.altPriceEnabled = enabled;
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [[[self->_daemonConnection connection] remoteObjectProxyWithErrorHandler:^(NSError *error) {
+                    
+                    os_log_with_type(OS_LOG_DEFAULT, OS_LOG_TYPE_FAULT, "SAPCorp: Failed to connect to daemon: %{public}@", error);
+                    
+                }] altPriceScheduleWithReply:^(NSDictionary *schedule, BOOL forced) {
+                    
+                    if (schedule) { [self.scheduleDict setDictionary:schedule]; }
+                    if (completionHandler) { completionHandler(); }
+                }];
+            });
+        }];
+        
+        
+    }];
+}
+
+- (NSString*)priceForMeasurementsWithArray:(NSArray*)allMeasurements
+{
+    NSMeasurement *powerConsumption = nil;
+    double electricityPrice = 0;
+    double regPrice = [_userDefaults doubleForKey:kMTDefaultsElectricityPriceKey];
+    
+    if (_altPriceEnabled) {
+
+        double altPrice = [_userDefaults doubleForKey:kMTDefaultsAltElectricityPriceKey];
+
+        MTElectricityPrice *ePrice = [[MTElectricityPrice alloc] initWithRegularPrice:regPrice
+                                                                     alternativePrice:altPrice
+                                                                             schedule:_scheduleDict
+        ];
+
+        NSArray *usingRegularTariff = [ePrice measurementsInRegularTariffWithArray:allMeasurements];
+        NSArray *usingAltTariff = [ePrice measurementsInAltTariffWithArray:allMeasurements];
+        
+        if ([usingAltTariff count] > 0) {
+            
+            NSTimeInterval measurementTime = [usingAltTariff totalTime];
+            powerConsumption = [[NSMeasurement alloc] initWithDoubleValue:[[usingAltTariff averagePower] doubleValue] * measurementTime unit:[NSUnitEnergy joules]];
+            powerConsumption = [powerConsumption measurementByConvertingToUnit:[NSUnitEnergy kilowattHours]];
+            electricityPrice += [powerConsumption doubleValue] * altPrice;
         }
         
-        [_graphView setNeedsDisplay:YES];
+        if ([usingRegularTariff count] > 0) {
+            
+            NSTimeInterval measurementTime = [usingRegularTariff totalTime];
+            powerConsumption = [[NSMeasurement alloc] initWithDoubleValue:[[usingRegularTariff averagePower] doubleValue] * measurementTime unit:[NSUnitEnergy joules]];
+            powerConsumption = [powerConsumption measurementByConvertingToUnit:[NSUnitEnergy kilowattHours]];
+            electricityPrice += [powerConsumption doubleValue] * regPrice;
+        }
+        
+    } else {
+
+        NSTimeInterval measurementTime = [_currentMeasurements totalTime];
+        powerConsumption = [[NSMeasurement alloc] initWithDoubleValue:[[allMeasurements averagePower] doubleValue] * measurementTime unit:[NSUnitEnergy joules]];
+        powerConsumption = [powerConsumption measurementByConvertingToUnit:[NSUnitEnergy kilowattHours]];
+        electricityPrice = [powerConsumption doubleValue] * regPrice;
     }
+        
+    NSNumberFormatter *priceFormatter = [[NSNumberFormatter alloc] init];
+    [priceFormatter setMinimumFractionDigits:2];
+    [priceFormatter setMaximumFractionDigits:2];
+    [priceFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    [priceFormatter setLocalizesFormat:YES];
+        
+    NSString *returnValue = [priceFormatter stringFromNumber:[NSNumber numberWithDouble:electricityPrice]];
+    
+    return returnValue;
 }
 
 - (void)setupGraphView
@@ -500,7 +634,7 @@
         
         BOOL todayOnly = [self->_userDefaults boolForKey:kMTDefaultsTodayValuesOnlyKey];
                             
-        NSArray *measurementData = (todayOnly) ? [self->_pM allMeasurementsSinceDate:[[NSCalendar currentCalendar] startOfDayForDate:[NSDate date]]] : [self->_pM allMeasurements];
+        NSArray *measurementData = [self measurementData];
                 
         NSMeasurement *measurementPowerKW = [[measurementData averagePower] measurementByConvertingToUnit:[NSUnitPower kilowatts]];
         NSMeasurement *measurementCarbon = (todayOnly) ? 
@@ -559,7 +693,7 @@
 {
     if (![_graphView showsPosition]) {
         
-        NSArray *measurementData = ([_userDefaults boolForKey:kMTDefaultsTodayValuesOnlyKey]) ? [_pM allMeasurementsSinceDate:[[NSCalendar currentCalendar] startOfDayForDate:[NSDate date]]] : [_pM allMeasurements];
+        NSArray *measurementData = [self measurementData];
         
         MTPowerMeasurement *maxValue = [measurementData maximumPower];
         [_graphView showMeasurement:maxValue withTooltip:YES];
@@ -654,6 +788,7 @@
     }
     
     if ([keyPath isEqualToString:kMTDefaultsElectricityPriceKey] ||
+        [keyPath isEqualToString:kMTDefaultsAltElectricityPriceKey] ||
         [keyPath isEqualToString:kMTDefaultsShowPriceKey] ||
         [keyPath isEqualToString:kMTDefaultsShowSleepIntervalsKey] ||
         [keyPath isEqualToString:kMTDefaultsGraphMarkPowerNapsKey] ||

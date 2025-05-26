@@ -1,6 +1,6 @@
 /*
      PowerMonitorDaemonProtocol.h
-     Copyright 2023-2024 SAP SE
+     Copyright 2023-2025 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -118,5 +118,13 @@
                 setting is managed (via configuration profile), otherwise returns NO.
 */
 - (void)powerNapsIgnoredWithReply:(void (^)(BOOL ignored, BOOL forced))reply;
+
+
+- (void)setAltPriceEnabled:(BOOL)enabled completionHandler:(void (^)(BOOL success))completionHandler;
+- (void)altPriceEnabledWithReply:(void (^)(BOOL enabled, BOOL forced))reply;
+
+- (void)setAltPriceSchedule:(NSDictionary*)schedule completionHandler:(void (^)(BOOL success))completionHandler;
+- (void)altPriceScheduleWithReply:(void (^)(NSDictionary *schedule, BOOL forced))reply;
+
 
 @end

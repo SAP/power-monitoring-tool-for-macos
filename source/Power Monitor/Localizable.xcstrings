@@ -1,6 +1,54 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "accessiblilityLabelAssertionsTableView" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liste von Prozessen, die den Ruhezustand verhindert haben"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Table of processes preventing sleep"
+          }
+        }
+      }
+    },
+    "accessiblilityLabelJournalTableView" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liste von Journaleinträgen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Table of power journal entries"
+          }
+        }
+      }
+    },
+    "accessiblilityLabelLogTableView" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liste von Logeinträgen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Table of log entries"
+          }
+        }
+      }
+    },
     "acPower" : {
       "localizations" : {
         "de" : {
@@ -13,6 +61,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Power Supply"
+          }
+        }
+      }
+    },
+    "altScheduleToolTip" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klicke, um einen Zeitraum für den alternativen Stromtarif auszuwählen. Wenn Du beim Klicken die Option-Taste gedrückt hältst, kannst Du mit einem Klick den kompletten Tag aus- oder abwählen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Click to select a time period for the alternative electricity tariff. If you hold down the Option key while clicking, you can select or deselect the entire day with a single click."
           }
         }
       }
@@ -327,7 +391,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sind Sie sicher, dass Sie das Programm jetzt im Hintergrund ausführen wollen?"
+            "value" : "Bist Du sicher, dass Du das Programm jetzt im Hintergrund ausführen möchtest?"
           }
         },
         "en" : {
@@ -359,7 +423,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Möchten Sie die bereits importierten CO2-Emissionsdaten löschen?"
+            "value" : "Möchtest Du die bereits importierten CO2-Emissionsdaten löschen?"
           }
         },
         "en" : {
@@ -391,7 +455,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Möchten Sie wirklich alle Messwerte löschen?"
+            "value" : "Möchtest Du wirklich alle Messwerte löschen?"
           }
         },
         "en" : {
@@ -407,7 +471,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Beim Exportieren des Journals in eine CSV-Datei ist ein Fehler aufgetreten. Bitte überprüfen Sie, ob der ausgewählte Speicherort korrekt ist und versuchen Sie es erneut."
+            "value" : "Beim Exportieren des Journals in eine CSV-Datei ist ein Fehler aufgetreten. Bitte überprüfe, ob der ausgewählte Speicherort korrekt ist und versuche es erneut."
           }
         },
         "en" : {
@@ -439,7 +503,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Beim Schreiben der Protokolldatei ist ein Fehler aufgetreten. Bitte überprüfen Sie, ob der ausgewählte Speicherort korrekt ist und versuchen Sie es erneut."
+            "value" : "Beim Schreiben der Protokolldatei ist ein Fehler aufgetreten. Bitte überprüfe, ob der ausgewählte Speicherort korrekt ist und versuche es erneut."
           }
         },
         "en" : {
@@ -471,7 +535,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aus der ausgewählten Daten konnten keine CO2-Emissionsdaten importiert werden. Bitte prüfen Sie, ob die Datei eine gültige CSV-Datei, mit durch Komma oder Semikolon getrennten Werten ist, und versuchen Sie es erneut."
+            "value" : "Aus der ausgewählten Daten konnten keine CO2-Emissionsdaten importiert werden. Bitte überprüfe, ob die Datei eine gültige CSV-Datei, mit durch Komma oder Semikolon getrennten Werten ist, und versuche es erneut."
           }
         },
         "en" : {
@@ -535,7 +599,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sind Sie sicher, dass Sie alle Journaleinträge löschen wollen?"
+            "value" : "Bist Du sicher, dass Du alle Journaleinträge löschen möchtest?"
           }
         },
         "en" : {
@@ -567,7 +631,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sind Sie sicher, dass Sie die ausgewählten Journaleinträge löschen wollen?"
+            "value" : "Bist Du sicher, dass Du die ausgewählten Journaleinträge löschen möchtest?"
           }
         },
         "en" : {
@@ -583,7 +647,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sind Sie sicher, dass Sie diesen Journaleintrag löschen wollen?"
+            "value" : "Bist Du sicher, dass Du diesen Journaleintrag löschen möchtest?"
           }
         },
         "en" : {
@@ -599,7 +663,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Das Anmeldeobjekt dieses Programms muss in den Systemeinstellungen aktiviert werden, damit das Programm korrekt funktionieren kann. Bitte aktivieren Sie das Anmeldeobjekt und versuchen Sie es erneut."
+            "value" : "Das Anmeldeobjekt dieses Programms muss in den Systemeinstellungen aktiviert werden, damit das Programm korrekt funktionieren kann. Bitte aktiviere das Anmeldeobjekt und versuche es erneut."
           }
         },
         "en" : {
@@ -663,7 +727,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Das Journal wurde deaktiviert, konnte aber nicht in den Papierkorb gelegt werden. Bitte löschen Sie das Journal direkt im Finder."
+            "value" : "Das Journal wurde deaktiviert, konnte aber nicht in den Papierkorb gelegt werden. Bitte lösche das Journal direkt im Finder."
           }
         },
         "en" : {
@@ -695,7 +759,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Möchten Sie das bestehende Journal in den Papierkorb legen?"
+            "value" : "Möchtest Du das bestehende Journal in den Papierkorb legen?"
           }
         },
         "en" : {
@@ -1010,6 +1074,22 @@
         }
       }
     },
+    "sidebarAccessibilityLabel" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seitenleiste"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sidebar"
+          }
+        }
+      }
+    },
     "sidebarEntryJournal" : {
       "localizations" : {
         "de" : {
@@ -1267,22 +1347,6 @@
         }
       }
     },
-    "usageConsumptionTextDark" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stromverbrauch während Power Nap:"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Power consumption during Power Nap:"
-          }
-        }
-      }
-    },
     "usageConsumptionTodayText" : {
       "localizations" : {
         "de" : {
@@ -1343,22 +1407,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Total electricity costs:"
-          }
-        }
-      }
-    },
-    "usagePriceTextDark" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stromkosten wegen Power Nap:"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Electricity costs due to Power Nap:"
           }
         }
       }

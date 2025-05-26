@@ -1,6 +1,6 @@
 /*
      MTJournalInspectorController.h
-     Copyright 2023-2024 SAP SE
+     Copyright 2023-2025 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,18 +17,23 @@
 
 #import "MTJournalInspectorController.h"
 #import "MTPowerJournal.h"
+#import "MTDaemonConnection.h"
 #import "Constants.h"
 
 @interface MTJournalInspectorController ()
+@property (nonatomic, strong, readwrite) MTDaemonConnection *daemonConnection;
 @property (nonatomic, strong, readwrite) NSUserDefaults *userDefaults;
 
 @property (weak) IBOutlet NSTextField *consumptionSummaryValue;
 @property (weak) IBOutlet NSTextField *consumptionSummaryLabel;
 @property (weak) IBOutlet NSTextField *consumptionSummaryNapValue;
+@property (weak) IBOutlet NSTextField *consumptionSummaryAltTariffValue;
 @property (weak) IBOutlet NSTextField *consumptionSummaryPriceValue;
 @property (weak) IBOutlet NSTextField *consumptionSummaryNapPriceValue;
+@property (weak) IBOutlet NSTextField *consumptionSummaryAltTariffPriceValue;
 @property (weak) IBOutlet NSTextField *durationSummaryAwakeValue;
 @property (weak) IBOutlet NSTextField *durationSummaryNapValue;
+@property (weak) IBOutlet NSTextField *durationSummaryAltTariffValue;
 @property (weak) IBOutlet NSTextField *entriesCountValue;
 @end
 
@@ -39,6 +44,7 @@
     [super viewDidLoad];
     
     _userDefaults = [NSUserDefaults standardUserDefaults];
+    _daemonConnection = [[MTDaemonConnection alloc] init];
 }
 
 #pragma mark MTJournalControllerDelegate
@@ -60,23 +66,57 @@
     [self.entriesCountValue setStringValue:[NSString stringWithFormat:@"%ld", [selectedObjects count]]];
     [self.consumptionSummaryValue setStringValue:[MTPowerJournal consumptionStringTotalWithEntries:selectedObjects]];
     [self.consumptionSummaryNapValue setStringValue:[MTPowerJournal consumptionStringPowerNapWithEntries:selectedObjects]];
+    [self.consumptionSummaryAltTariffValue setStringValue:[MTPowerJournal consumptionStringAltTariffWithEntries:selectedObjects]];
     [self.durationSummaryAwakeValue setStringValue:[MTPowerJournal durationStringAwakeWithEntries:selectedObjects]];
     [self.durationSummaryNapValue setStringValue:[MTPowerJournal durationStringPowerNapWithEntries:selectedObjects]];
-    
+    [self.durationSummaryAltTariffValue setStringValue:[MTPowerJournal durationStringAltTariffWithEntries:selectedObjects]];
+        
     if ([_userDefaults boolForKey:kMTDefaultsShowPriceKey]) {
-        
-        double pricePerKWh = [_userDefaults doubleForKey:kMTDefaultsElectricityPriceKey];
-        double electricityPriceTotal = [MTPowerJournal consumptionTotalInKWhWithEntries:selectedObjects] * pricePerKWh;
-        double electricityPriceNap = [MTPowerJournal consumptionPowerNapInKWhWithEntries:selectedObjects] * pricePerKWh;
-        
-        NSNumberFormatter *priceFormatter = [[NSNumberFormatter alloc] init];
-        [priceFormatter setMinimumFractionDigits:2];
-        [priceFormatter setMaximumFractionDigits:2];
-        [priceFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-        [priceFormatter setLocalizesFormat:YES];
-        
-        [self.consumptionSummaryPriceValue setStringValue:[priceFormatter stringFromNumber:[NSNumber numberWithDouble:electricityPriceTotal]]];
-        [self.consumptionSummaryNapPriceValue setStringValue:[priceFormatter stringFromNumber:[NSNumber numberWithDouble:electricityPriceNap]]];
+
+        [_daemonConnection connectToDaemonWithExportedObject:nil
+                                      andExecuteCommandBlock:^{
+            
+            [[[self->_daemonConnection connection] remoteObjectProxyWithErrorHandler:^(NSError *error) {
+                
+                os_log_with_type(OS_LOG_DEFAULT, OS_LOG_TYPE_FAULT, "SAPCorp: Failed to connect to daemon: %{public}@", error);
+                
+            }] altPriceEnabledWithReply:^(BOOL enabled, BOOL forced) {
+                
+                double pricePerKWh = [self->_userDefaults doubleForKey:kMTDefaultsElectricityPriceKey];
+                double totalKWh = [MTPowerJournal consumptionTotalInKWhWithEntries:selectedObjects];
+                double napKWh = [MTPowerJournal consumptionPowerNapInKWhWithEntries:selectedObjects];
+                double electricityPriceTotal = 0;
+                double electricityPriceNap = 0;
+                double electricityPriceAltTariff = 0;
+                
+                if (enabled) {
+                    
+                    double altPricePerKWh = [self->_userDefaults doubleForKey:kMTDefaultsAltElectricityPriceKey];
+                    double altTariffKWh = [MTPowerJournal consumptionAltTariffInKWhWithEntries:selectedObjects];
+                    electricityPriceAltTariff = altTariffKWh * altPricePerKWh;
+                    electricityPriceTotal = ((totalKWh - altTariffKWh) * pricePerKWh) + electricityPriceAltTariff;
+                    electricityPriceNap = napKWh * pricePerKWh;
+
+                } else {
+                     
+                    electricityPriceTotal = totalKWh * pricePerKWh;
+                    electricityPriceNap = napKWh * pricePerKWh;
+                }
+                        
+                NSNumberFormatter *priceFormatter = [[NSNumberFormatter alloc] init];
+                [priceFormatter setMinimumFractionDigits:2];
+                [priceFormatter setMaximumFractionDigits:2];
+                [priceFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+                [priceFormatter setLocalizesFormat:YES];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                                        
+                    [self.consumptionSummaryPriceValue setStringValue:[priceFormatter stringFromNumber:[NSNumber numberWithDouble:electricityPriceTotal]]];
+                    [self.consumptionSummaryNapPriceValue setStringValue:[priceFormatter stringFromNumber:[NSNumber numberWithDouble:electricityPriceNap]]];
+                    [self.consumptionSummaryAltTariffPriceValue setStringValue:[priceFormatter stringFromNumber:[NSNumber numberWithDouble:electricityPriceAltTariff]]];
+                });
+            }];
+        }];
     }
 }
 

@@ -13,6 +13,13 @@
 	<string>/Applications/Power Monitor.app/Contents/MacOS/PowerMonitorDaemon</string>
 	<key>AssociatedBundleIdentifiers</key>
 	<string>corp.sap.PowerMonitor</string>
+	<key>SpawnConstraint</key>
+	<dict>
+		<key>team-identifier</key>
+		<string>7R5ZEU67FQ</string>
+		<key>signing-identifier</key>
+		<string>corp.sap.PowerMonitorDaemon</string>
+	</dict>
 	<key>RunAtLoad</key>
 	<true/>
 	<key>KeepAlive</key>

@@ -1,6 +1,6 @@
 /*
      Constants.h
-     Copyright 2023-2024 SAP SE
+     Copyright 2023-2025 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -43,6 +43,7 @@
 #define kMTDefaultsTodayValuesOnlyKey           @"TodayValuesOnly"
 #define kMTDefaultsUpdateCarbonKey              @"UpdateCarbon"
 #define kMTDefaultsElectricityPriceKey          @"ElectricityPrice"
+#define kMTDefaultsAltElectricityPriceKey       @"AltElectricityPrice"
 #define kMTDefaultsShowPriceKey                 @"ShowPrice"
 #define kMTDefaultsShowSleepIntervalsKey        @"ShowSleepIntervals"
 #define kMTDefaultsMeasurementStartDateKey      @"MeasurementStartDate"
@@ -62,6 +63,8 @@
 #define kMTPrefsEnableJournalKey                CFSTR("EnableJournal")
 #define kMTPrefsJournalAutoDeleteKey            CFSTR("JournalEntriesAutoDelete")
 #define kMTPrefsIgnorePowerNapsKey              CFSTR("IgnorePowerNaps")
+#define kMTPrefsUseAltPriceKey                  CFSTR("UseAltPrice")
+#define kMTPrefsAltPriceScheduleKey             CFSTR("AltPriceSchedule")
 
 // NSNotification
 #define kMTNotificationNameCarbonValue              @"corp.sap.PowerMonitor.CarbonFootprintValue"
@@ -79,6 +82,7 @@
 #define kMTNotificationNameGraphShowDetail          @"corp.sap.PowerMonitor.GraphView.ShowDetail"
 #define kMTNotificationNameGraphReloadData          @"corp.sap.PowerMonitor.GraphView.ReloadData"
 #define kMTNotificationNameJournalUpdateSummary     @"corp.sap.PowerMonitor.Journal.UpdateSummary"
+#define kMTNotificationNameDaemonConfigDidChange    @"corp.sap.PowerMonitorDaemon.Configuration.DidChange"
 
 // NSNotification user info keys
 #define kMTNotificationKeyCarbonValue           @"CarbonValue"
@@ -89,6 +93,7 @@
 #define kMTNotificationKeyLogMessage            @"LogMessage"
 #define kMTNotificationKeyGraphPosition         @"MeasurementAtCurrentPosition"
 #define kMTNotificationKeyGraphData             @"GraphData"
+#define kMTNotificationKeyPreferenceChanged     @"PreferenceKeyChanged"
 
 // pwrdata file format
 #define kMTFileHeaderSignature                  "pwrdata"

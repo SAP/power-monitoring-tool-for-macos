@@ -11,7 +11,8 @@
             "value" : "journalTimeAwake"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "1el-R4-jYy.ibShadowedDateFormat" : {
       "comment" : "Class = \"NSDateFormatter\"; ibShadowedDateFormat = \"yyyy-MM-dd HH:mm:ss.SSSZ\"; ObjectID = \"1el-R4-jYy\";",
@@ -23,7 +24,8 @@
             "value" : "yyyy-MM-dd HH:mm:ss.SSSZ"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "1u4-T0-e9q.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"Power Naps:\"; ObjectID = \"1u4-T0-e9q\";",
@@ -53,7 +55,8 @@
             "value" : "Power Monitor"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "2FD-PM-4eP.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Copy\"; ObjectID = \"2FD-PM-4eP\";",
@@ -98,7 +101,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Um dieses Programm bei der Anmeldung automatisch zu öffnen, aktivieren Sie bitte die unten stehende Option."
+            "value" : "Um dieses Programm bei der Anmeldung automatisch zu öffnen, aktiviere bitte die unten stehende Option."
           }
         },
         "en" : {
@@ -145,6 +148,24 @@
         }
       }
     },
+    "3jU-nr-vtB.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Consumed in alternative Tariff:\"; ObjectID = \"3jU-nr-vtB\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verbraucht im alternativen Tarif:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Consumed in alternative Tariff:"
+          }
+        }
+      }
+    },
     "3kl-4F-sYb.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"Header Cell\"; ObjectID = \"3kl-4F-sYb\";",
       "extractionState" : "extracted_with_value",
@@ -155,7 +176,8 @@
             "value" : "Header Cell"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "3Sv-Q5-2Dy.title" : {
       "comment" : "Class = \"NSButtonCell\"; title = \"Show day markers\"; ObjectID = \"3Sv-Q5-2Dy\";",
@@ -182,7 +204,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Im Hauptfenster dieses Programms wird der Verlauf der Systemleistung in Form eines Graphen angezeigt. Sie können zusätzliche Informationen einblenden, wenn Sie die unten stehenden Optionen aktivieren."
+            "value" : "Im Hauptfenster dieses Programms wird der Verlauf der Systemleistung in Form eines Graphen angezeigt. Du kannst zusätzliche Informationen einblenden, wenn Du die unten stehenden Optionen aktivierst."
           }
         },
         "en" : {
@@ -203,7 +225,8 @@
             "value" : "powerDescription"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "4r5-fi-WCs.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Show Journal in Finder\"; ObjectID = \"4r5-fi-WCs\";",
@@ -248,7 +271,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Anhand des Standorts dieses Macs und seiner durchschnittlichen Leistung kann dieses Programm das Äquivalent des Kohlendioxids anzeigen, das pro Stunde, in der Sie diesen Mac aktiv nutzen, ausgestoßen wird. Dieser Wert wird auch als CO2-Fußabdruck bezeichnet.\n\nFür die Berechnung des CO2-Fußabdrucks ist der ungefähre Standort dieses Macs erforderlich, da in verschiedenen Regionen der Welt unterschiedliche Mengen an Kohlendioxid für die Stromerzeugung ausgestoßen werden. Wenn Sie diese Funktion aktivieren, wird Ihr Mac Sie eventuell um Erlaubnis bitten, seinen Standort zu verwenden. Wenn Sie der Verwendung des Standorts dieses Macs nicht zustimmen, verwendet das Programm eine andere, aber wesentlich ungenauere Methode, um den ungefähren Standort dieses Macs zu ermitteln."
+            "value" : "Anhand des Standorts dieses Macs und seiner durchschnittlichen Leistung kann dieses Programm das Äquivalent des Kohlendioxids anzeigen, das pro Stunde, in der Du diesen Mac aktiv nutzt, ausgestoßen wird. Dieser Wert wird auch als CO2-Fußabdruck bezeichnet.\n\nFür die Berechnung des CO2-Fußabdrucks ist der ungefähre Standort dieses Macs erforderlich, da in verschiedenen Regionen der Welt unterschiedliche Mengen an Kohlendioxid für die Stromerzeugung ausgestoßen werden. Wenn Du diese Funktion aktivierst, wird Dein Mac Dich eventuell um Erlaubnis bitten, seinen Standort zu verwenden. Wenn Du der Verwendung des Standorts dieses Macs nicht zustimmst, verwendet das Programm eine andere, aber wesentlich ungenauere Methode, um den ungefähren Standort dieses Macs zu ermitteln."
           }
         },
         "en" : {
@@ -323,7 +346,8 @@
             "value" : "yyyy-MM-dd HH:mm:ss.SSSZ"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "8Rk-nO-hh4.headerCell.title" : {
       "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Duration Awake\"; ObjectID = \"8Rk-nO-hh4\";",
@@ -353,25 +377,8 @@
             "value" : "Delete Journal Entry"
           }
         }
-      }
-    },
-    "9c3-De-a2E.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Price per kWh:\"; ObjectID = \"9c3-De-a2E\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Preis pro kWh:"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Price per kWh:"
-          }
-        }
-      }
+      },
+      "shouldTranslate" : false
     },
     "9IP-YZ-hMZ.title" : {
       "comment" : "Class = \"NSWindow\"; title = \"Power Graph\"; ObjectID = \"9IP-YZ-hMZ\";",
@@ -409,6 +416,24 @@
         }
       }
     },
+    "9sd-k6-oMs.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"If you have an electricity tariff where the price per KWh changes at certain times, you can enter the alternative price and the times at which it is active here. If you want to use this feature, please activate and configure it below.\"; ObjectID = \"9sd-k6-oMs\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn Du einen Stromtarif hast, bei dem sich der Preis pro KWh zu bestimmten Zeiten ändert, kannst Du hier den alternativen Preis und die Zeiten, zu denen er aktiv ist, eingeben. Wenn Du diese Funktion nutzen möchtest, aktiviere und konfiguriere bitte die unten stehende Option."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "If you have an electricity tariff where the price per KWh changes at certain times, you can enter the alternative price and the times at which it is active here. If you want to use this feature, please activate and configure it below."
+          }
+        }
+      }
+    },
     "9xk-gz-4DH.title" : {
       "comment" : "Class = \"NSButtonCell\"; title = \"Continue\"; ObjectID = \"9xk-gz-4DH\";",
       "extractionState" : "extracted_with_value",
@@ -427,20 +452,64 @@
         }
       }
     },
-    "79H-X5-650.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Electricity costs:\"; ObjectID = \"79H-X5-650\";",
+    "30T-k0-UOk.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"weekday3\"; ObjectID = \"30T-k0-UOk\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "weekday3"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "51i-2z-G17.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"journalConsumptionAltTariff\"; ObjectID = \"51i-2z-G17\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "journalConsumptionAltTariff"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "74d-dS-aYC.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Calculate electricity costs\"; ObjectID = \"74d-dS-aYC\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Stromkosten:"
+            "value" : "Stromkosten berechnen"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Electricity costs:"
+            "value" : "Calculate electricity costs"
+          }
+        }
+      }
+    },
+    "79H-X5-650.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Total electricity costs:\"; ObjectID = \"79H-X5-650\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stromkosten gesamt:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Total electricity costs:"
           }
         }
       }
@@ -455,7 +524,8 @@
             "value" : "powerValue"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "216-BT-LWQ.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Select All\"; ObjectID = \"216-BT-LWQ\";",
@@ -485,7 +555,8 @@
             "value" : "journalConsumptionTotal"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "Agp-Bg-2gm.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Paste\"; ObjectID = \"Agp-Bg-2gm\";",
@@ -505,6 +576,24 @@
         }
       }
     },
+    "agv-2u-dqG.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSPopUpButton\"; ibExternalAccessibilityDescription = \"Popup button to enable or disable PowerNap\"; ObjectID = \"agv-2u-dqG\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menü um PowerNap ein- oder auszuschalten"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Popup button to enable or disable PowerNap"
+          }
+        }
+      }
+    },
     "AHX-Ey-ZrB.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"logMessage\"; ObjectID = \"AHX-Ey-ZrB\";",
       "extractionState" : "extracted_with_value",
@@ -515,7 +604,8 @@
             "value" : "logMessage"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "aHZ-8l-6c9.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"As your Mac does not consume any power when it is switched off or in sleep mode, these times are not displayed in the graph by default. If you want these times to be displayed, please enable the option below.\"; ObjectID = \"aHZ-8l-6c9\";",
@@ -524,7 +614,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Da ihr Mac, während er ausgeschaltet ist oder sich im Ruhezustand befindet, keinen Strom verbraucht, werden diese Zeiten standardmäßig im Graphen nicht angezeigt. Wenn Sie diese Zeiten dargestellt bekommen wollen, aktivieren Sie bitte die unten stehende Option."
+            "value" : "Da Dein Mac, während er ausgeschaltet ist oder sich im Ruhezustand befindet, keinen Strom verbraucht, werden diese Zeiten standardmäßig im Graphen nicht angezeigt. Wenn Du diese Zeiten dargestellt bekommen möchtest, aktiviere bitte die unten stehende Option."
           }
         },
         "en" : {
@@ -535,20 +625,20 @@
         }
       }
     },
-    "ajp-WQ-E8Y.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Total power consumption:\"; ObjectID = \"ajp-WQ-E8Y\";",
+    "Ai0-P8-LNk.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Based on the determined power consumption, the approximate electricity costs for this Mac can be calculated. If you would like to have the electricity costs displayed instead of the power consumption, please enter the price you pay for electricity per kilowatt hour in the field below and activate the calculation of electricity costs.\"; ObjectID = \"Ai0-P8-LNk\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Stromverbrauch insgesamt:"
+            "value" : "Basierend auf dem ermittelten Stromverbrauch können die ungefähren Stromkosten für diesen Mac berechnet werden. Wenn Du die Stromkosten anstelle des Stromverbrauchs angezeigt bekommen möchtest, gib bitte im unten stehenden Feld den Preis ein, den Du für Strom pro Kilowattstunde bezahlst und aktiviere die Berechnung der Stromkosten."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Total power consumption:"
+            "value" : "Based on the determined power consumption, the approximate electricity costs for this Mac can be calculated. If you would like to have the electricity costs displayed instead of the power consumption, please enter the price you pay for electricity per kilowatt hour in the field below and activate the calculation of electricity costs."
           }
         }
       }
@@ -581,7 +671,8 @@
             "value" : "Window"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "AYu-sK-qS6.title" : {
       "comment" : "Class = \"NSMenu\"; title = \"Main Menu\"; ObjectID = \"AYu-sK-qS6\";",
@@ -593,7 +684,8 @@
             "value" : "Main Menu"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "B0C-p2-nFw.headerCell.title" : {
       "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Category\"; ObjectID = \"B0C-p2-nFw\";",
@@ -620,7 +712,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Um den CO2-Fußabdruck dieses Macs ermitteln zu können, benötigt das Programm CO2-Emissionsdaten des Landes, in dem sich der Mac gerade befindet. Diese Daten können entweder dynamisch über eine der von diesem Programm unterstützten APIs bezogen werden oder durch Bereitstellung einer statischen Liste in Form einer CSV-Datei, die den Ländercode gefolgt vom jeweiligen CO2-Emissionsfaktor enthalten muss. Bitte benutzen Sie die unten stehende Taste, um CO2-Emissionsdaten zu importieren oder um zuvor importierte Daten zu löschen."
+            "value" : "Um den CO2-Fußabdruck dieses Macs ermitteln zu können, benötigt das Programm CO2-Emissionsdaten des Landes, in dem sich der Mac gerade befindet. Diese Daten können entweder dynamisch über eine der von diesem Programm unterstützten APIs bezogen werden oder durch Bereitstellung einer statischen Liste in Form einer CSV-Datei, die den Ländercode gefolgt vom jeweiligen CO2-Emissionsfaktor enthalten muss. Bitte benutze die unten stehende Taste, um CO2-Emissionsdaten zu importieren oder um zuvor importierte Daten zu löschen."
           }
         },
         "en" : {
@@ -677,7 +769,8 @@
             "value" : "Power Nap"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "C3i-sE-lNs.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"logTime\"; ObjectID = \"C3i-sE-lNs\";",
@@ -689,7 +782,8 @@
             "value" : "logTime"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "C9c-og-Thm.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"Power consumption during Power Nap:\"; ObjectID = \"C9c-og-Thm\";",
@@ -745,23 +839,18 @@
         }
       }
     },
-    "CQD-Ze-you.title" : {
-      "comment" : "Class = \"NSButtonCell\"; title = \"Calculate electricity costs\"; ObjectID = \"CQD-Ze-you\";",
+    "CPh-Qp-NhE.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"hr20\"; ObjectID = \"CPh-Qp-NhE\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stromkosten berechnen"
-          }
-        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Calculate electricity costs"
+            "value" : "hr20"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "csm-gY-8sj.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"Duration Power Nap:\"; ObjectID = \"csm-gY-8sj\";",
@@ -827,7 +916,8 @@
             "value" : "Separator"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "dBY-C9-8mg.title" : {
       "comment" : "Class = \"NSViewController\"; title = \"Journal\"; ObjectID = \"dBY-C9-8mg\";",
@@ -839,7 +929,8 @@
             "value" : "Journal"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "DCN-OY-bdG.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Never\"; ObjectID = \"DCN-OY-bdG\";",
@@ -869,6 +960,61 @@
             "value" : "Import carbon intensity data"
           }
         }
+      },
+      "shouldTranslate" : false
+    },
+    "dKV-RA-NgQ.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSTextField\"; ibExternalAccessibilityDescription = \"Alternative price per KWh\"; ObjectID = \"dKV-RA-NgQ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alternativer Preis pro KWh"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Alternative price per KWh"
+          }
+        }
+      }
+    },
+    "Duh-gD-22T.title" : {
+      "comment" : "Class = \"NSViewController\"; title = \"Costs\"; ObjectID = \"Duh-gD-22T\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kosten"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Costs"
+          }
+        }
+      }
+    },
+    "DyD-Vz-o6j.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Duration in alternative Tariff:\"; ObjectID = \"DyD-Vz-o6j\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dauer im alternativen Tarif:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Duration in alternative Tariff:"
+          }
+        }
       }
     },
     "eeg-PC-H8n.title" : {
@@ -878,7 +1024,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wenn Sie die Farben des Graphen ändern möchten, verwenden Sie bitte die unten stehenden Farbwähler. Sie können die Farben wieder auf ihren ursprünglichen Zustand zurücksetzen, indem Sie auf die entsprechende Taste klicken."
+            "value" : "Wenn Du die Farben des Graphen ändern möchtest, verwende bitte die unten stehenden Farbwähler. Du kannst die Farben wieder auf ihren ursprünglichen Zustand zurücksetzen, indem Du auf die entsprechende Taste klickst."
           }
         },
         "en" : {
@@ -917,7 +1063,8 @@
             "value" : "journalTimeNap"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "EsB-kD-7yn.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Edit\"; ObjectID = \"EsB-kD-7yn\";",
@@ -955,6 +1102,24 @@
         }
       }
     },
+    "Ewi-hx-cGi.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Electricity costs alternative Tariff:\"; ObjectID = \"Ewi-hx-cGi\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stromkosten im alternativen Tarif:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Electricity costs alternative Tariff:"
+          }
+        }
+      }
+    },
     "F2S-fz-NVQ.title" : {
       "comment" : "Class = \"NSMenu\"; title = \"Help\"; ObjectID = \"F2S-fz-NVQ\";",
       "extractionState" : "extracted_with_value",
@@ -983,7 +1148,8 @@
             "value" : "journalConsumptionNap"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "FlT-P2-7d3.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"API key:\"; ObjectID = \"FlT-P2-7d3\";",
@@ -1010,7 +1176,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sie haben noch keinen API-Schlüssel? Einen kostenlosen API-Schlüssel zur nicht-kommerziellen Nutzung erhalten Sie auf https://api-portal.electricitymaps.com."
+            "value" : "Du haben noch keinen API-Schlüssel? Einen kostenlosen API-Schlüssel zur nicht-kommerziellen Nutzung erhältst Du auf https://api-portal.electricitymaps.com."
           }
         },
         "en" : {
@@ -1085,7 +1251,8 @@
             "value" : "powerNapEnableLabel"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "fY2-hN-oBS.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"Day markers:\"; ObjectID = \"fY2-hN-oBS\";",
@@ -1133,7 +1300,8 @@
             "value" : "Power Consumption"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "gWf-CM-IEa.title" : {
       "comment" : "Class = \"NSButtonCell\"; title = \"Open at login\"; ObjectID = \"gWf-CM-IEa\";",
@@ -1171,6 +1339,19 @@
         }
       }
     },
+    "Gzi-Xf-Rei.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"hr4\"; ObjectID = \"Gzi-Xf-Rei\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "hr4"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "h6y-ZC-SCg.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"When the maximum number of measurements has been reached, the oldest measurements are overwritten. If you want to delete all measurements, please click on the button below.\"; ObjectID = \"h6y-ZC-SCg\";",
       "extractionState" : "extracted_with_value",
@@ -1178,7 +1359,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wenn die maximale Anzahl der Messwerte erreicht wurde, werden die ältesten Messwerte überschrieben. Falls Sie alle Messwerte löschen wollen, klicken Sie bitte auf die unten stehende Taste."
+            "value" : "Wenn die maximale Anzahl der Messwerte erreicht wurde, werden die ältesten Messwerte überschrieben. Falls Du alle Messwerte löschen möchtest, klicke bitte auf die unten stehende Taste."
           }
         },
         "en" : {
@@ -1271,7 +1452,8 @@
             "value" : "Sidebar"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "HQ7-ym-MUy.paletteLabel" : {
       "comment" : "Class = \"NSToolbarItem\"; paletteLabel = \"Sidebar\"; ObjectID = \"HQ7-ym-MUy\";",
@@ -1283,7 +1465,8 @@
             "value" : "Sidebar"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "hz9-B4-Xy5.title" : {
       "comment" : "Class = \"NSMenu\"; title = \"Services\"; ObjectID = \"hz9-B4-Xy5\";",
@@ -1321,6 +1504,19 @@
         }
       }
     },
+    "IHf-VQ-DOy.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"weekday2\"; ObjectID = \"IHf-VQ-DOy\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "weekday2"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "ilr-4r-VCp.headerCell.title" : {
       "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Message\"; ObjectID = \"ilr-4r-VCp\";",
       "extractionState" : "extracted_with_value",
@@ -1335,6 +1531,24 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Message"
+          }
+        }
+      }
+    },
+    "ipJ-MO-ESK.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSPopUpButton\"; ibExternalAccessibilityDescription = \"Popup button to select when journal entries should be automatically deleted\"; ObjectID = \"ipJ-MO-ESK\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menü um auszuwählen, wann Journaleinträge automatisch gelöscht werden sollen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Popup button to select when journal entries should be automatically deleted"
           }
         }
       }
@@ -1375,6 +1589,50 @@
         }
       }
     },
+    "IR5-Xu-Yym.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"weekday6\"; ObjectID = \"IR5-Xu-Yym\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "weekday6"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "Jez-KA-Tth.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Alternative price per kWh:\"; ObjectID = \"Jez-KA-Tth\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alternativer Preis pro kWh:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Alternative price per kWh:"
+          }
+        }
+      }
+    },
+    "jiS-wN-foj.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"weekday7\"; ObjectID = \"jiS-wN-foj\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "weekday7"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "jkR-AM-8Rp.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"measurementDate\"; ObjectID = \"jkR-AM-8Rp\";",
       "extractionState" : "extracted_with_value",
@@ -1385,7 +1643,8 @@
             "value" : "measurementDate"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "JUn-M5-ksy.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"assertionsMessage\"; ObjectID = \"JUn-M5-ksy\";",
@@ -1397,7 +1656,8 @@
             "value" : "assertionsMessage"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "Jv4-az-WCd.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"To prevent the journal from becoming too large, the entries can be deleted automatically after a certain period of time. Please select in the menu below whether or after what time journal entries should be deleted automatically.\"; ObjectID = \"Jv4-az-WCd\";",
@@ -1406,7 +1666,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Um das Journal nicht zu groß werden zu lassen, können die Einträge nach einer bestimmten Zeit automatisch gelöscht werden. Bitte wählen Sie im unten stehenden Menü aus, ob bzw. nach welcher Zeit Journaleinträge automatisch gelöscht werden sollen."
+            "value" : "Um das Journal nicht zu groß werden zu lassen, können die Einträge nach einer bestimmten Zeit automatisch gelöscht werden. Bitte wähle im unten stehenden Menü aus, ob bzw. nach welcher Zeit Journaleinträge automatisch gelöscht werden sollen."
           }
         },
         "en" : {
@@ -1445,7 +1705,57 @@
             "value" : "Current system power"
           }
         }
+      },
+      "shouldTranslate" : false
+    },
+    "K8W-oS-ycq.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Total power consumption:\"; ObjectID = \"K8W-oS-ycq\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stromverbrauch gesamt:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Total power consumption:"
+          }
+        }
       }
+    },
+    "K79-zl-bZB.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Price per kWh:\"; ObjectID = \"K79-zl-bZB\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preis pro kWh:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Price per kWh:"
+          }
+        }
+      }
+    },
+    "kaO-G2-zJR.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"weekday4\"; ObjectID = \"kaO-G2-zJR\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "weekday4"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "Kd2-mp-pUS.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Show All\"; ObjectID = \"Kd2-mp-pUS\";",
@@ -1547,7 +1857,8 @@
             "value" : "powerState"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "ME3-AA-pMQ.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"Journal entries:\"; ObjectID = \"ME3-AA-pMQ\";",
@@ -1581,24 +1892,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Power Nap:"
-          }
-        }
-      }
-    },
-    "Mpc-BY-IwB.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Based on the determined power consumption, the approximate electricity costs for this Mac can be calculated. If you would like to have the electricity costs displayed instead of the power consumption, please first enter the price you pay for electricity per kilowatt hour in the field below. You can then activate the calculation of electricity costs.\"; ObjectID = \"Mpc-BY-IwB\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Basierend auf dem ermittelten Stromverbrauch können die ungefähren Stromkosten für diesen Mac berechnet werden. Wenn Sie die Stromkosten anstelle des Stromverbrauchs angezeigt bekommen möchten, geben Sie bitte zuerst im unten stehenden Feld den Preis ein, den Sie für Strom pro Kilowattstunde bezahlen. Anschließend können Sie die Berechnung der Stromkosten aktivieren."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Based on the determined power consumption, the approximate electricity costs for this Mac can be calculated. If you would like to have the electricity costs displayed instead of the power consumption, please first enter the price you pay for electricity per kilowatt hour in the field below. You can then activate the calculation of electricity costs."
           }
         }
       }
@@ -1649,7 +1942,8 @@
             "value" : "Average system power"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "NME-51-rka.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"Please enter your Electricity Maps API key in the text field below.\"; ObjectID = \"NME-51-rka\";",
@@ -1658,7 +1952,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bitte geben Sie Ihren Schlüssel für Electricity Maps API in das unten stehende Textfeld ein."
+            "value" : "Bitte gib Deinen Schlüssel für die Electricity Maps API in das unten stehende Textfeld ein."
           }
         },
         "en" : {
@@ -1697,7 +1991,8 @@
             "value" : "assertionsTime"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "nwg-27-Nf5.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"When your Mac is in sleep mode, it can still perform certain tasks. To do this, certain parts of the computer are woken from sleep mode, while other parts (such as the display) remain in sleep mode. This is called a Power Nap. If you want to highlight the times when your Mac took a Power Nap, please enable the option below.\"; ObjectID = \"nwg-27-Nf5\";",
@@ -1706,7 +2001,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wenn sich Ihr Mac im Ruhezustand befindet, kann er trotzdem bestimmte Aufgaben ausführen. Dazu werden bestimmte Teile des Computers aus dem Ruhezustand aufgeweckt, während andere Teile (wie zum Beispiel der Bildschirm) im Ruhezustand verbleiben. Dies wird als Power Nap bezeichnet. Wenn Sie die Zeiten hervorheben möchten, in denen Ihr Mac einen Power Nap eingelegt hat, aktivieren Sie bitte die unten stehende Option."
+            "value" : "Wenn sich Dein Mac im Ruhezustand befindet, kann er trotzdem bestimmte Aufgaben ausführen. Dazu werden bestimmte Teile des Computers aus dem Ruhezustand aufgeweckt, während andere Teile (wie zum Beispiel der Bildschirm) im Ruhezustand verbleiben. Dies wird als Power Nap bezeichnet. Wenn Du die Zeiten hervorheben möchtest, in denen Dein Mac einen Power Nap eingelegt hat, aktiviere bitte die unten stehende Option."
           }
         },
         "en" : {
@@ -1778,7 +2073,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Während des Ruhezustands kann Ihr Mac in regelmäßigen Abständen aufwachen, um Aufgaben wie das Abrufen von neuen E-Mails oder das Herunterladen von Updates zu erledigen. Dies wird als Power Nap bezeichnet. Bitte wählen Sie im unten stehenden Menü aus, ob Sie Power Nap aktivieren oder deaktivieren möchten. Auf einigen Macs kann Power Nap möglicherweise nicht vollständig deaktiviert werden."
+            "value" : "Während des Ruhezustands kann Dein Mac in regelmäßigen Abständen aufwachen, um Aufgaben wie das Abrufen von neuen E-Mails oder das Herunterladen von Updates zu erledigen. Dies wird als Power Nap bezeichnet. Bitte wähle im unten stehenden Menü aus, ob Du Power Nap aktivieren oder deaktivieren möchtest. Auf einigen Macs kann Power Nap möglicherweise nicht vollständig deaktiviert werden."
           }
         },
         "en" : {
@@ -1951,6 +2246,24 @@
         }
       }
     },
+    "p5k-Wo-5j3.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Use alternative electricity tariff\"; ObjectID = \"p5k-Wo-5j3\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alternativen Stromtarif verwenden"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use alternative electricity tariff"
+          }
+        }
+      }
+    },
     "pfa-9s-Bs9.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"Highest measured system power:\"; ObjectID = \"pfa-9s-Bs9\";",
       "extractionState" : "extracted_with_value",
@@ -1969,6 +2282,19 @@
         }
       }
     },
+    "PtT-ap-d5H.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"weekday1\"; ObjectID = \"PtT-ap-d5H\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "weekday1"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "PYs-z2-snG.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"assertionsProcess\"; ObjectID = \"PYs-z2-snG\";",
       "extractionState" : "extracted_with_value",
@@ -1979,7 +2305,8 @@
             "value" : "assertionsProcess"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "Q0t-07-FGT.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Cut\"; ObjectID = \"Q0t-07-FGT\";",
@@ -1999,6 +2326,19 @@
         }
       }
     },
+    "q7v-5L-DsH.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"hr12\"; ObjectID = \"q7v-5L-DsH\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "hr12"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "Q65-PT-uMm.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Carbon footprint\"; ObjectID = \"Q65-PT-uMm\";",
       "extractionState" : "extracted_with_value",
@@ -2009,7 +2349,8 @@
             "value" : "Carbon footprint"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "QcZ-8s-LvD.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"journalDate\"; ObjectID = \"QcZ-8s-LvD\";",
@@ -2021,7 +2362,21 @@
             "value" : "journalDate"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
+    },
+    "qDN-hg-f87.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"journalTimeAltTariff\"; ObjectID = \"qDN-hg-f87\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "journalTimeAltTariff"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "QgV-jm-6vz.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"By default, this application measures all power consumption. In some environments, however, measuring power consumption during Power Naps may not be desirable. If you only want to measure power during times when your Mac is actively in use, please activate the option below.\"; ObjectID = \"QgV-jm-6vz\";",
@@ -2030,7 +2385,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Standardmäßig misst dieses Programm jeglichen Stromverbrauch. In einigen Umgebungen kann die Messung des Stromverbrauchs während Power Naps allerdings nicht gewünscht sein. Wenn Sie die Leistung nur in Zeiten messen wollen, in denen Ihr Mac aktiv genutzt wird, aktivieren Sie bitte die unten stehende Option."
+            "value" : "Standardmäßig misst dieses Programm jeglichen Stromverbrauch. In einigen Umgebungen kann die Messung des Stromverbrauchs während Power Naps allerdings nicht gewünscht sein. Wenn Du die Leistung nur in Zeiten messen möchtest, in denen Dein Mac aktiv genutzt wird, aktiviere bitte die unten stehende Option."
           }
         },
         "en" : {
@@ -2051,7 +2406,8 @@
             "value" : "powerState"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "qxt-b8-PAf.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"Measurements:\"; ObjectID = \"qxt-b8-PAf\";",
@@ -2078,7 +2434,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Um Ihnen die Möglichkeit zu geben, Ihren Stromverbrauch über einen längeren Zeitraum protokollieren und auswerten zu können, verfügt dieses Programm über eine Journal-Funktion, welche den Gesamtstromverbrauch pro Tag speichert. Wenn Sie das Journal nutzen wollen, aktivieren Sie bitte die unten stehende Option."
+            "value" : "Um Dir die Möglichkeit zu geben, Deinen Stromverbrauch über einen längeren Zeitraum protokollieren und auswerten zu können, verfügt dieses Programm über eine Journal-Funktion, welche den Gesamtstromverbrauch pro Tag speichert. Wenn Du das Journal nutzen möchtest, aktiviere bitte die unten stehende Option."
           }
         },
         "en" : {
@@ -2197,6 +2553,19 @@
         }
       }
     },
+    "rvW-hw-ba3.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"hr16\"; ObjectID = \"rvW-hw-ba3\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "hr16"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "S3X-49-Bkt.title" : {
       "comment" : "Class = \"NSButtonCell\"; title = \"Show today's values only\"; ObjectID = \"S3X-49-Bkt\";",
       "extractionState" : "extracted_with_value",
@@ -2211,6 +2580,24 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Show today's values only"
+          }
+        }
+      }
+    },
+    "S5m-eF-mxp.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Electricity costs due to Power Nap:\"; ObjectID = \"S5m-eF-mxp\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stromkosten wegen Power Nap:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Electricity costs due to Power Nap:"
           }
         }
       }
@@ -2456,7 +2843,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Stromverbrauch insgesamt:"
+            "value" : "Stromverbrauch gesamt:"
           }
         },
         "en" : {
@@ -2474,7 +2861,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dieses Programm kann im Hintergrund ausgeführt werden. In diesem Falle wird es nur in der macOS Menüleiste angezeigt und stellt lediglich grundlegende Leistungsinformationen zur Verfügung. Wenn Sie das Programm im Hintergrund ausführen möchten, aktivieren Sie bitte die unten stehende Funktion."
+            "value" : "Dieses Programm kann im Hintergrund ausgeführt werden. In diesem Falle wird es nur in der macOS Menüleiste angezeigt und stellt lediglich grundlegende Leistungsinformationen zur Verfügung. Wenn Du das Programm im Hintergrund ausführen möchtest, aktiviere bitte die unten stehende Option."
           }
         },
         "en" : {
@@ -2499,6 +2886,24 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Duration awake:"
+          }
+        }
+      }
+    },
+    "u4r-Yf-mWp.headerCell.title" : {
+      "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Duration Alt Tariff\"; ObjectID = \"u4r-Yf-mWp\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dauer im alternativen Tarif"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Duration Alt Tariff"
           }
         }
       }
@@ -2531,7 +2936,21 @@
             "value" : "Power Monitor"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
+    },
+    "uWh-7g-HAW.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"weekday5\"; ObjectID = \"uWh-7g-HAW\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "weekday5"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "Vdr-fp-XzO.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Hide Others\"; ObjectID = \"Vdr-fp-XzO\";",
@@ -2561,7 +2980,8 @@
             "value" : "measurementDate"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "VLe-x5-fQV.label" : {
       "comment" : "Class = \"NSToolbarItem\"; label = \"Filter\"; ObjectID = \"VLe-x5-fQV\";",
@@ -2613,6 +3033,37 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Show only entries related to wake and sleep events"
+          }
+        }
+      }
+    },
+    "vUG-kq-Mgo.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"hr8\"; ObjectID = \"vUG-kq-Mgo\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "hr8"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "W16-Ig-VY3.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Total electricity costs:\"; ObjectID = \"W16-Ig-VY3\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stromkosten gesamt:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Total electricity costs:"
           }
         }
       }
@@ -2699,7 +3150,8 @@
             "value" : "powerValue"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "xLV-2L-ILV.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"Current time period covered:\"; ObjectID = \"xLV-2L-ILV\";",
@@ -2709,6 +3161,25 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Current time period covered:"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "xZ1-BH-R2g.ibExternalAccessibilityDescription" : {
+      "comment" : "Class = \"NSTextField\"; ibExternalAccessibilityDescription = \"Price per kWh\"; ObjectID = \"xZ1-BH-R2g\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preis pro kWh"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Price per kWh"
           }
         }
       }
@@ -2831,6 +3302,25 @@
             "value" : "logCategory"
           }
         }
+      },
+      "shouldTranslate" : false
+    },
+    "yp6-zf-FVa.headerCell.title" : {
+      "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Consumption Alt Tariff\"; ObjectID = \"yp6-zf-FVa\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verbrauch alternativer Tarif"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Consumption Alt Tariff"
+          }
+        }
       }
     },
     "ytk-Ju-hcn.headerCell.title" : {
@@ -2897,7 +3387,8 @@
             "value" : "consumptionSummaryLabel"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "ZIU-Di-DIs.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Redo\"; ObjectID = \"ZIU-Di-DIs\";",

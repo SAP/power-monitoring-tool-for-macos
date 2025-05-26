@@ -1,6 +1,6 @@
 /*
      MTSettingsViewOptionsController.m
-     Copyright 2023-2024 SAP SE
+     Copyright 2023-2025 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -51,24 +51,27 @@
 
 - (void)defaultsChanged
 {
-    // options
-    [_showAverageCheckbox setEnabled:![_userDefaults objectIsForcedForKey:kMTDefaultsGraphShowAverageKey]];
-    [_showDayMarkersCheckbox setEnabled:![_userDefaults objectIsForcedForKey:kMTDefaultsGraphShowDayMarkersKey]];
-    [_markPowerNapsCheckbox setEnabled:![_userDefaults objectIsForcedForKey:kMTDefaultsGraphMarkPowerNapsKey]];
+    dispatch_async(dispatch_get_main_queue(), ^{
     
-    // color wells
-    [_graphColorWell setEnabled:![_userDefaults objectIsForcedForKey:kMTDefaultsGraphFillColorKey]];
-    [_graphPowerNapColorWell setEnabled:![_userDefaults objectIsForcedForKey:kMTDefaultsGraphPowerNapFillColorKey]];
-    [_averageColorWell setEnabled:![_userDefaults objectIsForcedForKey:kMTDefaultsGraphAverageColorKey]];
-    [_dayMarkersColorWell setEnabled:![_userDefaults objectIsForcedForKey:kMTDefaultsGraphDayMarkerColorKey]];
-    [_positionLineColorWell setEnabled:![_userDefaults objectIsForcedForKey:kMTDefaultsGraphPositionLineColorKey]];
-    
-    // button
-    [_resetColorsButton setEnabled:!([_userDefaults objectIsForcedForKey:kMTDefaultsGraphFillColorKey] &&
-                                     [_userDefaults objectIsForcedForKey:kMTDefaultsGraphPowerNapFillColorKey] &&
-                                     [_userDefaults objectIsForcedForKey:kMTDefaultsGraphAverageColorKey] &&
-                                     [_userDefaults objectIsForcedForKey:kMTDefaultsGraphDayMarkerColorKey] &&
-                                     [_userDefaults objectIsForcedForKey:kMTDefaultsGraphPositionLineColorKey])];
+        // options
+        [self->_showAverageCheckbox setEnabled:![self->_userDefaults objectIsForcedForKey:kMTDefaultsGraphShowAverageKey]];
+        [self->_showDayMarkersCheckbox setEnabled:![self->_userDefaults objectIsForcedForKey:kMTDefaultsGraphShowDayMarkersKey]];
+        [self->_markPowerNapsCheckbox setEnabled:![self->_userDefaults objectIsForcedForKey:kMTDefaultsGraphMarkPowerNapsKey]];
+        
+        // color wells
+        [self->_graphColorWell setEnabled:![self->_userDefaults objectIsForcedForKey:kMTDefaultsGraphFillColorKey]];
+        [self->_graphPowerNapColorWell setEnabled:![self->_userDefaults objectIsForcedForKey:kMTDefaultsGraphPowerNapFillColorKey]];
+        [self->_averageColorWell setEnabled:![self->_userDefaults objectIsForcedForKey:kMTDefaultsGraphAverageColorKey]];
+        [self->_dayMarkersColorWell setEnabled:![self->_userDefaults objectIsForcedForKey:kMTDefaultsGraphDayMarkerColorKey]];
+        [self->_positionLineColorWell setEnabled:![self->_userDefaults objectIsForcedForKey:kMTDefaultsGraphPositionLineColorKey]];
+        
+        // button
+        [self->_resetColorsButton setEnabled:!([self->_userDefaults objectIsForcedForKey:kMTDefaultsGraphFillColorKey] &&
+                                               [self->_userDefaults objectIsForcedForKey:kMTDefaultsGraphPowerNapFillColorKey] &&
+                                               [self->_userDefaults objectIsForcedForKey:kMTDefaultsGraphAverageColorKey] &&
+                                               [self->_userDefaults objectIsForcedForKey:kMTDefaultsGraphDayMarkerColorKey] &&
+                                               [self->_userDefaults objectIsForcedForKey:kMTDefaultsGraphPositionLineColorKey])];
+    });
 }
 
 - (IBAction)resetGraphColors:(id)sender

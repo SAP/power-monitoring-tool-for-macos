@@ -1,6 +1,6 @@
 /*
      MTSidebarController.m
-     Copyright 2023-2024 SAP SE
+     Copyright 2023-2025 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -35,6 +35,8 @@
     _allSidebarItems = [[NSMutableDictionary alloc] init];
     _allViewControllers = [[NSMutableDictionary alloc] init];
 
+    [[self sidebarOutlineView] setAccessibilityLabel:NSLocalizedString(@"sidebarAccessibilityLabel", nil)];
+    
     MTSidebarItem *logItem = [[MTSidebarItem alloc] init];
     [logItem setLabel:NSLocalizedString(@"sidebarEntryPowerEventLog", nil)];
     [logItem setImage:[NSImage imageWithSystemSymbolName:@"bolt" accessibilityDescription:nil]];

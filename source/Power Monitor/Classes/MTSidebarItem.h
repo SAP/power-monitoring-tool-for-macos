@@ -1,6 +1,6 @@
 /*
      MTSidebarItem.h
-     Copyright 2023-2024 SAP SE
+     Copyright 2023-2025 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,10 +17,33 @@
 
 #import <Cocoa/Cocoa.h>
 
+/*!
+ @class         MTSidebarItem
+ @abstract      This class specifies a sidebar item.
+*/
+
 @interface MTSidebarItem : NSObject
 
+/*!
+ @property      label
+ @abstract      A property to specify the text label of a sidebar item.
+ @discussion    The value of this property is NSString.
+*/
 @property (nonatomic, strong, readwrite) NSString *label;
+
+/*!
+ @property      image
+ @abstract      A property to specify the image of a sidebar item.
+ @discussion    The value of this property is NSImage.
+*/
 @property (nonatomic, strong, readwrite) NSImage *image;
+
+/*!
+ @property      targetViewControllerIdentifier
+ @abstract      A property to specify the identifier of the target view controller to be called when
+                the sidebar item is clicked.
+ @discussion    The value of this property is NSString.
+*/
 @property (nonatomic, strong, readwrite) NSString *targetViewControllerIdentifier;
 
 @end

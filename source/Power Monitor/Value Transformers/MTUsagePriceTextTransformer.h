@@ -1,6 +1,6 @@
 /*
      MTUsagePriceTextTransformer.h
-     Copyright 2023-2024 SAP SE
+     Copyright 2023-2025 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -19,9 +19,9 @@
 
 /*!
  @class         MTUsagePriceTextTransformer
- @abstract      A value transformer that returns the localized string "usagePriceText" if the bool value of the
-                given value is YES and the double value of the user defaults key kMTDefaultsElectricityPriceKey
-                is greater than 0. Otherwise it returns the localized string "usageConsumptionText".
+ @abstract      A value transformer that returns the localized string "usagePriceTodayText" if the bool
+                value of the given value is YES and the double value of the current electricity price is
+                greater than 0. Otherwise it returns the localized string "usagePriceText".
 */
 
 @interface MTUsagePriceTextTransformer : NSValueTransformer

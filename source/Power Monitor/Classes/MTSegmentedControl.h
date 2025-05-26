@@ -1,6 +1,6 @@
 /*
-     MTUsagePriceTextTransformerDark.m
-     Copyright 2023-2024 SAP SE
+     MTSegmentedControl.h
+     Copyright 2023-2025 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,19 +15,15 @@
      limitations under the License.
 */
 
-#import "MTUsagePriceTextTransformerDark.h"
-#import "Constants.h"
+#import <Cocoa/Cocoa.h>
 
-@implementation MTUsagePriceTextTransformerDark
+@interface MTSegmentedControl : NSSegmentedControl
 
-+ (BOOL)allowsReverseTransformation
-{
-    return NO;
-}
-
-- (id)transformedValue:(id)value
-{
-    return ([value boolValue] && [[NSUserDefaults standardUserDefaults] doubleForKey:kMTDefaultsElectricityPriceKey] > 0) ? NSLocalizedString(@"usagePriceTextDark", nil) : NSLocalizedString(@"usageConsumptionTextDark", nil);
-}
+/*!
+ @method        setSelectedSegmentsWithArray:
+ @abstract      Selects the specified segments.
+ @param         selected An array of NSNumber objects representing the indexes of the segments that should be selected.
+*/
+- (void)setSelectedSegmentsWithArray:(NSArray<NSNumber*>*)selected;
 
 @end

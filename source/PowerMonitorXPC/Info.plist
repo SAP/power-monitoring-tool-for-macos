@@ -4,10 +4,10 @@
 <dict>
 	<key>XPCService</key>
 	<dict>
-		<key>ServiceType</key>
-		<string>Application</string>
 		<key>JoinExistingSession</key>
 		<true/>
+		<key>ServiceType</key>
+		<string>Application</string>
 	</dict>
 </dict>
 </plist>

@@ -1,6 +1,6 @@
 /*
      AppDelegate.m
-     Copyright 2023-2024 SAP SE
+     Copyright 2023-2025 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@
 #import "MTCarbonFootprint.h"
 #import "MTStatusItemMenu.h"
 #import "MTPowerJournal.h"
+#import "MTDaemonConnection.h"
 
 @interface AppDelegate ()
 @property (weak) IBOutlet MTStatusItemMenu *statusItemMenu;
@@ -47,6 +48,8 @@
                                      [NSKeyedArchiver archivedDataWithRootObject:[NSColor colorNamed:@"GraphDayMarkerColor"] requiringSecureCoding:YES error:nil], kMTDefaultsGraphDayMarkerColorKey,
                                      [NSKeyedArchiver archivedDataWithRootObject:[NSColor colorNamed:@"GraphPositionLineColor"] requiringSecureCoding:YES error:nil], kMTDefaultsGraphPositionLineColorKey,
                                      [NSNumber numberWithBool:YES], kMTDefaultsLogFollowCursorKey,
+                                     [NSNumber numberWithDouble:0], kMTDefaultsElectricityPriceKey,
+                                     [NSNumber numberWithDouble:0], kMTDefaultsAltElectricityPriceKey,
                                      nil]
     ];
     

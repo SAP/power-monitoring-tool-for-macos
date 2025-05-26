@@ -1,6 +1,6 @@
 /*
      MTStatusItemMenu.m
-     Copyright 2023-2024 SAP SE
+     Copyright 2023-2025 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 
 #import "MTStatusItemMenu.h"
 #import "MTUsagePriceTextTransformer.h"
+#import "MTUsageConsumptionTextTransformer.h"
 #import "Constants.h"
 
 @interface MTStatusItemMenu ()
@@ -24,6 +25,7 @@
 @property(nonatomic, strong, readwrite) NSString *averagePowerValue;
 @property(nonatomic, strong, readwrite) NSString *currentPowerValue;
 @property(nonatomic, strong, readwrite) NSString *consumptionValue;
+@property(nonatomic, strong, readwrite) NSUserDefaults *userDefaults;
 @property (assign) BOOL isOpen;
 @end
 
@@ -47,6 +49,8 @@
 
 - (void)setUpMenu
 {
+    _userDefaults = [NSUserDefaults standardUserDefaults];
+
     // register for notifications
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateValues:)
@@ -90,17 +94,31 @@
 
 - (void)updateCarbonValue
 {
-    [[self itemWithTag:3000] setTitle:[NSString localizedStringWithFormat:([[NSUserDefaults standardUserDefaults] boolForKey:kMTDefaultsTodayValuesOnlyKey]) ? NSLocalizedString(@"statusItemCarbonFootprintToday", nil) : NSLocalizedString(@"statusItemCarbonFootprint", nil), (_carbonValue) ? _carbonValue : NSLocalizedString(@"statusItemValueUnknown", nil)]];
+    [[self itemWithTag:3000] setTitle:[NSString localizedStringWithFormat:([_userDefaults boolForKey:kMTDefaultsTodayValuesOnlyKey]) ? NSLocalizedString(@"statusItemCarbonFootprintToday", nil) : NSLocalizedString(@"statusItemCarbonFootprint", nil), (_carbonValue) ? _carbonValue : NSLocalizedString(@"statusItemValueUnknown", nil)]];
 }
 
 - (void)updatePowerStats
 {
     [[self itemWithTag:2000] setTitle:[NSString localizedStringWithFormat:NSLocalizedString(@"statusItemAveragePower", nil), (_averagePowerValue) ? _averagePowerValue : NSLocalizedString(@"statusItemValueUnknown", nil)]];
 
-    MTUsagePriceTextTransformer *valueTransformer = [[MTUsagePriceTextTransformer alloc] init];
-    BOOL showPrice = [[NSUserDefaults standardUserDefaults] boolForKey:kMTDefaultsShowPriceKey];
-    NSString *valueString = [valueTransformer transformedValue:[NSNumber numberWithBool:showPrice]];
-    [[self itemWithTag:2100] setTitle:[NSString stringWithFormat:@"%@ %@", valueString, (_consumptionValue) ? _consumptionValue : NSLocalizedString(@"statusItemValueUnknown", nil)]];
+    NSString *valueString = nil;
+    NSNumber *todayOnly = [NSNumber numberWithBool:[_userDefaults boolForKey:kMTDefaultsTodayValuesOnlyKey]];
+    
+    if ([_userDefaults boolForKey:kMTDefaultsShowPriceKey]) {
+        
+        MTUsagePriceTextTransformer *valueTransformer = [[MTUsagePriceTextTransformer alloc] init];
+        valueString = [valueTransformer transformedValue:todayOnly];
+        
+    } else {
+        
+        MTUsageConsumptionTextTransformer *valueTransformer = [[MTUsageConsumptionTextTransformer alloc] init];
+        valueString = [valueTransformer transformedValue:todayOnly];
+    }
+
+    if (valueString) {
+        
+        [[self itemWithTag:2100] setTitle:[NSString stringWithFormat:@"%@ %@", valueString, (_consumptionValue) ? _consumptionValue : NSLocalizedString(@"statusItemValueUnknown", nil)]];
+    }
 }
 
 - (void)updateCurrentPowerValue
@@ -110,7 +128,7 @@
 
 - (void)menuWillOpen:(NSMenu *)menu
 {
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:kMTDefaultsShowCarbonKey]) {
+    if ([_userDefaults boolForKey:kMTDefaultsShowCarbonKey]) {
         
         [self updateCarbonValue];
         [[self itemWithTag:3000] setHidden:NO];

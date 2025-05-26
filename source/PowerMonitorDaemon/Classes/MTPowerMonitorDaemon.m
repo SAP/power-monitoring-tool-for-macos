@@ -1,6 +1,6 @@
 /*
      MTPowerMonitorDaemon.m
-     Copyright 2023-2024 SAP SE
+     Copyright 2023-2025 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@
 #import "MTPowerMeasurementArray.h"
 #import "MTSystemInfo.h"
 #import "MTPowerJournal.h"
+#import "MTElectricityPrice.h"
 #import "Constants.h"
 #import <os/log.h>
 
@@ -166,29 +167,40 @@
                             MTPowerMeasurementReader *pmReader = [[MTPowerMeasurementReader alloc] initWithData:[self->_pMWriter measurementData]];
                             NSDictionary *groupedMeasurements = [[pmReader allMeasurements] measurementsGroupedByDay];
                             
-                            for (NSString *aKey in [groupedMeasurements allKeys]) {
+                            [self altPriceScheduleWithReply:^(NSDictionary *schedule, BOOL forced) {
+                            
+                                MTElectricityPrice *ePrice = [[MTElectricityPrice alloc] initWithRegularPrice:0
+                                                                                             alternativePrice:0
+                                                                                                     schedule:schedule
+                                ];
                                 
-                                NSTimeInterval interval = [aKey doubleValue];
-                                
-                                // we ignore today's measurements and only go ahead, if the
-                                // journal does not contain an entry for the day
-                                if  (interval != self->_currentDayStart && ![self->_powerJournal entryWithTimeStamp:interval]) {
+                                for (NSString *aKey in [groupedMeasurements allKeys]) {
                                     
-                                    NSArray *measurementGroup = [groupedMeasurements objectForKey:aKey];
-                                    NSArray *awakeMeasurements = [measurementGroup awakeMeasurements];
-                                    NSArray *powerNapMeasurements = [measurementGroup powerNapMeasurements];
+                                    NSTimeInterval interval = [aKey doubleValue];
                                     
-                                    MTPowerJournalEntry *journalEntry = [[MTPowerJournalEntry alloc] initWithTimeIntervalSince1970:interval];
-                                    [journalEntry setDurationAwake:[awakeMeasurements totalTime]];
-                                    [journalEntry setConsumptionTotal:[[measurementGroup averagePower] doubleValue]];
-                                    [journalEntry setDurationPowerNap:[powerNapMeasurements totalTime]];
-                                    [journalEntry setConsumptionPowerNap:[[powerNapMeasurements averagePower] doubleValue]];
-                                    
-                                    [[self->_powerJournal allEntries] addObject:journalEntry];
-                                    
-                                    journalUpdated = YES;
+                                    // we ignore today's measurements and only go ahead, if the
+                                    // journal does not contain an entry for the day
+                                    if  (interval != self->_currentDayStart && ![self->_powerJournal entryWithTimeStamp:interval]) {
+                                        
+                                        NSArray *measurementGroup = [groupedMeasurements objectForKey:aKey];
+                                        NSArray *awakeMeasurements = [measurementGroup awakeMeasurements];
+                                        NSArray *powerNapMeasurements = [measurementGroup powerNapMeasurements];
+                                        NSArray *measurementsInAltTariff = [ePrice measurementsInAltTariffWithArray:measurementGroup];
+
+                                        MTPowerJournalEntry *journalEntry = [[MTPowerJournalEntry alloc] initWithTimeIntervalSince1970:interval];
+                                        [journalEntry setDurationAwake:[awakeMeasurements totalTime]];
+                                        [journalEntry setConsumptionTotal:[[measurementGroup averagePower] doubleValue]];
+                                        [journalEntry setDurationAltTariff:[measurementsInAltTariff totalTime]];
+                                        [journalEntry setConsumptionAltTariff:[[measurementsInAltTariff averagePower] doubleValue]];
+                                        [journalEntry setDurationPowerNap:[powerNapMeasurements totalTime]];
+                                        [journalEntry setConsumptionPowerNap:[[powerNapMeasurements averagePower] doubleValue]];
+                                        
+                                        [[self->_powerJournal allEntries] addObject:journalEntry];
+                                        
+                                        journalUpdated = YES;
+                                    }
                                 }
-                            }
+                            }];
                         }
                         
                         // delete outdated entries
@@ -330,11 +342,10 @@
     // set the value
     CFPreferencesSetValue(kMTPrefsEnableJournalKey, (__bridge CFPropertyListRef)([NSNumber numberWithBool:enabled]), kMTDaemonPreferenceDomain, kCFPreferencesAnyUser, kCFPreferencesCurrentHost);
         
-    // read the value and compare it
-    // with the value we set
+    // read the value and compare it with the value we set
     [self journalEnabledWithReply:^(BOOL isEnabled, BOOL isForced) {
         
-        completionHandler((enabled == isEnabled) ? YES : NO);
+        completionHandler((enabled == isEnabled));
     }];
 }
 
@@ -358,11 +369,10 @@
     // set the value
     CFPreferencesSetValue(kMTPrefsJournalAutoDeleteKey, (__bridge CFPropertyListRef)([NSNumber numberWithInteger:interval]), kMTDaemonPreferenceDomain, kCFPreferencesAnyUser, kCFPreferencesCurrentHost);
         
-    // read the value and compare it
-    // with the value we set
+    // read the value and compare it with the value we set
     [self journalAutoDeletionIntervalWithReply:^(NSInteger storedInterval, BOOL isForced) {
         
-        completionHandler((interval == storedInterval) ? YES : NO);
+        completionHandler((interval == storedInterval));
     }];
 }
 
@@ -390,11 +400,10 @@
     // set the value
     CFPreferencesSetValue(kMTPrefsIgnorePowerNapsKey, (__bridge CFPropertyListRef)([NSNumber numberWithBool:ignore]), kMTDaemonPreferenceDomain, kCFPreferencesAnyUser, kCFPreferencesCurrentHost);
         
-    // read the value and compare it
-    // with the value we set
+    // read the value and compare it with the value we set
     [self powerNapsIgnoredWithReply:^(BOOL isIgnored, BOOL isForced) {
         
-        completionHandler((ignore == isIgnored) ? YES : NO);
+        completionHandler((ignore == isIgnored));
     }];
 }
 
@@ -402,6 +411,56 @@
 {
     BOOL isForced = CFPreferencesAppValueIsForced(kMTPrefsIgnorePowerNapsKey, kMTDaemonPreferenceDomain);
     reply([self powerNapsIgnored], isForced);
+}
+
+- (void)setAltPriceEnabled:(BOOL)enabled completionHandler:(void (^)(BOOL success))completionHandler
+{
+    // set the value
+    CFPreferencesSetValue(kMTPrefsUseAltPriceKey, (__bridge CFPropertyListRef)([NSNumber numberWithBool:enabled]), kMTDaemonPreferenceDomain, kCFPreferencesAnyUser, kCFPreferencesCurrentHost);
+        
+    // read the value and compare it with the value we set
+    [self altPriceEnabledWithReply:^(BOOL isEnabled, BOOL forced) {
+        
+        completionHandler((enabled == isEnabled));
+    }];
+}
+
+- (void)altPriceEnabledWithReply:(void (^)(BOOL enabled, BOOL forced))reply
+{
+    BOOL isEnabled = NO;
+    BOOL isForced = CFPreferencesAppValueIsForced(kMTPrefsUseAltPriceKey, kMTDaemonPreferenceDomain);
+    
+    CFPropertyListRef property = CFPreferencesCopyAppValue(kMTPrefsUseAltPriceKey, kMTDaemonPreferenceDomain);
+    
+    if (property) {
+        isEnabled = CFBooleanGetValue(property);
+        CFRelease(property);
+    }
+    
+    reply(isEnabled, isForced);
+}
+
+- (void)setAltPriceSchedule:(NSDictionary*)schedule completionHandler:(void (^)(BOOL success))completionHandler
+{
+    // set the value
+    CFPreferencesSetValue(kMTPrefsAltPriceScheduleKey, (__bridge CFPropertyListRef)schedule, kMTDaemonPreferenceDomain, kCFPreferencesAnyUser, kCFPreferencesCurrentHost);
+        
+    // read the value and compare it with the value we set
+    [self altPriceScheduleWithReply:^(NSDictionary *savedSchedule, BOOL forced) {
+        
+        completionHandler(([schedule isEqualTo:savedSchedule]));
+    }];
+}
+
+- (void)altPriceScheduleWithReply:(void (^)(NSDictionary *schedule, BOOL forced))reply
+{
+    NSDictionary *savedSchedule = nil;
+    BOOL isForced = CFPreferencesAppValueIsForced(kMTPrefsAltPriceScheduleKey, kMTDaemonPreferenceDomain);
+    
+    CFPropertyListRef property = CFPreferencesCopyAppValue(kMTPrefsAltPriceScheduleKey, kMTDaemonPreferenceDomain);
+    if (property) { savedSchedule = CFBridgingRelease(property); }
+    
+    reply(savedSchedule, isForced);
 }
 
 #pragma mark MTSleepWatcherDelegate methods

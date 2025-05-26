@@ -1,6 +1,6 @@
 /*
      MTSettingsGeneralController.m
-     Copyright 2023-2024 SAP SE
+     Copyright 2023-2025 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -26,7 +26,6 @@
 
 @property (weak) IBOutlet NSButton *runInBackgroundButton;
 @property (weak) IBOutlet NSButton *loginItemButton;
-@property (weak) IBOutlet NSTextField *electricityPriceField;
 @property (weak) IBOutlet NSButton *deleteMeasurementsButton;
 @end
 
@@ -40,7 +39,6 @@
     
     // set the initial state of the "Run in background" checkbox
     [_runInBackgroundButton setState:([_userDefaults boolForKey:kMTDefaultsRunInBackgroundKey]) ? NSControlStateValueOn : NSControlStateValueOff];
-    if ([_userDefaults doubleForKey:kMTDefaultsElectricityPriceKey] == 0) { [_userDefaults setBool:NO forKey:kMTDefaultsShowPriceKey]; }
     
     // set the initial state of the "Open at login" checkbox
     [self setLoginButton];
@@ -58,16 +56,6 @@
 - (void)setLoginButton
 {
     [_loginItemButton setState:([MTSystemInfo loginItemEnabled]) ? NSControlStateValueOn : NSControlStateValueOff];
-}
-
-- (void)controlTextDidEndEditing:(NSNotification *)obj
-{
-    if ([_userDefaults doubleForKey:kMTDefaultsElectricityPriceKey] == 0) { [_userDefaults setBool:NO forKey:kMTDefaultsShowPriceKey]; }
-}
-
-- (void)mouseDown:(NSEvent *)event
-{
-    [[_electricityPriceField window] makeFirstResponder:nil];
 }
 
 #pragma mark IBActions

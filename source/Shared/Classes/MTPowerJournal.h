@@ -1,6 +1,6 @@
 /*
      MTPowerJournal.h
-     Copyright 2023-2024 SAP SE
+     Copyright 2023-2025 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -82,6 +82,13 @@ typedef enum {
 + (double)consumptionTotalInKWhWithEntries:(NSArray<MTPowerJournalEntry*>*)entries;
 
 /*!
+ @method        consumptionAltTariffInKWhWithEntries:
+ @abstract      Returns the total power consumption in KWh for the time the alternative electricity tariff was active for given journal entries.
+ @param         entries An array of journal entries to calculate the power consumption from.
+*/
++ (double)consumptionAltTariffInKWhWithEntries:(NSArray<MTPowerJournalEntry*>*)entries;
+
+/*!
  @method        consumptionAwakeInKWhWithEntries:
  @abstract      Returns the power consumption in KWh for the time the Mac was awake for the given journal entries.
  @param         entries An array of journal entries to calculate the power consumption from.
@@ -117,6 +124,13 @@ typedef enum {
 + (NSString*)consumptionStringPowerNapWithEntries:(NSArray<MTPowerJournalEntry*>*)entries;
 
 /*!
+ @method        consumptionStringAltTariffWithEntries:
+ @abstract      Returns the power consumption in KWh for the time the alternative electricity tariff was active for the given journal entries as string.
+ @param         entries An array of journal entries to calculate the power consumption from.
+*/
++ (NSString*)consumptionStringAltTariffWithEntries:(NSArray<MTPowerJournalEntry*>*)entries;
+
+/*!
  @method        durationTotalWithEntries:
  @abstract      Returns the total duration of all power events (in seconds) for the given journal entries.
  @param         entries An array of journal entries to calculate the duration from.
@@ -138,6 +152,13 @@ typedef enum {
 + (NSTimeInterval)durationPowerNapWithEntries:(NSArray<MTPowerJournalEntry*>*)entries;
 
 /*!
+ @method        durationAltTariffWithEntries:
+ @abstract      Returns the total duration of power events that occurred while the alternative electricity tariff was active (in seconds) for the given journal entries.
+ @param         entries An array of journal entries to calculate the duration from.
+*/
++ (NSTimeInterval)durationAltTariffWithEntries:(NSArray<MTPowerJournalEntry*>*)entries;
+
+/*!
  @method        durationStringTotalWithEntries:
  @abstract      Returns the total duration of all power events (as string with format hh:mm:ss) for the given journal entries.
  @param         entries An array of journal entries to calculate the duration from.
@@ -157,6 +178,13 @@ typedef enum {
  @param         entries An array of journal entries to calculate the duration from.
 */
 + (NSString*)durationStringPowerNapWithEntries:(NSArray<MTPowerJournalEntry*>*)entries;
+
+/*!
+ @method        durationStringAltTariffWithEntries:
+ @abstract      Returns the total duration of power events that occurred while the alternative electricity tariff was active (as string with format hh:mm:ss) for the given journal entries.
+ @param         entries An array of journal entries to calculate the duration from.
+*/
++ (NSString*)durationStringAltTariffWithEntries:(NSArray<MTPowerJournalEntry*>*)entries;
 
 /*!
  @method        journalEntries:summarizedBy:

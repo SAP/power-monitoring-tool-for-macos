@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 
 <!--
-     Copyright 2023-2024 SAP SE
+     Copyright 2023-2025 SAP SE
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -339,6 +339,37 @@
                                 -->
                                 <key>GraphPositionLineColor</key>
                                 <data/>
+                                
+                                <!--
+                                    key:     ShowPrice
+                                    value:   a boolean
+                                    
+                                    Forces Power Monitor to display the electricity price instead of the
+                                    power consumtion. Once this setting has been configured, the setting
+                                    cannot be changed by the user.
+                                -->
+                                <key>ShowPrice</key>
+                                <true/>
+                                
+                                <!--
+                                    key:     ElectricityPrice
+                                    value:   a floating point number
+                                    
+                                    Forces the electricity price per kWh. Once this setting has been
+                                    configured, the setting cannot be changed by the user.
+                                -->
+                                <key>ElectricityPrice</key>
+                                <real>0.3351</real>
+                                
+                                <!--
+                                    key:     AltElectricityPrice
+                                    value:   a floating point number
+                                    
+                                    Forces the alternative electricity price per kWh. Once this setting has
+                                    been configured, the setting cannot be changed by the user.
+                                -->
+                                <key>AltElectricityPrice</key>
+                                <real>0.12689</real>
                                     								
 							</dict>
 						</dict>
@@ -394,6 +425,96 @@
                                 -->
                                 <key>IgnorePowerNaps</key>
                                 <true/>
+                                
+                                <!--
+                                    key:     UseAltPrice
+                                    value:   boolean
+                                   
+                                    When set to true, the times specified in AltPriceSchedule are given
+                                    special treatment by PowerMonitorDaemon. This affects the current
+                                    electricity price displayed in PowerMonitor and in the journal. If this
+                                    value is set, it can no longer be changed by the user. Neither can the
+                                    AltPriceSchedule value.
+                                -->
+                                <key>UseAltPrice</key>
+                                <true/>
+                                
+                                <!--
+                                    key:     AltPriceSchedule
+                                    value:   a dictionary
+                                   
+                                    The dictionary contains a key for each day of the week, where the number
+                                    0 stands for Sunday, 1 for Monday, and so on. The corresponding value is
+                                    of type array and contains integers for each hour of the day during
+                                    which the alternative electricity tariff is to apply (0-23).
+                                -->
+                                <key>AltPriceSchedule</key>
+                                <dict>
+                                    <key>0</key>
+                                    <array/>
+                                    <key>1</key>
+                                    <array>
+                                        <integer>9</integer>
+                                        <integer>10</integer>
+                                        <integer>11</integer>
+                                        <integer>12</integer>
+                                        <integer>13</integer>
+                                        <integer>14</integer>
+                                        <integer>15</integer>
+                                        <integer>16</integer>
+                                        <integer>17</integer>
+                                    </array>
+                                    <key>2</key>
+                                    <array>
+                                        <integer>9</integer>
+                                        <integer>10</integer>
+                                        <integer>11</integer>
+                                        <integer>12</integer>
+                                        <integer>13</integer>
+                                        <integer>14</integer>
+                                        <integer>15</integer>
+                                        <integer>16</integer>
+                                        <integer>17</integer>
+                                    </array>
+                                    <key>3</key>
+                                    <array>
+                                        <integer>9</integer>
+                                        <integer>10</integer>
+                                        <integer>11</integer>
+                                        <integer>12</integer>
+                                        <integer>13</integer>
+                                        <integer>14</integer>
+                                        <integer>15</integer>
+                                        <integer>16</integer>
+                                        <integer>17</integer>
+                                    </array>
+                                    <key>4</key>
+                                    <array>
+                                        <integer>9</integer>
+                                        <integer>10</integer>
+                                        <integer>11</integer>
+                                        <integer>12</integer>
+                                        <integer>13</integer>
+                                        <integer>14</integer>
+                                        <integer>15</integer>
+                                        <integer>16</integer>
+                                        <integer>17</integer>
+                                    </array>
+                                    <key>5</key>
+                                    <array>
+                                        <integer>9</integer>
+                                        <integer>10</integer>
+                                        <integer>11</integer>
+                                        <integer>12</integer>
+                                        <integer>13</integer>
+                                        <integer>14</integer>
+                                        <integer>15</integer>
+                                        <integer>16</integer>
+                                        <integer>17</integer>
+                                    </array>
+                                    <key>6</key>
+                                    <array/>
+                                </dict>
                                 
 							</dict>
 							

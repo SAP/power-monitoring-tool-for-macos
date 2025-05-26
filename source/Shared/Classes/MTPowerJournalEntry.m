@@ -1,6 +1,6 @@
 /*
      MTPowerJournalEntry.m
-     Copyright 2023-2024 SAP SE
+     Copyright 2023-2025 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -81,6 +81,11 @@
     return [self durationStringWithTimeInterval:_durationAwake];
 }
 
+- (NSString*)durationStringAltTariff
+{
+    return [self durationStringWithTimeInterval:_durationAltTariff];
+}
+
 - (NSString*)durationStringPowerNap
 {
     return [self durationStringWithTimeInterval:_durationPowerNap];
@@ -105,6 +110,11 @@
 - (NSString*)consumptionStringAwake
 {
     return [self consumptionStringWithMeasurementType:MTJournalEntryEventTypeAwake fractionDigits:6];
+}
+
+- (NSString*)consumptionStringAltTariff
+{
+    return [self consumptionStringWithMeasurementType:MTJournalEntryEventTypeAltTariff fractionDigits:6];
 }
 
 - (NSString*)consumptionStringPowerNap
@@ -135,6 +145,10 @@
             value = [self consumptionAwakeInKWh];
             break;
             
+        case MTJournalEntryEventTypeAltTariff:
+            value = [self consumptionAltTariffInKWh];
+            break;
+            
         default:
             break;
     }
@@ -154,6 +168,16 @@
 - (double)consumptionTotalInKWh
 {
     double value = _consumptionTotal * (_durationAwake + _durationPowerNap);
+    
+    NSMeasurement *powerConsumption = [[NSMeasurement alloc] initWithDoubleValue:value unit:[NSUnitEnergy joules]];
+    powerConsumption = [powerConsumption measurementByConvertingToUnit:[NSUnitEnergy kilowattHours]];
+    
+    return [powerConsumption doubleValue];
+}
+
+- (double)consumptionAltTariffInKWh
+{
+    double value = _consumptionAltTariff * _durationAltTariff;
     
     NSMeasurement *powerConsumption = [[NSMeasurement alloc] initWithDoubleValue:value unit:[NSUnitEnergy joules]];
     powerConsumption = [powerConsumption measurementByConvertingToUnit:[NSUnitEnergy kilowattHours]];
@@ -194,6 +218,8 @@
             entry = [[MTPowerJournalEntry alloc] initWithTimeIntervalSince1970:interval];
             [entry setDurationAwake:[[dictionary valueForKey:@"durationAwake"] doubleValue]];
             [entry setConsumptionTotal:[[dictionary valueForKey:@"consumptionTotal"] doubleValue]];
+            [entry setDurationAltTariff:[[dictionary valueForKey:@"durationAltTariff"] doubleValue]];
+            [entry setConsumptionAltTariff:[[dictionary valueForKey:@"consumptionAltTariff"] doubleValue]];
             [entry setDurationPowerNap:[[dictionary valueForKey:@"durationPowerNap"] doubleValue]];
             [entry setConsumptionPowerNap:[[dictionary valueForKey:@"consumptionPowerNap"] doubleValue]];
         }

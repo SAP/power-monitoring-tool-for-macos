@@ -21,7 +21,6 @@
 		AD2B8BBC2B7A1E0C00625CEB /* MTPowerJournalEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2B8BBB2B7A1E0C00625CEB /* MTPowerJournalEntry.m */; };
 		AD2B8BBD2B7A1E0C00625CEB /* MTPowerJournalEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2B8BBB2B7A1E0C00625CEB /* MTPowerJournalEntry.m */; };
 		AD2B8BBE2B7A1E1400625CEB /* MTPowerJournal.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2B8BB82B7A1DE100625CEB /* MTPowerJournal.m */; };
-		AD38D4C62B84C47200ACC67E /* MTJournalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD38D4C52B84C47200ACC67E /* MTJournalTableView.m */; };
 		AD3D04922AD041D9005B63A0 /* MTMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3D04912AD041D9005B63A0 /* MTMainWindowController.m */; };
 		AD4043022A02434400EFC66C /* MTModifyData.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4043012A02434400EFC66C /* MTModifyData.m */; };
 		AD4950D629F7BDB100B6F363 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4950D529F7BDB100B6F363 /* AppDelegate.m */; };
@@ -31,22 +30,26 @@
 		AD4950E029F7BDB200B6F363 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4950DF29F7BDB200B6F363 /* main.m */; };
 		AD4AB55A2CB7BE9A0000002F /* MTPowerInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4AB5592CB7BE9A0000002F /* MTPowerInfoController.m */; };
 		AD5236302B46FC9D00A6164D /* MTSidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52362F2B46FC9D00A6164D /* MTSidebarController.m */; };
+		AD5D37352D775892000D3191 /* MTSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5D37342D775892000D3191 /* MTSegmentedControl.m */; };
 		AD60B4F82A1CC0E500FE5BEC /* MTTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD60B4F72A1CC0E500FE5BEC /* MTTabViewController.m */; };
 		AD68CBF22A173CAE00B19D07 /* MTCarbonFootprint.m in Sources */ = {isa = PBXBuildFile; fileRef = AD68CBF12A173CAE00B19D07 /* MTCarbonFootprint.m */; };
 		AD6B1D7E2A2F691B00CFE596 /* MTColorTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6B1D7D2A2F691B00CFE596 /* MTColorTransformer.m */; };
 		AD6E2B612B890241009E820F /* MTJournalInspectorController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6E2B602B890241009E820F /* MTJournalInspectorController.m */; };
 		AD6E2B642B890B2E009E820F /* MTJournalSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6E2B632B890B2E009E820F /* MTJournalSplitViewController.m */; };
+		AD74537C2D785A35004893FD /* MTHourTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = AD74537B2D785A35004893FD /* MTHourTextField.m */; };
+		AD7453822D787CD7004893FD /* MTUsageConsumptionTextTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7453812D787CD7004893FD /* MTUsageConsumptionTextTransformer.m */; };
 		AD74D81A2B7A5216003B1524 /* MTSettingsJournalController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD74D8192B7A5216003B1524 /* MTSettingsJournalController.m */; };
 		AD74E37B2A38A59F000B0B84 /* MTPowerGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD74E3792A38A59F000B0B84 /* MTPowerGraphView.m */; };
 		AD7574B92B865EC80050CA85 /* MTSavePanelAccessory.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD7574B82B865EC80050CA85 /* MTSavePanelAccessory.xib */; };
+		AD75AE582D76FBFE0097D527 /* MTElectricityPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = AD75AE572D76FBFE0097D527 /* MTElectricityPrice.m */; };
+		AD75AE5B2D7700B60097D527 /* MTSettingsCostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD75AE5A2D7700B60097D527 /* MTSettingsCostsController.m */; };
 		AD7B989D2B48077C00AEEF92 /* MTSidebarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7B989B2B48077C00AEEF92 /* MTSidebarItem.m */; };
 		AD8123BD2A0B943C00857DF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8123BC2A0B943C00857DF8 /* main.m */; };
 		AD8123C32A0BC33B00857DF8 /* MTPowerMeasurementArray.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD8B532A0976D800B51609 /* MTPowerMeasurementArray.m */; };
 		AD8123C42A0BC33E00857DF8 /* MTPowerMeasurementReader.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE6425B29FFAFE9006BC4D5 /* MTPowerMeasurementReader.m */; };
 		AD8123C52A0BC34200857DF8 /* MTModifyData.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4043012A02434400EFC66C /* MTModifyData.m */; };
 		AD89CB4A2B28B5A000118757 /* MTUsagePriceTextTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89CB472B28B5A000118757 /* MTUsagePriceTextTransformer.m */; };
-		AD89CB4B2B28B5A000118757 /* MTUsagePriceValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89CB492B28B5A000118757 /* MTUsagePriceValueTransformer.m */; };
-		AD89CB4E2B28C66F00118757 /* MTUsagePriceTextTransformerDark.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89CB4C2B28C66F00118757 /* MTUsagePriceTextTransformerDark.m */; };
+		AD8D2C9D2DD3733300A2C71F /* MTJournalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8D2C9C2DD3733300A2C71F /* MTJournalTableView.m */; };
 		AD8ECA852A3A1B440045BA11 /* Power Monitor.mobileconfig in Resources */ = {isa = PBXBuildFile; fileRef = AD8ECA842A3A1B440045BA11 /* Power Monitor.mobileconfig */; };
 		AD9715092B48539B0059AC88 /* MTConsoleSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9715082B48539B0059AC88 /* MTConsoleSplitViewController.m */; };
 		AD9884E22B3171DE002C4FF7 /* PowerMonitorXPC.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9884E12B3171DE002C4FF7 /* PowerMonitorXPC.m */; };
@@ -63,6 +66,7 @@
 		ADBA009F2A29FCD50082157B /* MTSettingsCarbonController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBA009E2A29FCD50082157B /* MTSettingsCarbonController.m */; };
 		ADBA00A22A2A04480082157B /* MTCredentialsController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBA00A12A2A04480082157B /* MTCredentialsController.m */; };
 		ADBA00A52A2A2DFD0082157B /* MTCarbonAPIKey.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBA00A42A2A2DFD0082157B /* MTCarbonAPIKey.m */; };
+		ADCB4C962D78358E006DC869 /* MTWeekdayTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCB4C952D78358E006DC869 /* MTWeekdayTextField.m */; };
 		ADCBCC772B30A59A004B9424 /* MTLogController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCBCC762B30A59A004B9424 /* MTLogController.m */; };
 		ADCBCC7A2B30A68D004B9424 /* MTToolbarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCBCC782B30A68D004B9424 /* MTToolbarItem.m */; };
 		ADCDF28F2B3024000026F56B /* MTPowerGraphTooltip.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCDF28E2B3024000026F56B /* MTPowerGraphTooltip.m */; };
@@ -71,6 +75,8 @@
 		ADD391CC2B7384E40041432C /* MTGraphSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD391CB2B7384E40041432C /* MTGraphSplitViewController.m */; };
 		ADD3B09C2B1F306D000C1882 /* MTUsagePeriodTextTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD3B09B2B1F306D000C1882 /* MTUsagePeriodTextTransformer.m */; };
 		ADD594362A1B6C47007B84A3 /* MTElectricityMapsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD594342A1B6C47007B84A3 /* MTElectricityMapsAPI.m */; };
+		ADDD0A532D79FD5A002B06C6 /* MTUsageConsumptionValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDD0A522D79FD5A002B06C6 /* MTUsageConsumptionValueTransformer.m */; };
+		ADDD0A542D7A0EA2002B06C6 /* MTElectricityPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = AD75AE572D76FBFE0097D527 /* MTElectricityPrice.m */; };
 		ADE6425C29FFAFE9006BC4D5 /* MTPowerMeasurementReader.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE6425B29FFAFE9006BC4D5 /* MTPowerMeasurementReader.m */; };
 		ADE7AF232B85F36F00153AD5 /* MTSavePanelAccessoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE7AF222B85F36F00153AD5 /* MTSavePanelAccessoryController.m */; };
 		ADE9A1812B7CD6AF00BFBDEF /* MTJournalController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE9A17F2B7CD6AF00BFBDEF /* MTJournalController.m */; };
@@ -155,8 +161,6 @@
 		AD2B8BB82B7A1DE100625CEB /* MTPowerJournal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MTPowerJournal.m; path = Shared/Classes/MTPowerJournal.m; sourceTree = SOURCE_ROOT; };
 		AD2B8BBA2B7A1E0C00625CEB /* MTPowerJournalEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTPowerJournalEntry.h; sourceTree = "<group>"; };
 		AD2B8BBB2B7A1E0C00625CEB /* MTPowerJournalEntry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTPowerJournalEntry.m; sourceTree = "<group>"; };
-		AD38D4C42B84C47200ACC67E /* MTJournalTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MTJournalTableView.h; path = "Power Monitor/Classes/MTJournalTableView.h"; sourceTree = SOURCE_ROOT; };
-		AD38D4C52B84C47200ACC67E /* MTJournalTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MTJournalTableView.m; path = "Power Monitor/Classes/MTJournalTableView.m"; sourceTree = SOURCE_ROOT; };
 		AD3D04902AD041D9005B63A0 /* MTMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMainWindowController.h; sourceTree = "<group>"; };
 		AD3D04912AD041D9005B63A0 /* MTMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTMainWindowController.m; sourceTree = "<group>"; };
 		AD4043002A02434400EFC66C /* MTModifyData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTModifyData.h; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 		AD4AB5592CB7BE9A0000002F /* MTPowerInfoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTPowerInfoController.m; sourceTree = "<group>"; };
 		AD52362E2B46FC9D00A6164D /* MTSidebarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTSidebarController.h; sourceTree = "<group>"; };
 		AD52362F2B46FC9D00A6164D /* MTSidebarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTSidebarController.m; sourceTree = "<group>"; };
+		AD5D37332D775892000D3191 /* MTSegmentedControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTSegmentedControl.h; sourceTree = "<group>"; };
+		AD5D37342D775892000D3191 /* MTSegmentedControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTSegmentedControl.m; sourceTree = "<group>"; };
 		AD60B4F62A1CC0E500FE5BEC /* MTTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTabViewController.h; sourceTree = "<group>"; };
 		AD60B4F72A1CC0E500FE5BEC /* MTTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTabViewController.m; sourceTree = "<group>"; };
 		AD68CBF02A173CAE00B19D07 /* MTCarbonFootprint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCarbonFootprint.h; sourceTree = "<group>"; };
@@ -183,23 +189,29 @@
 		AD6E2B602B890241009E820F /* MTJournalInspectorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTJournalInspectorController.m; sourceTree = "<group>"; };
 		AD6E2B622B890B2D009E820F /* MTJournalSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTJournalSplitViewController.h; sourceTree = "<group>"; };
 		AD6E2B632B890B2E009E820F /* MTJournalSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTJournalSplitViewController.m; sourceTree = "<group>"; };
+		AD74537A2D785A35004893FD /* MTHourTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTHourTextField.h; sourceTree = "<group>"; };
+		AD74537B2D785A35004893FD /* MTHourTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTHourTextField.m; sourceTree = "<group>"; };
+		AD7453802D787CD7004893FD /* MTUsageConsumptionTextTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTUsageConsumptionTextTransformer.h; sourceTree = "<group>"; };
+		AD7453812D787CD7004893FD /* MTUsageConsumptionTextTransformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTUsageConsumptionTextTransformer.m; sourceTree = "<group>"; };
 		AD74D8182B7A5216003B1524 /* MTSettingsJournalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSettingsJournalController.h; sourceTree = "<group>"; };
 		AD74D8192B7A5216003B1524 /* MTSettingsJournalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSettingsJournalController.m; sourceTree = "<group>"; };
 		AD74E3792A38A59F000B0B84 /* MTPowerGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTPowerGraphView.m; sourceTree = "<group>"; };
 		AD74E37A2A38A59F000B0B84 /* MTPowerGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTPowerGraphView.h; sourceTree = "<group>"; };
 		AD7574B72B865EC80050CA85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MTSavePanelAccessory.xib; sourceTree = "<group>"; };
 		AD7574BA2B865EC80050CA85 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/MTSavePanelAccessory.xcstrings; sourceTree = "<group>"; };
+		AD75AE562D76FBFE0097D527 /* MTElectricityPrice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTElectricityPrice.h; sourceTree = "<group>"; };
+		AD75AE572D76FBFE0097D527 /* MTElectricityPrice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTElectricityPrice.m; sourceTree = "<group>"; };
+		AD75AE592D7700B60097D527 /* MTSettingsCostsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTSettingsCostsController.h; sourceTree = "<group>"; };
+		AD75AE5A2D7700B60097D527 /* MTSettingsCostsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTSettingsCostsController.m; sourceTree = "<group>"; };
 		AD7B989B2B48077C00AEEF92 /* MTSidebarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSidebarItem.m; sourceTree = "<group>"; };
 		AD7B989C2B48077C00AEEF92 /* MTSidebarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSidebarItem.h; sourceTree = "<group>"; };
 		AD8123BA2A0B943C00857DF8 /* PowerMonitorDaemon */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PowerMonitorDaemon; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD8123BC2A0B943C00857DF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AD8123C82A0BC5CF00857DF8 /* PowerMonitorDaemon-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PowerMonitorDaemon-Info.plist"; sourceTree = "<group>"; };
-		AD89CB462B28B5A000118757 /* MTUsagePriceValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTUsagePriceValueTransformer.h; sourceTree = "<group>"; };
 		AD89CB472B28B5A000118757 /* MTUsagePriceTextTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTUsagePriceTextTransformer.m; sourceTree = "<group>"; };
 		AD89CB482B28B5A000118757 /* MTUsagePriceTextTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTUsagePriceTextTransformer.h; sourceTree = "<group>"; };
-		AD89CB492B28B5A000118757 /* MTUsagePriceValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTUsagePriceValueTransformer.m; sourceTree = "<group>"; };
-		AD89CB4C2B28C66F00118757 /* MTUsagePriceTextTransformerDark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTUsagePriceTextTransformerDark.m; sourceTree = "<group>"; };
-		AD89CB4D2B28C66F00118757 /* MTUsagePriceTextTransformerDark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTUsagePriceTextTransformerDark.h; sourceTree = "<group>"; };
+		AD8D2C9B2DD3733300A2C71F /* MTJournalTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTJournalTableView.h; sourceTree = "<group>"; };
+		AD8D2C9C2DD3733300A2C71F /* MTJournalTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTJournalTableView.m; sourceTree = "<group>"; };
 		AD8ECA842A3A1B440045BA11 /* Power Monitor.mobileconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Power Monitor.mobileconfig"; sourceTree = "<group>"; };
 		AD90C7F929FBAB1A00917EE4 /* Power Monitor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Power Monitor.entitlements"; sourceTree = "<group>"; };
 		AD9715072B48539B0059AC88 /* MTConsoleSplitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTConsoleSplitViewController.h; sourceTree = "<group>"; };
@@ -231,6 +243,8 @@
 		ADBA00A12A2A04480082157B /* MTCredentialsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTCredentialsController.m; sourceTree = "<group>"; };
 		ADBA00A32A2A2DFD0082157B /* MTCarbonAPIKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MTCarbonAPIKey.h; path = "Power Monitor/Classes/MTCarbonAPIKey.h"; sourceTree = SOURCE_ROOT; };
 		ADBA00A42A2A2DFD0082157B /* MTCarbonAPIKey.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MTCarbonAPIKey.m; path = "Power Monitor/Classes/MTCarbonAPIKey.m"; sourceTree = SOURCE_ROOT; };
+		ADCB4C942D78358E006DC869 /* MTWeekdayTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTWeekdayTextField.h; sourceTree = "<group>"; };
+		ADCB4C952D78358E006DC869 /* MTWeekdayTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTWeekdayTextField.m; sourceTree = "<group>"; };
 		ADCBCC752B30A59A004B9424 /* MTLogController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLogController.h; sourceTree = "<group>"; };
 		ADCBCC762B30A59A004B9424 /* MTLogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLogController.m; sourceTree = "<group>"; };
 		ADCBCC782B30A68D004B9424 /* MTToolbarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTToolbarItem.m; sourceTree = "<group>"; };
@@ -247,6 +261,8 @@
 		ADD3B09D2B1F3188000C1882 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/Main.xcstrings; sourceTree = "<group>"; };
 		ADD594342A1B6C47007B84A3 /* MTElectricityMapsAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTElectricityMapsAPI.m; sourceTree = "<group>"; };
 		ADD594352A1B6C47007B84A3 /* MTElectricityMapsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTElectricityMapsAPI.h; sourceTree = "<group>"; };
+		ADDD0A512D79FD5A002B06C6 /* MTUsageConsumptionValueTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTUsageConsumptionValueTransformer.h; sourceTree = "<group>"; };
+		ADDD0A522D79FD5A002B06C6 /* MTUsageConsumptionValueTransformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTUsageConsumptionValueTransformer.m; sourceTree = "<group>"; };
 		ADE6425A29FFAFE9006BC4D5 /* MTPowerMeasurementReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTPowerMeasurementReader.h; sourceTree = "<group>"; };
 		ADE6425B29FFAFE9006BC4D5 /* MTPowerMeasurementReader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTPowerMeasurementReader.m; sourceTree = "<group>"; };
 		ADE6427C2A00FD06006BC4D5 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -300,6 +316,8 @@
 		AD18A3C32A14AFF10021F734 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				AD75AE562D76FBFE0097D527 /* MTElectricityPrice.h */,
+				AD75AE572D76FBFE0097D527 /* MTElectricityPrice.m */,
 				AD4043002A02434400EFC66C /* MTModifyData.h */,
 				AD4043012A02434400EFC66C /* MTModifyData.m */,
 				AD2B8BB72B7A1DE100625CEB /* MTPowerJournal.h */,
@@ -339,8 +357,6 @@
 				AD6E2B602B890241009E820F /* MTJournalInspectorController.m */,
 				AD6E2B622B890B2D009E820F /* MTJournalSplitViewController.h */,
 				AD6E2B632B890B2E009E820F /* MTJournalSplitViewController.m */,
-				AD38D4C42B84C47200ACC67E /* MTJournalTableView.h */,
-				AD38D4C52B84C47200ACC67E /* MTJournalTableView.m */,
 				ADCBCC752B30A59A004B9424 /* MTLogController.h */,
 				ADCBCC762B30A59A004B9424 /* MTLogController.m */,
 				ADFD50242B35689100849855 /* MTLogDetailsController.h */,
@@ -357,6 +373,8 @@
 				ADE7AF222B85F36F00153AD5 /* MTSavePanelAccessoryController.m */,
 				ADBA009D2A29FCD50082157B /* MTSettingsCarbonController.h */,
 				ADBA009E2A29FCD50082157B /* MTSettingsCarbonController.m */,
+				AD75AE592D7700B60097D527 /* MTSettingsCostsController.h */,
+				AD75AE5A2D7700B60097D527 /* MTSettingsCostsController.m */,
 				ADBA009A2A29E1210082157B /* MTSettingsGeneralController.h */,
 				ADBA009B2A29E1210082157B /* MTSettingsGeneralController.m */,
 				AD74D8182B7A5216003B1524 /* MTSettingsJournalController.h */,
@@ -430,18 +448,26 @@
 				ADEF0BE12B318417000C7EEA /* MTDaemonConnection.m */,
 				ADD594352A1B6C47007B84A3 /* MTElectricityMapsAPI.h */,
 				ADD594342A1B6C47007B84A3 /* MTElectricityMapsAPI.m */,
+				AD74537A2D785A35004893FD /* MTHourTextField.h */,
+				AD74537B2D785A35004893FD /* MTHourTextField.m */,
+				AD8D2C9B2DD3733300A2C71F /* MTJournalTableView.h */,
+				AD8D2C9C2DD3733300A2C71F /* MTJournalTableView.m */,
 				AD3D04902AD041D9005B63A0 /* MTMainWindowController.h */,
 				AD3D04912AD041D9005B63A0 /* MTMainWindowController.m */,
 				ADCDF28D2B3024000026F56B /* MTPowerGraphTooltip.h */,
 				ADCDF28E2B3024000026F56B /* MTPowerGraphTooltip.m */,
 				AD74E37A2A38A59F000B0B84 /* MTPowerGraphView.h */,
 				AD74E3792A38A59F000B0B84 /* MTPowerGraphView.m */,
+				AD5D37332D775892000D3191 /* MTSegmentedControl.h */,
+				AD5D37342D775892000D3191 /* MTSegmentedControl.m */,
 				AD7B989C2B48077C00AEEF92 /* MTSidebarItem.h */,
 				AD7B989B2B48077C00AEEF92 /* MTSidebarItem.m */,
 				AD06CE652A4575FD006386B8 /* MTStatusItemMenu.h */,
 				AD06CE662A4575FD006386B8 /* MTStatusItemMenu.m */,
 				ADCBCC792B30A68D004B9424 /* MTToolbarItem.h */,
 				ADCBCC782B30A68D004B9424 /* MTToolbarItem.m */,
+				ADCB4C942D78358E006DC869 /* MTWeekdayTextField.h */,
+				ADCB4C952D78358E006DC869 /* MTWeekdayTextField.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -485,14 +511,14 @@
 				AD6B1D7D2A2F691B00CFE596 /* MTColorTransformer.m */,
 				ADEF0BE32B318980000C7EEA /* MTLogLevelValueTransformer.h */,
 				ADEF0BE42B318980000C7EEA /* MTLogLevelValueTransformer.m */,
+				AD7453802D787CD7004893FD /* MTUsageConsumptionTextTransformer.h */,
+				AD7453812D787CD7004893FD /* MTUsageConsumptionTextTransformer.m */,
+				ADDD0A512D79FD5A002B06C6 /* MTUsageConsumptionValueTransformer.h */,
+				ADDD0A522D79FD5A002B06C6 /* MTUsageConsumptionValueTransformer.m */,
 				ADD3B09A2B1F306D000C1882 /* MTUsagePeriodTextTransformer.h */,
 				ADD3B09B2B1F306D000C1882 /* MTUsagePeriodTextTransformer.m */,
 				AD89CB482B28B5A000118757 /* MTUsagePriceTextTransformer.h */,
 				AD89CB472B28B5A000118757 /* MTUsagePriceTextTransformer.m */,
-				AD89CB4D2B28C66F00118757 /* MTUsagePriceTextTransformerDark.h */,
-				AD89CB4C2B28C66F00118757 /* MTUsagePriceTextTransformerDark.m */,
-				AD89CB462B28B5A000118757 /* MTUsagePriceValueTransformer.h */,
-				AD89CB492B28B5A000118757 /* MTUsagePriceValueTransformer.m */,
 			);
 			path = "Value Transformers";
 			sourceTree = "<group>";
@@ -666,21 +692,23 @@
 				ADBA00A52A2A2DFD0082157B /* MTCarbonAPIKey.m in Sources */,
 				ADAD8B542A0976D800B51609 /* MTPowerMeasurementArray.m in Sources */,
 				AD6B1D7E2A2F691B00CFE596 /* MTColorTransformer.m in Sources */,
+				AD75AE582D76FBFE0097D527 /* MTElectricityPrice.m in Sources */,
 				AD1F5DF12B4BFC0D007DD4FF /* MTAssertionsController.m in Sources */,
-				AD89CB4B2B28B5A000118757 /* MTUsagePriceValueTransformer.m in Sources */,
 				ADD3B09C2B1F306D000C1882 /* MTUsagePeriodTextTransformer.m in Sources */,
-				AD89CB4E2B28C66F00118757 /* MTUsagePriceTextTransformerDark.m in Sources */,
+				ADDD0A532D79FD5A002B06C6 /* MTUsageConsumptionValueTransformer.m in Sources */,
 				AD0E98222B6A6CDE006A1C66 /* MTPowerGraphController.m in Sources */,
 				ADCBCC772B30A59A004B9424 /* MTLogController.m in Sources */,
 				AD68CBF22A173CAE00B19D07 /* MTCarbonFootprint.m in Sources */,
+				AD74537C2D785A35004893FD /* MTHourTextField.m in Sources */,
 				AD2B8BB92B7A1DE100625CEB /* MTPowerJournal.m in Sources */,
-				AD38D4C62B84C47200ACC67E /* MTJournalTableView.m in Sources */,
 				AD4AB55A2CB7BE9A0000002F /* MTPowerInfoController.m in Sources */,
 				AD74D81A2B7A5216003B1524 /* MTSettingsJournalController.m in Sources */,
+				ADCB4C962D78358E006DC869 /* MTWeekdayTextField.m in Sources */,
 				AD74E37B2A38A59F000B0B84 /* MTPowerGraphView.m in Sources */,
 				ADEAFD832B2892B3005A1799 /* MTSettingsViewOptionsController.m in Sources */,
 				ADD391CC2B7384E40041432C /* MTGraphSplitViewController.m in Sources */,
 				AD4950D929F7BDB100B6F363 /* MTMainViewController.m in Sources */,
+				AD8D2C9D2DD3733300A2C71F /* MTJournalTableView.m in Sources */,
 				AD238DCD2AD3DCC900A6B5B2 /* MTSystemInfo.m in Sources */,
 				ADFCECBC2A1F2B8300AA728D /* MTPowerMeasurement.m in Sources */,
 				AD7B989D2B48077C00AEEF92 /* MTSidebarItem.m in Sources */,
@@ -690,8 +718,10 @@
 				AD89CB4A2B28B5A000118757 /* MTUsagePriceTextTransformer.m in Sources */,
 				AD6E2B642B890B2E009E820F /* MTJournalSplitViewController.m in Sources */,
 				ADBA00A22A2A04480082157B /* MTCredentialsController.m in Sources */,
+				AD5D37352D775892000D3191 /* MTSegmentedControl.m in Sources */,
 				AD06CE672A4575FD006386B8 /* MTStatusItemMenu.m in Sources */,
 				ADBA009C2A29E1210082157B /* MTSettingsGeneralController.m in Sources */,
+				AD7453822D787CD7004893FD /* MTUsageConsumptionTextTransformer.m in Sources */,
 				ADE6425C29FFAFE9006BC4D5 /* MTPowerMeasurementReader.m in Sources */,
 				AD4950E029F7BDB200B6F363 /* main.m in Sources */,
 				ADEA60742BE8AFA200344CC0 /* MTSettingsPowerNapController.m in Sources */,
@@ -699,6 +729,7 @@
 				ADBA009F2A29FCD50082157B /* MTSettingsCarbonController.m in Sources */,
 				ADCDF28F2B3024000026F56B /* MTPowerGraphTooltip.m in Sources */,
 				AD4950D629F7BDB100B6F363 /* AppDelegate.m in Sources */,
+				AD75AE5B2D7700B60097D527 /* MTSettingsCostsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,6 +745,7 @@
 				AD8123BD2A0B943C00857DF8 /* main.m in Sources */,
 				AD2B8BBD2B7A1E0C00625CEB /* MTPowerJournalEntry.m in Sources */,
 				AD8123C42A0BC33E00857DF8 /* MTPowerMeasurementReader.m in Sources */,
+				ADDD0A542D7A0EA2002B06C6 /* MTElectricityPrice.m in Sources */,
 				AD2B8BBE2B7A1E1400625CEB /* MTPowerJournal.m in Sources */,
 				ADEF0BDF2B317CD7000C7EEA /* MTPowerMonitorDaemon.m in Sources */,
 				AD0D3ADB2A1D1C83006AFF0D /* MTPowerMeasurementWriter.m in Sources */,
@@ -901,11 +933,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Power Monitor/Power Monitor.entitlements";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 513;
+				CURRENT_PROJECT_VERSION = 547;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -914,7 +946,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Power Monitor";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023-2024 SAP SE. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023-2025 SAP SE. All rights reserved.";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -922,9 +954,10 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Debug;
@@ -935,11 +968,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Power Monitor/Power Monitor.entitlements";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 513;
+				CURRENT_PROJECT_VERSION = 547;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -948,7 +981,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Power Monitor";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023-2024 SAP SE. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023-2025 SAP SE. All rights reserved.";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -956,10 +989,11 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 1.3.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;
@@ -970,13 +1004,15 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 199;
+				CURRENT_PROJECT_VERSION = 213;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/PowerMonitorDaemon/PowerMonitorDaemon-Info.plist";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023-2025 SAP SE. All rights reserved.";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitorDaemon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -989,13 +1025,15 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 199;
+				CURRENT_PROJECT_VERSION = 213;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/PowerMonitorDaemon/PowerMonitorDaemon-Info.plist";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023-2025 SAP SE. All rights reserved.";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.3.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitorDaemon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1015,10 +1053,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PowerMonitorXPC/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PowerMonitorXPC;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023-2025 SAP SE. All rights reserved.";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitorXPC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1038,10 +1077,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PowerMonitorXPC/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PowerMonitorXPC;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023-2025 SAP SE. All rights reserved.";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitorXPC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

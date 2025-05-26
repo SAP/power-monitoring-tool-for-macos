@@ -1,6 +1,6 @@
 /*
      MTPowerJournal.m
-     Copyright 2023-2024 SAP SE
+     Copyright 2023-2025 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -145,6 +145,11 @@
     return [self consumptionStringWithValue:[self consumptionPowerNapInKWhWithEntries:entries] fractionDigits:3];
 }
 
++ (NSString*)consumptionStringAltTariffWithEntries:(NSArray<MTPowerJournalEntry*>*)entries
+{
+    return [self consumptionStringWithValue:[self consumptionAltTariffInKWhWithEntries:entries] fractionDigits:3];
+}
+
 + (NSString*)consumptionStringWithValue:(double)value fractionDigits:(NSInteger)digits
 {
     NSMeasurement *powerConsumption = [[NSMeasurement alloc] initWithDoubleValue:value unit:[NSUnitEnergy kilowattHours]];
@@ -160,6 +165,16 @@
 + (double)consumptionTotalInKWhWithEntries:(NSArray<MTPowerJournalEntry*>*)entries
 {
     double value = [self consumptionWithEntries:entries entryType:MTJournalEntryEventTypeAll];
+    
+    NSMeasurement *powerConsumption = [[NSMeasurement alloc] initWithDoubleValue:value unit:[NSUnitEnergy joules]];
+    powerConsumption = [powerConsumption measurementByConvertingToUnit:[NSUnitEnergy kilowattHours]];
+    
+    return [powerConsumption doubleValue];
+}
+
++ (double)consumptionAltTariffInKWhWithEntries:(NSArray<MTPowerJournalEntry*>*)entries
+{
+    double value = [self consumptionWithEntries:entries entryType:MTJournalEntryEventTypeAltTariff];
     
     NSMeasurement *powerConsumption = [[NSMeasurement alloc] initWithDoubleValue:value unit:[NSUnitEnergy joules]];
     powerConsumption = [powerConsumption measurementByConvertingToUnit:[NSUnitEnergy kilowattHours]];
@@ -207,6 +222,10 @@
                 consumptionTotal += ([journalEntry consumptionTotal] - [journalEntry consumptionPowerNap]) * [journalEntry durationAwake];
                 break;
                 
+            case MTJournalEntryEventTypeAltTariff:
+                consumptionTotal += [journalEntry consumptionAltTariff] * ([journalEntry durationAwake] + [journalEntry durationPowerNap]);
+                break;
+                
             default:
                 break;
         }
@@ -230,6 +249,12 @@
 + (NSString*)durationStringPowerNapWithEntries:(NSArray<MTPowerJournalEntry*>*)entries
 {
     NSTimeInterval duration = [self durationPowerNapWithEntries:entries];
+    return [self durationStringWithTimeInterval:duration];
+}
+
++ (NSString*)durationStringAltTariffWithEntries:(NSArray<MTPowerJournalEntry*>*)entries
+{
+    NSTimeInterval duration = [self durationAltTariffWithEntries:entries];
     return [self durationStringWithTimeInterval:duration];
 }
 
@@ -259,6 +284,11 @@
     return [self durationWithEntries:entries entryType:MTJournalEntryEventTypePowerNap];
 }
 
++ (NSTimeInterval)durationAltTariffWithEntries:(NSArray<MTPowerJournalEntry*>*)entries
+{
+    return [self durationWithEntries:entries entryType:MTJournalEntryEventTypeAltTariff];
+}
+
 + (NSTimeInterval)durationWithEntries:(NSArray<MTPowerJournalEntry*>*)entries entryType:(MTJournalEntryEventType)type
 {
     NSTimeInterval durationTotal = 0;
@@ -277,6 +307,10 @@
                 
             case MTJournalEntryEventTypeAwake:
                 durationTotal += [journalEntry durationAwake];
+                break;
+                
+            case MTJournalEntryEventTypeAltTariff:
+                durationTotal += [journalEntry durationAltTariff];
                 break;
                 
             default:

@@ -1,6 +1,6 @@
 /*
      MTAssertionsController.m
-     Copyright 2023-2024 SAP SE
+     Copyright 2023-2025 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@
 @interface MTAssertionsController ()
 @property (nonatomic, strong, readwrite) NSMutableArray *assertionEntries;
 
+@property (weak) IBOutlet NSTableView *assertionsTableView;
 @property (weak) IBOutlet NSArrayController *assertionsController;
 @end
 
@@ -30,6 +31,8 @@
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
+    
+    [_assertionsTableView setAccessibilityLabel:NSLocalizedString(@"accessiblilityLabelAssertionsTableView", nil)];
     
     _assertionEntries = [[NSMutableArray alloc] init];
     NSSortDescriptor *initialSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"Process Name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];

@@ -1,6 +1,6 @@
 /*
      MTLogController.m
-     Copyright 2023-2024 SAP SE
+     Copyright 2023-2025 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@
 @property (nonatomic, strong, readwrite) NSUserDefaults *userDefaults;
 @property (nonatomic, strong, readwrite) MTPowerJournal *powerJournal;
 @property (nonatomic, strong, readwrite) MTSavePanelAccessoryController *accessoryController;
+@property (retain) id daemonPreferencesObserver;
 
 @property (weak) IBOutlet NSArrayController *journalController;
 @property (weak) IBOutlet NSTableView *tableView;
@@ -39,6 +40,7 @@
     [super viewDidLoad];
     
     _userDefaults = [NSUserDefaults standardUserDefaults];
+    [_tableView setAccessibilityLabel:NSLocalizedString(@"accessiblilityLabelJournalTableView", nil)];
         
     NSSortDescriptor *initialSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"timeStamp" ascending:NO selector:@selector(compare:)];
     [self.journalController setSortDescriptors:[NSArray arrayWithObject:initialSortDescriptor]];
@@ -46,8 +48,35 @@
     [self importJournal];
     [self toggleInfoSection:nil];
     
-    [_userDefaults addObserver:self forKeyPath:kMTDefaultsShowPriceKey options:NSKeyValueObservingOptionNew context:nil];
-    [_userDefaults addObserver:self forKeyPath:kMTDefaultsElectricityPriceKey options:NSKeyValueObservingOptionNew context:nil];
+    // observe our user defaults for changes
+    NSArray *observedDefaults = [NSArray arrayWithObjects:
+                                 kMTDefaultsElectricityPriceKey,
+                                 kMTDefaultsAltElectricityPriceKey,
+                                 kMTDefaultsShowPriceKey,
+                                 nil
+    ];
+    
+    for (NSString *keyPath in observedDefaults) {
+        [_userDefaults addObserver:self forKeyPath:keyPath options:NSKeyValueObservingOptionNew context:nil];
+    }
+    
+    _daemonPreferencesObserver = [[NSDistributedNotificationCenter defaultCenter] addObserverForName:kMTNotificationNameDaemonConfigDidChange
+                                                                                              object:nil
+                                                                                               queue:nil
+                                                                                          usingBlock:^(NSNotification *notification) {
+        
+        NSDictionary *userInfo = [notification userInfo];
+        
+        if (userInfo) {
+            
+            NSString *changedKey = [userInfo objectForKey:kMTNotificationKeyPreferenceChanged];
+            
+            if ([changedKey isEqualToString:(NSString*)kMTPrefsUseAltPriceKey]) {
+                
+                [self inspectorUpdateConsumptionSummary];
+            }
+        }
+    }];
 }
 
 - (void)viewWillAppear
@@ -233,6 +262,11 @@
     [self inspectorUpdateConsumptionSummary];
 }
 
+- (BOOL)tableView:(NSTableView *)tableView userCanChangeVisibilityOfTableColumn:(NSTableColumn *)column
+{
+    return YES;
+}
+
 #pragma mark NSToolbarItemValidation
 
 - (BOOL)enableToolbarItem:(NSToolbarItem *)item
@@ -271,7 +305,8 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 {
     if ([keyPath isEqualToString:kMTDefaultsShowPriceKey] ||
-        [keyPath isEqualToString:kMTDefaultsElectricityPriceKey]) {
+        [keyPath isEqualToString:kMTDefaultsElectricityPriceKey] ||
+        [keyPath isEqualToString:kMTDefaultsAltElectricityPriceKey]) {
         
         [self inspectorUpdateConsumptionSummary];
     }

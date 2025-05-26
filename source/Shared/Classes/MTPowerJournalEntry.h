@@ -1,6 +1,6 @@
 /*
      MTPowerJournalEntry.h
-     Copyright 2023-2024 SAP SE
+     Copyright 2023-2025 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -25,11 +25,13 @@
  @constant      MTJournalEntryEventTypeAll Specifies all power events.
  @constant      MTJournalEntryEventTypeAwake Specifies an event where the Mac was awake.
  @constant      MTJournalEntryEventTypePowerNap Specifies a Power Nap event.
+ @constant      MTJournalEntryEventTypeAltTariff Specifies an event where the alternative electricity tariff was active.
 */
 typedef enum {
-    MTJournalEntryEventTypeAll      = 0,
-    MTJournalEntryEventTypeAwake    = 1,
-    MTJournalEntryEventTypePowerNap = 2
+    MTJournalEntryEventTypeAll       = 0,
+    MTJournalEntryEventTypeAwake     = 1,
+    MTJournalEntryEventTypePowerNap  = 2,
+    MTJournalEntryEventTypeAltTariff = 3
 } MTJournalEntryEventType;
 
 /*!
@@ -45,6 +47,13 @@ typedef enum {
  @discussion    The value of this property NSTimeInterval.
 */
 @property (assign) NSTimeInterval durationAwake;
+
+/*!
+ @property      durationAltTariff
+ @abstract      A property to store the duration the machine used the alternative electricity tariff.
+ @discussion    The value of this property NSTimeInterval.
+*/
+@property (assign) NSTimeInterval durationAltTariff;
 
 /*!
  @property      durationPowerNap
@@ -69,6 +78,15 @@ typedef enum {
                 power the machine consumed during Power Nap.
 */
 @property (assign) double consumptionPowerNap;
+
+/*!
+ @property      consumptionAltTariff
+ @abstract      A property to store the power the machine consumed during while the alternative
+                electricity tariff was active.
+ @discussion    The value of this property double. The stored value specifies the average
+                power the machine consumed while the alternative electricity tariff was active.
+*/
+@property (assign) double consumptionAltTariff;
 
 /*!
  @method        init:
@@ -97,6 +115,12 @@ typedef enum {
 - (double)consumptionAwakeInKWh;
 
 /*!
+ @method        consumptionAltTariffInKWh
+ @abstract      Returns the power consuption for the MTPowerJournalEntry object in KWh for the time the alternative electricity tariff was active.
+*/
+- (double)consumptionAltTariffInKWh;
+
+/*!
  @method        consumptionPowerNapInKWh
  @abstract      Returns the power consuption for the MTPowerJournalEntry object in KWh for the time the Mac took Power Naps.
 */
@@ -121,6 +145,12 @@ typedef enum {
 - (NSString*)durationStringAwake;
 
 /*!
+ @method        durationStringAltTariff
+ @abstract      Returns the duration of the MTPowerJournalEntry object as string, where the alternative electricity tariff was active.
+*/
+- (NSString*)durationStringAltTariff;
+
+/*!
  @method        durationStringPowerNap
  @abstract      Returns the duration of the MTPowerJournalEntry object as string, where the Mac took Power Naps.
 */
@@ -137,6 +167,12 @@ typedef enum {
  @abstract      Returns the power consumption for the MTPowerJournalEntry object as string (in KWh), where the Mac was awake.
 */
 - (NSString*)consumptionStringAwake;
+
+/*!
+ @method        consumptionStringAltTariff
+ @abstract      Returns the power consumption for the MTPowerJournalEntry object as string (in KWh), where the alternative electricity tariff was active.
+*/
+- (NSString*)consumptionStringAltTariff;
 
 /*!
  @method        consumptionStringPowerNap

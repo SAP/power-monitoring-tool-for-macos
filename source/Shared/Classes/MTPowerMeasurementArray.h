@@ -1,6 +1,6 @@
 /*
      MTPowerMeasurementArray.h
-     Copyright 2023-2024 SAP SE
+     Copyright 2023-2025 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -45,14 +45,30 @@
 */
 - (MTPowerMeasurement*)maximumPower;
 
+/*!
+ @method        awakeMeasurements
+ @abstract      Returns only the measurements taken while the device was awake.
+ @discussion    Returns an NSArray of MTPowerMeasurement objects.
+*/
 - (NSArray<MTPowerMeasurement*>*)awakeMeasurements;
+
+/*!
+ @method        powerNapMeasurements
+ @abstract      Returns only the measurements taken while the device took a power nap.
+ @discussion    Returns an NSArray of MTPowerMeasurement objects.
+*/
 - (NSArray<MTPowerMeasurement*>*)powerNapMeasurements;
 
+/*!
+ @method        totalTime
+ @abstract      Returns the total time covered by the taken measurements.
+ @discussion    Returns an NSTimeInterval object.
+*/
 - (NSTimeInterval)totalTime;
 
 /*!
  @method        measurementsGroupedByDay
- @abstract      Return the measurement data grouped by day.
+ @abstract      Returns the measurement data grouped by day.
  @discussion    Returns an NSDictionary with timestamps as keys and NSArrays of MTPowerMeasurement
                 objects as values.
 */

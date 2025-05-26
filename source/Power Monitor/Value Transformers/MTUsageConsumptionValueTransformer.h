@@ -1,6 +1,6 @@
 /*
-     MTUsagePriceTextTransformerDark.h
-     Copyright 2023-2024 SAP SE
+     MTUsageConsumptionValueTransformer.h
+     Copyright 2023-2025 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -18,12 +18,10 @@
 #import <Cocoa/Cocoa.h>
 
 /*!
- @class         MTUsagePriceTextTransformerDark
- @abstract      A value transformer that returns the localized string "usagePriceTextDark" if the float value of the
-                given value is greater than 0 and display of the energy costs has been enabled in the app's defaults.
-                Otherwise it returns the localized string "usageConsumptionTextDark".
+ @class         MTUsageConsumptionValueTransformer
+ @abstract      A value transformer that returns the formatted power consumption string from a given value.
 */
 
-@interface MTUsagePriceTextTransformerDark : NSValueTransformer
+@interface MTUsageConsumptionValueTransformer : NSValueTransformer
 
 @end
