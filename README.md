@@ -24,7 +24,7 @@ _Power Monitor_ is a powerful open-source tool that provides real-time insights 
 
 <br/>
 
-**Make a positive impact, reduce energy waste, and contribute to sustainability with Power Monitor!**
+**Make a positive impact, reduce energy waste, and contribute to sustainability with _Power Monitor_!**
 
 <br/>
 
