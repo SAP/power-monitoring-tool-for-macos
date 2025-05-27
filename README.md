@@ -1,3 +1,4 @@
+
 ![](https://github.com/SAP/power-monitoring-tool-for-macos/blob/main/readme_images/banner.png)
 
 # Power Monitor 
