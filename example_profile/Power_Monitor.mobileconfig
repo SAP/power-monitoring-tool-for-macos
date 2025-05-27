@@ -36,7 +36,7 @@
                         <!--
                            key:     ShowCarbon
                            value:   boolean
-                                    
+                                   
                            Forces the display of the carbon footprint if the option is set
                            to true. If this option is set to false, the display of the carbon
                            footprint is disabled. Once this setting has been configured, the
@@ -56,321 +56,321 @@
                         -->
                         <key>CarbonRegions</key>
                         <dict>
-                                    <key>ARE</key>
-                                    <real>162</real>
-                                    <key>ARG</key>
-                                    <real>196</real>
-                                    <key>AUS</key>
-                                    <real>246</real>
-                                    <key>AUT</key>
-                                    <real>157</real>
-                                    <key>AZE</key>
-                                    <real>210</real>
-                                    <key>BEL</key>
-                                    <real>126</real>
-                                    <key>BGD</key>
-                                    <real>203</real>
-                                    <key>BGR</key>
-                                    <real>196</real>
-                                    <key>BLR</key>
-                                    <real>194</real>
-                                    <key>BRA</key>
-                                    <real>140</real>
-                                    <key>CAN</key>
-                                    <real>141</real>
-                                    <key>CHE</key>
-                                    <real>117</real>
-                                    <key>CHL</key>
-                                    <real>185</real>
-                                    <key>CHN</key>
-                                    <real>262</real>
-                                    <key>COL</key>
-                                    <real>172</real>
-                                    <key>CYP</key>
-                                    <real>255</real>
-                                    <key>CZE</key>
-                                    <real>208</real>
-                                    <key>DEU</key>
-                                    <real>192</real>
-                                    <key>DNK</key>
-                                    <real>159</real>
-                                    <key>DZA</key>
-                                    <real>257</real>
-                                    <key>ECU</key>
-                                    <real>195</real>
-                                    <key>EGY</key>
-                                    <real>237</real>
-                                    <key>ESP</key>
-                                    <real>150</real>
-                                    <key>EST</key>
-                                    <real>159</real>
-                                    <key>FIN</key>
-                                    <real>117</real>
-                                    <key>FRA</key>
-                                    <real>117</real>
-                                    <key>GBR</key>
-                                    <real>174</real>
-                                    <key>GRC</key>
-                                    <real>192</real>
-                                    <key>HKG</key>
-                                    <real>130</real>
-                                    <key>HRV</key>
-                                    <real>178</real>
-                                    <key>HUN</key>
-                                    <real>172</real>
-                                    <key>IDN</key>
-                                    <real>268</real>
-                                    <key>IND</key>
-                                    <real>275</real>
-                                    <key>IRL</key>
-                                    <real>215</real>
-                                    <key>IRN</key>
-                                    <real>221</real>
-                                    <key>IRQ</key>
-                                    <real>315</real>
-                                    <key>ISL</key>
-                                    <real>58</real>
-                                    <key>ISR</key>
-                                    <real>187</real>
-                                    <key>ITA</key>
-                                    <real>186</real>
-                                    <key>JPN</key>
-                                    <real>217</real>
-                                    <key>KAZ</key>
-                                    <real>350</real>
-                                    <key>KOR</key>
-                                    <real>176</real>
-                                    <key>KWT</key>
-                                    <real>220</real>
-                                    <key>LKA</key>
-                                    <real>196</real>
-                                    <key>LTU</key>
-                                    <real>198</real>
-                                    <key>LUX</key>
-                                    <real>199</real>
-                                    <key>LVA</key>
-                                    <real>172</real>
-                                    <key>MAR</key>
-                                    <real>266</real>
-                                    <key>MEX</key>
-                                    <real>216</real>
-                                    <key>MKD</key>
-                                    <real>236</real>
-                                    <key>MYS</key>
-                                    <real>220</real>
-                                    <key>NLD</key>
-                                    <real>146</real>
-                                    <key>NOR</key>
-                                    <real>72</real>
-                                    <key>NZL</key>
-                                    <real>145</real>
-                                    <key>OMN</key>
-                                    <real>194</real>
-                                    <key>PAK</key>
-                                    <real>214</real>
-                                    <key>PER</key>
-                                    <real>169</real>
-                                    <key>PHL</key>
-                                    <real>265</real>
-                                    <key>POL</key>
-                                    <real>266</real>
-                                    <key>PRT</key>
-                                    <real>154</real>
-                                    <key>QAT</key>
-                                    <real>179</real>
-                                    <key>ROU</key>
-                                    <real>204</real>
-                                    <key>RUS</key>
-                                    <real>202</real>
-                                    <key>SAU</key>
-                                    <real>224</real>
-                                    <key>SGP</key>
-                                    <real>34</real>
-                                    <key>SVK</key>
-                                    <real>179</real>
-                                    <key>SVN</key>
-                                    <real>167</real>
-                                    <key>SWE</key>
-                                    <real>57</real>
-                                    <key>THA</key>
-                                    <real>196</real>
-                                    <key>TKM</key>
-                                    <real>186</real>
-                                    <key>TTO</key>
-                                    <real>212</real>
-                                    <key>TUR</key>
-                                    <real>235</real>
-                                    <key>TWN</key>
-                                    <real>205</real>
-                                    <key>UKR</key>
-                                    <real>218</real>
-                                    <key>USA</key>
-                                    <real>194</real>
-                                    <key>UZB</key>
-                                    <real>222</real>
-                                    <key>VEN</key>
-                                    <real>141</real>
-                                    <key>VNM</key>
-                                    <real>272</real>
-                                    <key>ZAF</key>
-                                    <real>315</real>
-                                </dict>
-                                
-                                <!--
-                                    key:     ShowAverage
-                                    value:   boolean
-                                    
-                                    Forces the display of the average line of the power graph if set
-                                    to true, otherwise the display of the average line is disabled.
-                                    Once this setting has been configured, the setting cannot be changed
-                                    by the user.
-                                -->
-                                <key>ShowAverage</key>
-                                <true/>
-                                
-                                <!--
-                                    key:     ShowDayMarkers
-                                    value:   boolean
-                                    
-                                    Forces the display of the day markers of the power graph if set
-                                    to true, otherwise the display of the day markers is disabled.
-                                    Once this setting has been configured, the setting cannot be changed
-                                    by the user.
-                                -->
-                                <key>ShowDayMarkers</key>
-                                <true/>
-                                
-                                 <!--
-                                    key:     MarkPowerNaps
-                                    value:   boolean
-                                    
-                                    Forces the display of the Power Nap intervals in the power graph if set
-                                    to true, otherwise the display of the Power Nap intervals is disabled.
-                                    Once this setting has been configured, the setting cannot be changed
-                                    by the user.
-                                -->
-                                <key>MarkPowerNaps</key>
-                                <true/>
-                                
-                                <!--
-                                    If you want to deploy a color, just use the Power Monitor app, change
-                                    the colors in the app's settings and copy the correspondig data from
-                                    the app's preferences into the profile. The app's preference file
-                                    corp.sap.PowerMonitor.plist is located at:
-                                    ~/Library/Containers/corp.sap.PowerMonitor/Data/Library/Preferences/
-                                    
-                                    We recommend using Apple's system colors from the "Developer" color 
-                                    palette as they come with different appearances for light and dark mode. 
-                                    If you want to provide different appearances using your own colors, you 
-                                    need to create a color palette using a 3rd-party app and then import this 
-                                    palette to the macOS color picker. The app's default colors also use 
-                                    different appearances for light and dark mode.
-                                -->
-                                
-                                <!--
-                                    key:     GraphFillColor
-                                    value:   data
-                                    
-                                    Forces the fill color of the power graph. Once this setting has been
-                                    configured, the setting cannot be changed by the user.
-                                -->
-                                <key>GraphFillColor</key>
-                                <data>
-                                    YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
-                                    AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGpCwwXGBkiKCkwVSRudWxs1Q0O
-                                    DxAREhMUFRZWJGNsYXNzW05TQ29sb3JOYW1lXE5TQ29sb3JTcGFjZV1OU0NhdGFsb2dO
-                                    YW1lV05TQ29sb3KACIADEAaAAoAEXxAVIyRhc3NldHMtbWFpbkJ1bmRsZUlEXkdyYXBo
-                                    RmlsbENvbG9y1RobDxwNHR4fIBJcTlNDb21wb25lbnRzVU5TUkdCXxASTlNDdXN0b21D
-                                    b2xvclNwYWNlTxAnMC4xNjc5OTk5OTc3IDAuNDgzOTk5OTk3NCAwLjExMjk5OTk5OCAx
-                                    TxARMCAwLjQyOTYwOTQ3NzUgMAAQAYAFgAjTIw0kJSYnVU5TSUNDWU5TU3BhY2VJRIAG
-                                    gAcQDE8RAhgAAAIYYXBwbAQAAABtbnRyUkdCIFhZWiAH5gABAAEAAAAAAABhY3NwQVBQ
-                                    TAAAAABBUFBMAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWFwcGzs/aOOOIVHw220
-                                    vU962hgvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApkZXNjAAAA/AAAADBj
-                                    cHJ0AAABLAAAAFB3dHB0AAABfAAAABRyWFlaAAABkAAAABRnWFlaAAABpAAAABRiWFla
-                                    AAABuAAAABRyVFJDAAABzAAAACBjaGFkAAAB7AAAACxiVFJDAAABzAAAACBnVFJDAAAB
-                                    zAAAACBtbHVjAAAAAAAAAAEAAAAMZW5VUwAAABQAAAAcAEQAaQBzAHAAbABhAHkAIABQ
-                                    ADNtbHVjAAAAAAAAAAEAAAAMZW5VUwAAADQAAAAcAEMAbwBwAHkAcgBpAGcAaAB0ACAA
-                                    QQBwAHAAbABlACAASQBuAGMALgAsACAAMgAwADIAMlhZWiAAAAAAAAD21QABAAAAANMs
-                                    WFlaIAAAAAAAAIPfAAA9v////7tYWVogAAAAAAAASr8AALE3AAAKuVhZWiAAAAAAAAAo
-                                    OAAAEQsAAMi5cGFyYQAAAAAAAwAAAAJmZgAA8qcAAA1ZAAAT0AAACltzZjMyAAAAAAAB
-                                    DEIAAAXe///zJgAAB5MAAP2Q///7ov///aMAAAPcAADAbtIqKywtWiRjbGFzc25hbWVY
-                                    JGNsYXNzZXNcTlNDb2xvclNwYWNloi4vXE5TQ29sb3JTcGFjZVhOU09iamVjdNIqKzEy
-                                    V05TQ29sb3KiMS8ACAARABoAJAApADIANwBJAEwAUQBTAF0AYwBuAHUAgQCOAJwApACm
-                                    AKgAqgCsAK4AxgDVAOAA7QDzAQgBMgFGAUgBSgFMAVMBWQFjAWUBZwFpA4UDigOVA54D
-                                    qwOuA7sDxAPJA9EAAAAAAAACAQAAAAAAAAAzAAAAAAAAAAAAAAAAAAAD1A==
-                                </data>
-                                
-                                <!--
-                                    key:     GraphAverageLineColor
-                                    value:   data
-                                    
-                                    Forces the color of the average line of the power graph. Once this
-                                    setting has been configured, the setting cannot be changed by the user.
-                                -->
-                                <key>GraphAverageLineColor</key>
-                                <data/>
-                                    
-                                <!--
-                                    key:     GraphDayMarkerColor
-                                    value:   data
-                                    
-                                    Forces the color of the day markers of the power graph. Once this
-                                    setting has been configured, the setting cannot be changed by the user.
-                                -->
-                                <key>GraphDayMarkerColor</key>
-                                <data/>
-                                
-                                <!--
-                                    key:     GraphPowerNapFillColor
-                                    value:   data
-                                    
-                                    Forces the color of the Power Nap intervals of the power graph. Once this
-                                    setting has been configured, the setting cannot be changed by the user.
-                                -->
-                                <key>GraphPowerNapFillColor</key>
-                                <data/>
-                                
-                                <!--
-                                    key:     GraphPositionLineColor
-                                    value:   data
-                                    
-                                    Forces the color of the position line of the power graph. Once this
-                                    setting has been configured, the setting cannot be changed by the user.
-                                -->
-                                <key>GraphPositionLineColor</key>
-                                <data/>
-                                
-                                <!--
-                                    key:     ShowPrice
-                                    value:   a boolean
-                                    
-                                    Forces Power Monitor to display the electricity price instead of the
-                                    power consumtion. Once this setting has been configured, the setting
-                                    cannot be changed by the user.
-                                -->
-                                <key>ShowPrice</key>
-                                <true/>
-                                
-                                <!--
-                                    key:     ElectricityPrice
-                                    value:   a floating point number
-                                    
-                                    Forces the electricity price per kWh. Once this setting has been
-                                    configured, the setting cannot be changed by the user.
-                                -->
-                                <key>ElectricityPrice</key>
-                                <real>0.3351</real>
-                                
-                                <!--
-                                    key:     AltElectricityPrice
-                                    value:   a floating point number
-                                    
-                                    Forces the alternative electricity price per kWh. Once this setting has
-                                    been configured, the setting cannot be changed by the user.
-                                -->
-                                <key>AltElectricityPrice</key>
-                                <real>0.12689</real>
-                                                            
+                           <key>ARE</key>
+                           <real>162</real>
+                           <key>ARG</key>
+                           <real>196</real>
+                           <key>AUS</key>
+                           <real>246</real>
+                           <key>AUT</key>
+                           <real>157</real>
+                           <key>AZE</key>
+                           <real>210</real>
+                           <key>BEL</key>
+                           <real>126</real>
+                           <key>BGD</key>
+                           <real>203</real>
+                           <key>BGR</key>
+                           <real>196</real>
+                           <key>BLR</key>
+                           <real>194</real>
+                           <key>BRA</key>
+                           <real>140</real>
+                           <key>CAN</key>
+                           <real>141</real>
+                           <key>CHE</key>
+                           <real>117</real>
+                           <key>CHL</key>
+                           <real>185</real>
+                           <key>CHN</key>
+                           <real>262</real>
+                           <key>COL</key>
+                           <real>172</real>
+                           <key>CYP</key>
+                           <real>255</real>
+                           <key>CZE</key>
+                           <real>208</real>
+                           <key>DEU</key>
+                           <real>192</real>
+                           <key>DNK</key>
+                           <real>159</real>
+                           <key>DZA</key>
+                           <real>257</real>
+                           <key>ECU</key>
+                           <real>195</real>
+                           <key>EGY</key>
+                           <real>237</real>
+                           <key>ESP</key>
+                           <real>150</real>
+                           <key>EST</key>
+                           <real>159</real>
+                           <key>FIN</key>
+                           <real>117</real>
+                           <key>FRA</key>
+                           <real>117</real>
+                           <key>GBR</key>
+                           <real>174</real>
+                           <key>GRC</key>
+                           <real>192</real>
+                           <key>HKG</key>
+                           <real>130</real>
+                           <key>HRV</key>
+                           <real>178</real>
+                           <key>HUN</key>
+                           <real>172</real>
+                           <key>IDN</key>
+                           <real>268</real>
+                           <key>IND</key>
+                           <real>275</real>
+                           <key>IRL</key>
+                           <real>215</real>
+                           <key>IRN</key>
+                           <real>221</real>
+                           <key>IRQ</key>
+                           <real>315</real>
+                           <key>ISL</key>
+                           <real>58</real>
+                           <key>ISR</key>
+                           <real>187</real>
+                           <key>ITA</key>
+                           <real>186</real>
+                           <key>JPN</key>
+                           <real>217</real>
+                           <key>KAZ</key>
+                           <real>350</real>
+                           <key>KOR</key>
+                           <real>176</real>
+                           <key>KWT</key>
+                           <real>220</real>
+                           <key>LKA</key>
+                           <real>196</real>
+                           <key>LTU</key>
+                           <real>198</real>
+                           <key>LUX</key>
+                           <real>199</real>
+                           <key>LVA</key>
+                           <real>172</real>
+                           <key>MAR</key>
+                           <real>266</real>
+                           <key>MEX</key>
+                           <real>216</real>
+                           <key>MKD</key>
+                           <real>236</real>
+                           <key>MYS</key>
+                           <real>220</real>
+                           <key>NLD</key>
+                           <real>146</real>
+                           <key>NOR</key>
+                           <real>72</real>
+                           <key>NZL</key>
+                           <real>145</real>
+                           <key>OMN</key>
+                           <real>194</real>
+                           <key>PAK</key>
+                           <real>214</real>
+                           <key>PER</key>
+                           <real>169</real>
+                           <key>PHL</key>
+                           <real>265</real>
+                           <key>POL</key>
+                           <real>266</real>
+                           <key>PRT</key>
+                           <real>154</real>
+                           <key>QAT</key>
+                           <real>179</real>
+                           <key>ROU</key>
+                           <real>204</real>
+                           <key>RUS</key>
+                           <real>202</real>
+                           <key>SAU</key>
+                           <real>224</real>
+                           <key>SGP</key>
+                           <real>34</real>
+                           <key>SVK</key>
+                           <real>179</real>
+                           <key>SVN</key>
+                           <real>167</real>
+                           <key>SWE</key>
+                           <real>57</real>
+                           <key>THA</key>
+                           <real>196</real>
+                           <key>TKM</key>
+                           <real>186</real>
+                           <key>TTO</key>
+                           <real>212</real>
+                           <key>TUR</key>
+                           <real>235</real>
+                           <key>TWN</key>
+                           <real>205</real>
+                           <key>UKR</key>
+                           <real>218</real>
+                           <key>USA</key>
+                           <real>194</real>
+                           <key>UZB</key>
+                           <real>222</real>
+                           <key>VEN</key>
+                           <real>141</real>
+                           <key>VNM</key>
+                           <real>272</real>
+                           <key>ZAF</key>
+                           <real>315</real>
+                       </dict>
+                       
+                         <!--
+                            key:     ShowAverage
+                            value:   boolean
+                            
+                            Forces the display of the average line of the power graph if set
+                            to true, otherwise the display of the average line is disabled.
+                            Once this setting has been configured, the setting cannot be changed
+                            by the user.
+                         -->
+                         <key>ShowAverage</key>
+                         <true/>
+                         
+                         <!--
+                            key:     ShowDayMarkers
+                            value:   boolean
+                            
+                            Forces the display of the day markers of the power graph if set
+                            to true, otherwise the display of the day markers is disabled.
+                            Once this setting has been configured, the setting cannot be changed
+                            by the user.
+                         -->
+                         <key>ShowDayMarkers</key>
+                         <true/>
+                         
+                         <!--
+                            key:     MarkPowerNaps
+                            value:   boolean
+                            
+                            Forces the display of the Power Nap intervals in the power graph if set
+                            to true, otherwise the display of the Power Nap intervals is disabled.
+                            Once this setting has been configured, the setting cannot be changed
+                            by the user.
+                         -->
+                         <key>MarkPowerNaps</key>
+                         <true/>
+                         
+                         <!--
+                            If you want to deploy a color, just use the Power Monitor app, change
+                            the colors in the app's settings and copy the correspondig data from
+                            the app's preferences into the profile. The app's preference file
+                            corp.sap.PowerMonitor.plist is located at:
+                            ~/Library/Containers/corp.sap.PowerMonitor/Data/Library/Preferences/
+                            
+                            We recommend using Apple's system colors from the "Developer" color
+                            palette as they come with different appearances for light and dark mode.
+                            If you want to provide different appearances using your own colors, you
+                            need to create a color palette using a 3rd-party app and then import this
+                            palette to the macOS color picker. The app's default colors also use
+                            different appearances for light and dark mode.
+                         -->
+                         
+                         <!--
+                            key:     GraphFillColor
+                            value:   data
+                            
+                            Forces the fill color of the power graph. Once this setting has been
+                            configured, the setting cannot be changed by the user.
+                         -->
+                         <key>GraphFillColor</key>
+                         <data>
+                            YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
+                            AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGpCwwXGBkiKCkwVSRudWxs1Q0O
+                            DxAREhMUFRZWJGNsYXNzW05TQ29sb3JOYW1lXE5TQ29sb3JTcGFjZV1OU0NhdGFsb2dO
+                            YW1lV05TQ29sb3KACIADEAaAAoAEXxAVIyRhc3NldHMtbWFpbkJ1bmRsZUlEXkdyYXBo
+                            RmlsbENvbG9y1RobDxwNHR4fIBJcTlNDb21wb25lbnRzVU5TUkdCXxASTlNDdXN0b21D
+                            b2xvclNwYWNlTxAnMC4xNjc5OTk5OTc3IDAuNDgzOTk5OTk3NCAwLjExMjk5OTk5OCAx
+                            TxARMCAwLjQyOTYwOTQ3NzUgMAAQAYAFgAjTIw0kJSYnVU5TSUNDWU5TU3BhY2VJRIAG
+                            gAcQDE8RAhgAAAIYYXBwbAQAAABtbnRyUkdCIFhZWiAH5gABAAEAAAAAAABhY3NwQVBQ
+                            TAAAAABBUFBMAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWFwcGzs/aOOOIVHw220
+                            vU962hgvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApkZXNjAAAA/AAAADBj
+                            cHJ0AAABLAAAAFB3dHB0AAABfAAAABRyWFlaAAABkAAAABRnWFlaAAABpAAAABRiWFla
+                            AAABuAAAABRyVFJDAAABzAAAACBjaGFkAAAB7AAAACxiVFJDAAABzAAAACBnVFJDAAAB
+                            zAAAACBtbHVjAAAAAAAAAAEAAAAMZW5VUwAAABQAAAAcAEQAaQBzAHAAbABhAHkAIABQ
+                            ADNtbHVjAAAAAAAAAAEAAAAMZW5VUwAAADQAAAAcAEMAbwBwAHkAcgBpAGcAaAB0ACAA
+                            QQBwAHAAbABlACAASQBuAGMALgAsACAAMgAwADIAMlhZWiAAAAAAAAD21QABAAAAANMs
+                            WFlaIAAAAAAAAIPfAAA9v////7tYWVogAAAAAAAASr8AALE3AAAKuVhZWiAAAAAAAAAo
+                            OAAAEQsAAMi5cGFyYQAAAAAAAwAAAAJmZgAA8qcAAA1ZAAAT0AAACltzZjMyAAAAAAAB
+                            DEIAAAXe///zJgAAB5MAAP2Q///7ov///aMAAAPcAADAbtIqKywtWiRjbGFzc25hbWVY
+                            JGNsYXNzZXNcTlNDb2xvclNwYWNloi4vXE5TQ29sb3JTcGFjZVhOU09iamVjdNIqKzEy
+                            V05TQ29sb3KiMS8ACAARABoAJAApADIANwBJAEwAUQBTAF0AYwBuAHUAgQCOAJwApACm
+                            AKgAqgCsAK4AxgDVAOAA7QDzAQgBMgFGAUgBSgFMAVMBWQFjAWUBZwFpA4UDigOVA54D
+                            qwOuA7sDxAPJA9EAAAAAAAACAQAAAAAAAAAzAAAAAAAAAAAAAAAAAAAD1A==
+                         </data>
+                         
+                         <!--
+                            key:     GraphAverageLineColor
+                            value:   data
+                            
+                            Forces the color of the average line of the power graph. Once this
+                            setting has been configured, the setting cannot be changed by the user.
+                         -->
+                         <key>GraphAverageLineColor</key>
+                         <data/>
+                            
+                         <!--
+                            key:     GraphDayMarkerColor
+                            value:   data
+                            
+                            Forces the color of the day markers of the power graph. Once this
+                            setting has been configured, the setting cannot be changed by the user.
+                         -->
+                         <key>GraphDayMarkerColor</key>
+                         <data/>
+                         
+                         <!--
+                            key:     GraphPowerNapFillColor
+                            value:   data
+                            
+                            Forces the color of the Power Nap intervals of the power graph. Once this
+                            setting has been configured, the setting cannot be changed by the user.
+                         -->
+                         <key>GraphPowerNapFillColor</key>
+                         <data/>
+                         
+                         <!--
+                            key:     GraphPositionLineColor
+                            value:   data
+                            
+                            Forces the color of the position line of the power graph. Once this
+                            setting has been configured, the setting cannot be changed by the user.
+                         -->
+                         <key>GraphPositionLineColor</key>
+                         <data/>
+                         
+                         <!--
+                            key:     ShowPrice
+                            value:   a boolean
+                            
+                            Forces Power Monitor to display the electricity price instead of the
+                            power consumtion. Once this setting has been configured, the setting
+                            cannot be changed by the user.
+                         -->
+                         <key>ShowPrice</key>
+                         <true/>
+                         
+                         <!--
+                            key:     ElectricityPrice
+                            value:   a floating point number
+                            
+                            Forces the electricity price per kWh. Once this setting has been
+                            configured, the setting cannot be changed by the user.
+                         -->
+                         <key>ElectricityPrice</key>
+                         <real>0.3351</real>
+                         
+                         <!--
+                            key:     AltElectricityPrice
+                            value:   a floating point number
+                            
+                            Forces the alternative electricity price per kWh. Once this setting has
+                            been configured, the setting cannot be changed by the user.
+                         -->
+                         <key>AltElectricityPrice</key>
+                         <real>0.12689</real>
+                                                          
                      </dict>
                   </dict>
                </array>
@@ -384,138 +384,138 @@
                      <key>mcx_preference_settings</key>
                      <dict>
                      
-                                <!--
-                                    key:     EnableJournal
-                                    value:   boolean
-                                    
-                                    Force enables the journal function if the option is set to true.
-                                    If this option is set to false, the journal function is disabled. 
-                                    Once this setting has been configured, the setting cannot be 
-                                    changed by the user.
-                                -->
-                                <key>EnableJournal</key>
-                                <true/>
-                        
-                                <!--
-                                    key:     JournalEntriesAutoDelete
-                                    value:   integer
-                                    
-                                    Forces the interval for automatic deletion of journal entries. Once 
-                                    this setting has been configured, the setting cannot be changed by the 
-                                    user.
-                                    
-                                    Possible values and their meanings:
-                                    
-                                    0 -> disables automatic deletion of journal entries
-                                    1 -> automatically delete journal entries older than one month
-                                    2 -> automatically delete journal entries older than six months
-                                    3 -> automatically delete journal entries older than one year
-                                -->
-                                <key>JournalEntriesAutoDelete</key>
-                                <integer>1</integer>
-                                
-                                <!--
-                                    key:     IgnorePowerNaps
-                                    value:   boolean
-                                   
-                                    If set to true, PowerMonitorDaemon will not capture power data during 
-                                    Power Naps. So times where the Mac takes a Power Nap are treated like 
-                                    times the Mac is in sleep mode. Once this setting has been configured, 
-                                    the setting cannot be changed by the user.
-                                -->
-                                <key>IgnorePowerNaps</key>
-                                <true/>
-                                
-                                <!--
-                                    key:     UseAltPrice
-                                    value:   boolean
-                                   
-                                    When set to true, the times specified in AltPriceSchedule are given
-                                    special treatment by PowerMonitorDaemon. This affects the current
-                                    electricity price displayed in PowerMonitor and in the journal. If this
-                                    value is set, it can no longer be changed by the user. Neither can the
-                                    AltPriceSchedule value.
-                                -->
-                                <key>UseAltPrice</key>
-                                <true/>
-                                
-                                <!--
-                                    key:     AltPriceSchedule
-                                    value:   a dictionary
-                                   
-                                    The dictionary contains a key for each day of the week, where the number
-                                    0 stands for Sunday, 1 for Monday, and so on. The corresponding value is
-                                    of type array and contains integers for each hour of the day during
-                                    which the alternative electricity tariff is to apply (0-23).
-                                -->
-                                <key>AltPriceSchedule</key>
-                                <dict>
-                                    <key>0</key>
-                                    <array/>
-                                    <key>1</key>
-                                    <array>
-                                        <integer>9</integer>
-                                        <integer>10</integer>
-                                        <integer>11</integer>
-                                        <integer>12</integer>
-                                        <integer>13</integer>
-                                        <integer>14</integer>
-                                        <integer>15</integer>
-                                        <integer>16</integer>
-                                        <integer>17</integer>
-                                    </array>
-                                    <key>2</key>
-                                    <array>
-                                        <integer>9</integer>
-                                        <integer>10</integer>
-                                        <integer>11</integer>
-                                        <integer>12</integer>
-                                        <integer>13</integer>
-                                        <integer>14</integer>
-                                        <integer>15</integer>
-                                        <integer>16</integer>
-                                        <integer>17</integer>
-                                    </array>
-                                    <key>3</key>
-                                    <array>
-                                        <integer>9</integer>
-                                        <integer>10</integer>
-                                        <integer>11</integer>
-                                        <integer>12</integer>
-                                        <integer>13</integer>
-                                        <integer>14</integer>
-                                        <integer>15</integer>
-                                        <integer>16</integer>
-                                        <integer>17</integer>
-                                    </array>
-                                    <key>4</key>
-                                    <array>
-                                        <integer>9</integer>
-                                        <integer>10</integer>
-                                        <integer>11</integer>
-                                        <integer>12</integer>
-                                        <integer>13</integer>
-                                        <integer>14</integer>
-                                        <integer>15</integer>
-                                        <integer>16</integer>
-                                        <integer>17</integer>
-                                    </array>
-                                    <key>5</key>
-                                    <array>
-                                        <integer>9</integer>
-                                        <integer>10</integer>
-                                        <integer>11</integer>
-                                        <integer>12</integer>
-                                        <integer>13</integer>
-                                        <integer>14</integer>
-                                        <integer>15</integer>
-                                        <integer>16</integer>
-                                        <integer>17</integer>
-                                    </array>
-                                    <key>6</key>
-                                    <array/>
-                                </dict>
-                                
+                           <!--
+                               key:     EnableJournal
+                               value:   boolean
+                               
+                               Force enables the journal function if the option is set to true.
+                               If this option is set to false, the journal function is disabled. 
+                               Once this setting has been configured, the setting cannot be 
+                               changed by the user.
+                           -->
+                           <key>EnableJournal</key>
+                           <true/>
+                    
+                           <!--
+                               key:     JournalEntriesAutoDelete
+                               value:   integer
+                               
+                               Forces the interval for automatic deletion of journal entries. Once 
+                               this setting has been configured, the setting cannot be changed by the 
+                               user.
+                               
+                               Possible values and their meanings:
+                               
+                               0 -> disables automatic deletion of journal entries
+                               1 -> automatically delete journal entries older than one month
+                               2 -> automatically delete journal entries older than six months
+                               3 -> automatically delete journal entries older than one year
+                           -->
+                           <key>JournalEntriesAutoDelete</key>
+                           <integer>1</integer>
+                           
+                           <!--
+                               key:     IgnorePowerNaps
+                               value:   boolean
+                              
+                               If set to true, PowerMonitorDaemon will not capture power data during 
+                               Power Naps. So times where the Mac takes a Power Nap are treated like 
+                               times the Mac is in sleep mode. Once this setting has been configured, 
+                               the setting cannot be changed by the user.
+                           -->
+                           <key>IgnorePowerNaps</key>
+                           <true/>
+                           
+                           <!--
+                               key:     UseAltPrice
+                               value:   boolean
+                              
+                               When set to true, the times specified in AltPriceSchedule are given
+                               special treatment by PowerMonitorDaemon. This affects the current
+                               electricity price displayed in PowerMonitor and in the journal. If this
+                               value is set, it can no longer be changed by the user. Neither can the
+                               AltPriceSchedule value.
+                           -->
+                           <key>UseAltPrice</key>
+                           <true/>
+                           
+                           <!--
+                               key:     AltPriceSchedule
+                               value:   a dictionary
+                              
+                               The dictionary contains a key for each day of the week, where the number
+                               0 stands for Sunday, 1 for Monday, and so on. The corresponding value is
+                               of type array and contains integers for each hour of the day during
+                               which the alternative electricity tariff is to apply (0-23).
+                           -->
+                           <key>AltPriceSchedule</key>
+                           <dict>
+                               <key>0</key>
+                               <array/>
+                               <key>1</key>
+                               <array>
+                                   <integer>9</integer>
+                                   <integer>10</integer>
+                                   <integer>11</integer>
+                                   <integer>12</integer>
+                                   <integer>13</integer>
+                                   <integer>14</integer>
+                                   <integer>15</integer>
+                                   <integer>16</integer>
+                                   <integer>17</integer>
+                               </array>
+                               <key>2</key>
+                               <array>
+                                   <integer>9</integer>
+                                   <integer>10</integer>
+                                   <integer>11</integer>
+                                   <integer>12</integer>
+                                   <integer>13</integer>
+                                   <integer>14</integer>
+                                   <integer>15</integer>
+                                   <integer>16</integer>
+                                   <integer>17</integer>
+                               </array>
+                               <key>3</key>
+                               <array>
+                                   <integer>9</integer>
+                                   <integer>10</integer>
+                                   <integer>11</integer>
+                                   <integer>12</integer>
+                                   <integer>13</integer>
+                                   <integer>14</integer>
+                                   <integer>15</integer>
+                                   <integer>16</integer>
+                                   <integer>17</integer>
+                               </array>
+                               <key>4</key>
+                               <array>
+                                   <integer>9</integer>
+                                   <integer>10</integer>
+                                   <integer>11</integer>
+                                   <integer>12</integer>
+                                   <integer>13</integer>
+                                   <integer>14</integer>
+                                   <integer>15</integer>
+                                   <integer>16</integer>
+                                   <integer>17</integer>
+                               </array>
+                               <key>5</key>
+                               <array>
+                                   <integer>9</integer>
+                                   <integer>10</integer>
+                                   <integer>11</integer>
+                                   <integer>12</integer>
+                                   <integer>13</integer>
+                                   <integer>14</integer>
+                                   <integer>15</integer>
+                                   <integer>16</integer>
+                                   <integer>17</integer>
+                               </array>
+                               <key>6</key>
+                               <array/>
+                           </dict>
+                               
                      </dict>
                      
                   </dict>
