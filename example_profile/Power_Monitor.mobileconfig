@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 
 <!--
-     Copyright 2023-2024 SAP SE
+     Copyright 2023-2025 SAP SE
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -19,43 +19,43 @@
 
 <plist version="1.0">
 <dict>
-	<key>PayloadContent</key>
-	<array>
-		<dict>
-			<key>PayloadContent</key>
-			<dict>
-			
-				<key>corp.sap.PowerMonitor</key>
-				<dict>
-					<key>Forced</key>
-					<array>
-						<dict>
-							<key>mcx_preference_settings</key>
-							<dict>
-							
-                                <!--
-                                    key:     ShowCarbon
-                                    value:   boolean
+   <key>PayloadContent</key>
+   <array>
+      <dict>
+         <key>PayloadContent</key>
+         <dict>
+         
+            <key>corp.sap.PowerMonitor</key>
+            <dict>
+               <key>Forced</key>
+               <array>
+                  <dict>
+                     <key>mcx_preference_settings</key>
+                     <dict>
+                     
+                        <!--
+                           key:     ShowCarbon
+                           value:   boolean
                                     
-                                    Forces the display of the carbon footprint if the option is set
-                                    to true. If this option is set to false, the display of the carbon
-                                    footprint is disabled. Once this setting has been configured, the
-                                    setting cannot be changed by the user.
-                                -->
-                                <key>ShowCarbon</key>
-                                <true/>
+                           Forces the display of the carbon footprint if the option is set
+                           to true. If this option is set to false, the display of the carbon
+                           footprint is disabled. Once this setting has been configured, the
+                           setting cannot be changed by the user.
+                        -->
+                        <key>ShowCarbon</key>
+                        <true/>
 
-								<!--
-									key: 	CarbonRegions
-									value: 	dictionary
-									
-									The dictionary must contain ISO country codes (alpha-2 codes like "DE"
-                                    or alpha-3 codes like "DEU") as the keys along with the respective
-                                    carbon intensity float values (in gCO2eq/kWh). You may obtain carbon
-                                    intensity data from https://github.com/owid/co2-data
-								-->
-								<key>CarbonRegions</key>
-								<dict>
+                        <!--
+                           key:  CarbonRegions
+                           value:   dictionary
+                           
+                           The dictionary must contain ISO country codes (alpha-2 codes like "DE"
+                           or alpha-3 codes like "DEU") as the keys along with the respective
+                           carbon intensity float values (in gCO2eq/kWh). You may obtain carbon
+                           intensity data from https://github.com/owid/co2-data
+                        -->
+                        <key>CarbonRegions</key>
+                        <dict>
                                     <key>ARE</key>
                                     <real>162</real>
                                     <key>ARG</key>
@@ -339,21 +339,52 @@
                                 -->
                                 <key>GraphPositionLineColor</key>
                                 <data/>
-                                    								
-							</dict>
-						</dict>
-					</array>
-				</dict>
-				
-				<key>corp.sap.PowerMonitorDaemon</key>
-				<dict>
-					<key>Forced</key>
-					<array>
-						<dict>
-							<key>mcx_preference_settings</key>
-							<dict>
-							
-								<!--
+                                
+                                <!--
+                                    key:     ShowPrice
+                                    value:   a boolean
+                                    
+                                    Forces Power Monitor to display the electricity price instead of the
+                                    power consumtion. Once this setting has been configured, the setting
+                                    cannot be changed by the user.
+                                -->
+                                <key>ShowPrice</key>
+                                <true/>
+                                
+                                <!--
+                                    key:     ElectricityPrice
+                                    value:   a floating point number
+                                    
+                                    Forces the electricity price per kWh. Once this setting has been
+                                    configured, the setting cannot be changed by the user.
+                                -->
+                                <key>ElectricityPrice</key>
+                                <real>0.3351</real>
+                                
+                                <!--
+                                    key:     AltElectricityPrice
+                                    value:   a floating point number
+                                    
+                                    Forces the alternative electricity price per kWh. Once this setting has
+                                    been configured, the setting cannot be changed by the user.
+                                -->
+                                <key>AltElectricityPrice</key>
+                                <real>0.12689</real>
+                                                            
+                     </dict>
+                  </dict>
+               </array>
+            </dict>
+            
+            <key>corp.sap.PowerMonitorDaemon</key>
+            <dict>
+               <key>Forced</key>
+               <array>
+                  <dict>
+                     <key>mcx_preference_settings</key>
+                     <dict>
+                     
+                                <!--
                                     key:     EnableJournal
                                     value:   boolean
                                     
@@ -362,10 +393,10 @@
                                     Once this setting has been configured, the setting cannot be 
                                     changed by the user.
                                 -->
-								<key>EnableJournal</key>
-								<true/>
-								
-								<!--
+                                <key>EnableJournal</key>
+                                <true/>
+                        
+                                <!--
                                     key:     JournalEntriesAutoDelete
                                     value:   integer
                                     
@@ -380,62 +411,152 @@
                                     2 -> automatically delete journal entries older than six months
                                     3 -> automatically delete journal entries older than one year
                                 -->
-								<key>JournalEntriesAutoDelete</key>
-								<integer>1</integer>
+                                <key>JournalEntriesAutoDelete</key>
+                                <integer>1</integer>
                                 
                                 <!--
                                     key:     IgnorePowerNaps
                                     value:   boolean
                                    
-                                    Does not capture power data during Power Naps. So times where the Mac
-                                    takes a Power Nap are treated like times the Mac is in sleep mode.
-                                    Once this setting has been configured, the setting cannot be changed
-                                    by the user.
+                                    If set to true, PowerMonitorDaemon will not capture power data during 
+                                    Power Naps. So times where the Mac takes a Power Nap are treated like 
+                                    times the Mac is in sleep mode. Once this setting has been configured, 
+                                    the setting cannot be changed by the user.
                                 -->
                                 <key>IgnorePowerNaps</key>
                                 <true/>
                                 
-							</dict>
-							
-						</dict>
-					</array>
-				</dict>
-			</dict>
-			<key>PayloadDescription</key>
-			<string/>
-			<key>PayloadDisplayName</key>
-			<string>Power Monitor configuration</string>
-			<key>PayloadEnabled</key>
-			<true/>
-			<key>PayloadIdentifier</key>
-			<string>com.apple.ManagedClient.preferences.465AD781-3C05-432F-8484-7472FCC0DE71</string>
-			<key>PayloadOrganization</key>
-			<string>SAP SE</string>
-			<key>PayloadType</key>
-			<string>com.apple.ManagedClient.preferences</string>
-			<key>PayloadUUID</key>
-			<string>465AD781-3C05-432F-8484-7472FCC0DE71</string>
-			<key>PayloadVersion</key>
-			<integer>1</integer>
-		</dict>
-	</array>
-	<key>PayloadDescription</key>
-	<string>Configures the Power Monitor app.</string>
-	<key>PayloadDisplayName</key>
-	<string>Power Monitor configuration</string>
-	<key>PayloadIdentifier</key>
-	<string>B75E5BDD-107E-45C5-BC95-30A917BE2DA4</string>
-	<key>PayloadOrganization</key>
-	<string>SAP SE</string>
-	<key>PayloadRemovalDisallowed</key>
-	<false/>
-	<key>PayloadScope</key>
-	<string>System</string>
-	<key>PayloadType</key>
-	<string>Configuration</string>
-	<key>PayloadUUID</key>
-	<string>5F2A0C20-0FA0-42D9-B4FC-3ED2EC0A23A8</string>
-	<key>PayloadVersion</key>
-	<integer>1</integer>
+                                <!--
+                                    key:     UseAltPrice
+                                    value:   boolean
+                                   
+                                    When set to true, the times specified in AltPriceSchedule are given
+                                    special treatment by PowerMonitorDaemon. This affects the current
+                                    electricity price displayed in PowerMonitor and in the journal. If this
+                                    value is set, it can no longer be changed by the user. Neither can the
+                                    AltPriceSchedule value.
+                                -->
+                                <key>UseAltPrice</key>
+                                <true/>
+                                
+                                <!--
+                                    key:     AltPriceSchedule
+                                    value:   a dictionary
+                                   
+                                    The dictionary contains a key for each day of the week, where the number
+                                    0 stands for Sunday, 1 for Monday, and so on. The corresponding value is
+                                    of type array and contains integers for each hour of the day during
+                                    which the alternative electricity tariff is to apply (0-23).
+                                -->
+                                <key>AltPriceSchedule</key>
+                                <dict>
+                                    <key>0</key>
+                                    <array/>
+                                    <key>1</key>
+                                    <array>
+                                        <integer>9</integer>
+                                        <integer>10</integer>
+                                        <integer>11</integer>
+                                        <integer>12</integer>
+                                        <integer>13</integer>
+                                        <integer>14</integer>
+                                        <integer>15</integer>
+                                        <integer>16</integer>
+                                        <integer>17</integer>
+                                    </array>
+                                    <key>2</key>
+                                    <array>
+                                        <integer>9</integer>
+                                        <integer>10</integer>
+                                        <integer>11</integer>
+                                        <integer>12</integer>
+                                        <integer>13</integer>
+                                        <integer>14</integer>
+                                        <integer>15</integer>
+                                        <integer>16</integer>
+                                        <integer>17</integer>
+                                    </array>
+                                    <key>3</key>
+                                    <array>
+                                        <integer>9</integer>
+                                        <integer>10</integer>
+                                        <integer>11</integer>
+                                        <integer>12</integer>
+                                        <integer>13</integer>
+                                        <integer>14</integer>
+                                        <integer>15</integer>
+                                        <integer>16</integer>
+                                        <integer>17</integer>
+                                    </array>
+                                    <key>4</key>
+                                    <array>
+                                        <integer>9</integer>
+                                        <integer>10</integer>
+                                        <integer>11</integer>
+                                        <integer>12</integer>
+                                        <integer>13</integer>
+                                        <integer>14</integer>
+                                        <integer>15</integer>
+                                        <integer>16</integer>
+                                        <integer>17</integer>
+                                    </array>
+                                    <key>5</key>
+                                    <array>
+                                        <integer>9</integer>
+                                        <integer>10</integer>
+                                        <integer>11</integer>
+                                        <integer>12</integer>
+                                        <integer>13</integer>
+                                        <integer>14</integer>
+                                        <integer>15</integer>
+                                        <integer>16</integer>
+                                        <integer>17</integer>
+                                    </array>
+                                    <key>6</key>
+                                    <array/>
+                                </dict>
+                                
+                     </dict>
+                     
+                  </dict>
+               </array>
+            </dict>
+         </dict>
+         <key>PayloadDescription</key>
+         <string/>
+         <key>PayloadDisplayName</key>
+         <string>Power Monitor configuration</string>
+         <key>PayloadEnabled</key>
+         <true/>
+         <key>PayloadIdentifier</key>
+         <string>com.apple.ManagedClient.preferences.465AD781-3C05-432F-8484-7472FCC0DE71</string>
+         <key>PayloadOrganization</key>
+         <string>SAP SE</string>
+         <key>PayloadType</key>
+         <string>com.apple.ManagedClient.preferences</string>
+         <key>PayloadUUID</key>
+         <string>465AD781-3C05-432F-8484-7472FCC0DE71</string>
+         <key>PayloadVersion</key>
+         <integer>1</integer>
+      </dict>
+   </array>
+   <key>PayloadDescription</key>
+   <string>Configures the Power Monitor app.</string>
+   <key>PayloadDisplayName</key>
+   <string>Power Monitor configuration</string>
+   <key>PayloadIdentifier</key>
+   <string>B75E5BDD-107E-45C5-BC95-30A917BE2DA4</string>
+   <key>PayloadOrganization</key>
+   <string>SAP SE</string>
+   <key>PayloadRemovalDisallowed</key>
+   <false/>
+   <key>PayloadScope</key>
+   <string>System</string>
+   <key>PayloadType</key>
+   <string>Configuration</string>
+   <key>PayloadUUID</key>
+   <string>5F2A0C20-0FA0-42D9-B4FC-3ED2EC0A23A8</string>
+   <key>PayloadVersion</key>
+   <integer>1</integer>
 </dict>
 </plist>
