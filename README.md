@@ -6,7 +6,7 @@
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP/power-monitoring-tool-for-macos)](https://api.reuse.software/info/github.com/SAP/power-monitoring-tool-for-macos)
 
-Power Monitor is a powerful open-source tool that provides real-time insights into your device's energy consumption and carbon footprint, linked to your location. Here's how it can help you:
+_Power Monitor_ is a powerful open-source tool that provides real-time insights into your device's energy consumption and carbon footprint, linked to your location. Here's how it can help you:
 
 🔌 Measure Energy Consumption: Track how much energy your Mac consumes, helping you understand the environmental impact of your device usage.
 
@@ -14,7 +14,7 @@ Power Monitor is a powerful open-source tool that provides real-time insights in
 
 📈 Data-Driven Decisions: With data measured every 5 seconds and storage of maximum values from the last 24 hours, pinpoint energy hogs and optimize your usage for efficiency.
 
-🌟 Technical Accuracy: While it's not possible to measure exact wattage directly on the Mac, Power Monitor provides a reliable estimate based on external power meter tests.
+🌟 Technical Accuracy: While it's not possible to measure exact wattage directly on the Mac, _Power Monitor_ provides a reliable estimate based on external power meter tests.
 
 **Power Monitor supports the following macOS versions:**
 
@@ -22,19 +22,21 @@ Power Monitor is a powerful open-source tool that provides real-time insights in
 * macOS 14.x
 * macOS 13.x
 
+<br/>
+
 **Make a positive impact, reduce energy waste, and contribute to sustainability with Power Monitor!**
 
-
+<br/>
 
 # Demo
 
-Power Monitor is a new native Mac solution to monitor, report and visualize your Mac’s power consumption.
+_Power Monitor_ is a new native Mac solution to monitor, report and visualize your Mac’s power consumption.
 
 ![](https://github.com/SAP/power-monitoring-tool-for-macos/blob/main/readme_images/power_monitor_launched.png)
 
 # Documentation 
 
-You can find the following links also in the Wiki Page of Power Monitor.
+You can find the following links also in the wiki page of _Power Monitor_.
 
 * [Install Power Monitor](https://github.com/SAP/power-monitoring-tool-for-macos/wiki/Installation)
 * [Uninstall Power Monitor](https://github.com/SAP/power-monitoring-tool-for-macos/wiki/Uninstallation)
@@ -42,16 +44,24 @@ You can find the following links also in the Wiki Page of Power Monitor.
 * [Managing Power Monitor](https://github.com/SAP/power-monitoring-tool-for-macos/wiki/Managing-Power-Monitor)
 * [FAQ](https://github.com/SAP/power-monitoring-tool-for-macos/wiki/Frequently-Asked-Questions)
 
+<br/>
+
 # Support
 
 This project is 'as-is' with no support, no changes being made. You are welcome to make changes to improve it but we are not available for questions or support of any kind.
 
+<br/>
+
 ## Security / Disclosure
 If you find any bug that may be a security problem, please follow our instructions at [in our security policy](https://github.com/SAP/power-monitoring-tool-for-macos/security/policy) on how to report it. Please do not create GitHub issues for security-related doubts or problems.
+
+<br/>
 
 ## Feedback and Contributing
 
 This project is open to feature requests/suggestions, bug reports etc. via [GitHub issues](https://github.com/SAP/power-monitoring-tool-for-macos/issues). Contribution and feedback are encouraged and always welcome. For more information about how to contribute, the project structure, as well as additional contribution information, see our [Contribution Guidelines](CONTRIBUTING.md).
+
+<br/>
 
 ## Code of Conduct
 
