@@ -48,10 +48,10 @@ You can find the following links also in the wiki page of _Power Monitor_.
 
 # Articles
 
-See who's talking about _Privileges_…
+See who's talking about _Power Monitor…
 
 2025
-* [ComputerWorld: Apple should Sherlock SAP’s open-source energy management app]([https://youtu.be/JSnCdmV_N5U](https://www.computerworld.com/article/4012412/apple-should-sherlock-saps-open-source-energy-management-app.html))
+* [ComputerWorld: Apple should Sherlock SAP’s open-source energy management app]([https://youtu.be/JSnCdmV_N5U](https://www.computerworld.com/article/4012412/apple-should-sherlock-saps-open-source-energy-management-app.html)
 
 <br/>
 
