@@ -345,7 +345,7 @@
                                     value:   a boolean
                                     
                                     Forces Power Monitor to display the electricity price instead of the
-                                    power consumtion. Once this setting has been configured, the setting
+                                    power consumption. Once this setting has been configured, the setting
                                     cannot be changed by the user.
                                 -->
                                 <key>ShowPrice</key>
@@ -466,52 +466,28 @@
                                     </array>
                                     <key>2</key>
                                     <array>
-                                        <integer>9</integer>
-                                        <integer>10</integer>
-                                        <integer>11</integer>
-                                        <integer>12</integer>
-                                        <integer>13</integer>
-                                        <integer>14</integer>
-                                        <integer>15</integer>
-                                        <integer>16</integer>
-                                        <integer>17</integer>
+                                        <integer>0</integer>
+                                        <integer>1</integer>
+                                        <integer>2</integer>
+                                        <integer>3</integer>
+                                        <integer>4</integer>
+                                        <integer>5</integer>
+                                        <integer>6</integer>
+                                        <integer>7</integer>
                                     </array>
                                     <key>3</key>
                                     <array>
-                                        <integer>9</integer>
-                                        <integer>10</integer>
-                                        <integer>11</integer>
-                                        <integer>12</integer>
-                                        <integer>13</integer>
-                                        <integer>14</integer>
-                                        <integer>15</integer>
-                                        <integer>16</integer>
-                                        <integer>17</integer>
+                                        <integer>18</integer>
+                                        <integer>19</integer>
+                                        <integer>20</integer>
+                                        <integer>21</integer>
+                                        <integer>22</integer>
+                                        <integer>23</integer>
                                     </array>
                                     <key>4</key>
-                                    <array>
-                                        <integer>9</integer>
-                                        <integer>10</integer>
-                                        <integer>11</integer>
-                                        <integer>12</integer>
-                                        <integer>13</integer>
-                                        <integer>14</integer>
-                                        <integer>15</integer>
-                                        <integer>16</integer>
-                                        <integer>17</integer>
-                                    </array>
+                                    <array/>
                                     <key>5</key>
-                                    <array>
-                                        <integer>9</integer>
-                                        <integer>10</integer>
-                                        <integer>11</integer>
-                                        <integer>12</integer>
-                                        <integer>13</integer>
-                                        <integer>14</integer>
-                                        <integer>15</integer>
-                                        <integer>16</integer>
-                                        <integer>17</integer>
-                                    </array>
+                                    <array/>
                                     <key>6</key>
                                     <array/>
                                 </dict>

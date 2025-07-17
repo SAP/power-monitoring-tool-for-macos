@@ -167,7 +167,7 @@
                             [self->_carbonFootprint countryCodeWithLocation:location
                                                           completionHandler:^(NSString *countryCode) {
                                 
-                                [jsonDict setObject:countryCode forKey:@"CountryCode"];
+                                [jsonDict setObject:(countryCode) ? countryCode : @"unknown" forKey:@"CountryCode"];
                                 [jsonDict setObject:[NSNumber numberWithBool:preciseLocation] forKey:@"PreciseLocation"];
                                 
                                 // if we use a static list of carbon intensity values (either imported
@@ -175,7 +175,7 @@
                                 // print the carbon footprint value
                                 NSDictionary *carbonRegions = [self->_userDefaults objectForKey:kMTDefaultsCarbonRegionsKey];
                                 
-                                if (carbonRegions) {
+                                if (countryCode && carbonRegions) {
                                     
                                     NSNumber *gramsCO2eqkWh = ([carbonRegions objectForKey:countryCode]) ? [carbonRegions valueForKey:countryCode] : [carbonRegions valueForKey:NSLocalizedStringFromTable(countryCode, @"Alpha-2toAlpha-3", nil)];
                                     
