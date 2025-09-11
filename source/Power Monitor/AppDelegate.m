@@ -158,6 +158,7 @@
                     } else {
                         
                         NSMutableDictionary *jsonDict = [[NSMutableDictionary alloc] init];
+                        [jsonDict setObject:[NSNumber numberWithDouble:[[pM currentPower] doubleValue]] forKey:@"CurrentPower"];
                         [jsonDict setObject:[NSNumber numberWithDouble:[averagePower doubleValue]] forKey:@"AveragePower"];
                         [jsonDict setObject:[NSNumber numberWithInteger:[allMeasurements count]] forKey:@"MeasurementsCount"];
                         
@@ -223,6 +224,7 @@
                                     
                                     double carbonValue = [[jsonDict valueForKey:@"CarbonFootprint"] doubleValue];
                                     
+                                    printf("Current system power (in W): %.2f\n", [[jsonDict valueForKey:@"CurrentPower"] doubleValue]);
                                     printf("Average system power (in W): %.2f\n", [[jsonDict valueForKey:@"AveragePower"] doubleValue]);
                                     printf("Number of measurements: %lu\n", [[jsonDict valueForKey:@"MeasurementsCount"] integerValue]);
                                     printf("Country code: %s\n", [[jsonDict valueForKey:@"CountryCode"] UTF8String]);

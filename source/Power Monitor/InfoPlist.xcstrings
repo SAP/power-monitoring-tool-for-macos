@@ -43,8 +43,8 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Copyright © 2023-2024 SAP SE. Alle Rechte vorbehalten."
+            "state" : "translated",
+            "value" : "Copyright © 2023-2025 SAP SE. Alle Rechte vorbehalten."
           }
         },
         "en" : {

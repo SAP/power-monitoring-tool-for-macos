@@ -119,11 +119,42 @@
 */
 - (void)powerNapsIgnoredWithReply:(void (^)(BOOL ignored, BOOL forced))reply;
 
-
+/*!
+ @method        setAltPriceEnabled:completionHandler:
+ @abstract      Configures if an alternative electricity price is enabled or not.
+ @param         enabled A boolean specifying if the alternative price should be enabled or not.
+ @param         completionHandler The handler to call when the request is complete.
+ @discussion    Returns YES if the the option has been successfully set to the given value,
+                otherwise returns NO.
+*/
 - (void)setAltPriceEnabled:(BOOL)enabled completionHandler:(void (^)(BOOL success))completionHandler;
+
+/*!
+ @method        altPriceEnabledWithReply:
+ @abstract      Returns if the alternative electricity price is enabled.
+ @param         reply The reply block to call when the request is complete.
+ @discussion    Returns YES if the alternative price is enabled, otherwise returns NO. The second argument is set to YES, if the
+                setting is managed (via configuration profile), otherwise returns NO.
+*/
 - (void)altPriceEnabledWithReply:(void (^)(BOOL enabled, BOOL forced))reply;
 
+/*!
+ @method        setAltPriceSchedule:completionHandler:
+ @abstract      Configures the times where the alternative electricity price is active.
+ @param         schedule A dictionary specifying the days and times the alternative price is active.
+ @param         completionHandler The handler to call when the request is complete.
+ @discussion    Returns YES if the the option has been successfully set to the given value,
+                otherwise returns NO.
+*/
 - (void)setAltPriceSchedule:(NSDictionary*)schedule completionHandler:(void (^)(BOOL success))completionHandler;
+
+/*!
+ @method        altPriceScheduleWithReply:
+ @abstract      Returns the days and times the alternative electricity price is enabled.
+ @param         reply The reply block to call when the request is complete.
+ @discussion    Returns a dictionary specifying the days and times the alternative price is active. The second argument is set to YES,
+                if the setting is managed (via configuration profile), otherwise returns NO.
+*/
 - (void)altPriceScheduleWithReply:(void (^)(NSDictionary *schedule, BOOL forced))reply;
 
 

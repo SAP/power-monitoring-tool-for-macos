@@ -51,6 +51,7 @@
 		AD89CB4A2B28B5A000118757 /* MTUsagePriceTextTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89CB472B28B5A000118757 /* MTUsagePriceTextTransformer.m */; };
 		AD8D2C9D2DD3733300A2C71F /* MTJournalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8D2C9C2DD3733300A2C71F /* MTJournalTableView.m */; };
 		AD8ECA852A3A1B440045BA11 /* Power Monitor.mobileconfig in Resources */ = {isa = PBXBuildFile; fileRef = AD8ECA842A3A1B440045BA11 /* Power Monitor.mobileconfig */; };
+		AD9473E12E4B83630064C895 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = AD9473E02E4B83630064C895 /* AppIcon.icon */; };
 		AD9715092B48539B0059AC88 /* MTConsoleSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9715082B48539B0059AC88 /* MTConsoleSplitViewController.m */; };
 		AD9884E22B3171DE002C4FF7 /* PowerMonitorXPC.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9884E12B3171DE002C4FF7 /* PowerMonitorXPC.m */; };
 		AD9884E52B3171DE002C4FF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9884E42B3171DE002C4FF7 /* main.m */; };
@@ -214,6 +215,7 @@
 		AD8D2C9C2DD3733300A2C71F /* MTJournalTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTJournalTableView.m; sourceTree = "<group>"; };
 		AD8ECA842A3A1B440045BA11 /* Power Monitor.mobileconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Power Monitor.mobileconfig"; sourceTree = "<group>"; };
 		AD90C7F929FBAB1A00917EE4 /* Power Monitor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Power Monitor.entitlements"; sourceTree = "<group>"; };
+		AD9473E02E4B83630064C895 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		AD9715072B48539B0059AC88 /* MTConsoleSplitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTConsoleSplitViewController.h; sourceTree = "<group>"; };
 		AD9715082B48539B0059AC88 /* MTConsoleSplitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTConsoleSplitViewController.m; sourceTree = "<group>"; };
 		AD9884DE2B3171DE002C4FF7 /* PowerMonitorXPC.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = PowerMonitorXPC.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -423,6 +425,7 @@
 				AD4950D429F7BDB100B6F363 /* AppDelegate.h */,
 				AD4950D529F7BDB100B6F363 /* AppDelegate.m */,
 				AD4950DA29F7BDB200B6F363 /* Assets.xcassets */,
+				AD9473E02E4B83630064C895 /* AppIcon.icon */,
 				AD17F08F2A0AB7DE00DB060D /* corp.sap.PowerMonitorDaemon.plist */,
 				ADB911EB2AD6F007007C64F1 /* Credits.rtf */,
 				AD1E5FEA2C60275100E9C59B /* InfoPlist.xcstrings */,
@@ -611,7 +614,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 1510;
+				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					AD4950D029F7BDB100B6F363 = {
 						CreatedOnToolsVersion = 14.3;
@@ -659,6 +662,7 @@
 				ADB720C92A3C3E0600676E92 /* Alpha-2toAlpha-3.strings in Resources */,
 				AD4950DE29F7BDB200B6F363 /* Main.storyboard in Resources */,
 				ADCDF2912B3039B90026F56B /* MTPowerGraphTooltip.xib in Resources */,
+				AD9473E12E4B83630064C895 /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,6 +849,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -867,6 +872,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Debug;
@@ -908,6 +914,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -923,6 +930,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;
@@ -932,15 +940,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				AUTOMATION_APPLE_EVENTS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Power Monitor/Power Monitor.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 549;
+				CURRENT_PROJECT_VERSION = 551;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_RESOURCE_ACCESS_LOCATION = YES;
+				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Power Monitor/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Power Monitor";
@@ -954,7 +966,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.3.1;
+				MARKETING_VERSION = 1.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -967,15 +979,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				AUTOMATION_APPLE_EVENTS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Power Monitor/Power Monitor.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 549;
+				CURRENT_PROJECT_VERSION = 551;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_RESOURCE_ACCESS_LOCATION = YES;
+				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Power Monitor/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Power Monitor";
@@ -989,7 +1005,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.3.1;
+				MARKETING_VERSION = 1.3.2;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1006,13 +1022,12 @@
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
 				CURRENT_PROJECT_VERSION = 215;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/PowerMonitorDaemon/PowerMonitorDaemon-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023-2025 SAP SE. All rights reserved.";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitorDaemon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1027,13 +1042,12 @@
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
 				CURRENT_PROJECT_VERSION = 215;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/PowerMonitorDaemon/PowerMonitorDaemon-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023-2025 SAP SE. All rights reserved.";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.2;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitorDaemon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1047,7 +1061,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 27;
-				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1057,7 +1070,7 @@
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023-2025 SAP SE. All rights reserved.";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitorXPC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1071,7 +1084,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 27;
-				DEVELOPMENT_TEAM = 7R5ZEU67FQ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1081,7 +1093,7 @@
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023-2025 SAP SE. All rights reserved.";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitorXPC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
