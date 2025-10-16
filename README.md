@@ -37,7 +37,7 @@ _Power Monitor_ is a new native Mac solution to monitor, report and visualize yo
 
 # Documentation 
 
-You can find the following links also in the wiki page of _Power Monitor_.
+If you want to learn more about _Power Monitor_ features, make sure to take a look at our [wiki](https://github.com/SAP/power-monitoring-tool-for-macos/wiki) or the links below:
 
 * [Install Power Monitor](https://github.com/SAP/power-monitoring-tool-for-macos/wiki/Installation)
 * [Uninstall Power Monitor](https://github.com/SAP/power-monitoring-tool-for-macos/wiki/Uninstallation)
@@ -79,6 +79,6 @@ We as members, contributors, and leaders pledge to make participation in our com
 
 <br/>
 
-## Licensing
+## License
 
 Copyright 2023-2025 SAP SE or an SAP affiliate company and Power Monitor contributors. Please see our [LICENSE](LICENSE) for copyright and license information. Detailed information including third-party components and their licensing/copyright information is available [via the REUSE tool](https://api.reuse.software/info/github.com/SAP/power-monitoring-tool-for-macos).
