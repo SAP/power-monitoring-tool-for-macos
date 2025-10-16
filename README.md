@@ -1,4 +1,4 @@
-![](https://github.com/SAP/power-monitoring-tool-for-macos/blob/main/readme_images/banner.png)
+<img src="https://github.com/SAP/power-monitoring-tool-for-macos/blob/main/readme_images/powermonitor_banner_github.png" width="879"><br/>
 
 <br/>
 
