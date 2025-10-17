@@ -37,7 +37,7 @@ _Power Monitor_ is a new native Mac solution to monitor, report and visualize yo
 
 # Documentation 
 
-If you want to learn more about _Power Monitor_ features, make sure to take a look at our [wiki](https://github.com/SAP/power-monitoring-tool-for-macos/wiki) or the links below:
+To learn more about _Power Monitor_ features, make sure to take a look at our [wiki](https://github.com/SAP/power-monitoring-tool-for-macos/wiki) or the links below:
 
 * [Install Power Monitor](https://github.com/SAP/power-monitoring-tool-for-macos/wiki/Installation)
 * [Uninstall Power Monitor](https://github.com/SAP/power-monitoring-tool-for-macos/wiki/Uninstallation)
