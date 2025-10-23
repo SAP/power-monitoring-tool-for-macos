@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="24118.1" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="24128" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24118.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24128"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="NSView safe area layout guides" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -277,7 +277,7 @@ CA
                                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="ea2-tV-deH">
                                             <rect key="frame" x="74" y="252" width="255" height="26"/>
                                             <subviews>
-                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v9v-d7-2jn">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v9v-d7-2jn">
                                                     <rect key="frame" x="-2" y="0.0" width="219" height="26"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Current system power:" id="3ah-rg-0KD">
                                                         <font key="font" textStyle="title1" name=".SFNS-Regular"/>
@@ -285,7 +285,7 @@ CA
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PYK-8Y-sEJ">
+                                                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PYK-8Y-sEJ">
                                                     <rect key="frame" x="223" y="0.0" width="34" height="26"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="1Uo-bY-XrI"/>
@@ -315,7 +315,7 @@ CA
                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="SJa-oe-1Z4" userLabel="General Measurements">
                                                     <rect key="frame" x="89" y="126" width="225" height="95"/>
                                                     <subviews>
-                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="QfH-GH-8MY">
+                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="QfH-GH-8MY">
                                                             <rect key="frame" x="-2" y="0.0" width="219" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Current time period covered:" id="xLV-2L-ILV">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -331,7 +331,7 @@ CA
                                                                 </binding>
                                                             </connections>
                                                         </textField>
-                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="i9e-3p-IYN">
+                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="i9e-3p-IYN">
                                                             <rect key="frame" x="223" y="0.0" width="4" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="NQc-8E-oSy">
                                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" formatWidth="-1" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="uvb-MW-Mpy"/>
@@ -340,7 +340,7 @@ CA
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
-                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="2br-uB-sYs">
+                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="2br-uB-sYs">
                                                             <rect key="frame" x="-2" y="58" width="219" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Highest measured system power:" id="pfa-9s-Bs9">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -348,7 +348,7 @@ CA
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
-                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="IUy-xd-UYF">
+                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="IUy-xd-UYF">
                                                             <rect key="frame" x="-2" y="79" width="219" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Average system power:" id="MuP-fN-vvH">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -356,7 +356,7 @@ CA
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
-                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="ODg-c4-VjY">
+                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="ODg-c4-VjY">
                                                             <rect key="frame" x="223" y="79" width="4" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="2gD-I2-mll">
                                                                 <font key="font" metaFont="system"/>
@@ -364,7 +364,7 @@ CA
                                                                 <color key="backgroundColor" name="unemphasizedSelectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
-                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="CXp-cd-FnD">
+                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="CXp-cd-FnD">
                                                             <rect key="frame" x="223" y="58" width="4" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="sXO-q2-Jif">
                                                                 <font key="font" metaFont="system"/>
@@ -378,7 +378,7 @@ CA
                                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="GSG-wJ-u6q">
                                                                     <rect key="frame" x="0.0" y="16" width="225" height="16"/>
                                                                     <subviews>
-                                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="GZY-qn-MdA">
+                                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="GZY-qn-MdA">
                                                                             <rect key="frame" x="-2" y="0.0" width="219" height="16"/>
                                                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Total power consumption:" id="K8W-oS-ycq">
                                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -394,7 +394,7 @@ CA
                                                                                 </binding>
                                                                             </connections>
                                                                         </textField>
-                                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Xma-C1-XnT" userLabel="Consumption Text">
+                                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Xma-C1-XnT" userLabel="Consumption Text">
                                                                             <rect key="frame" x="223" y="0.0" width="4" height="16"/>
                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="fSo-OD-V2w">
                                                                                 <font key="font" metaFont="system"/>
@@ -427,7 +427,7 @@ CA
                                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="YTI-PK-V6R">
                                                                     <rect key="frame" x="0.0" y="0.0" width="225" height="16"/>
                                                                     <subviews>
-                                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="FWl-i8-FIs">
+                                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="FWl-i8-FIs">
                                                                             <rect key="frame" x="-2" y="0.0" width="219" height="16"/>
                                                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Total electricity costs:" id="W16-Ig-VY3">
                                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -449,7 +449,7 @@ CA
                                                                                 </binding>
                                                                             </connections>
                                                                         </textField>
-                                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="O2a-bF-6Dk" userLabel="Costs Text">
+                                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="O2a-bF-6Dk" userLabel="Costs Text">
                                                                             <rect key="frame" x="223" y="0.0" width="4" height="16"/>
                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="D5p-oS-Pe1">
                                                                                 <font key="font" metaFont="system"/>
@@ -522,7 +522,7 @@ CA
                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="8dq-e6-6Kp" userLabel="Dark Wake">
                                                     <rect key="frame" x="69" y="58" width="265" height="53"/>
                                                     <subviews>
-                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="LR1-8c-8Ss">
+                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="LR1-8c-8Ss">
                                                             <rect key="frame" x="-2" y="37" width="239" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Power Nap:" id="mmd-Fn-OoT">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -530,7 +530,7 @@ CA
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
-                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="rqR-Jr-5wp">
+                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="rqR-Jr-5wp">
                                                             <rect key="frame" x="243" y="37" width="24" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="3JY-J5-Teq">
                                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" formatWidth="-1" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="MxT-uN-Co0"/>
@@ -545,7 +545,7 @@ CA
                                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="BF0-XU-n7V">
                                                                     <rect key="frame" x="0.0" y="16" width="265" height="16"/>
                                                                     <subviews>
-                                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="m0S-ah-9cU">
+                                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="m0S-ah-9cU">
                                                                             <rect key="frame" x="-2" y="0.0" width="239" height="16"/>
                                                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Power consumption during Power Nap:" id="C9c-og-Thm">
                                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -553,7 +553,7 @@ CA
                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
                                                                         </textField>
-                                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="PB6-NG-Hhi">
+                                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="PB6-NG-Hhi">
                                                                             <rect key="frame" x="243" y="0.0" width="24" height="16"/>
                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="mk2-Qh-qSm">
                                                                                 <font key="font" metaFont="system"/>
@@ -586,7 +586,7 @@ CA
                                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="fd3-yI-UeP">
                                                                     <rect key="frame" x="0.0" y="0.0" width="265" height="16"/>
                                                                     <subviews>
-                                                                        <textField focusRingType="none" horizontalHuggingPriority="751" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Sfn-Cj-2NB">
+                                                                        <textField horizontalHuggingPriority="751" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Sfn-Cj-2NB">
                                                                             <rect key="frame" x="-2" y="0.0" width="239" height="16"/>
                                                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Electricity costs due to Power Nap:" id="S5m-eF-mxp">
                                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -594,7 +594,7 @@ CA
                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
                                                                         </textField>
-                                                                        <textField focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="hh2-Dl-OAw">
+                                                                        <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="hh2-Dl-OAw">
                                                                             <rect key="frame" x="243" y="0.0" width="24" height="16"/>
                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="hIM-h6-Hzd">
                                                                                 <font key="font" metaFont="system"/>
@@ -662,7 +662,7 @@ CA
                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="bRd-2r-UC9" userLabel="Carbon Footprint">
                                                     <rect key="frame" x="20" y="29" width="362" height="14"/>
                                                     <subviews>
-                                                        <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="HKn-yB-3jy">
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="HKn-yB-3jy">
                                                             <rect key="frame" x="-2" y="0.0" width="366" height="14"/>
                                                             <textFieldCell key="cell" alignment="center" id="X2U-Qr-GCC">
                                                                 <font key="font" metaFont="smallSystem"/>
@@ -701,7 +701,7 @@ CA
                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="Rb4-nG-YTX" userLabel="Determining Carbon Footprint">
                                                     <rect key="frame" x="72" y="0.0" width="258" height="14"/>
                                                     <subviews>
-                                                        <textField focusRingType="none" horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="XPe-c0-dTk">
+                                                        <textField horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="XPe-c0-dTk">
                                                             <rect key="frame" x="-2" y="0.0" width="222" height="14"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" alignment="left" title="Determining this Mac's carbon footprint…" usesSingleLineMode="YES" id="yDb-bT-TJ9">
                                                                 <font key="font" metaFont="smallSystem"/>
@@ -709,7 +709,7 @@ CA
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
-                                                        <progressIndicator maxValue="100" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="9bM-m4-e9l">
+                                                        <progressIndicator wantsLayer="YES" maxValue="100" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="9bM-m4-e9l">
                                                             <rect key="frame" x="218" y="-1" width="40" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="40" id="dMN-Ja-y57"/>
@@ -852,7 +852,7 @@ CA
                         <rect key="frame" x="0.0" y="0.0" width="450" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="3hd-KL-A9K">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="3hd-KL-A9K">
                                 <rect key="frame" x="18" y="20" width="414" height="16"/>
                                 <textFieldCell key="cell" title="powerDescription" id="4eH-4U-Qtl">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -943,7 +943,7 @@ CA
                         <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQ0-f2-pL9">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQ0-f2-pL9">
                                 <rect key="frame" x="23" y="293" width="434" height="42"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="TvQ-1c-RTC">
                                     <font key="font" metaFont="smallSystem"/>
@@ -952,7 +952,7 @@ CA
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWt-da-6NG">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWt-da-6NG">
                                 <rect key="frame" x="23" y="188" width="434" height="28"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" title="To open this application automatically when you log in, please enable the option below." id="02K-vK-hIW">
                                     <font key="font" metaFont="smallSystem"/>
@@ -993,7 +993,7 @@ CA
                                     <action selector="deleteMeasurements:" target="4TL-9c-yey" id="zoi-cg-F37"/>
                                 </connections>
                             </button>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcc-vf-fNE">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcc-vf-fNE">
                                 <rect key="frame" x="23" y="69" width="434" height="42"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="h6y-ZC-SCg">
                                     <font key="font" metaFont="smallSystem"/>
@@ -1052,7 +1052,7 @@ CA
                         <rect key="frame" x="0.0" y="0.0" width="480" height="657"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOY-Au-tw5">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOY-Au-tw5">
                                 <rect key="frame" x="23" y="590" width="434" height="42"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="4bl-8F-k7A">
                                     <font key="font" metaFont="smallSystem"/>
@@ -1074,7 +1074,7 @@ CA
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="Sf2-Y7-Ma0">
                                 <rect key="frame" x="85" y="69" width="310" height="92"/>
                                 <subviews>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OKs-Fw-EDn">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OKs-Fw-EDn">
                                         <rect key="frame" x="-2" y="72" width="98" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Measurements:" id="qxt-b8-PAf">
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -1097,7 +1097,7 @@ CA
                                             </binding>
                                         </connections>
                                     </colorWell>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pni-XH-Hpm">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pni-XH-Hpm">
                                         <rect key="frame" x="-2" y="38" width="98" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Average line:" id="Gwv-28-QfN">
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -1120,7 +1120,7 @@ CA
                                             </binding>
                                         </connections>
                                     </colorWell>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LS6-tt-AS0">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LS6-tt-AS0">
                                         <rect key="frame" x="180" y="38" width="84" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Day markers:" id="fY2-hN-oBS">
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -1143,7 +1143,7 @@ CA
                                             </binding>
                                         </connections>
                                     </colorWell>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RVa-Bu-aWa">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RVa-Bu-aWa">
                                         <rect key="frame" x="-2" y="4" width="98" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Position line:" id="9qQ-z3-Pxf">
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -1166,7 +1166,7 @@ CA
                                             </binding>
                                         </connections>
                                     </colorWell>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="98H-n5-ByY">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="98H-n5-ByY">
                                         <rect key="frame" x="180" y="72" width="84" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Power Naps:" id="1u4-T0-e9q">
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -1248,7 +1248,7 @@ CA
                                     </binding>
                                 </connections>
                             </button>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHE-qv-kcE">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHE-qv-kcE">
                                 <rect key="frame" x="23" y="181" width="434" height="42"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="eeg-PC-H8n">
                                     <font key="font" metaFont="smallSystem"/>
@@ -1277,7 +1277,7 @@ CA
                                     </binding>
                                 </connections>
                             </button>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3w-om-lCZ">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3w-om-lCZ">
                                 <rect key="frame" x="23" y="300" width="434" height="70"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="nwg-27-Nf5">
                                     <font key="font" metaFont="smallSystem"/>
@@ -1300,7 +1300,7 @@ CA
                                     </binding>
                                 </connections>
                             </button>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXc-dr-KzV">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXc-dr-KzV">
                                 <rect key="frame" x="23" y="447" width="434" height="42"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="aHZ-8l-6c9">
                                     <font key="font" metaFont="smallSystem"/>
@@ -1379,7 +1379,7 @@ CA
                         <rect key="frame" x="0.0" y="0.0" width="450" height="433"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3c-wk-Oem">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3c-wk-Oem">
                                 <rect key="frame" x="23" y="268" width="404" height="140"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="4t5-90-YF7">
                                     <font key="font" metaFont="smallSystem"/>
@@ -1411,7 +1411,7 @@ Calculating the carbon footprint requires this Mac's approximate location, as di
                                     </binding>
                                 </connections>
                             </button>
-                            <progressIndicator maxValue="100" displayedWhenStopped="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="kXm-wb-kO3">
+                            <progressIndicator wantsLayer="YES" maxValue="100" displayedWhenStopped="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="kXm-wb-kO3">
                                 <rect key="frame" x="307" y="231" width="16" height="16"/>
                                 <connections>
                                     <binding destination="kQJ-Ad-1gA" name="animate" keyPath="verifyingCredentials" id="IxB-hR-QlJ">
@@ -1427,7 +1427,7 @@ Calculating the carbon footprint requires this Mac's approximate location, as di
                                     </binding>
                                 </connections>
                             </progressIndicator>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hhy-9K-bsp">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hhy-9K-bsp">
                                 <rect key="frame" x="326" y="232" width="101" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Verifying API key…" id="CnG-14-GpQ">
                                     <font key="font" metaFont="smallSystem"/>
@@ -1446,7 +1446,7 @@ Calculating the carbon footprint requires this Mac's approximate location, as di
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="vPC-HC-mbA">
                                 <rect key="frame" x="25" y="185" width="400" height="5"/>
                             </box>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvd-fx-ECd">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvd-fx-ECd">
                                 <rect key="frame" x="23" y="69" width="404" height="98"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="BGq-Ni-IHx">
                                     <font key="font" metaFont="smallSystem"/>
@@ -1582,7 +1582,7 @@ Gw
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="tyf-yw-Nsc">
                                         <rect key="frame" x="0.0" y="101" width="340" height="70"/>
                                         <subviews>
-                                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="RNE-uT-ggG">
+                                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="RNE-uT-ggG">
                                                 <rect key="frame" x="-2" y="38" width="344" height="32"/>
                                                 <textFieldCell key="cell" title="Please enter your Electricity Maps API key in the text field below." id="NME-51-rka">
                                                     <font key="font" metaFont="systemBold"/>
@@ -1590,7 +1590,7 @@ Gw
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHp-6m-sHV">
+                                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHp-6m-sHV">
                                                 <rect key="frame" x="-2" y="0.0" width="344" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="340" id="6hK-0L-lBf"/>
@@ -1615,7 +1615,7 @@ Gw
                                             <constraint firstItem="RNE-uT-ggG" firstAttribute="leading" secondItem="tyf-yw-Nsc" secondAttribute="leading" id="x4D-x2-sDk"/>
                                         </constraints>
                                     </customView>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSJ-Lc-s4x">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSJ-Lc-s4x">
                                         <rect key="frame" x="93" y="65" width="155" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" allowsUndo="NO" alignment="center" title="The API key is incorrect!" id="IPl-A3-u8M">
                                             <font key="font" metaFont="system"/>
@@ -1633,7 +1633,7 @@ Gw
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="fhi-He-gRN">
                                         <rect key="frame" x="23" y="0.0" width="295" height="45"/>
                                         <subviews>
-                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KG9-Js-jHE">
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KG9-Js-jHE">
                                                 <rect key="frame" x="-2" y="29" width="53" height="16"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="API key:" id="FlT-P2-7d3">
                                                     <font key="font" metaFont="system"/>
@@ -1641,7 +1641,7 @@ Gw
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <progressIndicator hidden="YES" maxValue="100" displayedWhenStopped="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="73u-pq-9HZ">
+                                            <progressIndicator hidden="YES" wantsLayer="YES" maxValue="100" displayedWhenStopped="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="73u-pq-9HZ">
                                                 <rect key="frame" x="269" y="4" width="16" height="16"/>
                                                 <connections>
                                                     <binding destination="7XJ-cn-Hog" name="animate" keyPath="verifyingCredentials" id="8HY-6Y-hVx">
@@ -1656,7 +1656,7 @@ Gw
                                                     </binding>
                                                 </connections>
                                             </progressIndicator>
-                                            <secureTextField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TNW-HP-9Ug">
+                                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TNW-HP-9Ug">
                                                 <rect key="frame" x="0.0" y="0.0" width="295" height="24"/>
                                                 <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="LNa-Nk-t5o">
                                                     <font key="font" metaFont="system"/>
@@ -1837,7 +1837,7 @@ Gw
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="fZQ-vW-aho"/>
                                 <toolbarItem implicitItemIdentifier="9375995D-EC0D-4069-92B9-C94F08758203" explicitItemIdentifier="MTToolbarConsoleSearchItem" label="" paletteLabel="" sizingBehavior="auto" id="hZb-8U-PGs" userLabel="Search" customClass="MTToolbarItem">
                                     <nil key="toolTip"/>
-                                    <searchField key="view" wantsLayer="YES" focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" id="Ts7-X6-ZWB">
+                                    <searchField key="view" wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" id="Ts7-X6-ZWB">
                                         <rect key="frame" x="0.0" y="14" width="96" height="24"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="mjq-Ne-i7I">
@@ -1940,7 +1940,7 @@ Gw
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
-                                                <textField identifier="HeaderTextField" focusRingType="none" verticalHuggingPriority="750" id="M3n-fq-DiU">
+                                                <textField identifier="HeaderTextField" verticalHuggingPriority="750" id="M3n-fq-DiU">
                                                     <rect key="frame" x="11" y="0.0" width="167" height="14"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Header Cell" id="3kl-4F-sYb">
@@ -1957,7 +1957,7 @@ Gw
                                                             <rect key="frame" x="3" y="-1" width="20" height="20"/>
                                                             <imageCell key="cell" refusesFirstResponder="YES" imageScaling="proportionallyDown" image="NSActionTemplate" id="38T-1o-YyB"/>
                                                         </imageView>
-                                                        <textField focusRingType="none" horizontalHuggingPriority="249" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYQ-ax-XSm">
+                                                        <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYQ-ax-XSm">
                                                             <rect key="frame" x="28" y="0.0" width="141" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Table View Cell" usesSingleLineMode="YES" id="1wI-bA-gal">
                                                                 <font key="font" metaFont="system"/>
@@ -2036,9 +2036,9 @@ Gw
             <objects>
                 <viewController storyboardIdentifier="corp.sap.PowerMonitor.AppsPreventingSleep" id="GUC-ZR-A0j" customClass="MTAssertionsController" sceneMemberID="viewController">
                     <scrollView key="view" autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sW-jt-UDN">
-                        <rect key="frame" x="0.0" y="0.0" width="816" height="216"/>
+                        <rect key="frame" x="0.0" y="0.0" width="817" height="216"/>
                         <clipView key="contentView" id="xk0-jE-MP4">
-                            <rect key="frame" x="1" y="1" width="814" height="214"/>
+                            <rect key="frame" x="1" y="1" width="815" height="214"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" alternatingRowBackgroundColors="YES" multipleSelection="NO" emptySelection="NO" typeSelect="NO" autosaveName="AssertionsView" rowHeight="24" headerView="dW5-ZS-MDw" viewBased="YES" id="T0g-lG-Ui2">
@@ -2062,11 +2062,11 @@ Gw
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="w9U-3V-K2p">
-                                                    <rect key="frame" x="8" y="0.0" width="198" height="24"/>
+                                                    <rect key="frame" x="8" y="0.0" width="197" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ZCY-AT-weh">
-                                                            <rect key="frame" x="2" y="4" width="196" height="16"/>
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ZCY-AT-weh">
+                                                            <rect key="frame" x="2" y="4" width="195" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="assertionsProcess" id="PYs-z2-snG">
                                                                 <font key="font" usesAppearanceFont="YES"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -2106,10 +2106,10 @@ Gw
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="lYq-jl-YnR">
-                                                    <rect key="frame" x="221.5" y="0.0" width="250" height="24"/>
+                                                    <rect key="frame" x="221.5" y="0.0" width="251" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ANJ-zz-37d">
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ANJ-zz-37d">
                                                             <rect key="frame" x="2" y="4" width="249" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="assertionsTime" id="nrm-Np-YgB">
                                                                 <dateFormatter key="formatter" formatterBehavior="custom10_4" dateStyle="short" dateFormat="yyyy-MM-dd HH:mm:ss.SSSZ" id="1el-R4-jYy"/>
@@ -2154,7 +2154,7 @@ Gw
                                                     <rect key="frame" x="488" y="0.0" width="322" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="8HJ-7o-ezb">
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="8HJ-7o-ezb">
                                                             <rect key="frame" x="2" y="4" width="320" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="assertionsMessage" id="JUn-M5-ksy">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -2194,7 +2194,7 @@ Gw
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="800" id="qkS-n4-HUE"/>
                         </constraints>
                         <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="QAK-fx-DqC">
-                            <rect key="frame" x="1" y="198" width="814" height="17"/>
+                            <rect key="frame" x="1" y="198" width="815" height="17"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="7cZ-bG-Q6B">
@@ -2229,13 +2229,13 @@ Gw
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRw-og-ptP">
-                                <rect key="frame" x="0.0" y="0.0" width="1056" height="202"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1064" height="202"/>
                                 <clipView key="contentView" ambiguous="YES" id="96W-Lb-WOb">
-                                    <rect key="frame" x="1" y="1" width="1054" height="200"/>
+                                    <rect key="frame" x="1" y="1" width="1062" height="200"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" tableStyle="plain" alternatingRowBackgroundColors="YES" columnReordering="NO" multipleSelection="NO" autosaveName="LogViewer" rowHeight="24" usesAutomaticRowHeights="YES" headerView="lV7-Uh-vXT" viewBased="YES" id="JNv-Wl-dcG">
-                                            <rect key="frame" x="0.0" y="0.0" width="1054" height="172"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1062" height="172"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="16" height="0.0"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -2298,10 +2298,10 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="CCe-Mh-juB">
-                                                            <rect key="frame" x="74" y="0.0" width="201" height="24"/>
+                                                            <rect key="frame" x="74" y="0.0" width="200" height="24"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField focusRingType="none" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Cox-VY-kTV">
+                                                                <textField horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Cox-VY-kTV">
                                                                     <rect key="frame" x="2" y="3" width="199" height="18"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="18" id="186-dU-eb7"/>
@@ -2350,7 +2350,7 @@ Gw
                                                             <rect key="frame" x="290.5" y="0.0" width="140" height="24"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField focusRingType="none" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="gjT-7s-qx4">
+                                                                <textField horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="gjT-7s-qx4">
                                                                     <rect key="frame" x="2" y="3" width="138" height="18"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="18" id="Dls-C3-09S"/>
@@ -2381,7 +2381,7 @@ Gw
                                                         </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>
-                                                <tableColumn width="599.5" minWidth="150" maxWidth="10000" id="ilr-4r-VCp">
+                                                <tableColumn width="607.5" minWidth="150" maxWidth="10000" id="ilr-4r-VCp">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Message">
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2395,11 +2395,11 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="i0z-QC-M2P">
-                                                            <rect key="frame" x="446.5" y="0.0" width="599" height="24"/>
+                                                            <rect key="frame" x="446.5" y="0.0" width="608" height="24"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField focusRingType="none" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="VnP-7m-OFA">
-                                                                    <rect key="frame" x="2" y="3" width="598" height="18"/>
+                                                                <textField horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="VnP-7m-OFA">
+                                                                    <rect key="frame" x="2" y="3" width="606" height="18"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="18" id="R28-wK-q3J"/>
                                                                     </constraints>
@@ -2451,12 +2451,12 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <tableHeaderView key="headerView" wantsLayer="YES" id="lV7-Uh-vXT">
-                                    <rect key="frame" x="0.0" y="0.0" width="1054" height="28"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1062" height="28"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="DEb-Kk-t7A">
-                                <rect key="frame" x="477" y="44" width="102" height="58"/>
+                                <rect key="frame" x="481" y="44" width="102" height="58"/>
                                 <subviews>
                                     <progressIndicator verticalHuggingPriority="1000" maxValue="100" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="drN-g1-2s9">
                                         <rect key="frame" x="35" y="26" width="32" height="32"/>
@@ -2468,7 +2468,7 @@ Gw
                                             </binding>
                                         </connections>
                                     </progressIndicator>
-                                    <textField focusRingType="none" horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="1I3-ZE-igj">
+                                    <textField horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="1I3-ZE-igj">
                                         <rect key="frame" x="-2" y="0.0" width="106" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Composing log…" id="xeC-qU-AdB">
                                             <font key="font" metaFont="system"/>
@@ -2785,7 +2785,7 @@ Gw
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="Xz2-4L-LTn">
                                         <rect key="frame" x="0.0" y="100" width="150" height="100"/>
                                         <subviews>
-                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNt-0Q-zFn">
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNt-0Q-zFn">
                                                 <rect key="frame" x="-2" y="69" width="154" height="31"/>
                                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" alignment="center" title="powerValue" id="82l-7S-CjA">
                                                     <font key="font" textStyle="largeTitle" name=".SFNS-Regular"/>
@@ -2793,7 +2793,7 @@ Gw
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="L3P-OM-B5h">
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="L3P-OM-B5h">
                                                 <rect key="frame" x="-2" y="22" width="154" height="16"/>
                                                 <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" alignment="center" title="measurementDate" id="jkR-AM-8Rp">
                                                     <font key="font" metaFont="system"/>
@@ -2801,7 +2801,7 @@ Gw
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="dXb-5g-m6q">
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="dXb-5g-m6q">
                                                 <rect key="frame" x="-2" y="43" width="154" height="16"/>
                                                 <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" alignment="center" title="powerState" id="QIK-1s-Nxe">
                                                     <font key="font" metaFont="system"/>
@@ -2830,7 +2830,7 @@ Gw
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="AS8-g8-zVN">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="100"/>
                                         <subviews>
-                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doh-nO-K6U">
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doh-nO-K6U">
                                                 <rect key="frame" x="-2" y="69" width="154" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="G88-lo-FIM"/>
@@ -2841,7 +2841,7 @@ Gw
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="87X-aN-ZOJ">
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="87X-aN-ZOJ">
                                                 <rect key="frame" x="-2" y="22" width="154" height="16"/>
                                                 <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" alignment="center" title="measurementDate" id="vH9-De-bB3">
                                                     <font key="font" metaFont="system"/>
@@ -2849,7 +2849,7 @@ Gw
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="op7-8k-Y9z">
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="op7-8k-Y9z">
                                                 <rect key="frame" x="-2" y="43" width="154" height="16"/>
                                                 <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" alignment="center" title="powerState" id="Lhx-fv-9ck">
                                                     <font key="font" metaFont="system"/>
@@ -2923,7 +2923,7 @@ Gw
                         <rect key="frame" x="0.0" y="0.0" width="480" height="261"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AjN-Ki-mI5">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AjN-Ki-mI5">
                                 <rect key="frame" x="23" y="180" width="434" height="56"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="qye-Lt-zao">
                                     <font key="font" metaFont="smallSystem"/>
@@ -2945,7 +2945,7 @@ Gw
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="ff2-52-LgE">
                                 <rect key="frame" x="25" y="121" width="430" height="5"/>
                             </box>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CwE-5n-UbN">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CwE-5n-UbN">
                                 <rect key="frame" x="23" y="61" width="434" height="42"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="Jv4-az-WCd">
                                     <font key="font" metaFont="smallSystem"/>
@@ -2954,7 +2954,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AvO-4r-bup">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AvO-4r-bup">
                                 <rect key="frame" x="23" y="25" width="137" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Delete journal entries:" id="Tq5-S6-vw3">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -2963,7 +2963,7 @@ Gw
                                 </textFieldCell>
                             </textField>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ipJ-MO-ESK" userLabel="Deletion Interval">
-                                <rect key="frame" x="168" y="20" width="144" height="24"/>
+                                <rect key="frame" x="168" y="20" width="147" height="24"/>
                                 <popUpButtonCell key="cell" type="push" title="Never" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="DCN-OY-bdG" id="YvI-EJ-lef">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="message"/>
@@ -3056,7 +3056,7 @@ Gw
                                                     <rect key="frame" x="8" y="0.0" width="148" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="xGj-jH-8nf">
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="xGj-jH-8nf">
                                                             <rect key="frame" x="2" y="4" width="146" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="journalDate" usesSingleLineMode="YES" id="QcZ-8s-LvD">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -3098,11 +3098,11 @@ Gw
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="DsX-nj-yoW">
-                                                    <rect key="frame" x="172" y="0.0" width="151" height="24"/>
+                                                    <rect key="frame" x="172" y="0.0" width="150" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="8Fs-FO-ewV">
-                                                            <rect key="frame" x="2" y="4" width="149" height="16"/>
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="8Fs-FO-ewV">
+                                                            <rect key="frame" x="2" y="4" width="148" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="journalConsumptionTotal" usesSingleLineMode="YES" id="a6b-fq-F0L">
                                                                 <font key="font" usesAppearanceFont="YES"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -3143,10 +3143,10 @@ Gw
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="vF4-DR-5DA">
-                                                    <rect key="frame" x="338.5" y="0.0" width="150" height="24"/>
+                                                    <rect key="frame" x="338.5" y="0.0" width="151" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="4Wi-yT-UnY">
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="4Wi-yT-UnY">
                                                             <rect key="frame" x="2" y="4" width="149" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="journalConsumptionNap" usesSingleLineMode="YES" id="f8r-pg-7RR">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -3191,7 +3191,7 @@ Gw
                                                     <rect key="frame" x="505" y="0.0" width="126" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="wIX-fL-3oD">
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="wIX-fL-3oD">
                                                             <rect key="frame" x="2" y="4" width="124" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="journalConsumptionAltTariff" usesSingleLineMode="YES" id="51i-2z-G17">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -3236,7 +3236,7 @@ Gw
                                                     <rect key="frame" x="647" y="0.0" width="152" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="7ui-37-eVc">
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="7ui-37-eVc">
                                                             <rect key="frame" x="2" y="4" width="150" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="journalTimeAwake" usesSingleLineMode="YES" id="0hJ-4A-yd8">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -3281,7 +3281,7 @@ Gw
                                                     <rect key="frame" x="815" y="0.0" width="152" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="aev-pG-7CA">
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="aev-pG-7CA">
                                                             <rect key="frame" x="2" y="4" width="150" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="journalTimeNap" usesSingleLineMode="YES" id="eJC-U8-DqW">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -3326,7 +3326,7 @@ Gw
                                                     <rect key="frame" x="983" y="0.0" width="150" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="gx0-SO-auH">
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="gx0-SO-auH">
                                                             <rect key="frame" x="2" y="4" width="148" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="journalTimeAltTariff" usesSingleLineMode="YES" id="qDN-hg-f87">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -3423,7 +3423,7 @@ Gw
                         <rect key="frame" x="0.0" y="0.0" width="312" height="387"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
-                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jat-vc-Z6U">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jat-vc-Z6U">
                                 <rect key="frame" x="18" y="249" width="190" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Total power consumption:" usesSingleLineMode="YES" id="TvO-d4-Nym">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3431,7 +3431,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Koh-m6-0cu">
+                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Koh-m6-0cu">
                                 <rect key="frame" x="214" y="249" width="74" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="xO5-bb-xj0"/>
@@ -3442,7 +3442,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="yYQ-2q-DqG" userLabel="Consumption Summary Nap Label">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="yYQ-2q-DqG" userLabel="Consumption Summary Nap Label">
                                 <rect key="frame" x="18" y="230" width="190" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Consumed during Power Nap:" usesSingleLineMode="YES" id="OLr-dX-jwG">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3450,7 +3450,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcB-QI-qln">
+                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcB-QI-qln">
                                 <rect key="frame" x="214" y="230" width="74" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="S4x-U9-Mm5">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3458,7 +3458,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IJM-Ea-NrB" userLabel="Duration Summary Awake Label">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IJM-Ea-NrB" userLabel="Duration Summary Awake Label">
                                 <rect key="frame" x="18" y="182" width="190" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Duration awake:" usesSingleLineMode="YES" id="U4A-7v-8aP">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3466,7 +3466,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHs-NO-8Wj">
+                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHs-NO-8Wj">
                                 <rect key="frame" x="214" y="182" width="74" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="PXZ-C7-eAF">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3474,7 +3474,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YSK-Xa-Bao" userLabel="Duration Summary Nap Label">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YSK-Xa-Bao" userLabel="Duration Summary Nap Label">
                                 <rect key="frame" x="18" y="163" width="190" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Duration Power Nap:" usesSingleLineMode="YES" id="csm-gY-8sj">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3482,7 +3482,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM9-nI-EBh">
+                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM9-nI-EBh">
                                 <rect key="frame" x="214" y="163" width="74" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="qNU-ew-9nn">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3490,7 +3490,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" horizontalHuggingPriority="249" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="7M0-FP-neR" userLabel="Consumption Summary Costs Label">
+                            <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="7M0-FP-neR" userLabel="Consumption Summary Costs Label">
                                 <rect key="frame" x="18" y="115" width="190" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Total electricity costs:" usesSingleLineMode="YES" id="79H-X5-650">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3505,7 +3505,7 @@ Gw
                                     </binding>
                                 </connections>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qql-E6-Jnb" userLabel="Consumption Summary Costs Value">
+                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qql-E6-Jnb" userLabel="Consumption Summary Costs Value">
                                 <rect key="frame" x="214" y="115" width="74" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" usesSingleLineMode="YES" id="Jrt-qJ-XaC">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3520,7 +3520,7 @@ Gw
                                     </binding>
                                 </connections>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="4jk-y9-iV2" userLabel="Consumption Summary Nap Costs Label">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="4jk-y9-iV2" userLabel="Consumption Summary Nap Costs Label">
                                 <rect key="frame" x="18" y="96" width="190" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Electricity costs Power Nap:" usesSingleLineMode="YES" id="5L4-n0-bFI">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3535,7 +3535,7 @@ Gw
                                     </binding>
                                 </connections>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4X-yP-ruJ" userLabel="Consumption Summary Nap Costs Value">
+                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4X-yP-ruJ" userLabel="Consumption Summary Nap Costs Value">
                                 <rect key="frame" x="214" y="96" width="74" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" usesSingleLineMode="YES" id="Zva-EX-a2c">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3550,7 +3550,7 @@ Gw
                                     </binding>
                                 </connections>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="sCv-ar-o0m" userLabel="Consumption Summary Nap Costs Label">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="sCv-ar-o0m" userLabel="Consumption Summary Nap Costs Label">
                                 <rect key="frame" x="18" y="77" width="190" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Electricity costs alternative Tariff:" usesSingleLineMode="YES" id="Ewi-hx-cGi">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3565,7 +3565,7 @@ Gw
                                     </binding>
                                 </connections>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQf-Ep-vSZ" userLabel="Consumption Summary Nap Costs Value">
+                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQf-Ep-vSZ" userLabel="Consumption Summary Nap Costs Value">
                                 <rect key="frame" x="214" y="77" width="74" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" usesSingleLineMode="YES" id="ZAl-I3-QNc">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3580,7 +3580,7 @@ Gw
                                     </binding>
                                 </connections>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="jaI-12-NCq">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="jaI-12-NCq">
                                 <rect key="frame" x="5" y="312" width="181" height="16"/>
                                 <textFieldCell key="cell" selectable="YES" title="consumptionSummaryLabel" id="zdL-7W-VgV">
                                     <font key="font" metaFont="systemSemibold" size="13"/>
@@ -3588,7 +3588,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hp9-ev-jsk">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hp9-ev-jsk">
                                 <rect key="frame" x="18" y="278" width="190" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Journal entries:" usesSingleLineMode="YES" id="ME3-AA-pMQ">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3596,7 +3596,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vR-lq-GSt">
+                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vR-lq-GSt">
                                 <rect key="frame" x="214" y="278" width="74" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="BgG-4M-oXN"/>
@@ -3607,7 +3607,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="ZVe-JM-4vt" userLabel="Consumption Summary Nap Label">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="ZVe-JM-4vt" userLabel="Consumption Summary Nap Label">
                                 <rect key="frame" x="18" y="211" width="190" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Consumed in alternative Tariff:" usesSingleLineMode="YES" id="3jU-nr-vtB">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3615,7 +3615,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="B53-mB-bKe" userLabel="Duration Summary Nap Label">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="B53-mB-bKe" userLabel="Duration Summary Nap Label">
                                 <rect key="frame" x="18" y="144" width="190" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Duration in alternative Tariff:" usesSingleLineMode="YES" id="DyD-Vz-o6j">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3623,7 +3623,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4k-TV-Nur">
+                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4k-TV-Nur">
                                 <rect key="frame" x="214" y="211" width="74" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="jBt-PM-HDZ">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3631,7 +3631,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7K-yM-Cb8">
+                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7K-yM-Cb8">
                                 <rect key="frame" x="214" y="144" width="74" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="uP9-lC-UWx">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3738,7 +3738,7 @@ Gw
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="QFN-05-pXQ">
                                 <rect key="frame" x="25" y="135" width="400" height="5"/>
                             </box>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QT5-d4-7Ze">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QT5-d4-7Ze">
                                 <rect key="frame" x="23" y="202" width="404" height="56"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="nzZ-Dp-bqY">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3770,7 +3770,7 @@ Gw
                                     </binding>
                                 </connections>
                             </popUpButton>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BNR-Hj-tlN">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BNR-Hj-tlN">
                                 <rect key="frame" x="23" y="163" width="140" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="powerNapEnableLabel" id="Fvy-a0-jaA">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -3778,7 +3778,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyC-FF-6Dy">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyC-FF-6Dy">
                                 <rect key="frame" x="23" y="61" width="404" height="56"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="QgV-jm-6vz">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3894,7 +3894,7 @@ Gw
                         <rect key="frame" x="0.0" y="0.0" width="480" height="565"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eC3-Hh-Pjf">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eC3-Hh-Pjf">
                                 <rect key="frame" x="23" y="470" width="434" height="70"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="Ai0-P8-LNk">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3903,7 +3903,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TVb-ZW-WhI">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TVb-ZW-WhI">
                                 <rect key="frame" x="23" y="430" width="93" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Price per kWh:" id="K79-zl-bZB">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -3911,7 +3911,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xZ1-BH-R2g">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xZ1-BH-R2g">
                                 <rect key="frame" x="124" y="426" width="90" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="96G-wS-s8X"/>
@@ -3956,7 +3956,7 @@ Gw
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="bb4-6z-Ky5">
                                 <rect key="frame" x="25" y="403" width="430" height="5"/>
                             </box>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbA-DJ-6nE">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbA-DJ-6nE">
                                 <rect key="frame" x="23" y="343" width="434" height="42"/>
                                 <textFieldCell key="cell" controlSize="small" allowsUndo="NO" id="9sd-k6-oMs">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3965,7 +3965,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="h40-5P-bKx">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="h40-5P-bKx">
                                 <rect key="frame" x="23" y="29" width="162" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Alternative price per kWh:" id="Jez-KA-Tth">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -3973,7 +3973,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dKV-RA-NgQ">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dKV-RA-NgQ">
                                 <rect key="frame" x="193" y="25" width="90" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="3hU-yE-qO3"/>
@@ -4067,30 +4067,30 @@ Gw
                                         <segmentedCell key="cell" scrollable="YES" lineBreakMode="clipping" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="rounded" trackingMode="selectAny" id="CYj-LV-01X">
                                             <font key="font" metaFont="system"/>
                                             <segments>
-                                                <segment/>
-                                                <segment/>
-                                                <segment/>
-                                                <segment/>
-                                                <segment/>
-                                                <segment/>
-                                                <segment/>
-                                                <segment/>
-                                                <segment/>
-                                                <segment/>
-                                                <segment/>
-                                                <segment/>
-                                                <segment/>
-                                                <segment/>
-                                                <segment/>
-                                                <segment/>
-                                                <segment/>
-                                                <segment/>
-                                                <segment/>
-                                                <segment/>
-                                                <segment/>
-                                                <segment/>
-                                                <segment/>
-                                                <segment/>
+                                                <segment width="13"/>
+                                                <segment width="13"/>
+                                                <segment width="13"/>
+                                                <segment width="13"/>
+                                                <segment width="13"/>
+                                                <segment width="13"/>
+                                                <segment width="13"/>
+                                                <segment width="13"/>
+                                                <segment width="13"/>
+                                                <segment width="13"/>
+                                                <segment width="13"/>
+                                                <segment width="13"/>
+                                                <segment width="13"/>
+                                                <segment width="13"/>
+                                                <segment width="13"/>
+                                                <segment width="13"/>
+                                                <segment width="13"/>
+                                                <segment width="13"/>
+                                                <segment width="13"/>
+                                                <segment width="13"/>
+                                                <segment width="13"/>
+                                                <segment width="13"/>
+                                                <segment width="13"/>
+                                                <segment width="13"/>
                                             </segments>
                                         </segmentedCell>
                                         <connections>
@@ -4106,74 +4106,74 @@ Gw
                                         <segmentedCell key="cell" scrollable="YES" lineBreakMode="clipping" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="rounded" trackingMode="selectAny" id="xx7-AB-P2A">
                                             <font key="font" metaFont="system"/>
                                             <segments>
-                                                <segment/>
-                                                <segment>
+                                                <segment width="13"/>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
                                             </segments>
@@ -4191,74 +4191,74 @@ Gw
                                         <segmentedCell key="cell" scrollable="YES" lineBreakMode="clipping" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="rounded" trackingMode="selectAny" id="36m-jW-swI">
                                             <font key="font" metaFont="system"/>
                                             <segments>
-                                                <segment/>
-                                                <segment>
+                                                <segment width="13"/>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
                                             </segments>
@@ -4276,74 +4276,74 @@ Gw
                                         <segmentedCell key="cell" scrollable="YES" lineBreakMode="clipping" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="rounded" trackingMode="selectAny" id="VZ5-KB-1lr">
                                             <font key="font" metaFont="system"/>
                                             <segments>
-                                                <segment/>
-                                                <segment>
+                                                <segment width="13"/>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
                                             </segments>
@@ -4361,74 +4361,74 @@ Gw
                                         <segmentedCell key="cell" scrollable="YES" lineBreakMode="clipping" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="rounded" trackingMode="selectAny" id="Mcz-xw-C6a">
                                             <font key="font" metaFont="system"/>
                                             <segments>
-                                                <segment/>
-                                                <segment>
+                                                <segment width="13"/>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
                                             </segments>
@@ -4446,74 +4446,74 @@ Gw
                                         <segmentedCell key="cell" scrollable="YES" lineBreakMode="clipping" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="rounded" trackingMode="selectAny" id="aeN-Dd-2WT">
                                             <font key="font" metaFont="system"/>
                                             <segments>
-                                                <segment/>
-                                                <segment>
+                                                <segment width="13"/>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
                                             </segments>
@@ -4531,74 +4531,74 @@ Gw
                                         <segmentedCell key="cell" scrollable="YES" lineBreakMode="clipping" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="rounded" trackingMode="selectAny" id="Ptf-or-Afi">
                                             <font key="font" metaFont="system"/>
                                             <segments>
-                                                <segment/>
-                                                <segment>
+                                                <segment width="13"/>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment>
+                                                <segment width="13">
                                                     <nil key="label"/>
                                                 </segment>
                                             </segments>
@@ -4608,7 +4608,7 @@ Gw
                                             <binding destination="Duh-gD-22T" name="enabled" keyPath="altPriceEnabled" id="Gh4-wr-e33"/>
                                         </connections>
                                     </segmentedControl>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="ntU-de-fCU" userLabel="Weekday1" customClass="MTWeekdayTextField">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="ntU-de-fCU" userLabel="Weekday1" customClass="MTWeekdayTextField">
                                         <rect key="frame" x="-2" y="178" width="65" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="weekday1" id="PtT-ap-d5H">
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -4616,7 +4616,7 @@ Gw
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="3sE-dt-f6M" userLabel="Weekday2" customClass="MTWeekdayTextField">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="3sE-dt-f6M" userLabel="Weekday2" customClass="MTWeekdayTextField">
                                         <rect key="frame" x="-2" y="149" width="65" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="weekday2" id="IHf-VQ-DOy">
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -4624,7 +4624,7 @@ Gw
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="9et-Vm-hmq" userLabel="Weekday3" customClass="MTWeekdayTextField">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="9et-Vm-hmq" userLabel="Weekday3" customClass="MTWeekdayTextField">
                                         <rect key="frame" x="-2" y="120" width="65" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="weekday3" id="30T-k0-UOk">
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -4632,7 +4632,7 @@ Gw
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="ob6-Jq-Tig" userLabel="Weekday4" customClass="MTWeekdayTextField">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="ob6-Jq-Tig" userLabel="Weekday4" customClass="MTWeekdayTextField">
                                         <rect key="frame" x="-2" y="91" width="65" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="weekday4" id="kaO-G2-zJR">
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -4640,7 +4640,7 @@ Gw
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="9xU-7g-L6s" userLabel="Weekday5" customClass="MTWeekdayTextField">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="9xU-7g-L6s" userLabel="Weekday5" customClass="MTWeekdayTextField">
                                         <rect key="frame" x="-2" y="62" width="65" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="weekday5" id="uWh-7g-HAW">
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -4648,7 +4648,7 @@ Gw
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="py3-hR-iEV" userLabel="Weekday6" customClass="MTWeekdayTextField">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="py3-hR-iEV" userLabel="Weekday6" customClass="MTWeekdayTextField">
                                         <rect key="frame" x="-2" y="33" width="65" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="weekday6" id="IR5-Xu-Yym">
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -4656,7 +4656,7 @@ Gw
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="BFN-9b-z9Z" userLabel="Weekday7" customClass="MTWeekdayTextField">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="BFN-9b-z9Z" userLabel="Weekday7" customClass="MTWeekdayTextField">
                                         <rect key="frame" x="-2" y="4" width="65" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="weekday7" id="jiS-wN-foj">
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -4664,7 +4664,7 @@ Gw
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="UqC-9A-UdS" customClass="MTHourTextField">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="UqC-9A-UdS" customClass="MTHourTextField">
                                         <rect key="frame" x="116" y="204" width="22" height="14"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="hr4" id="Gzi-Xf-Rei">
                                             <font key="font" metaFont="smallSystem"/>
@@ -4672,7 +4672,7 @@ Gw
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="8" translatesAutoresizingMaskIntoConstraints="NO" id="gur-YY-DLC" customClass="MTHourTextField">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="8" translatesAutoresizingMaskIntoConstraints="NO" id="gur-YY-DLC" customClass="MTHourTextField">
                                         <rect key="frame" x="172" y="204" width="22" height="14"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="hr8" id="vUG-kq-Mgo">
                                             <font key="font" metaFont="smallSystem"/>
@@ -4680,7 +4680,7 @@ Gw
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="12" translatesAutoresizingMaskIntoConstraints="NO" id="9bI-pp-tuG" customClass="MTHourTextField">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="12" translatesAutoresizingMaskIntoConstraints="NO" id="9bI-pp-tuG" customClass="MTHourTextField">
                                         <rect key="frame" x="225" y="204" width="27" height="14"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="hr12" id="q7v-5L-DsH">
                                             <font key="font" metaFont="smallSystem"/>
@@ -4688,7 +4688,7 @@ Gw
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="16" translatesAutoresizingMaskIntoConstraints="NO" id="oJ7-p6-89w" customClass="MTHourTextField">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="16" translatesAutoresizingMaskIntoConstraints="NO" id="oJ7-p6-89w" customClass="MTHourTextField">
                                         <rect key="frame" x="281" y="204" width="28" height="14"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="hr16" id="rvW-hw-ba3">
                                             <font key="font" metaFont="smallSystem"/>
@@ -4696,7 +4696,7 @@ Gw
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tlm-Xw-OdQ" customClass="MTHourTextField">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tlm-Xw-OdQ" customClass="MTHourTextField">
                                         <rect key="frame" x="336" y="204" width="29" height="14"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="hr20" id="CPh-Qp-NhE">
                                             <font key="font" metaFont="smallSystem"/>
