@@ -81,4 +81,4 @@ We as members, contributors, and leaders pledge to make participation in our com
 
 # License
 
-Copyright 2023-2026 SAP SE or an SAP affiliate company and Power Monitor contributors. Please see our [LICENSE](LICENSE) for copyright and license information. Detailed information including third-party components and their licensing/copyright information is available [via the REUSE tool](https://api.reuse.software/info/github.com/SAP/power-monitoring-tool-for-macos).
+Copyright 2023-2026 SAP SE or an SAP affiliate company and _Power Monitor_ contributors. Please see our [LICENSE](LICENSE) for copyright and license information. Detailed information including third-party components and their licensing/copyright information is available [via the REUSE tool](https://api.reuse.software/info/github.com/SAP/power-monitoring-tool-for-macos).
