@@ -1303,6 +1303,18 @@
       },
       "shouldTranslate" : false
     },
+    "gu0-zj-Eor.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Check for Updates\"; ObjectID = \"gu0-zj-Eor\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Check for Updates"
+          }
+        }
+      }
+    },
     "gWf-CM-IEa.title" : {
       "comment" : "Class = \"NSButtonCell\"; title = \"Open at login\"; ObjectID = \"gWf-CM-IEa\";",
       "extractionState" : "extracted_with_value",

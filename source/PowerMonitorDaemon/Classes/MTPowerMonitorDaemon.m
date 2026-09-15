@@ -1,18 +1,18 @@
 /*
-     MTPowerMonitorDaemon.m
-     Copyright 2023-2025 SAP SE
-     
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-     
-     http://www.apache.org/licenses/LICENSE-2.0
-     
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+    MTPowerMonitorDaemon.m
+    Copyright 2023-2026 SAP SE
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 */
 
 #import "MTPowerMonitorDaemon.h"
@@ -23,6 +23,7 @@
 #import "MTSystemInfo.h"
 #import "MTPowerJournal.h"
 #import "MTElectricityPrice.h"
+#import "MTCodeSigning.h"
 #import "Constants.h"
 #import <os/log.h>
 
@@ -61,29 +62,43 @@
     
     if (listener == _listener && newConnection != nil) {
         
-        NSXPCInterface *exportedInterface = [NSXPCInterface interfaceWithProtocol:@protocol(PowerMonitorDaemonProtocol)];
-        [newConnection setExportedInterface:exportedInterface];
-        [newConnection setExportedObject:self];
+        NSError *error = nil;
+        NSString *signingAuth = [MTCodeSigning getSigningAuthorityWithError:&error];
+        NSString *requiredVersion = [[NSBundle bundleForClass:[self class]] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
         
+        if (signingAuth) {
+            
+            NSString *reqString = [MTCodeSigning codeSigningRequirementsWithCommonName:signingAuth
+                                                                      bundleIdentifier:@"corp.sap.PowerMonitor*"
+                                                                         versionString:requiredVersion
+            ];
+            
+            [newConnection setCodeSigningRequirement:reqString];
+            
+            NSXPCInterface *exportedInterface = [NSXPCInterface interfaceWithProtocol:@protocol(PowerMonitorDaemonProtocol)];
+            [newConnection setExportedInterface:exportedInterface];
+            [newConnection setExportedObject:self];
+            
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-retain-cycles"
-        [newConnection setInvalidationHandler:^{
-                      
-            [newConnection setInvalidationHandler:nil];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                os_log(OS_LOG_DEFAULT, "SAPCorp: %{public}@ invalidated", newConnection);
-            });
-        }];
+            [newConnection setInvalidationHandler:^{
+                
+                [newConnection setInvalidationHandler:nil];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    os_log(OS_LOG_DEFAULT, "SAPCorp: %{public}@ invalidated", newConnection);
+                });
+            }];
 #pragma clang diagnostic pop
-        
-        // Resuming the connection allows the system to deliver more incoming messages.
-        [newConnection resume];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            os_log(OS_LOG_DEFAULT, "SAPCorp: %{public}@ established", newConnection);
-        });
-        
-        acceptConnection = YES;
+            
+            // Resuming the connection allows the system to deliver more incoming messages.
+            [newConnection resume];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                os_log(OS_LOG_DEFAULT, "SAPCorp: %{public}@ established", newConnection);
+            });
+            
+            acceptConnection = YES;
+        }
     }
 
     return acceptConnection;

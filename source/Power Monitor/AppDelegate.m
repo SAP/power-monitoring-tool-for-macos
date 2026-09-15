@@ -1,6 +1,6 @@
 /*
      AppDelegate.m
-     Copyright 2023-2025 SAP SE
+     Copyright 2023-2026 SAP SE
      
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #import "MTStatusItemMenu.h"
 #import "MTPowerJournal.h"
 #import "MTDaemonConnection.h"
+#import "MTUpdateChecker.h"
 
 @interface AppDelegate ()
 @property (weak) IBOutlet MTStatusItemMenu *statusItemMenu;
@@ -369,6 +370,36 @@
 - (IBAction)openGitHub:(id)sender
 {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:kMTGitHubURL]];
+}
+
+- (IBAction)checkForUpdates:(id)sender
+{
+    MTUpdateChecker *updateChecker = [[MTUpdateChecker alloc] initWithBundleIdentifier:kMTUpdateCheckerBundleIdentifier];
+    [updateChecker launch];
+}
+
+#pragma mark - NSMenuItemValidation
+
+- (BOOL)validateMenuItem:(NSMenuItem *)menuItem
+{
+    BOOL enable = YES;
+    
+    if ([menuItem tag] == 1000) {
+        
+        enable = !([_userDefaults objectIsForcedForKey:kMTDefaultsUpdateCheckDisabledKey] &&
+                   [_userDefaults boolForKey:kMTDefaultsUpdateCheckDisabledKey]);
+        
+        // if update checking has not been disabled, we check if the Patcher app is installed
+        if (enable) {
+            
+            MTUpdateChecker *updateChecker = [[MTUpdateChecker alloc] initWithBundleIdentifier:kMTUpdateCheckerBundleIdentifier];
+            enable = [updateChecker isAvailable];
+        }
+        
+        [menuItem setHidden:!enable];
+    }
+    
+    return enable;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context

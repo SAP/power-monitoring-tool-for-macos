@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD0164E330330377005B49AB /* MTCodeSigning.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0164E230330377005B49AB /* MTCodeSigning.m */; };
 		AD06CE672A4575FD006386B8 /* MTStatusItemMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = AD06CE662A4575FD006386B8 /* MTStatusItemMenu.m */; };
 		AD09A6042B73D217008CF6C4 /* MTPowerGraphInspectorController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD09A6032B73D217008CF6C4 /* MTPowerGraphInspectorController.m */; };
 		AD0D3ADB2A1D1C83006AFF0D /* MTPowerMeasurementWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0D3ADA2A1D1C83006AFF0D /* MTPowerMeasurementWriter.m */; };
@@ -17,6 +18,7 @@
 		AD1E5FEB2C60275100E9C59B /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AD1E5FEA2C60275100E9C59B /* InfoPlist.xcstrings */; };
 		AD1F5DF12B4BFC0D007DD4FF /* MTAssertionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1F5DF02B4BFC0D007DD4FF /* MTAssertionsController.m */; };
 		AD238DCD2AD3DCC900A6B5B2 /* MTSystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB4B37C2A0BDCD800B7AF32 /* MTSystemInfo.m */; };
+		AD242DC2300F5C4D001E3E95 /* MTUpdateChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = AD242DC1300F5C4D001E3E95 /* MTUpdateChecker.m */; };
 		AD2B8BB92B7A1DE100625CEB /* MTPowerJournal.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2B8BB82B7A1DE100625CEB /* MTPowerJournal.m */; };
 		AD2B8BBC2B7A1E0C00625CEB /* MTPowerJournalEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2B8BBB2B7A1E0C00625CEB /* MTPowerJournalEntry.m */; };
 		AD2B8BBD2B7A1E0C00625CEB /* MTPowerJournalEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2B8BBB2B7A1E0C00625CEB /* MTPowerJournalEntry.m */; };
@@ -145,6 +147,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AD0164E130330377005B49AB /* MTCodeSigning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCodeSigning.h; sourceTree = "<group>"; };
+		AD0164E230330377005B49AB /* MTCodeSigning.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTCodeSigning.m; sourceTree = "<group>"; };
 		AD06CE652A4575FD006386B8 /* MTStatusItemMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTStatusItemMenu.h; sourceTree = "<group>"; };
 		AD06CE662A4575FD006386B8 /* MTStatusItemMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTStatusItemMenu.m; sourceTree = "<group>"; };
 		AD09A6022B73D217008CF6C4 /* MTPowerGraphInspectorController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTPowerGraphInspectorController.h; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 		AD1E5FEA2C60275100E9C59B /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		AD1F5DEF2B4BFC0D007DD4FF /* MTAssertionsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTAssertionsController.h; sourceTree = "<group>"; };
 		AD1F5DF02B4BFC0D007DD4FF /* MTAssertionsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTAssertionsController.m; sourceTree = "<group>"; };
+		AD242DC0300F5C4D001E3E95 /* MTUpdateChecker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTUpdateChecker.h; sourceTree = "<group>"; };
+		AD242DC1300F5C4D001E3E95 /* MTUpdateChecker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTUpdateChecker.m; sourceTree = "<group>"; };
 		AD2B8BB72B7A1DE100625CEB /* MTPowerJournal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MTPowerJournal.h; path = Shared/Classes/MTPowerJournal.h; sourceTree = SOURCE_ROOT; };
 		AD2B8BB82B7A1DE100625CEB /* MTPowerJournal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MTPowerJournal.m; path = Shared/Classes/MTPowerJournal.m; sourceTree = SOURCE_ROOT; };
 		AD2B8BBA2B7A1E0C00625CEB /* MTPowerJournalEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTPowerJournalEntry.h; sourceTree = "<group>"; };
@@ -469,6 +475,8 @@
 				AD06CE662A4575FD006386B8 /* MTStatusItemMenu.m */,
 				ADCBCC792B30A68D004B9424 /* MTToolbarItem.h */,
 				ADCBCC782B30A68D004B9424 /* MTToolbarItem.m */,
+				AD242DC0300F5C4D001E3E95 /* MTUpdateChecker.h */,
+				AD242DC1300F5C4D001E3E95 /* MTUpdateChecker.m */,
 				ADCB4C942D78358E006DC869 /* MTWeekdayTextField.h */,
 				ADCB4C952D78358E006DC869 /* MTWeekdayTextField.m */,
 			);
@@ -529,12 +537,14 @@
 		ADA213EA2B20BFFF00C9661C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				AD0164E130330377005B49AB /* MTCodeSigning.h */,
+				AD0164E230330377005B49AB /* MTCodeSigning.m */,
 				ADA213E82B20BFF300C9661C /* MTPowerEvent.h */,
 				ADA213E72B20BFF300C9661C /* MTPowerEvent.m */,
-				ADA213E42B20BFEA00C9661C /* MTSleepWatcher.h */,
-				ADA213E52B20BFEA00C9661C /* MTSleepWatcher.m */,
 				ADEF0BDD2B317CD7000C7EEA /* MTPowerMonitorDaemon.h */,
 				ADEF0BDE2B317CD7000C7EEA /* MTPowerMonitorDaemon.m */,
+				ADA213E42B20BFEA00C9661C /* MTSleepWatcher.h */,
+				ADA213E52B20BFEA00C9661C /* MTSleepWatcher.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -614,7 +624,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 2600;
+				LastUpgradeCheck = 2700;
 				TargetAttributes = {
 					AD4950D029F7BDB100B6F363 = {
 						CreatedOnToolsVersion = 14.3;
@@ -711,6 +721,7 @@
 				AD74E37B2A38A59F000B0B84 /* MTPowerGraphView.m in Sources */,
 				ADEAFD832B2892B3005A1799 /* MTSettingsViewOptionsController.m in Sources */,
 				ADD391CC2B7384E40041432C /* MTGraphSplitViewController.m in Sources */,
+				AD242DC2300F5C4D001E3E95 /* MTUpdateChecker.m in Sources */,
 				AD4950D929F7BDB100B6F363 /* MTMainViewController.m in Sources */,
 				AD8D2C9D2DD3733300A2C71F /* MTJournalTableView.m in Sources */,
 				AD238DCD2AD3DCC900A6B5B2 /* MTSystemInfo.m in Sources */,
@@ -746,6 +757,7 @@
 				AD8123C52A0BC34200857DF8 /* MTModifyData.m in Sources */,
 				ADA213E92B20BFF300C9661C /* MTPowerEvent.m in Sources */,
 				ADA213E62B20BFEA00C9661C /* MTSleepWatcher.m in Sources */,
+				AD0164E330330377005B49AB /* MTCodeSigning.m in Sources */,
 				AD8123BD2A0B943C00857DF8 /* main.m in Sources */,
 				AD2B8BBD2B7A1E0C00625CEB /* MTPowerJournalEntry.m in Sources */,
 				AD8123C42A0BC33E00857DF8 /* MTPowerMeasurementReader.m in Sources */,
@@ -945,8 +957,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 553;
+				CURRENT_PROJECT_VERSION = 561;
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -958,7 +969,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Power Monitor";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023-2025 SAP SE. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023-2026 SAP SE. All rights reserved.";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -966,7 +977,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.3.3;
+				MARKETING_VERSION = 1.3.4;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -984,8 +995,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 553;
+				CURRENT_PROJECT_VERSION = 561;
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -997,7 +1007,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Power Monitor";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023-2025 SAP SE. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023-2026 SAP SE. All rights reserved.";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1005,7 +1015,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.3.3;
+				MARKETING_VERSION = 1.3.4;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1020,14 +1030,14 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 217;
+				CURRENT_PROJECT_VERSION = 219;
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/PowerMonitorDaemon/PowerMonitorDaemon-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023-2025 SAP SE. All rights reserved.";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.3.3;
+				MARKETING_VERSION = 1.3.4;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitorDaemon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1040,14 +1050,14 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 217;
+				CURRENT_PROJECT_VERSION = 219;
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/PowerMonitorDaemon/PowerMonitorDaemon-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023-2025 SAP SE. All rights reserved.";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.3.3;
+				MARKETING_VERSION = 1.3.4;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitorDaemon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1060,7 +1070,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 31;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1070,7 +1080,7 @@
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023-2025 SAP SE. All rights reserved.";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.3.3;
+				MARKETING_VERSION = 1.3.4;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitorXPC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1083,7 +1093,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 31;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1093,7 +1103,7 @@
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023-2025 SAP SE. All rights reserved.";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.3.3;
+				MARKETING_VERSION = 1.3.4;
 				PRODUCT_BUNDLE_IDENTIFIER = corp.sap.PowerMonitorXPC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
