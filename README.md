@@ -18,11 +18,16 @@ _Power Monitor_ is a powerful open-source tool that provides real-time insights 
 
 **_Power Monitor_ supports the following macOS versions:**
 
-* macOS 27.x
+* macOS 27.x (*)
 * macOS 26.x
 * macOS 15.x
 * macOS 14.x
 * macOS 13.x
+
+<br/>
+
+>[!NOTE]
+>(*) An issue has been identified in macOS 27 whereby the schedule for the alternative electricity tariff is not displayed correctly. We raised this issue with Apple, but unfortunately it was not fixed in the final release of macOS 27. We are continuing to work with Apple on this issue in the hope that it will be resolved soon.
 
 <br/>
 
