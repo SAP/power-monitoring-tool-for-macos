@@ -6,6 +6,8 @@
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP/power-monitoring-tool-for-macos)](https://api.reuse.software/info/github.com/SAP/power-monitoring-tool-for-macos)
 
+### Make a positive impact, reduce energy waste, and contribute to sustainability with _Power Monitor_!
+
 _Power Monitor_ is a powerful open-source tool that provides real-time insights into your device's energy consumption and carbon footprint, linked to your location. Here's how it can help you:
 
 🔌 Measure Energy Consumption: Track how much energy your Mac consumes, helping you understand the environmental impact of your device usage.
@@ -28,10 +30,6 @@ _Power Monitor_ is a powerful open-source tool that provides real-time insights 
 
 >[!NOTE]
 >(*) An issue has been identified in macOS 27 whereby the schedule for the alternative electricity tariff is not displayed correctly. We raised this issue with Apple, but unfortunately it was not fixed in the final release of macOS 27. However, the issue appears to have been resolved in the macOS 27.2 beta.
-
-<br/>
-
-**Make a positive impact, reduce energy waste, and contribute to sustainability with _Power Monitor_!**
 
 <br/>
 
