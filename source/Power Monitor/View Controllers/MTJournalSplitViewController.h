@@ -17,6 +17,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface MTJournalSplitViewController : NSSplitViewController
+@interface MTJournalSplitViewController : NSSplitViewController <NSSplitViewDelegate>
 
 @end

@@ -46,7 +46,6 @@
     [self.journalController setSortDescriptors:[NSArray arrayWithObject:initialSortDescriptor]];
     
     [self importJournal];
-    [self toggleInfoSection:nil];
     
     // observe our user defaults for changes
     NSArray *observedDefaults = [NSArray arrayWithObjects:
@@ -83,6 +82,7 @@
 {
     [super viewWillAppear];
     [self inspectorUpdateConsumptionSummary];
+    [self toggleInfoSection:nil];
 }
 
 - (void)importJournal
@@ -219,40 +219,23 @@
 - (IBAction)toggleInfoSection:(id)sender
 {
     BOOL isEnabled = [_userDefaults boolForKey:kMTDefaultsJournalSummaryEnabledKey];
-
+    if (sender) { isEnabled = !isEnabled; }
+    
     NSSplitViewController *splitViewController = (NSSplitViewController*)[self parentViewController];
     
     if (splitViewController) {
         
+        [[[splitViewController splitViewItems] lastObject] setCollapsed:!isEnabled];
+
         if (isEnabled) {
             
-            // save the divider position
-            if (sender) {
-                
-                float position = NSHeight([[self view] frame]);
-                
-                if (position > 0) {
-                    [_userDefaults setFloat:position forKey:kMTDefaultsJournalDividerPositionKey];
-                }
-            }
-            
-            [[[splitViewController splitViewItems] lastObject] setCollapsed:YES];
-            
-        } else {
-            
-            // get saved divider position
+            // restore saved divider position
             float position = [_userDefaults floatForKey:kMTDefaultsJournalDividerPositionKey];
-            [[[splitViewController splitViewItems] lastObject] setCollapsed:NO];
-            
-            if (position > 0) {
-                [[splitViewController splitView] setPosition:position ofDividerAtIndex:0];
-            }
+            if (position > 0) { [[splitViewController splitView] setPosition:position ofDividerAtIndex:0]; }
         }
     }
     
-    if (sender) {
-        [_userDefaults setBool:!isEnabled forKey:kMTDefaultsJournalSummaryEnabledKey];
-    }
+    if (sender) { [_userDefaults setBool:isEnabled forKey:kMTDefaultsJournalSummaryEnabledKey]; }
 }
 
 #pragma mark NSTableViewDelegate

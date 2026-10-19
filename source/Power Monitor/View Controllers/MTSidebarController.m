@@ -165,6 +165,7 @@
             NSViewController *targetViewController = [_allViewControllers objectForKey:[selectedItem targetViewControllerIdentifier]];
             
             if (!targetViewController) {
+                
                 targetViewController = [[self storyboard] instantiateControllerWithIdentifier:[selectedItem targetViewControllerIdentifier]];
                 
                 if (targetViewController) {
@@ -176,8 +177,13 @@
                 
                 NSSplitViewItem *splitViewItem = [NSSplitViewItem splitViewItemWithViewController:targetViewController];
                 NSSplitViewController *splitViewController = (NSSplitViewController*)[self parentViewController];
-                [splitViewController removeSplitViewItem:[[splitViewController splitViewItems] lastObject]];
-                [splitViewController addSplitViewItem:splitViewItem];
+
+                if (splitViewController) {
+                    
+                    NSArray *existingSplitViewItems = [splitViewController splitViewItems];
+                    if ([existingSplitViewItems count] > 0) { [splitViewController removeSplitViewItem:[existingSplitViewItems lastObject]]; }
+                    [splitViewController addSplitViewItem:splitViewItem];
+                }
             }
         }
     }

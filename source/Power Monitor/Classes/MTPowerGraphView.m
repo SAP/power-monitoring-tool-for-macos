@@ -206,6 +206,7 @@
         _lineWidth = (scaleFactor > 1) ? 2.0 / scaleFactor : 1;
         [_dayMarkerLayer setLineWidth:_lineWidth];
         [_graphLayer setLineWidth:_lineWidth / 10.0];
+        [_graphLayer setHidden:NO];
         [_powerNapLayer setLineWidth:_lineWidth / 10.0];
 
         CGMutablePathRef linePath = CGPathCreateMutable();
@@ -380,6 +381,15 @@
         
         [_positionLineLayer setBackgroundColor:[_positionLineColor CGColor]];
         [_positionLineLockLayer setBackgroundColor:[_positionLineColor CGColor]];
+        
+    } else {
+        
+        [_graphLayer setHidden:YES];
+        [_powerNapLayer setHidden:YES];
+        [_dayMarkerLayer setHidden:YES];
+        [_averageLineLayer setHidden:YES];
+        [_positionLineLayer setHidden:YES];
+        [_positionLineLockLayer setHidden:YES];
     }
 }
 

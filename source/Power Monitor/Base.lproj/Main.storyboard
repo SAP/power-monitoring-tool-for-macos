@@ -2015,7 +2015,7 @@ Gw
         <!--Log Split View Controller-->
         <scene sceneID="CYb-vp-ehD">
             <objects>
-                <splitViewController storyboardIdentifier="corp.sap.PowerMonitor.PowerEventLog" id="cjD-2g-mL5" userLabel="Log Split View Controller" sceneMemberID="viewController">
+                <splitViewController storyboardIdentifier="corp.sap.PowerMonitor.PowerEventLog" id="cjD-2g-mL5" userLabel="Log Split View Controller" customClass="MTLogSplitViewController" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem id="IYa-bV-ewW"/>
                         <splitViewItem id="LNh-pl-IWb"/>
@@ -2235,13 +2235,13 @@ Gw
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRw-og-ptP">
-                                <rect key="frame" x="0.0" y="0.0" width="1104" height="202"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1114" height="202"/>
                                 <clipView key="contentView" ambiguous="YES" id="96W-Lb-WOb">
-                                    <rect key="frame" x="1" y="1" width="1102" height="200"/>
+                                    <rect key="frame" x="1" y="1" width="1112" height="200"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" tableStyle="plain" alternatingRowBackgroundColors="YES" columnReordering="NO" multipleSelection="NO" autosaveName="LogViewer" rowHeight="24" usesAutomaticRowHeights="YES" headerView="lV7-Uh-vXT" viewBased="YES" id="JNv-Wl-dcG">
-                                            <rect key="frame" x="0.0" y="0.0" width="1102" height="172"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1112" height="172"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="16" height="0.0"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -2387,7 +2387,7 @@ Gw
                                                         </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>
-                                                <tableColumn width="647.5" minWidth="150" maxWidth="10000" id="ilr-4r-VCp">
+                                                <tableColumn width="657.5" minWidth="150" maxWidth="10000" id="ilr-4r-VCp">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Message">
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2401,11 +2401,11 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="i0z-QC-M2P">
-                                                            <rect key="frame" x="446.5" y="0.0" width="647" height="24"/>
+                                                            <rect key="frame" x="446.5" y="0.0" width="657" height="24"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField focusRingType="none" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="VnP-7m-OFA">
-                                                                    <rect key="frame" x="2" y="3" width="646" height="18"/>
+                                                                    <rect key="frame" x="2" y="3" width="656" height="18"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="18" id="R28-wK-q3J"/>
                                                                     </constraints>
@@ -2457,12 +2457,12 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <tableHeaderView key="headerView" wantsLayer="YES" id="lV7-Uh-vXT">
-                                    <rect key="frame" x="0.0" y="0.0" width="1102" height="28"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1112" height="28"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="DEb-Kk-t7A">
-                                <rect key="frame" x="501" y="44" width="102" height="58"/>
+                                <rect key="frame" x="506" y="44" width="102" height="58"/>
                                 <subviews>
                                     <progressIndicator verticalHuggingPriority="1000" maxValue="100" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="drN-g1-2s9">
                                         <rect key="frame" x="35" y="26" width="32" height="32"/>
@@ -2758,7 +2758,7 @@ Gw
                 <splitViewController storyboardIdentifier="corp.sap.PowerMonitor.Journal" id="ps0-CA-1ND" customClass="MTJournalSplitViewController" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem id="kR0-no-UtW"/>
-                        <splitViewItem separatorStyle="none" id="a5T-6Q-7jR"/>
+                        <splitViewItem id="a5T-6Q-7jR"/>
                     </splitViewItems>
                     <splitView key="splitView" autosaveName="JournalSplitView" dividerStyle="thin" vertical="YES" id="t4u-2t-fSG">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
@@ -3374,7 +3374,7 @@ Gw
                         </clipView>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="XnV-Dq-fvJ"/>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="hJD-Eq-7aN"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="488" id="hJD-Eq-7aN"/>
                         </constraints>
                         <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="nJu-J9-JUG">
                             <rect key="frame" x="1" y="199" width="1169" height="16"/>
@@ -3429,7 +3429,7 @@ Gw
                         <rect key="frame" x="0.0" y="0.0" width="312" height="387"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
-                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jat-vc-Z6U">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Jat-vc-Z6U">
                                 <rect key="frame" x="18" y="249" width="190" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Total power consumption:" usesSingleLineMode="YES" id="TvO-d4-Nym">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3437,7 +3437,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Koh-m6-0cu">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Koh-m6-0cu">
                                 <rect key="frame" x="214" y="249" width="74" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="xO5-bb-xj0"/>
@@ -3448,7 +3448,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="yYQ-2q-DqG" userLabel="Consumption Summary Nap Label">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="yYQ-2q-DqG" userLabel="Consumption Summary Nap Label">
                                 <rect key="frame" x="18" y="230" width="190" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Consumed during Power Nap:" usesSingleLineMode="YES" id="OLr-dX-jwG">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3456,7 +3456,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcB-QI-qln">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcB-QI-qln">
                                 <rect key="frame" x="214" y="230" width="74" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="S4x-U9-Mm5">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3464,7 +3464,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IJM-Ea-NrB" userLabel="Duration Summary Awake Label">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="IJM-Ea-NrB" userLabel="Duration Summary Awake Label">
                                 <rect key="frame" x="18" y="182" width="190" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Duration awake:" usesSingleLineMode="YES" id="U4A-7v-8aP">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3472,7 +3472,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHs-NO-8Wj">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHs-NO-8Wj">
                                 <rect key="frame" x="214" y="182" width="74" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="PXZ-C7-eAF">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3480,7 +3480,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YSK-Xa-Bao" userLabel="Duration Summary Nap Label">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="YSK-Xa-Bao" userLabel="Duration Summary Nap Label">
                                 <rect key="frame" x="18" y="163" width="190" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Duration Power Nap:" usesSingleLineMode="YES" id="csm-gY-8sj">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3488,7 +3488,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM9-nI-EBh">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM9-nI-EBh">
                                 <rect key="frame" x="214" y="163" width="74" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="qNU-ew-9nn">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3496,7 +3496,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" horizontalHuggingPriority="249" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="7M0-FP-neR" userLabel="Consumption Summary Costs Label">
+                            <textField focusRingType="none" horizontalHuggingPriority="249" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="7M0-FP-neR" userLabel="Consumption Summary Costs Label">
                                 <rect key="frame" x="18" y="115" width="190" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Total electricity costs:" usesSingleLineMode="YES" id="79H-X5-650">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3511,7 +3511,7 @@ Gw
                                     </binding>
                                 </connections>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qql-E6-Jnb" userLabel="Consumption Summary Costs Value">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qql-E6-Jnb" userLabel="Consumption Summary Costs Value">
                                 <rect key="frame" x="214" y="115" width="74" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" usesSingleLineMode="YES" id="Jrt-qJ-XaC">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3526,7 +3526,7 @@ Gw
                                     </binding>
                                 </connections>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="4jk-y9-iV2" userLabel="Consumption Summary Nap Costs Label">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="4jk-y9-iV2" userLabel="Consumption Summary Nap Costs Label">
                                 <rect key="frame" x="18" y="96" width="190" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Electricity costs Power Nap:" usesSingleLineMode="YES" id="5L4-n0-bFI">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3541,7 +3541,7 @@ Gw
                                     </binding>
                                 </connections>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4X-yP-ruJ" userLabel="Consumption Summary Nap Costs Value">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4X-yP-ruJ" userLabel="Consumption Summary Nap Costs Value">
                                 <rect key="frame" x="214" y="96" width="74" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" usesSingleLineMode="YES" id="Zva-EX-a2c">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3556,7 +3556,7 @@ Gw
                                     </binding>
                                 </connections>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="sCv-ar-o0m" userLabel="Consumption Summary Nap Costs Label">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="sCv-ar-o0m" userLabel="Consumption Summary Nap Costs Label">
                                 <rect key="frame" x="18" y="77" width="190" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Electricity costs alternative Tariff:" usesSingleLineMode="YES" id="Ewi-hx-cGi">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3571,7 +3571,7 @@ Gw
                                     </binding>
                                 </connections>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQf-Ep-vSZ" userLabel="Consumption Summary Nap Costs Value">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQf-Ep-vSZ" userLabel="Consumption Summary Nap Costs Value">
                                 <rect key="frame" x="214" y="77" width="74" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" usesSingleLineMode="YES" id="ZAl-I3-QNc">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3586,15 +3586,15 @@ Gw
                                     </binding>
                                 </connections>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="jaI-12-NCq">
-                                <rect key="frame" x="5" y="312" width="181" height="16"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="jaI-12-NCq">
+                                <rect key="frame" x="18" y="312" width="181" height="16"/>
                                 <textFieldCell key="cell" selectable="YES" title="consumptionSummaryLabel" id="zdL-7W-VgV">
                                     <font key="font" metaFont="systemSemibold" size="13"/>
                                     <color key="textColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hp9-ev-jsk">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Hp9-ev-jsk">
                                 <rect key="frame" x="18" y="278" width="190" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Journal entries:" usesSingleLineMode="YES" id="ME3-AA-pMQ">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3602,7 +3602,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vR-lq-GSt">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vR-lq-GSt">
                                 <rect key="frame" x="214" y="278" width="74" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="BgG-4M-oXN"/>
@@ -3613,7 +3613,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="ZVe-JM-4vt" userLabel="Consumption Summary Nap Label">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="ZVe-JM-4vt" userLabel="Consumption Summary Nap Label">
                                 <rect key="frame" x="18" y="211" width="190" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Consumed in alternative Tariff:" usesSingleLineMode="YES" id="3jU-nr-vtB">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3621,7 +3621,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="B53-mB-bKe" userLabel="Duration Summary Nap Label">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="B53-mB-bKe" userLabel="Duration Summary Nap Label">
                                 <rect key="frame" x="18" y="144" width="190" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Duration in alternative Tariff:" usesSingleLineMode="YES" id="DyD-Vz-o6j">
                                     <font key="font" metaFont="systemSemibold" size="11"/>
@@ -3629,7 +3629,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4k-TV-Nur">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4k-TV-Nur">
                                 <rect key="frame" x="214" y="211" width="74" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="jBt-PM-HDZ">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3637,7 +3637,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7K-yM-Cb8">
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7K-yM-Cb8">
                                 <rect key="frame" x="214" y="144" width="74" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" usesSingleLineMode="YES" id="uP9-lC-UWx">
                                     <font key="font" metaFont="smallSystem"/>
@@ -3647,7 +3647,7 @@ Gw
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="jaI-12-NCq" firstAttribute="leading" secondItem="yh2-Eu-rzT" secondAttribute="leading" constant="7" id="09I-M3-GvJ"/>
+                            <constraint firstItem="jaI-12-NCq" firstAttribute="leading" secondItem="yh2-Eu-rzT" secondAttribute="leading" constant="20" id="09I-M3-GvJ"/>
                             <constraint firstItem="5vR-lq-GSt" firstAttribute="firstBaseline" secondItem="Hp9-ev-jsk" secondAttribute="firstBaseline" id="0EU-Cv-i9h"/>
                             <constraint firstItem="IJM-Ea-NrB" firstAttribute="trailing" secondItem="yYQ-2q-DqG" secondAttribute="trailing" id="0wI-9g-QaN"/>
                             <constraint firstItem="ZVe-JM-4vt" firstAttribute="leading" secondItem="yYQ-2q-DqG" secondAttribute="leading" id="35d-QH-f4U"/>
@@ -3846,28 +3846,32 @@ Gw
             <objects>
                 <viewController storyboardIdentifier="corp.sap.PowerMonitor.PowerInfo" id="vpt-R8-qES" customClass="MTPowerInfoController" sceneMemberID="viewController">
                     <customView key="view" id="jVR-1z-mAS">
-                        <rect key="frame" x="0.0" y="0.0" width="820" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="252"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" translatesAutoresizingMaskIntoConstraints="NO" id="gg0-IH-RbP">
-                                <rect key="frame" x="0.0" y="0.0" width="820" height="148"/>
+                                <rect key="frame" x="0.0" y="0.0" width="800" height="200"/>
                                 <clipView key="contentView" id="TlW-Zo-Hyo">
-                                    <rect key="frame" x="1" y="1" width="818" height="146"/>
+                                    <rect key="frame" x="1" y="1" width="798" height="198"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView wantsLayer="YES" editable="NO" drawsBackground="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" textCompletion="NO" id="IzL-hw-CkH">
-                                            <rect key="frame" x="0.0" y="0.0" width="818" height="127"/>
+                                        <textView wantsLayer="YES" editable="NO" drawsBackground="NO" importsGraphics="NO" richText="NO" horizontallyResizable="YES" verticallyResizable="YES" textCompletion="NO" id="IzL-hw-CkH">
+                                            <rect key="frame" x="0.0" y="0.0" width="779" height="179"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="799" height="127"/>
+                                            <size key="minSize" width="779" height="179"/>
                                             <size key="maxSize" width="820" height="10000000"/>
                                         </textView>
                                     </subviews>
                                 </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="800" id="7Cm-qy-uyE"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="C8A-uQ-0wN"/>
+                                </constraints>
                                 <edgeInsets key="contentInsets" left="20" right="0.0" top="20" bottom="0.0"/>
-                                <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="1tq-zv-O7G">
-                                    <rect key="frame" x="20" y="130" width="799" height="17"/>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="1tq-zv-O7G">
+                                    <rect key="frame" x="20" y="182" width="779" height="17"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="hsW-S2-CO2">
@@ -3896,8 +3900,8 @@ Gw
         <scene sceneID="FLZ-UV-yhm">
             <objects>
                 <viewController title="Costs" id="Duh-gD-22T" customClass="MTSettingsCostsController" sceneMemberID="viewController">
-                    <view key="view" id="AcK-Tx-PKB">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="565"/>
+                    <view key="view" misplaced="YES" id="AcK-Tx-PKB">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="561"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eC3-Hh-Pjf">
@@ -4073,30 +4077,30 @@ Gw
                                         <segmentedCell key="cell" scrollable="YES" lineBreakMode="clipping" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="rounded" trackingMode="selectAny" id="CYj-LV-01X">
                                             <font key="font" metaFont="system"/>
                                             <segments>
-                                                <segment width="13"/>
-                                                <segment width="13"/>
-                                                <segment width="13"/>
-                                                <segment width="13"/>
-                                                <segment width="13"/>
-                                                <segment width="13"/>
-                                                <segment width="13"/>
-                                                <segment width="13"/>
-                                                <segment width="13"/>
-                                                <segment width="13"/>
-                                                <segment width="13"/>
-                                                <segment width="13"/>
-                                                <segment width="13"/>
-                                                <segment width="13"/>
-                                                <segment width="13"/>
-                                                <segment width="13"/>
-                                                <segment width="13"/>
-                                                <segment width="13"/>
-                                                <segment width="13"/>
-                                                <segment width="13"/>
-                                                <segment width="13"/>
-                                                <segment width="13"/>
-                                                <segment width="13"/>
-                                                <segment width="13"/>
+                                                <segment width="14"/>
+                                                <segment width="14"/>
+                                                <segment width="14"/>
+                                                <segment width="14"/>
+                                                <segment width="14"/>
+                                                <segment width="14"/>
+                                                <segment width="14"/>
+                                                <segment width="14"/>
+                                                <segment width="14"/>
+                                                <segment width="14"/>
+                                                <segment width="14"/>
+                                                <segment width="14"/>
+                                                <segment width="14"/>
+                                                <segment width="14"/>
+                                                <segment width="14"/>
+                                                <segment width="14"/>
+                                                <segment width="14"/>
+                                                <segment width="14"/>
+                                                <segment width="14"/>
+                                                <segment width="14"/>
+                                                <segment width="14"/>
+                                                <segment width="14"/>
+                                                <segment width="14"/>
+                                                <segment width="14"/>
                                             </segments>
                                         </segmentedCell>
                                         <connections>
@@ -4112,74 +4116,74 @@ Gw
                                         <segmentedCell key="cell" scrollable="YES" lineBreakMode="clipping" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="rounded" trackingMode="selectAny" id="xx7-AB-P2A">
                                             <font key="font" metaFont="system"/>
                                             <segments>
-                                                <segment width="13"/>
-                                                <segment width="13">
+                                                <segment width="14"/>
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
                                             </segments>
@@ -4197,74 +4201,74 @@ Gw
                                         <segmentedCell key="cell" scrollable="YES" lineBreakMode="clipping" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="rounded" trackingMode="selectAny" id="36m-jW-swI">
                                             <font key="font" metaFont="system"/>
                                             <segments>
-                                                <segment width="13"/>
-                                                <segment width="13">
+                                                <segment width="14"/>
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
                                             </segments>
@@ -4282,74 +4286,74 @@ Gw
                                         <segmentedCell key="cell" scrollable="YES" lineBreakMode="clipping" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="rounded" trackingMode="selectAny" id="VZ5-KB-1lr">
                                             <font key="font" metaFont="system"/>
                                             <segments>
-                                                <segment width="13"/>
-                                                <segment width="13">
+                                                <segment width="14"/>
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
                                             </segments>
@@ -4367,74 +4371,74 @@ Gw
                                         <segmentedCell key="cell" scrollable="YES" lineBreakMode="clipping" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="rounded" trackingMode="selectAny" id="Mcz-xw-C6a">
                                             <font key="font" metaFont="system"/>
                                             <segments>
-                                                <segment width="13"/>
-                                                <segment width="13">
+                                                <segment width="14"/>
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
                                             </segments>
@@ -4452,74 +4456,74 @@ Gw
                                         <segmentedCell key="cell" scrollable="YES" lineBreakMode="clipping" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="rounded" trackingMode="selectAny" id="aeN-Dd-2WT">
                                             <font key="font" metaFont="system"/>
                                             <segments>
-                                                <segment width="13"/>
-                                                <segment width="13">
+                                                <segment width="14"/>
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
                                             </segments>
@@ -4537,74 +4541,74 @@ Gw
                                         <segmentedCell key="cell" scrollable="YES" lineBreakMode="clipping" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="rounded" trackingMode="selectAny" id="Ptf-or-Afi">
                                             <font key="font" metaFont="system"/>
                                             <segments>
-                                                <segment width="13"/>
-                                                <segment width="13">
+                                                <segment width="14"/>
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
-                                                <segment width="13">
+                                                <segment width="14">
                                                     <nil key="label"/>
                                                 </segment>
                                             </segments>

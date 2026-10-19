@@ -20,19 +20,35 @@
 #import "MTJournalInspectorController.h"
 #import "Constants.h"
 
+@interface MTJournalSplitViewController ()
+@property (nonatomic, strong, readwrite) NSSplitViewItem *contentItem;
+@property (nonatomic, strong, readwrite) NSSplitViewItem *inspectorItem;
+@end
+
 @implementation MTJournalSplitViewController
 
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
     
-    NSSplitViewItem *contentItem = [[self splitViewItems] firstObject];
-    NSSplitViewItem *inspectorItem = [[self splitViewItems] lastObject];
+    _contentItem = [[self splitViewItems] firstObject];
+    _inspectorItem = [[self splitViewItems] lastObject];
     
     // set a delegate so we can pass data to our inspector
-    MTJournalController *contentController = (MTJournalController*)[contentItem viewController];
-    MTJournalInspectorController *inspectorController = (MTJournalInspectorController*)[inspectorItem viewController];
+    MTJournalController *contentController = (MTJournalController*)[_contentItem viewController];
+    MTJournalInspectorController *inspectorController = (MTJournalInspectorController*)[_inspectorItem viewController];
     [contentController setDelegate:inspectorController];
+}
+
+- (void)splitViewDidResizeSubviews:(NSNotification *)notification
+{
+    BOOL userResized = [[[notification userInfo] objectForKey:@"NSSplitViewUserResizeKey"] boolValue];
+    
+    if (userResized) {
+        
+        CGFloat dividerPosition = NSWidth([[[_contentItem viewController] view] frame]);
+        [[NSUserDefaults standardUserDefaults] setFloat:dividerPosition forKey:kMTDefaultsJournalDividerPositionKey];
+    }
 }
 
 @end

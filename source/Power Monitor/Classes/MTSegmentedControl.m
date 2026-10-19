@@ -48,6 +48,18 @@
     [self setSelectedSegment:-1];
     [self setToolTip:NSLocalizedString(@"altScheduleToolTip", nil)];
     [self setAccessibilityChildren:nil];
+    
+    if (@available(macOS 27.0, *)) {
+        
+        // nothing to do
+    
+    } else {
+        
+        // adjust the segment width
+        CGFloat segmentWidth = 13;
+        NSInteger segmentCount = [self segmentCount];
+        for (int i = 0; i < segmentCount; i++) { [self setWidth:segmentWidth forSegment:i]; }
+    }
 }
 
 - (void)setSelectedSegmentsWithArray:(NSArray*)selected

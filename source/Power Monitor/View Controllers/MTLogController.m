@@ -52,8 +52,13 @@
                                                object:nil
     ];
     
-    [self toggleInfoSection:nil];
     [self getLogEntriesFromDaemon];
+}
+
+- (void)viewWillAppear
+{
+    [super viewWillAppear];
+    [self toggleInfoSection:nil];
 }
 
 - (void)getLogEntriesFromDaemon
@@ -189,40 +194,23 @@
 - (IBAction)toggleInfoSection:(id)sender
 {
     BOOL isEnabled = [_userDefaults boolForKey:kMTDefaultsLogDetailsEnabledKey];
+    if (sender) { isEnabled = !isEnabled; }
     
     NSSplitViewController *splitViewController = (NSSplitViewController*)[self parentViewController];
     
     if (splitViewController) {
         
+        [[[splitViewController splitViewItems] lastObject] setCollapsed:!isEnabled];
+
         if (isEnabled) {
             
-            // save the divider position
-            if (sender) {
-                
-                float position = NSHeight([[self view] frame]);
-                
-                if (position > 0) {
-                    [_userDefaults setFloat:position forKey:kMTDefaultsLogDividerPositionKey];
-                }
-            }
-            
-            [[[splitViewController splitViewItems] lastObject] setCollapsed:YES];
-            
-        } else {
-            
-            // get saved divider position
+            // restore saved divider position
             float position = [_userDefaults floatForKey:kMTDefaultsLogDividerPositionKey];
-            [[[splitViewController splitViewItems] lastObject] setCollapsed:NO];
-            
-            if (position > 0) {
-                [[splitViewController splitView] setPosition:position ofDividerAtIndex:0];
-            }
+            if (position > 0) { [[splitViewController splitView] setPosition:position ofDividerAtIndex:0]; }
         }
     }
     
-    if (sender) {
-        [_userDefaults setBool:!isEnabled forKey:kMTDefaultsLogDetailsEnabledKey];
-    }
+    if (sender) { [_userDefaults setBool:isEnabled forKey:kMTDefaultsLogDetailsEnabledKey]; }
 }
 
 - (IBAction)saveContent:(id)sender
