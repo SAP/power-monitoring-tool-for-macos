@@ -29,7 +29,7 @@ _Power Monitor_ is a powerful open-source tool that provides real-time insights 
 <br/>
 
 >[!NOTE]
->(*) An issue has been identified in macOS 27 whereby the schedule for the alternative electricity tariff is not displayed correctly. We raised this issue with Apple, but unfortunately it was not fixed in the final release of macOS 27. However, the issue appears to have been resolved in the macOS 27.2 beta.
+>(*) An issue has been identified in macOS 27 whereby the schedule for the alternative electricity tariff is not displayed correctly. This issue appears to have been resolved in the macOS 27.2.
 
 <br/>
 
