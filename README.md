@@ -18,6 +18,10 @@ _Power Monitor_ is a powerful open-source tool that provides real-time insights 
 
 🌟 Technical Accuracy: While it's not possible to measure exact wattage directly on the Mac, _Power Monitor_ provides a reliable estimate based on external power meter tests.
 
+🔄 Seamless automatic updates powered by [_Patcher_](https://github.com/SAP/macos-app-patcher).
+
+<br/>
+
 **_Power Monitor_ supports the following macOS versions:**
 
 * macOS 27.x (*)
